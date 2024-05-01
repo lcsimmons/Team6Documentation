@@ -1,0 +1,2717 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CustomerCustomizeItemComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/customer-customize-item/customer-customize-item.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-customer-customize-item</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./customer-customize-item.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./customer-customize-item.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#customizationChoices" >customizationChoices</a>
+                            </li>
+                            <li>
+                                <a href="#customizations" >customizations</a>
+                            </li>
+                            <li>
+                                <a href="#feelsLikeTemperature" >feelsLikeTemperature</a>
+                            </li>
+                            <li>
+                                <a href="#ingredients" >ingredients</a>
+                            </li>
+                            <li>
+                                <a href="#isAccessibilityToolbarContainerVisible" >isAccessibilityToolbarContainerVisible</a>
+                            </li>
+                            <li>
+                                <a href="#isHandset$" >isHandset$</a>
+                            </li>
+                            <li>
+                                <a href="#menuItem" >menuItem</a>
+                            </li>
+                            <li>
+                                <a href="#orderNumber" >orderNumber</a>
+                            </li>
+                            <li>
+                                <a href="#selectedCustomizations" >selectedCustomizations</a>
+                            </li>
+                            <li>
+                                <a href="#selectedIngredients" >selectedIngredients</a>
+                            </li>
+                            <li>
+                                <a href="#selectedTextSize" >selectedTextSize</a>
+                            </li>
+                            <li>
+                                <a href="#temperature" >temperature</a>
+                            </li>
+                            <li>
+                                <a href="#textsizers" >textsizers</a>
+                            </li>
+                            <li>
+                                <a href="#weatherDescription" >weatherDescription</a>
+                            </li>
+                            <li>
+                                <a href="#weathericon" >weathericon</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#calculateTotalPrice" >calculateTotalPrice</a>
+                            </li>
+                            <li>
+                                <a href="#callWeatherApi" >callWeatherApi</a>
+                            </li>
+                            <li>
+                                <a href="#getMenuItemImage" >getMenuItemImage</a>
+                            </li>
+                            <li>
+                                <a href="#goHome" >goHome</a>
+                            </li>
+                            <li>
+                                <a href="#handleImageError" >handleImageError</a>
+                            </li>
+                            <li>
+                                <a href="#initGoogleTranslate" >initGoogleTranslate</a>
+                            </li>
+                            <li>
+                                <a href="#loadCustomizations" >loadCustomizations</a>
+                            </li>
+                            <li>
+                                <a href="#loadGoogleTranslate" >loadGoogleTranslate</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSeeMenu" >onSeeMenu</a>
+                            </li>
+                            <li>
+                                <a href="#saveCustomizations" >saveCustomizations</a>
+                            </li>
+                            <li>
+                                <a href="#setTextSize" >setTextSize</a>
+                            </li>
+                            <li>
+                                <a href="#toggleAccessibilityToolbarContainer" >toggleAccessibilityToolbarContainer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#totalPriceChanged" >totalPriceChanged</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: ActivatedRoute, dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, router: Router, breakpointObserver: BreakpointObserver)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:80</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>breakpointObserver</td>
+                                                  
+                                                        <td>
+                                                                    <code>BreakpointObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="totalPriceChanged"></a>
+                        <b>totalPriceChanged</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;number&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:41</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculateTotalPrice"></a>
+                    <span class="name">
+                        <span ><b>calculateTotalPrice</b></span>
+                        <a href="#calculateTotalPrice"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>calculateTotalPrice()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="308"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:308</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="callWeatherApi"></a>
+                    <span class="name">
+                        <span ><b>callWeatherApi</b></span>
+                        <a href="#callWeatherApi"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>callWeatherApi()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="181"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:181</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMenuItemImage"></a>
+                    <span class="name">
+                        <span ><b>getMenuItemImage</b></span>
+                        <a href="#getMenuItemImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMenuItemImage(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="326"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:326</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goHome"></a>
+                    <span class="name">
+                        <span ><b>goHome</b></span>
+                        <a href="#goHome"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goHome()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="330"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:330</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleImageError"></a>
+                    <span class="name">
+                        <span ><b>handleImageError</b></span>
+                        <a href="#handleImageError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleImageError(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="338"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:338</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initGoogleTranslate"></a>
+                    <span class="name">
+                        <span ><b>initGoogleTranslate</b></span>
+                        <a href="#initGoogleTranslate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initGoogleTranslate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="173"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:173</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadCustomizations"></a>
+                    <span class="name">
+                        <span ><b>loadCustomizations</b></span>
+                        <a href="#loadCustomizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadCustomizations()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="235"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:235</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadGoogleTranslate"></a>
+                    <span class="name">
+                        <span ><b>loadGoogleTranslate</b></span>
+                        <a href="#loadGoogleTranslate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadGoogleTranslate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="161"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:161</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSeeMenu"></a>
+                    <span class="name">
+                        <span ><b>onSeeMenu</b></span>
+                        <a href="#onSeeMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSeeMenu()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="334"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:334</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveCustomizations"></a>
+                    <span class="name">
+                        <span ><b>saveCustomizations</b></span>
+                        <a href="#saveCustomizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveCustomizations(menuItemId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="258"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:258</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>menuItemId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTextSize"></a>
+                    <span class="name">
+                        <span ><b>setTextSize</b></span>
+                        <a href="#setTextSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setTextSize(cssClass: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="78"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sets the text size based on the selected CSS class.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>cssClass</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The CSS class that defines the text size.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleAccessibilityToolbarContainer"></a>
+                    <span class="name">
+                        <span ><b>toggleAccessibilityToolbarContainer</b></span>
+                        <a href="#toggleAccessibilityToolbarContainer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleAccessibilityToolbarContainer()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="52"
+                                    class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customizationChoices"></a>
+                    <span class="name">
+                        <span ><b>customizationChoices</b></span>
+                        <a href="#customizationChoices"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customizations"></a>
+                    <span class="name">
+                        <span ><b>customizations</b></span>
+                        <a href="#customizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="feelsLikeTemperature"></a>
+                    <span class="name">
+                        <span ><b>feelsLikeTemperature</b></span>
+                        <a href="#feelsLikeTemperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ingredients"></a>
+                    <span class="name">
+                        <span ><b>ingredients</b></span>
+                        <a href="#ingredients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Ingredient[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAccessibilityToolbarContainerVisible"></a>
+                    <span class="name">
+                        <span ><b>isAccessibilityToolbarContainerVisible</b></span>
+                        <a href="#isAccessibilityToolbarContainerVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHandset$"></a>
+                    <span class="name">
+                        <span ><b>isHandset$</b></span>
+                        <a href="#isHandset$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuItem"></a>
+                    <span class="name">
+                        <span ><b>menuItem</b></span>
+                        <a href="#menuItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orderNumber"></a>
+                    <span class="name">
+                        <span ><b>orderNumber</b></span>
+                        <a href="#orderNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedCustomizations"></a>
+                    <span class="name">
+                        <span ><b>selectedCustomizations</b></span>
+                        <a href="#selectedCustomizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedIngredients"></a>
+                    <span class="name">
+                        <span ><b>selectedIngredients</b></span>
+                        <a href="#selectedIngredients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedTextSize"></a>
+                    <span class="name">
+                        <span ><b>selectedTextSize</b></span>
+                        <a href="#selectedTextSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;text-normal&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The currently selected text size for display.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="temperature"></a>
+                    <span class="name">
+                        <span ><b>temperature</b></span>
+                        <a href="#temperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="textsizers"></a>
+                    <span class="name">
+                        <span ><b>textsizers</b></span>
+                        <a href="#textsizers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    { size: &#x27;Normal&#x27;, cssClass: &#x27;text-normal&#x27; },
+    { size: &#x27;Large&#x27;, cssClass: &#x27;text-large&#x27; },
+    { size: &#x27;Extra Large&#x27;, cssClass: &#x27;text-extra-large&#x27; }
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array of text size options available for screen display.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weatherDescription"></a>
+                    <span class="name">
+                        <span ><b>weatherDescription</b></span>
+                        <a href="#weatherDescription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weathericon"></a>
+                    <span class="name">
+                        <span ><b>weathericon</b></span>
+                        <a href="#weathericon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;01d.png&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/customer-customize-item/customer-customize-item.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, OnInit, Output } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { DataService } from &#x27;../data.service&#x27;; 
+import { FormControl } from &#x27;@angular/forms&#x27;;
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
+import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
+import { concatMap } from &#x27;rxjs/operators&#x27;;
+import { forkJoin } from &#x27;rxjs&#x27;;
+
+interface Ingredient {
+  id: number;
+  name: string;
+}
+
+@Component({
+  selector: &#x27;app-customer-customize-item&#x27;,
+  templateUrl: &#x27;./customer-customize-item.component.html&#x27;,
+  styleUrls: [&#x27;./customer-customize-item.component.css&#x27;] 
+})
+
+export class CustomerCustomizeItemComponent implements OnInit {
+
+
+  weatherDescription: string &#x3D; &#x27;&#x27;;
+  temperature: number &#x3D; 0;
+  feelsLikeTemperature: number &#x3D; 0;
+  weathericon: string &#x3D; &#x27;01d.png&#x27;;
+  
+
+  menuItem: any;
+  ingredients: Ingredient[] &#x3D; [];
+  selectedIngredients: { [key: number]: FormControl } &#x3D; {};
+  orderNumber: number &#x3D; 0;
+  customizationChoices: { id: number; name: string; price: number }[] &#x3D; []; // Include price in the customization choices
+  customizations: any[] &#x3D; [];
+  selectedCustomizations: { [key: number]: FormControl } &#x3D; {};
+
+
+  @Output() totalPriceChanged: EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;(); // Event emitter for total price
+
+  isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    );
+  
+    /* accesibility toolbar code here */
+  isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
+
+  toggleAccessibilityToolbarContainer(): void {
+    this.isAccessibilityToolbarContainerVisible &#x3D; !this.isAccessibilityToolbarContainerVisible;
+    console.log(&#x27;Toolbar visibility:&#x27;, this.isAccessibilityToolbarContainerVisible);
+  }
+  
+
+  
+
+   /**
+   * Array of text size options available for screen display.
+   */
+   textsizers &#x3D; [
+    { size: &#x27;Normal&#x27;, cssClass: &#x27;text-normal&#x27; },
+    { size: &#x27;Large&#x27;, cssClass: &#x27;text-large&#x27; },
+    { size: &#x27;Extra Large&#x27;, cssClass: &#x27;text-extra-large&#x27; }
+    ];
+    
+    /**
+     * The currently selected text size for display.
+     */
+    selectedTextSize: string &#x3D; &#x27;text-normal&#x27;;
+    
+    /**
+     * Sets the text size based on the selected CSS class.
+     * @param cssClass The CSS class that defines the text size.
+     */
+    setTextSize(cssClass: string): void {
+      this.selectedTextSize &#x3D; cssClass;
+    }
+    
+
+  /* end accessibility toolbar code */
+
+
+
+
+
+  constructor(
+    private route: ActivatedRoute,
+    private dataService: DataService,
+
+    private router: Router,
+    private breakpointObserver: BreakpointObserver
+  ) {
+    this.customizationChoices &#x3D; [
+      { id: 1, name: &#x27;Crispy Bacon&#x27;, price: 0.81 },
+      { id: 2, name: &#x27;American Cheese&#x27;, price: 0.65 },
+      { id: 4, name: &#x27;Lettuce&#x27;, price: 0.36 },
+      { id: 5, name: &#x27;Pickles&#x27;, price: 0.18 },
+      { id: 6, name: &#x27;Tomatoes&#x27;, price: 0.78 },
+      { id: 7, name: &#x27;Onions&#x27;, price: 0.10 },
+      { id: 10, name: &#x27;Caramelized Onions&#x27;, price: 0.40 },
+      { id: 11, name: &#x27;American Swiss Cheese&#x27;, price: 0.86 }
+    ];
+
+    // Initialize selectedCustomizations with all customizations from customizationChoices
+    this.customizationChoices.forEach(choice &#x3D;&gt; {
+      // For ingredients, set initial value to true
+      this.selectedIngredients[choice.id] &#x3D; new FormControl(false);
+      // For extra customizations, set initial value to false
+      this.selectedCustomizations[choice.id] &#x3D; new FormControl(false);
+    });
+  }
+
+
+  ngOnInit(): void {
+    this.dataService.getNextOrderId().subscribe((response: any) &#x3D;&gt; {
+      this.orderNumber &#x3D; response.next_order_id;
+    });
+  
+    const itemId &#x3D; this.route.snapshot.paramMap.get(&#x27;id&#x27;);
+    if (itemId !&#x3D;&#x3D; null) {
+      this.dataService.getMenuItem(+itemId).subscribe((menuItem: any) &#x3D;&gt; {
+        this.menuItem &#x3D; menuItem;
+        this.ingredients &#x3D; menuItem.ingredients;
+        this.selectedIngredients &#x3D; {};
+        this.ingredients.forEach(ingredient &#x3D;&gt; {
+          this.selectedIngredients[ingredient.id] &#x3D; new FormControl(true);
+        });
+  
+        this.loadCustomizations();
+  
+        // Check if the category is 0 or 1
+        if (menuItem.category_id &#x3D;&#x3D;&#x3D; 0 || menuItem.category_id &#x3D;&#x3D;&#x3D; 1) {
+          // Load extra customization choices only if the array is empty
+          if (this.customizationChoices.length &#x3D;&#x3D;&#x3D; 0) {
+            // You might need to fetch these choices from a service
+            // For now, let&#x27;s assume you have an array of extra customizations
+            this.customizationChoices &#x3D; [
+              { id: 1, name: &#x27;Crispy Bacon&#x27;, price: 0.81 },
+              { id: 2, name: &#x27;American Cheese&#x27;, price: 0.65 },
+              { id: 4, name: &#x27;Lettuce&#x27;, price: 0.36 },
+              { id: 5, name: &#x27;Pickles&#x27;, price: 0.18 },
+              { id: 6, name: &#x27;Tomatoes&#x27;, price: 0.78 },
+              { id: 7, name: &#x27;Onions&#x27;, price: 0.10 },
+              { id: 10, name: &#x27;Caramelized Onions&#x27;, price: 0.40 },
+              { id: 11, name: &#x27;American Swiss Cheese&#x27;, price: 0.86 }
+            ];
+          }
+        }
+      });
+    } else {
+      console.error(&#x27;ID parameter is null&#x27;);
+    }
+
+    this.callWeatherApi();
+    this.loadGoogleTranslate();
+  }
+
+  loadGoogleTranslate(): void {
+    const existingScript &#x3D; document.getElementById(&#x27;google-translate-script&#x27;);
+    if (!existingScript) {
+      const script &#x3D; document.createElement(&#x27;script&#x27;);
+      script.id &#x3D; &#x27;google-translate-script&#x27;;
+      script.type &#x3D; &#x27;text/javascript&#x27;;
+      script.src &#x3D; &#x27;//translate.google.com/translate_a/element.js?cb&#x3D;googleTranslateElementInit&#x27;;
+      document.head.appendChild(script);
+    }
+      (window as any).googleTranslateElementInit &#x3D; this.initGoogleTranslate;
+  }
+
+  initGoogleTranslate(): void {
+    new window.google.translate.TranslateElement({
+      pageLanguage: &#x27;en&#x27;,
+      layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, &#x27;google_translate_element&#x27;);
+  }
+
+
+  callWeatherApi(): void {
+    const lat &#x3D; 30.6125364
+    const lon &#x3D; -96.3433166
+    const api_key &#x3D; &#x27;dcd3c687ea0ab81cb49468a99ae0ddb4&#x27;
+    
+    
+    this.dataService.getWeather(lat, lon, api_key).subscribe((weather: any) &#x3D;&gt; {
+
+      console.log(weather.current.weather[0].icon);
+
+      this.weatherDescription &#x3D; weather.current.weather[0].description;
+      this.temperature &#x3D; Math.round((weather.current.temp - 273.15) * (9 / 5) + 32);
+      // this.feelsLikeTemperature &#x3D; Math.round((weather.current.feels_like - 273.15) * (9 / 5) + 32);
+      if(weather.current.weather[0].icon !&#x3D; null){
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;01d&#x27;){
+          this.weathericon &#x3D; &#x27;01d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;01n&#x27;){
+          this.weathericon &#x3D; &#x27;01n.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;02d&#x27;){
+          this.weathericon &#x3D; &#x27;02d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;02n&#x27;){
+          this.weathericon &#x3D; &#x27;02n.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;03d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;03n&#x27;){
+          this.weathericon &#x3D; &#x27;03d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;04d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;04n&#x27;){
+          this.weathericon &#x3D; &#x27;04d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;09d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;09n&#x27;){
+          this.weathericon &#x3D; &#x27;09d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;10d&#x27;){
+          this.weathericon &#x3D; &#x27;10d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;10n&#x27;){
+          this.weathericon &#x3D; &#x27;10n.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;11d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;11n&#x27;){
+          this.weathericon &#x3D; &#x27;11d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;13d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;13n&#x27;){
+          this.weathericon &#x3D; &#x27;13d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;50d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;50n&#x27;){
+          this.weathericon &#x3D; &#x27;50d.png&#x27;;
+        }
+      }
+    });
+  }
+
+  loadCustomizations(): void {
+    console.log(&#x27;Loading customizations for order ID:&#x27;, this.orderNumber);
+    console.log(&#x27;Menu item ID:&#x27;, this.menuItem?.id); // Add null check with &#x27;?&#x27;
+    
+    if (this.orderNumber !&#x3D;&#x3D; 0 &amp;&amp; this.menuItem !&#x3D;&#x3D; undefined) {
+      this.dataService.getCustomizations(this.orderNumber, this.menuItem.id).subscribe((customizations: any[]) &#x3D;&gt; {
+        console.log(&#x27;Customizations loaded:&#x27;, customizations);
+        customizations.forEach(customization &#x3D;&gt; {
+          const ingredientId &#x3D; customization;
+          if (this.selectedIngredients[ingredientId]) {
+            this.selectedIngredients[ingredientId].setValue(true);
+          }
+          // Check for extra customizations and set their form control values
+          if (this.selectedCustomizations[ingredientId]) {
+            this.selectedCustomizations[ingredientId].setValue(true);
+          }
+        });
+      });
+    }
+  }
+  
+
+
+  saveCustomizations(menuItemId: number): void {
+    console.log(&#x27;Order Number:&#x27;, this.orderNumber);
+    console.log(&#x27;Menu Item ID:&#x27;, menuItemId);
+  
+    // Initialize arrays to store selected ingredient IDs and customizations
+    const selectedIngredientIds: number[] &#x3D; [];
+    const selectedCustomizationIds: number[] &#x3D; [];
+  
+    // Iterate over the selectedIngredients and selectedCustomizations objects to gather selected checkboxes
+    Object.keys(this.selectedIngredients).forEach(key &#x3D;&gt; {
+      const ingredientId &#x3D; parseInt(key);
+      if (this.selectedIngredients[ingredientId].value) {
+        selectedIngredientIds.push(ingredientId);
+      }
+    });
+  
+    Object.keys(this.selectedCustomizations).forEach(key &#x3D;&gt; {
+      const customizationId &#x3D; parseInt(key);
+      if (this.selectedCustomizations[customizationId].value) {
+        selectedCustomizationIds.push(customizationId);
+      }
+    });
+  
+    console.log(&#x27;Selected Ingredients:&#x27;, selectedIngredientIds);
+    console.log(&#x27;Selected Customizations:&#x27;, selectedCustomizationIds);
+  
+    // Calculate the total price of selected customizations
+    const totalPrice &#x3D; this.calculateTotalPrice();
+  
+    // Emit the total price
+    this.totalPriceChanged.emit(totalPrice);
+  
+    // Convert arrays of selected ingredient IDs and customizations to comma-separated strings
+    const selectedIngredientsString &#x3D; selectedIngredientIds.join(&#x27;,&#x27;);
+    const selectedCustomizationsString &#x3D; selectedCustomizationIds.join(&#x27;,&#x27;);
+  
+    console.log(&#x27;Total Price:&#x27;, totalPrice);
+  
+    // Save the customizations to the database
+    this.dataService.saveCustomizations(this.orderNumber, menuItemId, selectedIngredientsString + &#x27;,&#x27; + selectedCustomizationsString)
+      .subscribe(() &#x3D;&gt; {
+        console.log(&#x27;Customizations saved successfully&#x27;);
+        this.router.navigate([&#x27;/customer-cart&#x27;]);
+      }, error &#x3D;&gt; {
+        console.error(&#x27;Error saving customizations:&#x27;, error);
+      });
+  }
+  
+
+
+  calculateTotalPrice(): number {
+    let totalPrice &#x3D; 0;
+  
+    Object.keys(this.selectedCustomizations).forEach(key &#x3D;&gt; {
+      const customizationId &#x3D; parseInt(key);
+      if (this.selectedCustomizations[customizationId].value) {
+        const customization &#x3D; this.customizationChoices.find(c &#x3D;&gt; c.id &#x3D;&#x3D;&#x3D; customizationId);
+        if (customization) {
+          // Add 50 cents for each extra customization
+          totalPrice +&#x3D; customization.price + 0.50;
+        }
+      }
+    });
+  
+    return totalPrice;
+  }
+  
+
+  getMenuItemImage(id: number): string {
+    return &#x60;assets/menu_item_images/item${id}.jpg&#x60;;
+  }
+
+  goHome(): void {
+    this.router.navigate([&#x27;/employee-login&#x27;]);
+  }
+  
+  onSeeMenu(): void {
+    this.router.navigate([&#x27;/cashier-menu&#x27;]);
+  }
+
+  handleImageError(event: any) {
+    event.target.src &#x3D; &#x27;assets/REVSLogoUpdated.jpg&#x27;; // Replace with path to your placeholder image
+  }
+  
+}
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+
+&lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+    &lt;mat-sidenav
+      #drawer
+      class&#x3D;&quot;sidenav&quot;
+      fixedInViewport&#x3D;&quot;false&quot;
+      [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+      [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+      [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
+      &lt;div class&#x3D;&quot;icons-toolbar&quot;&gt;
+        &lt;button mat-icon-button (click)&#x3D;&quot;goHome()&quot;&gt;
+          &lt;mat-icon aria-label&#x3D;&quot;Log out&quot;&gt;logout&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        
+        &lt;button mat-icon-button (click)&#x3D;&quot;onSeeMenu()&quot;&gt;
+          &lt;mat-icon aria-label&#x3D;&quot;Back to menu&quot;&gt;menu_open&lt;/mat-icon&gt;
+        &lt;/button&gt;
+    
+        &lt;button mat-icon-button (click)&#x3D;&quot;toggleAccessibilityToolbarContainer()&quot;&gt;
+          &lt;mat-icon aria-label&#x3D;&quot;Toggle accessibility toolbar&quot;&gt;{{ isAccessibilityToolbarContainerVisible ? &#x27;chevron_left&#x27; : &#x27;chevron_right&#x27; }}&lt;/mat-icon&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+        &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+      &lt;/div&gt;
+      &lt;mat-nav-list&gt;
+      &lt;/mat-nav-list&gt;
+    &lt;/mat-sidenav&gt;
+    &lt;mat-sidenav-content&gt;
+        &lt;div class&#x3D;&quot;accessibility-toolbar-container&quot; *ngIf&#x3D;&quot;isAccessibilityToolbarContainerVisible&quot;&gt;
+
+            &lt;div class&#x3D;&quot;accessibility-toolbar&quot;&gt;
+      
+                &lt;div class&#x3D;&quot;weather-api-section&quot; matTooltip&#x3D;&quot;Current weather conditions in College Station, TX&quot; matTooltipPosition&#x3D;&quot;below&quot;&gt;
+                    &lt;img class&#x3D;&quot;weather-icon&quot; [src]&#x3D;&quot;&#x27;assets/&#x27; + weathericon&quot; alt&#x3D;&quot;Weather icon&quot;&gt;  {{temperature}} °F
+                    &lt;/div&gt;
+      
+              &lt;div class&#x3D;&quot;text-sizer-dropdown-section&quot;&gt;
+                &lt;mat-form-field class&#x3D;&quot;text-sizer-form-field&quot;&gt;
+                    &lt;mat-label&gt;Select text size&lt;/mat-label&gt;
+                    &lt;mat-select (selectionChange)&#x3D;&quot;setTextSize($event.value.cssClass)&quot;&gt;
+                        &lt;mat-option *ngFor&#x3D;&quot;let option of textsizers&quot; [value]&#x3D;&quot;option.size&quot; class&#x3D;&quot;text-sizer-form-field&quot;&gt;
+                            {{ option.size }}
+                        &lt;/mat-option&gt;
+                    &lt;/mat-select&gt;
+                &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+      
+              &lt;div class&#x3D;&quot;screen-reader-section&quot;&gt;
+                &lt;button mat-button class&#x3D;&quot;accessibility-toolbar-btn&quot;&gt;Activate screenreader&lt;/button&gt;
+              &lt;/div&gt;
+      
+              &lt;div class&#x3D;&quot;keyboard-shortcuts-section&quot;&gt;
+                &lt;button mat-button class&#x3D;&quot;accessibility-toolbar-btn&quot;&gt;Keyboard Shortcuts&lt;/button&gt;
+              &lt;/div&gt;
+              &lt;!-- &lt;div id&#x3D;&quot;google_translate_element&quot;&gt;&lt;/div&gt;
+              &lt;div class&#x3D;&quot;translate-dropdown-section&quot;&gt;
+                &lt;mat-form-field class&#x3D;&quot;translate-dropdown-form-field&quot;&gt;
+                  &lt;mat-label&gt;Translate API&lt;/mat-label&gt;
+                  &lt;mat-select&gt;
+                      &lt;mat-option *ngFor&#x3D;&quot;let option of textsizers&quot; [value]&#x3D;&quot;option.size&quot; class&#x3D;&quot;text-sizer-form-field&quot;&gt;
+                          {{ option.size }}
+                      &lt;/mat-option&gt;
+                  &lt;/mat-select&gt;
+              &lt;/mat-form-field&gt;
+              &lt;/div&gt; --&gt;
+      
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;div class&#x3D;&quot;main-content&quot;&gt;
+            &lt;div class&#x3D;&quot;main-content-inner&quot;&gt;
+                &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+                    &lt;button
+                    type&#x3D;&quot;button&quot;
+                    aria-label&#x3D;&quot;Toggle sidenav&quot;
+                    mat-icon-button
+                    (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+                    &lt;mat-icon class&#x3D;&quot;menu-icon-btn&quot; aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                    &lt;span class&#x3D;&quot;menu-category-title&quot;&gt;CUSTOMIZE YOUR ITEM&lt;/span&gt;
+                    &lt;div class&#x3D;&quot;toolbar-btn-container&quot;&gt;
+                        &lt;div *ngIf&#x3D;&quot;menuItem&quot;&gt;
+                            &lt;button class&#x3D;&quot;toolbar-btn&quot; (click)&#x3D;&quot;saveCustomizations(menuItem.id)&quot;&gt;Save Customizations&lt;/button&gt;
+                            &lt;button class&#x3D;&quot;toolbar-btn&quot; color&#x3D;&quot;primary&quot; routerLink&#x3D;&quot;/customer-cart&quot;&gt;Go Back&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div *ngIf&#x3D;&quot;!menuItem&quot;&gt;
+                            &lt;button mat-button color&#x3D;&quot;primary&quot; routerLink&#x3D;&quot;/customer-cart&quot;&gt;Go Back&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/mat-toolbar&gt;
+
+                &lt;ul&gt;
+                    &lt;div class&#x3D;&quot;columns-container&quot;&gt;
+                        &lt;div class&#x3D;&quot;column-1&quot;&gt;
+                            &lt;div *ngIf&#x3D;&quot;menuItem&quot;&gt;
+                                &lt;div class&#x3D;&quot;includes-container&quot;&gt;
+                                    &lt;div class&#x3D;&quot;includes-column&quot;&gt;
+                                        &lt;div class&#x3D;&quot;cart-item-name&quot;&gt;Included ingredients:&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;includes-column&quot;&gt;
+                                        &lt;div class&#x3D;&quot;cart-item-price&quot;&gt;Click to remove&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;checkbox-container&quot;&gt;
+                                    &lt;mat-checkbox class&#x3D;&quot;ingredient-checkbox&quot; [checked]&#x3D;&quot;true&quot; *ngFor&#x3D;&quot;let ingredient of ingredients&quot; [formControl]&#x3D;&quot;selectedIngredients[ingredient.id]&quot; [ngClass]&#x3D;&quot;selectedTextSize&quot;&gt;
+                                        {{ ingredient.name }}
+                                    &lt;/mat-checkbox&gt;
+                                &lt;/div&gt;
+                                &lt;!-- Additional section for extra customizations --&gt;
+                                &lt;div *ngIf&#x3D;&quot;menuItem &amp;&amp; (menuItem.category_id &#x3D;&#x3D;&#x3D; 0 || menuItem.category_id &#x3D;&#x3D;&#x3D; 1)&quot;&gt;
+                                    &lt;div class&#x3D;&quot;includes-container&quot;&gt;
+                                        &lt;div class&#x3D;&quot;includes-column&quot;&gt;
+                                            &lt;div class&#x3D;&quot;cart-item-name&quot; [ngClass]&#x3D;&quot;selectedTextSize&quot;&gt;Add customizations:&lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;includes-column&quot;&gt;
+                                            &lt;div class&#x3D;&quot;cart-item-price&quot; [ngClass]&#x3D;&quot;selectedTextSize&quot;&gt;Click to add&lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;checkbox-container&quot;&gt;
+                                        &lt;div class&#x3D;&quot;ingredient-checkbox&quot; *ngFor&#x3D;&quot;let choice of customizationChoices&quot;&gt;
+                                            &lt;mat-checkbox [formControl]&#x3D;&quot;selectedCustomizations[choice.id]&quot;&gt;
+                                                {{ choice.name }}
+                                            &lt;/mat-checkbox&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div *ngIf&#x3D;&quot;!menuItem&quot;&gt;
+                                &lt;p&gt;Menu item not found&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;column-2&quot;&gt;
+                            &lt;div class&#x3D;&quot;item-container&quot;&gt;
+                                &lt;img class&#x3D;&quot;menu-item-img&quot; [src]&#x3D;&quot;getMenuItemImage(menuItem.id)&quot; alt&#x3D;&quot;MenuItem Image&quot; (error)&#x3D;&quot;handleImageError($event)&quot;&gt;
+                                &lt;div class&#x3D;&quot;menu-item-name&quot; [ngClass]&#x3D;&quot;selectedTextSize&quot;&gt;{{ menuItem.name }}&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/ul&gt;
+                &lt;ng-content&gt;&lt;/ng-content&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/mat-sidenav-content&gt;
+  &lt;/mat-sidenav-container&gt;
+  
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./customer-customize-item.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* CSS */
+
+.mat-toolbar,
+.mat-sidenav-content,
+.mat-sidenav,
+.mat-nav-list,
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 0; /* Ensures no extra space below the header pushing the top buttons down */
+}
+
+.top-buttons {
+    display: flex;
+    flex-direction: row; /* Aligns buttons in a row */
+}
+
+.cart-items {
+    margin-top: 20px;
+    background-color: #e1e1e1;
+}
+
+.cart-container {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.item-actions button {
+    margin-left: 10px;
+}
+
+
+
+.checkout-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/*
+.cdk-overlay-pane {
+  position: absolute;
+}
+
+.cdk-overlay-connected-position-bounding-box {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 1px;
+  min-height: 1px;
+}
+*/
+
+.selected-item {
+    background-color: gold;
+    color: black; 
+  }
+  
+  .active {
+    background-color: gold;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: transparent;
+    color: #000;
+    font-size: 50px;
+  }
+  
+  .revs-image {
+    object-fit: cover;
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  .menu-category-title {
+    margin-right: auto;
+    margin-left: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    text-transform: uppercase !important;
+    font-weight: 800;
+  }
+  
+  body {
+    margin: 0;
+    width: 100%;
+  }
+  
+  .mat-sidenav-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+  }
+  
+  .mat-sidenav-content {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+  }
+  
+  .main-content {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+  }
+  
+  .sidenav-container {
+    height: 100vh;
+    display: flex;
+    width: 100vw;
+  }
+  
+  .sidenav {
+    width: 15%;
+    box-shadow: 3px 0 6px rgba(0,0,0,.24);
+    background-color: #5B0726;
+    height: 100%;
+  }
+  
+  .sidenav-link {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidenav-link:hover {
+    background-color: #790E36;
+    width: 100%;
+  }
+  
+  .sidenav-link-active {
+    background-color: #790E36 !important;
+  }
+  
+  .menu-item-container {
+    width: 100%;
+    list-style: none;
+  }
+  
+  .cart-item-module {
+    background: transparent;
+    border: none;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  
+  .cart-item-price {
+    font-style: italic;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 20px;
+    color: #8b8b8b;
+  }
+  
+  .cart-item-name {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .action-buttons-menu {
+    width: 100%;
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+  }
+  
+  .action-buttons-menu {
+    width: 15%;
+  }
+  
+  .action-buttons {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .action-buttons:hover {
+    background-color: #790E36;
+    width: 100%;
+  }
+  
+  .toolbar-btn-container {
+    display: flex;
+    margin-top: auto;
+  }
+  
+  .toolbar-btn {
+    margin-left: 10px;
+    background-color: #5B0726;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+  }
+  
+  .toolbar-btn:hover {
+    background-color: #F8BE14;
+    color: black;
+  }
+
+  .action-btn {
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    color: #5B0726;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+  }
+  
+  .action-btn:hover {
+    background-color: #e1e1e1;
+    color: #000;
+  }
+
+  .mat-toolbar {
+    display: flex;
+    justify-content: flex-start;
+    /*
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;#
+    margin-left: 0;
+    */
+    padding-left: 24px;
+    margin: 0;
+    background: white;
+  }
+
+  .mat-toolbar span:last-child {
+    margin-right:auto;
+  }
+  
+
+  .menu-icon-btn {
+    padding:0;
+    margin: 0;
+  }
+
+  .subtotal-taxes {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    color: #000;
+    line-height: 200%;
+  }
+
+  .total-price {
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    color: #000;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .summary-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 3px solid #e1e1e1;
+    border-top: 3px solid #e1e1e1;
+
+}
+
+.summary-2 {
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 100%;
+}
+
+.checkout-btn {
+    background-color: #5B0726;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+}
+
+.checkout-btn:hover {
+    background-color: #F8BE14;
+    color: #000;
+}
+
+.mat-toolbar {
+  display: flex;
+  padding-right: 0px;
+  padding-left: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.accessibility-toolbar-container {
+  display: block;
+}
+
+.accessibility-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e1e1e1;
+  color: #fff;
+  padding-left: 40px;
+  padding-right: 40px;
+  align-items: center;
+}
+
+.icons-toolbar {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: #e1e1e1;
+  background-color: #43091E;
+  border-bottom: 2px solid #43091E;
+}
+
+.text-sizer-dropdown-section {
+  height: 100px;
+  position:flex;
+  padding-top: 0.5em;
+  margin-bottom: -2.4em;
+}
+
+.translate-dropdown-section {
+  height: 100px;
+  position:flex;
+  padding-top: 0.5em;
+  margin-bottom: -2.4em;
+}
+
+.accessibility-toolbar-btn {
+  margin-left: 10px;
+    background-color: #fff;
+    border: none;
+    color: black;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+    letter-spacing: normal;
+}
+
+.weather-api-section {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  height: 100%;
+  letter-spacing: normal;
+  display: flex;
+  align-items: center;
+}
+
+.weather-icon {
+width: 50px;
+}
+
+.main-content-inner {
+  padding-right: 40px;
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart-button {
+  background-color: #F8BE14;
+  color: #43091E;
+}
+
+.columns-container {
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.column-1 {
+    width: 60%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.column-2 {
+    width: 40%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.menu-item-img {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.item-container {
+    background-color: #f2f2f2;
+    padding: 15px 15px 0px 15px;
+    height: 100%;
+}
+
+.menu-item-name {
+    padding: 50px 0 70px 0;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+  }
+
+  .ingredient-checkbox {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    display: block;
+  }
+
+  .checkbox-container {
+    margin: 30px 0 30px 0;
+  }
+
+  .mat-checkbox {
+    display: block;
+  }
+
+  .mat-checkbox-label {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    display: block;
+  }
+
+  .includes-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end;
+    justify-content: space-between;
+    border-bottom: 3px solid #e1e1e1;
+    padding-bottom: 20px;
+  }
+
+  .text-normal {
+    font-size: 25px;
+    }
+    
+    .text-large {
+    font-size: 36px;
+    }
+    
+    .text-extra-large {
+    font-size: 75px;
+    }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><mat-sidenav-container class="sidenav-container">    <mat-sidenav      #drawer      class="sidenav"      fixedInViewport="false"      [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"      [mode]="(isHandset$ | async) ? \'over\' : \'side\'"      [opened]="(isHandset$ | async) === false">      <div class="icons-toolbar">        <button mat-icon-button (click)="goHome()">          <mat-icon aria-label="Log out">logout</mat-icon>        </button>                <button mat-icon-button (click)="onSeeMenu()">          <mat-icon aria-label="Back to menu">menu_open</mat-icon>        </button>            <button mat-icon-button (click)="toggleAccessibilityToolbarContainer()">          <mat-icon aria-label="Toggle accessibility toolbar">{{ isAccessibilityToolbarContainerVisible ? \'chevron_left\' : \'chevron_right\' }}</mat-icon>        </button>      </div>      <div class="revs-image">        <img width="200" height="100" src="assets/REVSLogoUpdated.jpg">      </div>      <mat-nav-list>      </mat-nav-list>    </mat-sidenav>    <mat-sidenav-content>        <div class="accessibility-toolbar-container" *ngIf="isAccessibilityToolbarContainerVisible">            <div class="accessibility-toolbar">                      <div class="weather-api-section" matTooltip="Current weather conditions in College Station, TX" matTooltipPosition="below">                    <img class="weather-icon" [src]="\'assets/\' + weathericon" alt="Weather icon">  {{temperature}} °F                    </div>                    <div class="text-sizer-dropdown-section">                <mat-form-field class="text-sizer-form-field">                    <mat-label>Select text size</mat-label>                    <mat-select (selectionChange)="setTextSize($event.value.cssClass)">                        <mat-option *ngFor="let option of textsizers" [value]="option.size" class="text-sizer-form-field">                            {{ option.size }}                        </mat-option>                    </mat-select>                </mat-form-field>              </div>                    <div class="screen-reader-section">                <button mat-button class="accessibility-toolbar-btn">Activate screenreader</button>              </div>                    <div class="keyboard-shortcuts-section">                <button mat-button class="accessibility-toolbar-btn">Keyboard Shortcuts</button>              </div>              <!-- <div id="google_translate_element"></div>              <div class="translate-dropdown-section">                <mat-form-field class="translate-dropdown-form-field">                  <mat-label>Translate API</mat-label>                  <mat-select>                      <mat-option *ngFor="let option of textsizers" [value]="option.size" class="text-sizer-form-field">                          {{ option.size }}                      </mat-option>                  </mat-select>              </mat-form-field>              </div> -->                  </div>          </div>        <div class="main-content">            <div class="main-content-inner">                <mat-toolbar color="primary">                    <button                    type="button"                    aria-label="Toggle sidenav"                    mat-icon-button                    (click)="drawer.toggle()">                    <mat-icon class="menu-icon-btn" aria-label="Side nav toggle icon">menu</mat-icon>                    </button>                    <span class="menu-category-title">CUSTOMIZE YOUR ITEM</span>                    <div class="toolbar-btn-container">                        <div *ngIf="menuItem">                            <button class="toolbar-btn" (click)="saveCustomizations(menuItem.id)">Save Customizations</button>                            <button class="toolbar-btn" color="primary" routerLink="/customer-cart">Go Back</button>                        </div>                        <div *ngIf="!menuItem">                            <button mat-button color="primary" routerLink="/customer-cart">Go Back</button>                        </div>                    </div>                </mat-toolbar>                <ul>                    <div class="columns-container">                        <div class="column-1">                            <div *ngIf="menuItem">                                <div class="includes-container">                                    <div class="includes-column">                                        <div class="cart-item-name">Included ingredients:</div>                                    </div>                                    <div class="includes-column">                                        <div class="cart-item-price">Click to remove</div>                                    </div>                                </div>                                <div class="checkbox-container">                                    <mat-checkbox class="ingredient-checkbox" [checked]="true" *ngFor="let ingredient of ingredients" [formControl]="selectedIngredients[ingredient.id]" [ngClass]="selectedTextSize">                                        {{ ingredient.name }}                                    </mat-checkbox>                                </div>                                <!-- Additional section for extra customizations -->                                <div *ngIf="menuItem && (menuItem.category_id === 0 || menuItem.category_id === 1)">                                    <div class="includes-container">                                        <div class="includes-column">                                            <div class="cart-item-name" [ngClass]="selectedTextSize">Add customizations:</div>                                        </div>                                        <div class="includes-column">                                            <div class="cart-item-price" [ngClass]="selectedTextSize">Click to add</div>                                        </div>                                    </div>                                    <div class="checkbox-container">                                        <div class="ingredient-checkbox" *ngFor="let choice of customizationChoices">                                            <mat-checkbox [formControl]="selectedCustomizations[choice.id]">                                                {{ choice.name }}                                            </mat-checkbox>                                        </div>                                    </div>                                </div>                            </div>                            <div *ngIf="!menuItem">                                <p>Menu item not found</p>                            </div>                        </div>                        <div class="column-2">                            <div class="item-container">                                <img class="menu-item-img" [src]="getMenuItemImage(menuItem.id)" alt="MenuItem Image" (error)="handleImageError($event)">                                <div class="menu-item-name" [ngClass]="selectedTextSize">{{ menuItem.name }}</div>                            </div>                        </div>                    </div>                </ul>                <ng-content></ng-content>            </div>        </div>    </mat-sidenav-content>  </mat-sidenav-container>  </div>'
+    var COMPONENTS = [{'name': 'AddEmployeeComponent', 'selector': 'app-add-employee'},{'name': 'AddOrderDialogComponentComponent', 'selector': 'app-add-order-dialog-component'},{'name': 'AdminViewComponent', 'selector': 'app-admin-view'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CashierCartComponent', 'selector': 'app-cashier-cart'},{'name': 'CashierCheckoutViewComponent', 'selector': 'app-cashier-checkout-view'},{'name': 'CashierCustomizeItemComponent', 'selector': 'app-cashier-customize-item'},{'name': 'CashierMenuComponent', 'selector': 'app-cashier-menu'},{'name': 'CustomerCartComponent', 'selector': 'app-customer-cart'},{'name': 'CustomerCheckoutViewComponent', 'selector': 'app-customer-checkout-view'},{'name': 'CustomerCustomizeItemComponent', 'selector': 'app-customer-customize-item'},{'name': 'CustomerLandingComponent', 'selector': 'app-customer-landing'},{'name': 'CustomerMenuComponent', 'selector': 'app-customer-menu'},{'name': 'EditEmployeeDialogComponent', 'selector': 'app-edit-employee-dialog'},{'name': 'EditOrderComponent', 'selector': 'app-edit-order'},{'name': 'EmployeeLoginComponent', 'selector': 'app-employee-login'},{'name': 'ExcessReportComponent', 'selector': 'app-excess-report'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerEditIngredientsComponent', 'selector': 'app-manager-edit-ingredients'},{'name': 'ManagerEditMenuComponent', 'selector': 'app-manager-edit-menu'},{'name': 'ManagerViewComponent', 'selector': 'app-manager-view'},{'name': 'MenuBoardComponent', 'selector': 'app-menu-board'},{'name': 'MenuPopularityComponent', 'selector': 'app-menu-popularity'},{'name': 'OrderEditDialogComponent', 'selector': 'app-order-edit-dialog'},{'name': 'OrderManagementComponent', 'selector': 'app-order-management'},{'name': 'ProductUsageComponent', 'selector': 'app-product-usage'},{'name': 'RemoveOrderItemsDialogComponent', 'selector': 'app-remove-order-items-dialog'},{'name': 'RestockReportComponent', 'selector': 'app-restock-report'},{'name': 'SalesReportComponent', 'selector': 'app-sales-report'},{'name': 'SellTogetherReportComponent', 'selector': 'app-sell-together-report'},{'name': 'TrevorCartComponent', 'selector': 'app-trevor-cart'},{'name': 'TrevorCashierComponent', 'selector': 'app-trevor-cashier'},{'name': 'TrevorCheckoutComponent', 'selector': 'app-trevor-checkout'},{'name': 'TrevorCustomizeItemComponent', 'selector': 'app-trevor-customize-item'},{'name': 'ViewCustomizationsComponent', 'selector': 'app-view-customizations'}];
+    var DIRECTIVES = [{'name': 'LogoutDirective', 'selector': '[appLogout]'}];
+    var ACTUAL_COMPONENT = {'name': 'CustomerCustomizeItemComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CustomerCustomizeItemComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

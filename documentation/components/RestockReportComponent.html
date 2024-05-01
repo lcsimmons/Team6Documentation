@@ -1,0 +1,2008 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  RestockReportComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/restock-report/restock-report.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for managing and reporting inventory restocking.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-restock-report</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./restock-report.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./restock-report.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#Bionic" >Bionic</a>
+                            </li>
+                            <li>
+                                <a href="#currentQuantity" >currentQuantity</a>
+                            </li>
+                            <li>
+                                <a href="#ingredientName" >ingredientName</a>
+                            </li>
+                            <li>
+                                <a href="#inventory" >inventory</a>
+                            </li>
+                            <li>
+                                <a href="#isHandset$" >isHandset$</a>
+                            </li>
+                            <li>
+                                <a href="#quantityThreshold" >quantityThreshold</a>
+                            </li>
+                            <li>
+                                <a href="#quantityToAdd" >quantityToAdd</a>
+                            </li>
+                            <li>
+                                <a href="#restockItems" >restockItems</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#fetchInventory" >fetchInventory</a>
+                            </li>
+                            <li>
+                                <a href="#fetchRestockReport" >fetchRestockReport</a>
+                            </li>
+                            <li>
+                                <a href="#goHome" >goHome</a>
+                            </li>
+                            <li>
+                                <a href="#initializeSliderValues" >initializeSliderValues</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openSnackBar" >openSnackBar</a>
+                            </li>
+                            <li>
+                                <a href="#switchStyles" >switchStyles</a>
+                            </li>
+                            <li>
+                                <a href="#updateCurrentQuantity" >updateCurrentQuantity</a>
+                            </li>
+                            <li>
+                                <a href="#updateInventory" >updateInventory</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, router: Router, breakpointObserver: BreakpointObserver, _snackBar: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/restock-report/restock-report.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructs the Restock Report component with necessary dependencies.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>DataService for fetching and updating inventory data.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Router for navigation.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>breakpointObserver</td>
+                                                  
+                                                        <td>
+                                                                    <code>BreakpointObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>BreakpointObserver for responsive adjustments.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>_snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>MatSnackBar for displaying notifications.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchInventory"></a>
+                    <span class="name">
+                        <span ><b>fetchInventory</b></span>
+                        <a href="#fetchInventory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchInventory()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/restock-report/restock-report.component.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches inventory data from the DataService.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchRestockReport"></a>
+                    <span class="name">
+                        <span ><b>fetchRestockReport</b></span>
+                        <a href="#fetchRestockReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchRestockReport()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="109"
+                                    class="link-to-prism">src/app/restock-report/restock-report.component.ts:109</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches restock report data from the DataService.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goHome"></a>
+                    <span class="name">
+                        <span ><b>goHome</b></span>
+                        <a href="#goHome"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goHome()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/restock-report/restock-report.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates back to the employee login screen.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initializeSliderValues"></a>
+                    <span class="name">
+                        <span ><b>initializeSliderValues</b></span>
+                        <a href="#initializeSliderValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initializeSliderValues()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/restock-report/restock-report.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes slider values based on current inventory quantities.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/app/restock-report/restock-report.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the component by fetching initial restock data and inventory.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openSnackBar"></a>
+                    <span class="name">
+                        <span ><b>openSnackBar</b></span>
+                        <a href="#openSnackBar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openSnackBar(message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="182"
+                                    class="link-to-prism">src/app/restock-report/restock-report.component.ts:182</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Opens a snack bar with a specified message.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>message</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The message to display.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="switchStyles"></a>
+                    <span class="name">
+                        <span ><b>switchStyles</b></span>
+                        <a href="#switchStyles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>switchStyles()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">src/app/restock-report/restock-report.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles the current visual theme of the component.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateCurrentQuantity"></a>
+                    <span class="name">
+                        <span ><b>updateCurrentQuantity</b></span>
+                        <a href="#updateCurrentQuantity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateCurrentQuantity()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="89"
+                                    class="link-to-prism">src/app/restock-report/restock-report.component.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates the current quantity displayed on the UI.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateInventory"></a>
+                    <span class="name">
+                        <span ><b>updateInventory</b></span>
+                        <a href="#updateInventory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateInventory()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/app/restock-report/restock-report.component.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates the inventory for a specific ingredient.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Bionic"></a>
+                    <span class="name">
+                        <span ><b>Bionic</b></span>
+                        <a href="#Bionic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/restock-report/restock-report.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentQuantity"></a>
+                    <span class="name">
+                        <span ><b>currentQuantity</b></span>
+                        <a href="#currentQuantity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/restock-report/restock-report.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ingredientName"></a>
+                    <span class="name">
+                        <span ><b>ingredientName</b></span>
+                        <a href="#ingredientName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/restock-report/restock-report.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inventory"></a>
+                    <span class="name">
+                        <span ><b>inventory</b></span>
+                        <a href="#inventory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/InventoryItem.html" target="_self" >InventoryItem[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/restock-report/restock-report.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHandset$"></a>
+                    <span class="name">
+                        <span ><b>isHandset$</b></span>
+                        <a href="#isHandset$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/restock-report/restock-report.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Observable to track if the device is a handset for responsive layout purposes.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quantityThreshold"></a>
+                    <span class="name">
+                        <span ><b>quantityThreshold</b></span>
+                        <a href="#quantityThreshold"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>100</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/restock-report/restock-report.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quantityToAdd"></a>
+                    <span class="name">
+                        <span ><b>quantityToAdd</b></span>
+                        <a href="#quantityToAdd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/restock-report/restock-report.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="restockItems"></a>
+                    <span class="name">
+                        <span ><b>restockItems</b></span>
+                        <a href="#restockItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/restock-report/restock-report.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup } from &#x27;@angular/forms&#x27;;
+import { DataService } from &#x27;../data.service&#x27;;
+import { DatePipe } from &#x27;@angular/common&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
+import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
+import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+
+/**
+ * Interface defining the structure for inventory items.
+ */
+interface InventoryItem {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  currentQuantity: number; // Add currentQuantity property
+  quantityToAdd: number;   // Add quantityToAdd property
+  sliderValue: number; // Add sliderValue property
+}
+
+/**
+ * Component for managing and reporting inventory restocking.
+ */
+@Component({
+  selector: &#x27;app-restock-report&#x27;,
+  templateUrl: &#x27;./restock-report.component.html&#x27;,
+  styleUrls: [&#x27;./restock-report.component.css&#x27;]
+})
+export class RestockReportComponent {
+
+  Bionic &#x3D; false;
+
+  /**
+  * Observable to track if the device is a handset for responsive layout purposes.
+  */
+  isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    );
+
+  ingredientName: string &#x3D; &#x27;&#x27;;
+  currentQuantity: number &#x3D; 0;
+  quantityToAdd: number &#x3D; 0;
+  inventory: InventoryItem[] &#x3D; [];
+
+  quantityThreshold: number &#x3D; 100;
+
+  /**
+   * Constructs the Restock Report component with necessary dependencies.
+   * @param dataService DataService for fetching and updating inventory data.
+   * @param router Router for navigation.
+   * @param breakpointObserver BreakpointObserver for responsive adjustments.
+   * @param _snackBar MatSnackBar for displaying notifications.
+   */
+  constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver, private _snackBar: MatSnackBar) { }
+
+  restockItems: any[] &#x3D; [];
+
+  /**
+   * Initializes the component by fetching initial restock data and inventory.
+   */
+  ngOnInit() {
+    this.fetchRestockReport();
+    this.fetchInventory();
+  }
+
+  /**
+   * Navigates back to the employee login screen.
+   */
+  goHome(): void {
+    this.router.navigate([&#x27;/employee-login&#x27;]);
+  }
+
+  /**
+   * Toggles the current visual theme of the component.
+   */
+  switchStyles(): void {
+    this.Bionic &#x3D; !this.Bionic;
+  }
+
+  /**
+   * Updates the current quantity displayed on the UI.
+   */
+  updateCurrentQuantity(): void {
+    console.log(&quot;updateCurrentQuantity called&quot;);
+    const selectedIngredient &#x3D; this.inventory.find(item &#x3D;&gt; item.name &#x3D;&#x3D;&#x3D; this.ingredientName);
+    if (selectedIngredient) {
+      this.currentQuantity &#x3D; selectedIngredient.quantity;
+    }
+  }
+
+  /**
+   * Initializes slider values based on current inventory quantities.
+   */
+  initializeSliderValues(): void {
+    this.inventory.forEach(item &#x3D;&gt; {
+      item.sliderValue &#x3D; item.quantity;
+    });
+  }
+  
+  /**
+   * Fetches restock report data from the DataService.
+   */
+  fetchRestockReport(): void {
+    console.log(&#x27;fetchRestockReport called with threshold:&#x27;, this.quantityThreshold);
+    
+    this.dataService.getRestockReport(this.quantityThreshold).subscribe(
+      (data: any[]) &#x3D;&gt; {
+        console.log(&#x27;Received restock report data:&#x27;, data);
+        this.restockItems &#x3D; data;
+        console.log(&#x27;Updated restockItems:&#x27;, this.restockItems);
+      },
+      error &#x3D;&gt; {
+        console.error(&#x27;Error fetching restock report:&#x27;, error);
+        this.openSnackBar(&#x27;Failed to fetch restock report. Please try again later.&#x27;);
+      }
+    );
+  }
+  
+  /**
+   * Fetches inventory data from the DataService.
+   */
+  fetchInventory(): void {
+    console.log(&quot;fetchInventory called&quot;);
+    this.dataService.getIngredientInventory().subscribe(
+      (inventory: InventoryItem[]) &#x3D;&gt; {
+        console.log(&quot;Inventory fetched successfully:&quot;, inventory);
+        this.inventory &#x3D; inventory;
+        if (this.inventory.length &gt; 0) {
+          this.ingredientName &#x3D; this.inventory[0].name;
+          this.currentQuantity &#x3D; this.inventory[0].quantity;
+        }        
+      },
+      error &#x3D;&gt; {
+        console.error(&#x27;Error fetching inventory:&#x27;, error);
+        this.openSnackBar(&#x27;Failed to fetch inventory. Please try again later.&#x27;);
+      }
+    );
+  }
+
+  /**
+   * Updates the inventory for a specific ingredient.
+   */
+  updateInventory(): void {
+    console.log(&quot;updateInventory called&quot;);
+    const selectedIngredient &#x3D; this.inventory.find(item &#x3D;&gt; item.name &#x3D;&#x3D;&#x3D; this.ingredientName);
+    if (selectedIngredient) {
+      const updatedQuantity &#x3D; selectedIngredient.quantity + this.quantityToAdd;
+  
+      if (this.quantityToAdd &lt;&#x3D; 0) {
+        this.openSnackBar(&quot;Quantity must be positive to restock.&quot;);
+      }
+  
+      this.dataService.updateIngredientQuantity(selectedIngredient.name, updatedQuantity).subscribe(
+        (response: any) &#x3D;&gt; {
+          console.log(&#x27;Quantity updated successfully:&#x27;, response);
+          selectedIngredient.quantity &#x3D; updatedQuantity;
+          this.quantityToAdd &#x3D; 0;
+          this.updateCurrentQuantity(); 
+          this.fetchRestockReport(); 
+        },
+        (error: any) &#x3D;&gt; {
+          console.error(&#x27;Error updating quantity:&#x27;, error);
+          this.openSnackBar(&#x27;Failed to update quantity. Please try again later.&#x27;);
+        }
+      );
+    } else {
+      console.error(&#x27;Selected ingredient not found in inventory&#x27;);
+      this.openSnackBar(&#x27;Selected ingredient not found in inventory&#x27;);
+    }
+  }
+
+  /**
+   * Opens a snack bar with a specified message.
+   * @param message The message to display.
+   */
+  openSnackBar(message: string) {
+    this._snackBar.open(message, &quot;Done&quot;, {
+      duration: 5000
+    });
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;!Bionic&quot;&gt;
+&lt;div&gt;
+  &lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+  
+  &lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+      &lt;mat-sidenav
+        #drawer
+        class&#x3D;&quot;sidenav&quot;
+        fixedInViewport&#x3D;&quot;false&quot;
+        [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+        [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+        [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
+        &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+          &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+        &lt;/div&gt;
+        &lt;mat-nav-list&gt;
+          &lt;button (click)&#x3D;&quot;switchStyles()&quot;&gt;Switch Reading Format&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/product-usage&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Product Usage Chart&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/excess-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Excess Report&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/sales-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Sales Report&lt;/button&gt;
+          &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/sell-together-report&quot;&gt;Sells Together Report&lt;/button&gt;
+          &lt;button class&#x3D;&quot;sidenav-link-active&quot; routerLink&#x3D;&quot;/restock-report&quot;&gt;Restock Report&lt;/button&gt;
+          &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/menu-popularity&quot;&gt;Menu Popularity&lt;/button&gt;
+                    
+          &lt;button routerLink&#x3D;&quot;/manager-edit-menu&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Edit Menu&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/edit-ingredients&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Edit Ingredients&lt;/button&gt;
+  
+          &lt;button routerLink&#x3D;&quot;/cashier-menu&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Cashier Menu&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/order-management&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Kitchen View&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/admin-view&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Admin View&lt;/button&gt;
+  
+          &lt;div class&#x3D;&quot;action-buttons-menu&quot;&gt;
+              &lt;button class&#x3D;&quot;action-buttons&quot; (click)&#x3D;&quot;goHome()&quot;&gt;Logout&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/mat-nav-list&gt;
+      &lt;/mat-sidenav&gt;
+      &lt;mat-sidenav-content&gt;
+          &lt;div class&#x3D;&quot;main-content&quot;&gt;
+              &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+              &lt;button
+              type&#x3D;&quot;button&quot;
+              aria-label&#x3D;&quot;Toggle sidenav&quot;
+              mat-icon-button
+              (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+              &lt;mat-icon class&#x3D;&quot;menu-icon-btn&quot; aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;span class&#x3D;&quot;menu-category-title&quot;&gt;RESTOCK REPORT&lt;/span&gt;
+      
+              &lt;/mat-toolbar&gt;
+              
+              &lt;div&gt;
+                &lt;label for&#x3D;&quot;ingredientSelect&quot;&gt;Select Ingredient:&lt;/label&gt;
+                &lt;select id&#x3D;&quot;ingredientSelect&quot; [(ngModel)]&#x3D;&quot;ingredientName&quot; (change)&#x3D;&quot;updateCurrentQuantity()&quot;&gt;
+                  &lt;option *ngFor&#x3D;&quot;let item of inventory&quot; [value]&#x3D;&quot;item.name&quot;&gt;{{ item.name }}&lt;/option&gt;
+                &lt;/select&gt;
+            
+                &lt;label for&#x3D;&quot;currentQuantity&quot;&gt;Current Quantity:&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;currentQuantity&quot; [(ngModel)]&#x3D;&quot;currentQuantity&quot; readonly&gt;
+            
+                &lt;label for&#x3D;&quot;quantityToAdd&quot;&gt;Quantity to Add:&lt;/label&gt;
+                &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;quantityToAdd&quot; [(ngModel)]&#x3D;&quot;quantityToAdd&quot;&gt;
+            
+                &lt;input type&#x3D;&quot;range&quot; id&#x3D;&quot;quantitySlider&quot; [(ngModel)]&#x3D;&quot;quantityToAdd&quot; min&#x3D;&quot;0&quot; max&#x3D;&quot;100&quot; step&#x3D;&quot;1&quot;&gt;
+            
+                &lt;button (click)&#x3D;&quot;updateInventory()&quot;&gt;Restock Inventory&lt;/button&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;chart-container&quot;&gt;
+                &lt;div&gt;
+                  &lt;label for&#x3D;&quot;quantityThreshold&quot;&gt;Quantity Threshold:&lt;/label&gt;
+                  &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;quantityThreshold&quot; [(ngModel)]&#x3D;&quot;quantityThreshold&quot; (input)&#x3D;&quot;fetchRestockReport()&quot;&gt;
+                &lt;/div&gt;
+                &lt;table mat-table [dataSource]&#x3D;&quot;restockItems&quot; class&#x3D;&quot;mat-elevation-z8&quot; *ngIf&#x3D;&quot;restockItems.length&quot;&gt;
+                  &lt;ng-container matColumnDef&#x3D;&quot;IngredientID&quot;&gt;
+                    &lt;th mat-header-cell *matHeaderCellDef&gt; ID &lt;/th&gt;
+                    &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.id}} &lt;/td&gt;
+                  &lt;/ng-container&gt;
+              
+                  &lt;ng-container matColumnDef&#x3D;&quot;IngredientName&quot;&gt;
+                    &lt;th mat-header-cell *matHeaderCellDef&gt; Name &lt;/th&gt;
+                    &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.name}} &lt;/td&gt;
+                  &lt;/ng-container&gt;
+            
+                  &lt;ng-container matColumnDef&#x3D;&quot;IngredientQuantity&quot;&gt;
+                    &lt;th mat-header-cell *matHeaderCellDef&gt; Quantity &lt;/th&gt;
+                    &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{ element.quantity &lt; 0 ? 0 : element.quantity }}
+                    &lt;/td&gt;
+                  &lt;/ng-container&gt;
+              
+                  &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;[&#x27;IngredientID&#x27;, &#x27;IngredientName&#x27;, &#x27;IngredientQuantity&#x27;]&quot;&gt;&lt;/tr&gt;
+                  &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: [&#x27;IngredientID&#x27;, &#x27;IngredientName&#x27;, &#x27;IngredientQuantity&#x27;];&quot;&gt;&lt;/tr&gt;
+                &lt;/table&gt;
+              &lt;/div&gt;
+              
+              
+          &lt;/div&gt;
+      &lt;/mat-sidenav-content&gt;
+    &lt;/mat-sidenav-container&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- /&#x3D;&#x3D;/&#x3D;&#x3D;&#x3D;/&#x3D;&#x3D;/&#x3D;/&#x3D;&#x3D;&#x3D;/&#x3D;/&#x3D;&#x3D;/&#x3D;/&#x3D;//&#x3D;&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;&#x3D;/&#x3D;//&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;&#x3D;/ --&gt;
+
+&lt;div *ngIf&#x3D;&quot;Bionic&quot;&gt;
+  &lt;div&gt;
+    &lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+    
+    &lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+        &lt;mat-sidenav
+          #drawer
+          class&#x3D;&quot;sidenav&quot;
+          fixedInViewport&#x3D;&quot;false&quot;
+          [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+          [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+          [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
+          &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+            &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+          &lt;/div&gt;
+          &lt;mat-nav-list&gt;
+            &lt;button (click)&#x3D;&quot;switchStyles()&quot;&gt;Switch Reading Format&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/product-usage&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Product Usage Chart&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/excess-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Excess Report&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/sales-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Sales Report&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/sell-together-report&quot;&gt;Sells Together Report&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link-active&quot; routerLink&#x3D;&quot;/restock-report&quot;&gt;Restock Report&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/order-management&quot;&gt;Manage Orders&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/menu-popularity&quot;&gt;Menu Popularity&lt;/button&gt;
+            
+            &lt;button routerLink&#x3D;&quot;/manager-edit-menu&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Edit Menu&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/edit-ingredients&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Edit Ingredients&lt;/button&gt;
+    
+            &lt;button routerLink&#x3D;&quot;/cashier-menu&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Cashier Menu&lt;/button&gt;
+              &lt;button routerLink&#x3D;&quot;/admin-view&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Admin View&lt;/button&gt;
+    
+            &lt;div class&#x3D;&quot;action-buttons-menu&quot;&gt;
+                &lt;button class&#x3D;&quot;action-buttons&quot; (click)&#x3D;&quot;goHome()&quot;&gt;Logout&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/mat-nav-list&gt;
+        &lt;/mat-sidenav&gt;
+        &lt;mat-sidenav-content&gt;
+            &lt;div class&#x3D;&quot;main-content&quot;&gt;
+                &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+                &lt;button
+                type&#x3D;&quot;button&quot;
+                aria-label&#x3D;&quot;Toggle sidenav&quot;
+                mat-icon-button
+                (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;menu-icon-btn&quot; aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
+                &lt;/button&gt;
+                &lt;span class&#x3D;&quot;menu-category-title&quot; [innerHTML]&#x3D;&quot;&#x27;RESTOCK REPORT&#x27; | bionicReading&quot;&gt;&lt;/span&gt;
+        
+                &lt;/mat-toolbar&gt;
+                &lt;div&gt;
+                  &lt;label for&#x3D;&quot;ingredientSelect&quot; [innerHTML]&#x3D;&quot;&#x27;Select Ingredient:&#x27; | bionicReading&quot;&gt;&lt;/label&gt;
+                  &lt;select id&#x3D;&quot;ingredientSelect&quot; [(ngModel)]&#x3D;&quot;ingredientName&quot; (change)&#x3D;&quot;updateCurrentQuantity()&quot;&gt;
+                    &lt;option *ngFor&#x3D;&quot;let item of inventory&quot; [value]&#x3D;&quot;item.name&quot; [innerHTML]&#x3D;&quot;item.name | bionicReading&quot;&gt;&lt;/option&gt;
+                  &lt;/select&gt;
+              
+                  &lt;label for&#x3D;&quot;currentQuantity&quot; [innerHTML]&#x3D;&quot;&#x27;Current Quantity:&#x27; | bionicReading&quot;&gt;&lt;/label&gt;
+                  &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;currentQuantity&quot; [(ngModel)]&#x3D;&quot;currentQuantity&quot; readonly&gt;
+              
+                  &lt;label for&#x3D;&quot;quantityToAdd&quot; [innerHTML]&#x3D;&quot;&#x27;Quantity to Add:&#x27; | bionicReading&quot;&gt;&lt;/label&gt;
+                  &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;quantityToAdd&quot; [(ngModel)]&#x3D;&quot;quantityToAdd&quot;&gt;
+              
+                  &lt;input type&#x3D;&quot;range&quot; id&#x3D;&quot;quantitySlider&quot; [(ngModel)]&#x3D;&quot;quantityToAdd&quot; min&#x3D;&quot;0&quot; max&#x3D;&quot;100&quot; step&#x3D;&quot;1&quot;&gt;
+              
+                  &lt;button (click)&#x3D;&quot;updateInventory()&quot; [innerHTML]&#x3D;&quot;&#x27;Restock Inventory&#x27; | bionicReading&quot;&gt;&lt;/button&gt;
+                &lt;/div&gt;
+  
+                &lt;div&gt;
+                  &lt;label for&#x3D;&quot;quantityThreshold&quot; [innerHTML]&#x3D;&quot;&#x27;Quantity Threshold:&#x27; | bionicReading&quot;&gt;&lt;/label&gt;
+                  &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;quantityThreshold&quot; [(ngModel)]&#x3D;&quot;quantityThreshold&quot; (input)&#x3D;&quot;fetchRestockReport()&quot;&gt;
+                &lt;/div&gt;
+                
+                &lt;div class&#x3D;&quot;chart-container&quot;&gt;
+                  &lt;table mat-table [dataSource]&#x3D;&quot;restockItems&quot; class&#x3D;&quot;mat-elevation-z8&quot; *ngIf&#x3D;&quot;restockItems.length&quot;&gt;
+                    &lt;ng-container matColumnDef&#x3D;&quot;IngredientID&quot;&gt;
+                      &lt;th mat-header-cell *matHeaderCellDef [innerHTML]&#x3D;&quot;&#x27;ID&#x27; | bionicReading&quot;&gt;  &lt;/th&gt;
+                      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.id}} &lt;/td&gt;
+                    &lt;/ng-container&gt;
+
+                    &lt;ng-container matColumnDef&#x3D;&quot;IngredientName&quot;&gt;
+                      &lt;th mat-header-cell *matHeaderCellDef [innerHTML]&#x3D;&quot;&#x27;Name&#x27; | bionicReading&quot;&gt;  &lt;/th&gt;
+                      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; [innerHTML]&#x3D;&quot;element.name | bionicReading&quot;&gt; &lt;/td&gt;
+                    &lt;/ng-container&gt;
+              
+                    &lt;ng-container matColumnDef&#x3D;&quot;IngredientQuantity&quot;&gt;
+                      &lt;th mat-header-cell *matHeaderCellDef [innerHTML]&#x3D;&quot;&#x27;Quantity&#x27; | bionicReading&quot;&gt;  &lt;/th&gt;
+                      &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+                        {{ element.quantity &lt; 0 ? 0 : element.quantity }}
+                      &lt;/td&gt;
+                    &lt;/ng-container&gt;
+                
+                    &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;[&#x27;IngredientID&#x27;, &#x27;IngredientName&#x27;, &#x27;IngredientQuantity&#x27;]&quot;&gt;&lt;/tr&gt;
+                    &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: [&#x27;IngredientID&#x27;, &#x27;IngredientName&#x27;, &#x27;IngredientQuantity&#x27;];&quot;&gt;&lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/div&gt;
+                
+                
+            &lt;/div&gt;
+        &lt;/mat-sidenav-content&gt;
+      &lt;/mat-sidenav-container&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./restock-report.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.mat-toolbar,
+.mat-sidenav-content,
+.mat-sidenav,
+.mat-nav-list,
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  margin: 0;
+  padding: 0;
+}
+
+b{
+  font-weight: 1000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 0; /* Ensures no extra space below the header pushing the top buttons down */
+}
+
+.top-buttons {
+    display: flex;
+    flex-direction: row; /* Aligns buttons in a row */
+}
+
+.cart-items {
+    margin-top: 20px;
+    background-color: #e1e1e1;
+}
+
+.cart-container {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.item-actions button {
+    margin-left: 10px;
+}
+
+
+
+.checkout-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/*
+.cdk-overlay-pane {
+  position: absolute;
+}
+
+.cdk-overlay-connected-position-bounding-box {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 1px;
+  min-height: 1px;
+}
+*/
+
+.selected-item {
+    background-color: gold;
+    color: black; 
+  }
+  
+  .active {
+    background-color: gold;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: transparent;
+    color: #000;
+    font-size: 50px;
+  }
+  
+  .revs-image {
+    object-fit: cover;
+    text-align: center;
+  }
+  
+  .menu-category-title {
+    margin-right: auto;
+    margin-left: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    text-transform: uppercase !important;
+    font-weight: 400;
+    color: black;
+    font-size: calc(25px + 0.390625vw);
+  }
+  
+  body {
+    margin: 0;
+    width: 100%;
+  }
+  
+  .mat-sidenav-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .mat-sidenav-content {
+    width: 100%;
+    height: 100%;
+    padding-right: 40px;
+    background-color: white;
+  }
+  
+  .main-content {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sidenav-container {
+    height: 100vh;
+    display: flex;
+    width: 100vw;
+  }
+  
+  .sidenav {
+    width: 15%;
+    box-shadow: 3px 0 6px rgba(0,0,0,.24);
+    background-color: #5B0726;
+    height: 100%;
+  }
+  
+  .sidenav-link {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidenav-link:hover {
+    background-color: #790E36;
+    width: 100%;
+  }
+  
+  .sidenav-link-active {
+    background-color: #790E36 !important;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu-item-container {
+    width: 100%;
+    list-style: none;
+  }
+  
+  .cart-item-module {
+    background: transparent;
+    border: none;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  
+  .cart-item-price {
+    font-style: italic;
+    align-items: center;
+    margin-left: auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 20px;
+  }
+  
+  .cart-item-name {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .action-buttons-menu {
+    width: 100%;
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+  }
+  
+  .action-buttons-menu {
+    width: 15%;
+  }
+  
+  .action-buttons {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .action-buttons:hover {
+    background-color: #790E36;
+    width: 100%;
+  }
+  
+  .toolbar-btn-container {
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+    height: 90%
+  }
+  
+  .toolbar-btn {
+    margin-left: 10px;
+    background-color: #5B0726;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+  }
+  
+  .toolbar-btn:hover {
+    background-color: #F8BE14;
+    color: black;
+  }
+
+  .action-btn {
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    color: #5B0726;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+  }
+  
+  .action-btn:hover {
+    background-color: #e1e1e1;
+    color: #000;
+  }
+
+  .mat-toolbar {
+    display: flex;
+    justify-content: flex-start;
+    /*
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0;
+    */
+    padding-left: 24px;
+    margin: 0;
+    background: white;
+  }
+
+  .mat-toolbar span:last-child {
+    margin-right:auto;
+  }
+  
+
+  .menu-icon-btn {
+    padding:0;
+    margin: 0;
+    color: black;
+  }
+
+  .subtotal-taxes {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    color: #000;
+    line-height: 200%;
+  }
+
+  .total-price {
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    color: #000;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .summary-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 3px solid #e1e1e1;
+    border-top: 3px solid #e1e1e1;
+
+}
+
+.summary-2 {
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 100%;
+}
+
+.checkout-btn {
+    background-color: #5B0726;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+}
+
+.checkout-btn:hover {
+    background-color: #F8BE14;
+    color: #000;
+}
+
+.manager-view-info {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    font-style: italic;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    justify-content: center;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+.chart-container {
+    padding-left: 40px;
+    padding-top: 40px;
+    font-weight: 400;
+}
+
+.datepickers {
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-weight: 400;
+}
+
+
+.report-button {
+    margin-left: 10px;
+    background-color: #5B0726;
+    border: none;
+    color: white;
+    padding-top: 10.5px;
+    padding-bottom: 10.5px;
+    padding-left: 28px;
+    padding-right: 28px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    height: 100%;
+    letter-spacing: normal;
+  }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="!Bionic"><div>  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    <mat-sidenav-container class="sidenav-container">      <mat-sidenav        #drawer        class="sidenav"        fixedInViewport="false"        [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"        [mode]="(isHandset$ | async) ? \'over\' : \'side\'"        [opened]="(isHandset$ | async) === false">        <div class="revs-image">          <img width="200" height="100" src="assets/REVSLogoUpdated.jpg">        </div>        <mat-nav-list>          <button (click)="switchStyles()">Switch Reading Format</button>          <button routerLink="/product-usage" class="sidenav-link">Product Usage Chart</button>          <button routerLink="/excess-report" class="sidenav-link">Excess Report</button>          <button routerLink="/sales-report" class="sidenav-link">Sales Report</button>          <button class="sidenav-link" routerLink="/sell-together-report">Sells Together Report</button>          <button class="sidenav-link-active" routerLink="/restock-report">Restock Report</button>          <button class="sidenav-link" routerLink="/menu-popularity">Menu Popularity</button>                              <button routerLink="/manager-edit-menu" class="sidenav-link">Edit Menu</button>          <button routerLink="/edit-ingredients" class="sidenav-link">Edit Ingredients</button>            <button routerLink="/cashier-menu" class="sidenav-link">Cashier Menu</button>          <button routerLink="/order-management" class="sidenav-link">Kitchen View</button>            <button routerLink="/admin-view" class="sidenav-link">Admin View</button>            <div class="action-buttons-menu">              <button class="action-buttons" (click)="goHome()">Logout</button>          </div>        </mat-nav-list>      </mat-sidenav>      <mat-sidenav-content>          <div class="main-content">              <mat-toolbar color="primary">              <button              type="button"              aria-label="Toggle sidenav"              mat-icon-button              (click)="drawer.toggle()">              <mat-icon class="menu-icon-btn" aria-label="Side nav toggle icon">menu</mat-icon>              </button>              <span class="menu-category-title">RESTOCK REPORT</span>                    </mat-toolbar>                            <div>                <label for="ingredientSelect">Select Ingredient:</label>                <select id="ingredientSelect" [(ngModel)]="ingredientName" (change)="updateCurrentQuantity()">                  <option *ngFor="let item of inventory" [value]="item.name">{{ item.name }}</option>                </select>                            <label for="currentQuantity">Current Quantity:</label>                <input type="text" id="currentQuantity" [(ngModel)]="currentQuantity" readonly>                            <label for="quantityToAdd">Quantity to Add:</label>                <input type="number" id="quantityToAdd" [(ngModel)]="quantityToAdd">                            <input type="range" id="quantitySlider" [(ngModel)]="quantityToAdd" min="0" max="100" step="1">                            <button (click)="updateInventory()">Restock Inventory</button>              </div>              <div class="chart-container">                <div>                  <label for="quantityThreshold">Quantity Threshold:</label>                  <input type="number" id="quantityThreshold" [(ngModel)]="quantityThreshold" (input)="fetchRestockReport()">                </div>                <table mat-table [dataSource]="restockItems" class="mat-elevation-z8" *ngIf="restockItems.length">                  <ng-container matColumnDef="IngredientID">                    <th mat-header-cell *matHeaderCellDef> ID </th>                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>                  </ng-container>                                <ng-container matColumnDef="IngredientName">                    <th mat-header-cell *matHeaderCellDef> Name </th>                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>                  </ng-container>                              <ng-container matColumnDef="IngredientQuantity">                    <th mat-header-cell *matHeaderCellDef> Quantity </th>                    <td mat-cell *matCellDef="let element"> {{ element.quantity < 0 ? 0 : element.quantity }}                    </td>                  </ng-container>                                <tr mat-header-row *matHeaderRowDef="[\'IngredientID\', \'IngredientName\', \'IngredientQuantity\']"></tr>                  <tr mat-row *matRowDef="let row; columns: [\'IngredientID\', \'IngredientName\', \'IngredientQuantity\'];"></tr>                </table>              </div>                                      </div>      </mat-sidenav-content>    </mat-sidenav-container>  </div></div><!-- /==/===/==/=/===/=/==/=/=//==/=/=/=/=/=/=/=/=/==/=//=/=/=/=/=/=/=/=/==/ --><div *ngIf="Bionic">  <div>    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">        <mat-sidenav-container class="sidenav-container">        <mat-sidenav          #drawer          class="sidenav"          fixedInViewport="false"          [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"          [mode]="(isHandset$ | async) ? \'over\' : \'side\'"          [opened]="(isHandset$ | async) === false">          <div class="revs-image">            <img width="200" height="100" src="assets/REVSLogoUpdated.jpg">          </div>          <mat-nav-list>            <button (click)="switchStyles()">Switch Reading Format</button>            <button routerLink="/product-usage" class="sidenav-link">Product Usage Chart</button>            <button routerLink="/excess-report" class="sidenav-link">Excess Report</button>            <button routerLink="/sales-report" class="sidenav-link">Sales Report</button>            <button class="sidenav-link" routerLink="/sell-together-report">Sells Together Report</button>            <button class="sidenav-link-active" routerLink="/restock-report">Restock Report</button>            <button class="sidenav-link" routerLink="/order-management">Manage Orders</button>            <button class="sidenav-link" routerLink="/menu-popularity">Menu Popularity</button>                        <button routerLink="/manager-edit-menu" class="sidenav-link">Edit Menu</button>            <button routerLink="/edit-ingredients" class="sidenav-link">Edit Ingredients</button>                <button routerLink="/cashier-menu" class="sidenav-link">Cashier Menu</button>              <button routerLink="/admin-view" class="sidenav-link">Admin View</button>                <div class="action-buttons-menu">                <button class="action-buttons" (click)="goHome()">Logout</button>            </div>          </mat-nav-list>        </mat-sidenav>        <mat-sidenav-content>            <div class="main-content">                <mat-toolbar color="primary">                <button                type="button"                aria-label="Toggle sidenav"                mat-icon-button                (click)="drawer.toggle()">                <mat-icon class="menu-icon-btn" aria-label="Side nav toggle icon">menu</mat-icon>                </button>                <span class="menu-category-title" [innerHTML]="\'RESTOCK REPORT\' | bionicReading"></span>                        </mat-toolbar>                <div>                  <label for="ingredientSelect" [innerHTML]="\'Select Ingredient:\' | bionicReading"></label>                  <select id="ingredientSelect" [(ngModel)]="ingredientName" (change)="updateCurrentQuantity()">                    <option *ngFor="let item of inventory" [value]="item.name" [innerHTML]="item.name | bionicReading"></option>                  </select>                                <label for="currentQuantity" [innerHTML]="\'Current Quantity:\' | bionicReading"></label>                  <input type="text" id="currentQuantity" [(ngModel)]="currentQuantity" readonly>                                <label for="quantityToAdd" [innerHTML]="\'Quantity to Add:\' | bionicReading"></label>                  <input type="number" id="quantityToAdd" [(ngModel)]="quantityToAdd">                                <input type="range" id="quantitySlider" [(ngModel)]="quantityToAdd" min="0" max="100" step="1">                                <button (click)="updateInventory()" [innerHTML]="\'Restock Inventory\' | bionicReading"></button>                </div>                  <div>                  <label for="quantityThreshold" [innerHTML]="\'Quantity Threshold:\' | bionicReading"></label>                  <input type="number" id="quantityThreshold" [(ngModel)]="quantityThreshold" (input)="fetchRestockReport()">                </div>                                <div class="chart-container">                  <table mat-table [dataSource]="restockItems" class="mat-elevation-z8" *ngIf="restockItems.length">                    <ng-container matColumnDef="IngredientID">                      <th mat-header-cell *matHeaderCellDef [innerHTML]="\'ID\' | bionicReading">  </th>                      <td mat-cell *matCellDef="let element"> {{element.id}} </td>                    </ng-container>                    <ng-container matColumnDef="IngredientName">                      <th mat-header-cell *matHeaderCellDef [innerHTML]="\'Name\' | bionicReading">  </th>                      <td mat-cell *matCellDef="let element" [innerHTML]="element.name | bionicReading"> </td>                    </ng-container>                                  <ng-container matColumnDef="IngredientQuantity">                      <th mat-header-cell *matHeaderCellDef [innerHTML]="\'Quantity\' | bionicReading">  </th>                      <td mat-cell *matCellDef="let element">                        {{ element.quantity < 0 ? 0 : element.quantity }}                      </td>                    </ng-container>                                    <tr mat-header-row *matHeaderRowDef="[\'IngredientID\', \'IngredientName\', \'IngredientQuantity\']"></tr>                    <tr mat-row *matRowDef="let row; columns: [\'IngredientID\', \'IngredientName\', \'IngredientQuantity\'];"></tr>                  </table>                </div>                                            </div>        </mat-sidenav-content>      </mat-sidenav-container>    </div>  </div>    </div>'
+    var COMPONENTS = [{'name': 'AddEmployeeComponent', 'selector': 'app-add-employee'},{'name': 'AddOrderDialogComponentComponent', 'selector': 'app-add-order-dialog-component'},{'name': 'AdminViewComponent', 'selector': 'app-admin-view'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CashierCartComponent', 'selector': 'app-cashier-cart'},{'name': 'CashierCheckoutViewComponent', 'selector': 'app-cashier-checkout-view'},{'name': 'CashierCustomizeItemComponent', 'selector': 'app-cashier-customize-item'},{'name': 'CashierMenuComponent', 'selector': 'app-cashier-menu'},{'name': 'CustomerCartComponent', 'selector': 'app-customer-cart'},{'name': 'CustomerCheckoutViewComponent', 'selector': 'app-customer-checkout-view'},{'name': 'CustomerCustomizeItemComponent', 'selector': 'app-customer-customize-item'},{'name': 'CustomerLandingComponent', 'selector': 'app-customer-landing'},{'name': 'CustomerMenuComponent', 'selector': 'app-customer-menu'},{'name': 'EditEmployeeDialogComponent', 'selector': 'app-edit-employee-dialog'},{'name': 'EditOrderComponent', 'selector': 'app-edit-order'},{'name': 'EmployeeLoginComponent', 'selector': 'app-employee-login'},{'name': 'ExcessReportComponent', 'selector': 'app-excess-report'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerEditIngredientsComponent', 'selector': 'app-manager-edit-ingredients'},{'name': 'ManagerEditMenuComponent', 'selector': 'app-manager-edit-menu'},{'name': 'ManagerViewComponent', 'selector': 'app-manager-view'},{'name': 'MenuBoardComponent', 'selector': 'app-menu-board'},{'name': 'MenuPopularityComponent', 'selector': 'app-menu-popularity'},{'name': 'OrderEditDialogComponent', 'selector': 'app-order-edit-dialog'},{'name': 'OrderManagementComponent', 'selector': 'app-order-management'},{'name': 'ProductUsageComponent', 'selector': 'app-product-usage'},{'name': 'RemoveOrderItemsDialogComponent', 'selector': 'app-remove-order-items-dialog'},{'name': 'RestockReportComponent', 'selector': 'app-restock-report'},{'name': 'SalesReportComponent', 'selector': 'app-sales-report'},{'name': 'SellTogetherReportComponent', 'selector': 'app-sell-together-report'},{'name': 'TrevorCartComponent', 'selector': 'app-trevor-cart'},{'name': 'TrevorCashierComponent', 'selector': 'app-trevor-cashier'},{'name': 'TrevorCheckoutComponent', 'selector': 'app-trevor-checkout'},{'name': 'TrevorCustomizeItemComponent', 'selector': 'app-trevor-customize-item'},{'name': 'ViewCustomizationsComponent', 'selector': 'app-view-customizations'}];
+    var DIRECTIVES = [{'name': 'LogoutDirective', 'selector': '[appLogout]'}];
+    var ACTUAL_COMPONENT = {'name': 'RestockReportComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RestockReportComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

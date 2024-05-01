@@ -1,0 +1,2287 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ManagerEditMenuComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/manager-edit-menu/manager-edit-menu.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for managing and editing the menu items within a restaurant management system.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-manager-edit-menu</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./manager-edit-menu.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./manager-edit-menu.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#Bionic" >Bionic</a>
+                            </li>
+                            <li>
+                                <a href="#categories" >categories</a>
+                            </li>
+                            <li>
+                                <a href="#deleteForm" >deleteForm</a>
+                            </li>
+                            <li>
+                                <a href="#ingredients" >ingredients</a>
+                            </li>
+                            <li>
+                                <a href="#isHandset$" >isHandset$</a>
+                            </li>
+                            <li>
+                                <a href="#menuForm" >menuForm</a>
+                            </li>
+                            <li>
+                                <a href="#menuItemIngredients" >menuItemIngredients</a>
+                            </li>
+                            <li>
+                                <a href="#menuItems" >menuItems</a>
+                            </li>
+                            <li>
+                                <a href="#seasonal" >seasonal</a>
+                            </li>
+                            <li>
+                                <a href="#SeasonalEndDate" >SeasonalEndDate</a>
+                            </li>
+                            <li>
+                                <a href="#selectedItemId" >selectedItemId</a>
+                            </li>
+                            <li>
+                                <a href="#TodayDate" >TodayDate</a>
+                            </li>
+                            <li>
+                                <a href="#toGo" >toGo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#goHome" >goHome</a>
+                            </li>
+                            <li>
+                                <a href="#loadCategories" >loadCategories</a>
+                            </li>
+                            <li>
+                                <a href="#loadIngredients" >loadIngredients</a>
+                            </li>
+                            <li>
+                                <a href="#loadMenuItemIngredients" >loadMenuItemIngredients</a>
+                            </li>
+                            <li>
+                                <a href="#loadMenuItems" >loadMenuItems</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSeasonalDateChange" >onSeasonalDateChange</a>
+                            </li>
+                            <li>
+                                <a href="#openSnackBar" >openSnackBar</a>
+                            </li>
+                            <li>
+                                <a href="#submit" >submit</a>
+                            </li>
+                            <li>
+                                <a href="#submitChanges" >submitChanges</a>
+                            </li>
+                            <li>
+                                <a href="#submitDelete" >submitDelete</a>
+                            </li>
+                            <li>
+                                <a href="#switchStyles" >switchStyles</a>
+                            </li>
+                            <li>
+                                <a href="#toggleMenuItem" >toggleMenuItem</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(cdr: ChangeDetectorRef, fb: FormBuilder, dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, breakpointObserver: BreakpointObserver, router: Router, _snackbar: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:69</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cdr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ChangeDetectorRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>breakpointObserver</td>
+                                                  
+                                                        <td>
+                                                                    <code>BreakpointObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_snackbar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goHome"></a>
+                    <span class="name">
+                        <span ><b>goHome</b></span>
+                        <a href="#goHome"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goHome()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="291"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:291</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates back to the employee login screen.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadCategories"></a>
+                    <span class="name">
+                        <span ><b>loadCategories</b></span>
+                        <a href="#loadCategories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadCategories()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="109"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:109</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Loads categories from the server to populate the category selector.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadIngredients"></a>
+                    <span class="name">
+                        <span ><b>loadIngredients</b></span>
+                        <a href="#loadIngredients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadIngredients()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="116"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:116</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Loads ingredients from the server for use in menu item compositions.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadMenuItemIngredients"></a>
+                    <span class="name">
+                        <span ><b>loadMenuItemIngredients</b></span>
+                        <a href="#loadMenuItemIngredients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadMenuItemIngredients(itemId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="193"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:193</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Loads ingredients for a selected menu item.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>itemId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The ID of the menu item.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadMenuItems"></a>
+                    <span class="name">
+                        <span ><b>loadMenuItems</b></span>
+                        <a href="#loadMenuItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadMenuItems()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="162"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:162</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches and displays all menu items.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="121"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:121</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSeasonalDateChange"></a>
+                    <span class="name">
+                        <span ><b>onSeasonalDateChange</b></span>
+                        <a href="#onSeasonalDateChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSeasonalDateChange(event: MatDatepickerInputEvent<Date>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="89"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles changes to the seasonal date picker, updating the seasonal end date.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>MatDatepickerInputEvent&lt;Date&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The date picker event.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openSnackBar"></a>
+                    <span class="name">
+                        <span ><b>openSnackBar</b></span>
+                        <a href="#openSnackBar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openSnackBar(message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="308"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:308</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Displays a snack bar with a message.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>message</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The message to display.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submit"></a>
+                    <span class="name">
+                        <span ><b>submit</b></span>
+                        <a href="#submit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="248"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:248</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Adds or updates a seasonal menu item based on form validity and date checks.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitChanges"></a>
+                    <span class="name">
+                        <span ><b>submitChanges</b></span>
+                        <a href="#submitChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submitChanges()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="202"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:202</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Submits changes to the ingredients of a selected menu item.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitDelete"></a>
+                    <span class="name">
+                        <span ><b>submitDelete</b></span>
+                        <a href="#submitDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submitDelete()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="224"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:224</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Submits a request to delete a menu item based on the form&#39;s validity.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="switchStyles"></a>
+                    <span class="name">
+                        <span ><b>switchStyles</b></span>
+                        <a href="#switchStyles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>switchStyles()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="298"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:298</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles the style theme and triggers change detection.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleMenuItem"></a>
+                    <span class="name">
+                        <span ><b>toggleMenuItem</b></span>
+                        <a href="#toggleMenuItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleMenuItem(item: <a href="../interfaces/MenuItem.html" target="_self">MenuItem</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="177"
+                                    class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:177</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles selection state of a menu item and loads its ingredients if selected.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="../interfaces/MenuItem.html" target="_self" >MenuItem</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The menu item to toggle.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Bionic"></a>
+                    <span class="name">
+                        <span ><b>Bionic</b></span>
+                        <a href="#Bionic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Flag for theme toggling.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categories"></a>
+                    <span class="name">
+                        <span ><b>categories</b></span>
+                        <a href="#categories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array of categories fetched for menu item categorization.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteForm"></a>
+                    <span class="name">
+                        <span ><b>deleteForm</b></span>
+                        <a href="#deleteForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Form group for deleting menu items.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ingredients"></a>
+                    <span class="name">
+                        <span ><b>ingredients</b></span>
+                        <a href="#ingredients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array of ingredients fetched for menu item customization.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHandset$"></a>
+                    <span class="name">
+                        <span ><b>isHandset$</b></span>
+                        <a href="#isHandset$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Observable to determine if the device is a handset for responsive layout purposes.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuForm"></a>
+                    <span class="name">
+                        <span ><b>menuForm</b></span>
+                        <a href="#menuForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Form group for adding or editing menu items.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuItemIngredients"></a>
+                    <span class="name">
+                        <span ><b>menuItemIngredients</b></span>
+                        <a href="#menuItemIngredients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array of ingredients for the selected menu item.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuItems"></a>
+                    <span class="name">
+                        <span ><b>menuItems</b></span>
+                        <a href="#menuItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MenuItem[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array of menu items fetched from the backend.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seasonal"></a>
+                    <span class="name">
+                        <span ><b>seasonal</b></span>
+                        <a href="#seasonal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Flag for toggling the seasonal menu items display.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SeasonalEndDate"></a>
+                    <span class="name">
+                        <span ><b>SeasonalEndDate</b></span>
+                        <a href="#SeasonalEndDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Stores the end date for seasonal menu items.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedItemId"></a>
+                    <span class="name">
+                        <span ><b>selectedItemId</b></span>
+                        <a href="#selectedItemId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ID of the currently selected menu item.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TodayDate"></a>
+                    <span class="name">
+                        <span ><b>TodayDate</b></span>
+                        <a href="#TodayDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Stores today&#39;s date for comparison purposes.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toGo"></a>
+                    <span class="name">
+                        <span ><b>toGo</b></span>
+                        <a href="#toGo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/manager-edit-menu/manager-edit-menu.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Flag to determine if an item is to go</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ChangeDetectorRef } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { DataService } from &#x27;../data.service&#x27;;
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
+import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { MatDatepickerInputEvent } from &#x27;@angular/material/datepicker&#x27;;
+import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+
+/**
+ * Interface for items on the menu, allowing type-safe usage of menu item data.
+ */
+export interface MenuItem {
+  id: number;
+  name: string; 
+  price: number;
+  selected?: boolean;
+}
+
+/**
+ * Component for managing and editing the menu items within a restaurant management system.
+ */
+@Component({
+  selector: &#x27;app-manager-edit-menu&#x27;,
+  templateUrl: &#x27;./manager-edit-menu.component.html&#x27;,
+  styleUrl: &#x27;./manager-edit-menu.component.css&#x27;
+})
+export class ManagerEditMenuComponent {
+  /** Flag for toggling the seasonal menu items display. */
+  seasonal &#x3D; false
+  /** Stores today&#x27;s date for comparison purposes. */
+  TodayDate: string &#x3D; &#x27;&#x27;;
+  /** Stores the end date for seasonal menu items. */
+  SeasonalEndDate: string &#x3D; &#x27;&#x27;;
+  /** Flag for theme toggling. */
+  Bionic &#x3D; false;
+  /** Array of menu items fetched from the backend. */
+  menuItems: MenuItem[] &#x3D; [];
+  /** Array of ingredients for the selected menu item. */
+  menuItemIngredients: any[] &#x3D; [];
+
+  /** ID of the currently selected menu item. */
+  selectedItemId: number | null &#x3D; null;
+
+  /** Form group for deleting menu items. */
+  deleteForm: FormGroup;
+
+  /** Form group for adding or editing menu items. */
+  menuForm: FormGroup;
+
+  /** Array of categories fetched for menu item categorization. */
+  categories: any[] &#x3D; []; 
+
+  /** Array of ingredients fetched for menu item customization. */
+  ingredients: any[] &#x3D; []; 
+
+  /** Flag to determine if an item is to go */
+  toGo: boolean &#x3D; false;
+
+  /**
+   * Observable to determine if the device is a handset for responsive layout purposes.
+   */
+  isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    );
+
+  constructor(private cdr: ChangeDetectorRef, private fb: FormBuilder, private dataService: DataService, private breakpointObserver: BreakpointObserver, private router: Router, private _snackbar: MatSnackBar) {
+    this.menuForm &#x3D; this.fb.group({
+      name: [&#x27;&#x27;, Validators.required],
+      price: [&#x27;&#x27;, [Validators.required, Validators.pattern(/^\d+\.?\d{0,2}$/)]],
+      category_id: [&#x27;&#x27;, Validators.required],
+      ingredients: [[], Validators.required]
+    });
+    this.deleteForm &#x3D; this.fb.group({
+      menu_item_id: [&#x27;&#x27;, Validators.required]
+    });
+    this.loadCategories();
+    this.loadIngredients();
+  }
+
+  /**
+   * Handles changes to the seasonal date picker, updating the seasonal end date.
+   * @param event The date picker event.
+   */
+  onSeasonalDateChange(event: MatDatepickerInputEvent&lt;Date&gt;): void {
+    this.seasonal &#x3D; true;
+
+    // console.log(event.value?.getDate());
+    // console.log(event.value?.getMonth());
+    // console.log(event.value?.getFullYear());
+    
+    this.SeasonalEndDate &#x3D; event.value ? event.value.toISOString().slice(0, 10) : &#x27;&#x27;;
+  
+
+    console.log(&quot;seasonal item: &quot; + this.SeasonalEndDate);
+
+    // console.log(event.value.toLocaleDateString(&#x27;en-US&#x27;));
+
+    // console.log(&quot;seasonal item&quot;);
+  }
+
+  /**
+   * Loads categories from the server to populate the category selector.
+   */
+  loadCategories(): void {
+    this.dataService.getCategories().subscribe(data &#x3D;&gt; this.categories &#x3D; data);
+  }
+
+  /**
+   * Loads ingredients from the server for use in menu item compositions.
+   */
+  loadIngredients(): void {
+    this.dataService.getIngredients().subscribe(data &#x3D;&gt; this.ingredients &#x3D; data);
+  }
+
+
+  ngOnInit(): void {
+    let dateObj &#x3D; new Date();
+    this.TodayDate &#x3D; dateObj.toISOString().slice(0, 10); // 2021-07-01
+
+   
+    this.dataService.getlastSeasonalItem().subscribe(data &#x3D;&gt; {
+      if(data !&#x3D; null){
+        //console.log(&quot;last seasonal item: &quot; + data.end_date);
+
+        let SeasonalItemExpiryDate &#x3D; new Date(data.end_date);
+        let today &#x3D; new Date(this.TodayDate);
+
+        if(SeasonalItemExpiryDate &gt; today) {
+          console.log(SeasonalItemExpiryDate + &quot; &gt; &quot; + today);
+          console.log(&quot;dont delete seasonal item&quot;);
+
+        } else if(SeasonalItemExpiryDate &lt; today) {
+          console.log(SeasonalItemExpiryDate + &quot; &lt; &quot; + today);
+          console.log(&quot;delete seasonal item&quot;);
+
+          this.dataService.deleteSeasonalItem(data.end_date).subscribe({
+            next: (res) &#x3D;&gt; {
+              console.log(&#x27;Item deleted successfully&#x27;, res);
+              
+            },
+            error: (err) &#x3D;&gt; {
+              console.error(&#x27;Error deleting item&#x27;, err);
+              
+            }
+          });
+        } 
+      }
+
+    });
+
+    this.loadMenuItems();
+  }
+
+  /**
+   * Fetches and displays all menu items.
+   */
+  loadMenuItems(): void {
+    this.dataService.getMenuItems().subscribe(data &#x3D;&gt; {
+      this.menuItems &#x3D; data.map((item: { id: any; name: any; price: any; }) &#x3D;&gt; ({
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        selected: false
+      }));
+    });
+  }
+
+  /**
+   * Toggles selection state of a menu item and loads its ingredients if selected.
+   * @param item The menu item to toggle.
+   */
+  toggleMenuItem(item: MenuItem): void {
+    if (item.id &#x3D;&#x3D;&#x3D; this.selectedItemId) {
+      this.selectedItemId &#x3D; null;
+      this.menuItemIngredients &#x3D; [];
+      item.selected &#x3D; false;
+    } else {
+      this.menuItems.forEach(i &#x3D;&gt; i.selected &#x3D; i.id &#x3D;&#x3D;&#x3D; item.id);
+      this.selectedItemId &#x3D; item.id;
+      this.loadMenuItemIngredients(item.id);
+    }
+  }
+
+  /**
+   * Loads ingredients for a selected menu item.
+   * @param itemId The ID of the menu item.
+   */
+  loadMenuItemIngredients(itemId: number): void {
+    this.dataService.getMenuItem(itemId).subscribe(data &#x3D;&gt; {
+      this.menuItemIngredients &#x3D; data.ingredients || []; 
+    });
+  }
+
+  /**
+   * Submits changes to the ingredients of a selected menu item.
+   */
+  submitChanges(): void {
+    if (this.selectedItemId !&#x3D;&#x3D; null) {
+      const payload &#x3D; {
+        menu_item_id: this.selectedItemId,
+        ingredients: this.menuItemIngredients
+      };
+      this.dataService.submitIngredientChanges(payload).subscribe(
+        response &#x3D;&gt; {
+          console.log(&#x27;Update successful&#x27;, response);
+        },
+        error &#x3D;&gt; {
+          console.error(&#x27;Update failed&#x27;, error);
+        }
+      );
+    } else {
+      console.error(&#x27;No menu item selected&#x27;);
+    }
+  }
+
+  /**
+   * Submits a request to delete a menu item based on the form&#x27;s validity.
+   */
+  submitDelete(): void {
+    if (this.deleteForm.valid) {
+      let itemId &#x3D; this.deleteForm.get(&#x27;menu_item_id&#x27;)!.value;
+      this.dataService.removeItemFromMenu(itemId).subscribe({
+        next: (res) &#x3D;&gt; {
+         this.openSnackBar(&#x27;Menu item deleted successfully&#x27;);
+          this.loadMenuItems(); 
+        },
+        error: (err) &#x3D;&gt; {
+          console.error(&#x27;Deletion failed&#x27;, err);
+          this.openSnackBar(&#x27;Error deleting menu item&#x27;);
+        }
+      });
+    } else {
+      console.error(&#x27;Form is not valid&#x27;);
+      this.openSnackBar(&#x27;Invalid selection&#x27;);
+    }
+  }
+
+  
+
+  /**
+   * Adds or updates a seasonal menu item based on form validity and date checks.
+   */
+  submit(): void {
+  
+    if(this.seasonal){
+      
+      const item &#x3D; {
+        name: this.menuForm.get(&#x27;name&#x27;)?.value,
+        price: this.menuForm.get(&#x27;price&#x27;)?.value,
+        start_date: this.TodayDate,
+        end_date: this.SeasonalEndDate
+      };
+
+      if (this.SeasonalEndDate &lt;&#x3D; this.TodayDate) {
+        this.openSnackBar(&quot;Error: End date cannot be before current date.&quot;)
+        return;
+      }
+
+      if (this.menuForm.valid) {
+        this.dataService.addSeasonalMenuItem(item).subscribe({
+          next: (res) &#x3D;&gt; console.log(&#x27;Seasonal menu item added successfully&#x27;),
+          error: (err) &#x3D;&gt; console.error(&#x27;Error adding seasonal menu item&#x27;, err)
+        });
+      }
+      else {
+        console.log(&quot;Invalid form&quot;)
+      }
+
+    }
+    // else{
+    if (this.menuForm.valid) {
+        this.dataService.addMenuItem(this.menuForm.value).subscribe({
+          next: (res) &#x3D;&gt; this.openSnackBar(&#x27;Menu item added successfully&#x27;),
+          error: (err) &#x3D;&gt; console.error(&#x27;Error adding menu item&#x27;, err)
+        });
+      }
+      else {
+        console.log(&quot;Invalid form&quot;)
+      }
+    // }
+  }
+  
+  /**
+   * Navigates back to the employee login screen.
+   */
+  goHome(): void {
+    this.router.navigate([&#x27;/employee-login&#x27;]);
+  }
+
+  /**
+   * Toggles the style theme and triggers change detection.
+   */
+  switchStyles(): void {
+    this.Bionic &#x3D; !this.Bionic;
+    this.cdr.detectChanges(); 
+  }
+
+
+  /**
+   * Displays a snack bar with a message.
+   * @param message The message to display.
+   */
+  openSnackBar(message: string) {
+    this._snackbar.open(message, &quot;Done&quot;, {
+      duration: 5000
+    });
+  }
+  
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;!Bionic&quot;&gt;
+  &lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+  
+  &lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+      &lt;mat-sidenav
+        #drawer
+        class&#x3D;&quot;sidenav&quot;
+        fixedInViewport&#x3D;&quot;false&quot;
+        [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+        [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+        [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
+        &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+          &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+        &lt;/div&gt;
+        &lt;mat-nav-list&gt;
+          &lt;button (click)&#x3D;&quot;switchStyles()&quot;&gt;Switch Reading Format&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/product-usage&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Product Usage Chart&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/excess-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Excess Report&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/sales-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Sales Report&lt;/button&gt;
+          &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/sell-together-report&quot;&gt;Sells Together Report&lt;/button&gt;
+          &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/restock-report&quot;&gt;Restock Report&lt;/button&gt;
+          &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/menu-popularity&quot;&gt;Menu Popularity&lt;/button&gt;
+          
+          &lt;button routerLink&#x3D;&quot;/manager-edit-menu&quot; class&#x3D;&quot;sidenav-link-active&quot;&gt;Edit Menu&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/edit-ingredients&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Edit Ingredients&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/cashier-menu&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Cashier Menu&lt;/button&gt;
+          &lt;button routerLink&#x3D;&quot;/order-management&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Kitchen View&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/admin-view&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Admin View&lt;/button&gt;
+  
+          &lt;div class&#x3D;&quot;action-buttons-menu&quot;&gt;
+              &lt;button class&#x3D;&quot;action-buttons&quot; (click)&#x3D;&quot;goHome()&quot;&gt;Logout&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/mat-nav-list&gt;
+      &lt;/mat-sidenav&gt;
+      &lt;mat-sidenav-content&gt;
+          &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+              &lt;button
+              type&#x3D;&quot;button&quot;
+              aria-label&#x3D;&quot;Toggle sidenav&quot;
+              mat-icon-button
+              (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+              &lt;mat-icon class&#x3D;&quot;menu-icon-btn&quot; aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;span class&#x3D;&quot;menu-category-title&quot;&gt;EDIT MENU&lt;/span&gt;
+          &lt;/mat-toolbar&gt;
+          
+          &lt;div class&#x3D;&quot;column-container-1&quot;&gt;
+  
+            &lt;div class&#x3D;&quot;column-33&quot;&gt;
+              &lt;div class&#x3D;&quot;section-heading&quot;&gt;
+                &lt;div class&#x3D;&quot;section-title&quot;&gt;Create Item&lt;/div&gt;
+                &lt;div class&#x3D;&quot;section-desc&quot;&gt;Choose a name, price, category, and ingredients and click the submit button to create a new item and add it to the menu.&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+  
+            &lt;div class&#x3D;&quot;column-66&quot;&gt;
+              &lt;form [formGroup]&#x3D;&quot;menuForm&quot; (ngSubmit)&#x3D;&quot;submit()&quot;&gt;
+                &lt;mat-form-field&gt;
+                  &lt;mat-label&gt;Name:&lt;/mat-label&gt;
+                  &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;name&quot; required&gt;
+                &lt;/mat-form-field&gt;
+                &lt;mat-form-field&gt;
+                  &lt;mat-label&gt;Price:&lt;/mat-label&gt;
+                  &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;price&quot; required pattern&#x3D;&quot;^\d+\.?\d{0,2}$&quot;&gt;
+                &lt;/mat-form-field&gt;
+                &lt;mat-form-field&gt;
+                  &lt;mat-label&gt;Category:&lt;/mat-label&gt;
+                  &lt;mat-select formControlName&#x3D;&quot;category_id&quot; required&gt;
+                    &lt;mat-option *ngFor&#x3D;&quot;let category of categories&quot; [value]&#x3D;&quot;category.id&quot;&gt;{{category.name}}&lt;/mat-option&gt;
+                  &lt;/mat-select&gt;
+                &lt;/mat-form-field&gt;
+                &lt;mat-form-field&gt;
+                  &lt;mat-label&gt;Ingredients:&lt;/mat-label&gt;
+                  &lt;mat-select multiple formControlName&#x3D;&quot;ingredients&quot;&gt;
+                    &lt;mat-option *ngFor&#x3D;&quot;let ingredient of ingredients&quot; [value]&#x3D;&quot;ingredient.id&quot;&gt;{{ingredient.name}}&lt;/mat-option&gt;
+                  &lt;/mat-select&gt;
+                &lt;/mat-form-field&gt;
+                &lt;button class&#x3D;&quot;submit-btn&quot; type&#x3D;&quot;submit&quot;&gt;Add Menu Item&lt;/button&gt;
+              &lt;/form&gt;
+  
+              &lt;div class&#x3D;&quot;datepickers&quot;&gt;
+                &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                  &lt;mat-label&gt;Seasonal Item Expiry Date&lt;/mat-label&gt;
+                  &lt;input matInput [matDatepicker]&#x3D;&quot;startDatePicker&quot; (dateChange)&#x3D;&quot;onSeasonalDateChange($event)&quot; formControlName&#x3D;&quot;startDate&quot;&gt;
+                  &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;startDatePicker&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+                  &lt;mat-datepicker #startDatePicker&gt;&lt;/mat-datepicker&gt;
+                &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+              
+                          
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;container-divider&quot;&gt;&lt;/div&gt;
+            &lt;div class&#x3D;&quot;column-container-1&quot;&gt;
+              &lt;div class&#x3D;&quot;column-33&quot;&gt;
+                &lt;div class&#x3D;&quot;section-heading&quot;&gt;
+                  &lt;div class&#x3D;&quot;section-title&quot;&gt;Delete an Item&lt;/div&gt;
+                  &lt;div class&#x3D;&quot;section-desc&quot;&gt;Choose an item to delete it from the menu.&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;column-66&quot;&gt;
+                &lt;form [formGroup]&#x3D;&quot;deleteForm&quot; (ngSubmit)&#x3D;&quot;submitDelete()&quot;&gt;
+                  &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                    &lt;mat-label&gt;Menu Item:&lt;/mat-label&gt;
+                    &lt;mat-select formControlName&#x3D;&quot;menu_item_id&quot; required&gt;
+                      &lt;mat-option *ngFor&#x3D;&quot;let item of menuItems&quot; [value]&#x3D;&quot;item.id&quot;&gt;{{item.name}}&lt;/mat-option&gt;
+                    &lt;/mat-select&gt;
+                  &lt;/mat-form-field&gt;
+                  &lt;button class&#x3D;&quot;submit-btn&quot; type&#x3D;&quot;submit&quot;&gt;Delete Menu Item&lt;/button&gt;
+                &lt;/form&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;container-divider&quot;&gt;&lt;/div&gt;
+  
+          &lt;div class&#x3D;&quot;column-container-2&quot;&gt;
+
+            &lt;div class&#x3D;&quot;column-1&quot;&gt;
+              &lt;div class&#x3D;&quot;section-heading&quot;&gt;
+                &lt;div class&#x3D;&quot;section-title&quot;&gt;Edit Recipes&lt;/div&gt;
+                &lt;div class&#x3D;&quot;section-desc&quot;&gt;Select a menu item below to view its current ingredients. Type in the new ingredient list and submit to change the item&#x27;s recipe.&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          
+            &lt;div class&#x3D;&quot;column-2&quot;&gt;
+              &lt;div class&#x3D;&quot;select-container&quot;&gt;
+                &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                  &lt;mat-label&gt;Menu Items&lt;/mat-label&gt;
+                  &lt;mat-select (selectionChange)&#x3D;&quot;toggleMenuItem($event.value)&quot;&gt;
+                    &lt;mat-option *ngFor&#x3D;&quot;let item of menuItems&quot; [value]&#x3D;&quot;item&quot;&gt;
+                      {{ item.name }} - {{ item.price | currency }}
+                    &lt;/mat-option&gt;
+                  &lt;/mat-select&gt;
+                &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          
+            &lt;div class&#x3D;&quot;column-3&quot;&gt;
+              &lt;div class&#x3D;&quot;editing-table-container&quot;&gt;
+                &lt;div class&#x3D;&quot;table-column-title&quot;&gt;Current Ingredients:&lt;/div&gt;
+                &lt;div class&#x3D;&quot;current-ingredient-container&quot;&gt;
+                  &lt;ng-container *ngFor&#x3D;&quot;let ingredient of menuItemIngredients; let last &#x3D; last&quot;&gt;
+                    &lt;div class&#x3D;&quot;current-ingredient&quot;&gt;{{ ingredient.name }}{{ !last ? &#x27;, &#x27; : &#x27;&#x27; }}&lt;/div&gt;
+                  &lt;/ng-container&gt;
+                &lt;/div&gt;
+          
+                &lt;div class&#x3D;&quot;table-column-title-2&quot;&gt;New Ingredients:&lt;/div&gt;
+                &lt;div class&#x3D;&quot;new-ingredients-container&quot;&gt;
+                  &lt;div class&#x3D;&quot;new-ingredient&quot; *ngFor&#x3D;&quot;let ingredient of menuItemIngredients; let i &#x3D; index&quot;&gt;
+                    &lt;mat-form-field class&#x3D;&quot;editing-table-form-field&quot; appearance&#x3D;&quot;fill&quot;&gt;
+                      &lt;mat-label&gt;New Name&lt;/mat-label&gt;
+                      &lt;input matInput type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;menuItemIngredients[i].name&quot;&gt;
+                    &lt;/mat-form-field&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          
+                &lt;button class&#x3D;&quot;submit-btn&quot; (click)&#x3D;&quot;submitChanges()&quot;&gt;Submit New Recipe&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          
+          &lt;/div&gt;
+  
+  
+          &lt;ng-content&gt;&lt;/ng-content&gt;
+      &lt;/mat-sidenav-content&gt;
+  &lt;/mat-sidenav-container&gt;
+  
+  &lt;/div&gt;
+  
+  &lt;!-- /&#x3D;/&#x3D;&#x3D;//&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;&#x3D;//&#x3D;&#x3D;//&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;/&#x3D;&#x3D;//&#x3D;/&#x3D;/&#x3D;&#x3D; --&gt;
+  
+  &lt;div *ngIf&#x3D;&quot;Bionic&quot;&gt;
+    &lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+    
+    &lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+        &lt;mat-sidenav
+          #drawer
+          class&#x3D;&quot;sidenav&quot;
+          fixedInViewport&#x3D;&quot;false&quot;
+          [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+          [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+          [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
+          &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+            &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+          &lt;/div&gt;
+          &lt;mat-nav-list&gt;
+            &lt;button (click)&#x3D;&quot;switchStyles()&quot;&gt;Switch Reading Format&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/product-usage&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Product Usage Chart&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/excess-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Excess Report&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/sales-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Sales Report&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/sell-together-report&quot;&gt;Sells Together Report&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/restock-report&quot;&gt;Restock Report&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/order-management&quot;&gt;Manage Orders&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/menu-popularity&quot;&gt;Menu Popularity&lt;/button&gt;  
+            
+            &lt;button routerLink&#x3D;&quot;/manager-edit-menu&quot; class&#x3D;&quot;sidenav-link-active&quot;&gt;Edit Menu&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/edit-ingredients&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Edit Ingredients&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/cashier-menu&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Cashier Menu&lt;/button&gt;
+              &lt;button routerLink&#x3D;&quot;/admin-view&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Admin View&lt;/button&gt;
+    
+            &lt;div class&#x3D;&quot;action-buttons-menu&quot;&gt;
+                &lt;button class&#x3D;&quot;action-buttons&quot; (click)&#x3D;&quot;goHome()&quot;&gt;Logout&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/mat-nav-list&gt;
+        &lt;/mat-sidenav&gt;
+        &lt;mat-sidenav-content&gt;
+            &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+                &lt;button
+                type&#x3D;&quot;button&quot;
+                aria-label&#x3D;&quot;Toggle sidenav&quot;
+                mat-icon-button
+                (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;menu-icon-btn&quot; aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
+                &lt;/button&gt;
+                &lt;span class&#x3D;&quot;menu-category-title&quot; [innerHTML]&#x3D;&quot;&#x27;EDIT MENU&#x27; | bionicReading&quot;&gt;&lt;/span&gt;
+            &lt;/mat-toolbar&gt;
+            
+            &lt;div class&#x3D;&quot;column-container-1&quot;&gt;
+    
+              &lt;div class&#x3D;&quot;column-33&quot;&gt;
+                &lt;div class&#x3D;&quot;section-heading&quot;&gt;
+                  &lt;div class&#x3D;&quot;section-title&quot; [innerHTML]&#x3D;&quot;&#x27;Create Item&#x27; | bionicReading&quot;&gt;&lt;/div&gt;
+                  &lt;div class&#x3D;&quot;section-desc&quot; [innerHTML]&#x3D;&quot;&#x27;Choose a name, price, category, and ingredients and click the submit button to create a new item and add it to the menu.&#x27; | bionicReading&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+    
+              &lt;div class&#x3D;&quot;column-66&quot;&gt;
+                &lt;form [formGroup]&#x3D;&quot;menuForm&quot; (ngSubmit)&#x3D;&quot;submit()&quot;&gt;
+                  &lt;mat-form-field&gt;
+                    &lt;mat-label [innerHTML]&#x3D;&quot;&#x27;Name:&#x27; | bionicReading&quot;&gt;&lt;/mat-label&gt;
+                    &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;name&quot; required&gt;
+                  &lt;/mat-form-field&gt;
+                  &lt;mat-form-field&gt;
+                    &lt;mat-label [innerHTML]&#x3D;&quot;&#x27;Price:&#x27; | bionicReading&quot;&gt;&lt;/mat-label&gt;
+                    &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;price&quot; required pattern&#x3D;&quot;^\d+\.?\d{0,2}$&quot;&gt;
+                  &lt;/mat-form-field&gt;
+                  &lt;mat-form-field&gt;
+                    &lt;mat-label [innerHTML]&#x3D;&quot;&#x27;Category:&#x27; | bionicReading&quot;&gt;&lt;/mat-label&gt;
+                    &lt;mat-select formControlName&#x3D;&quot;category_id&quot; required&gt;
+                      &lt;mat-option *ngFor&#x3D;&quot;let category of categories&quot; [value]&#x3D;&quot;category.id&quot; [innerHTML]&#x3D;&quot;(category.name) | bionicReading&quot;&gt;&lt;/mat-option&gt;
+                    &lt;/mat-select&gt;
+                  &lt;/mat-form-field&gt;
+                  &lt;mat-form-field&gt;
+                    &lt;mat-label [innerHTML]&#x3D;&quot;&#x27;Ingredients:&#x27; | bionicReading&quot;&gt;&lt;/mat-label&gt;
+                    &lt;mat-select multiple formControlName&#x3D;&quot;ingredients&quot;&gt;
+                      &lt;mat-option *ngFor&#x3D;&quot;let ingredient of ingredients&quot; [value]&#x3D;&quot;ingredient.id&quot; [innerHTML]&#x3D;&quot;ingredient.name | bionicReading&quot;&gt;&lt;/mat-option&gt;
+                    &lt;/mat-select&gt;
+                  &lt;/mat-form-field&gt;
+                  &lt;button class&#x3D;&quot;submit-btn&quot; type&#x3D;&quot;submit&quot; [innerHTML]&#x3D;&quot;&#x27;Add Menu Item&#x27; | bionicReading&quot;&gt;&lt;/button&gt;
+                &lt;/form&gt;
+    
+                &lt;div class&#x3D;&quot;datepickers&quot;&gt;
+                  &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+                    &lt;mat-label [innerHTML]&#x3D;&quot;&#x27;Seasonal Item End Date&#x27; | bionicReading&quot;&gt;&lt;/mat-label&gt;
+                    &lt;input matInput [matDatepicker]&#x3D;&quot;startDatePicker&quot; (dateChange)&#x3D;&quot;onSeasonalDateChange($event)&quot; formControlName&#x3D;&quot;startDate&quot;&gt;
+                    &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;startDatePicker&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+                    &lt;mat-datepicker #startDatePicker&gt;&lt;/mat-datepicker&gt;
+                  &lt;/mat-form-field&gt;
+                &lt;/div&gt;
+                
+                            
+              &lt;/div&gt;
+            &lt;/div&gt;
+    
+            &lt;div class&#x3D;&quot;container-divider&quot;&gt;&lt;/div&gt;
+    
+            &lt;div class&#x3D;&quot;column-container-2&quot;&gt;
+    
+              &lt;div class&#x3D;&quot;column-1&quot;&gt;
+                &lt;div class&#x3D;&quot;section-heading&quot;&gt;
+                  &lt;div class&#x3D;&quot;section-title&quot; [innerHTML]&#x3D;&quot;&#x27;Edit Recipes&#x27; | bionicReading&quot;&gt;&lt;/div&gt;
+                  &lt;div class&#x3D;&quot;section-desc&quot; [innerHTML]&#x3D;&quot;&#x27;Select a menu item below to view its current ingredients. Type in the new ingredient list and submit to change the items recipe.&#x27; | bionicReading&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+    
+              &lt;div class&#x3D;&quot;column-2&quot;&gt;
+                &lt;div class&#x3D;&quot;checkbox-container&quot;&gt;
+                  &lt;mat-checkbox class&#x3D;&quot;menu-items-checkbox&quot; [checked]&#x3D;&quot;false&quot; *ngFor&#x3D;&quot;let item of menuItems&quot; (change)&#x3D;&quot;toggleMenuItem(item)&quot;&gt;
+                    &lt;span [innerHTML]&#x3D;&quot; (item.name +  &#x27;-&#x27; + item.price) | bionicReading&quot;&gt;&lt;/span&gt;
+                  &lt;/mat-checkbox&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+    
+              &lt;div class&#x3D;&quot;column-3&quot;&gt;
+                &lt;div class&#x3D;&quot;editing-table-container&quot;&gt;
+                  &lt;div class&#x3D;&quot;table-column-title&quot; [innerHTML]&#x3D;&quot;&#x27;Current Ingredients:&#x27; | bionicReading&quot;&gt;&lt;/div&gt;
+                  &lt;div class&#x3D;&quot;current-ingredient-container&quot;&gt;
+                    &lt;ng-container *ngFor&#x3D;&quot;let ingredient of menuItemIngredients; let last &#x3D; last&quot;&gt;
+                      &lt;div class&#x3D;&quot;current-ingredient&quot; [innerHTML]&#x3D;&quot;(ingredient.name | bionicReading) + (!last ? &#x27;, &#x27; : &#x27;&#x27;)&quot;&gt;&lt;/div&gt;
+                    &lt;/ng-container&gt;
+                  &lt;/div&gt;
+    
+                
+                  &lt;div class&#x3D;&quot;table-column-title-2&quot; [innerHTML]&#x3D;&quot;&#x27;New Ingredients:&#x27; | bionicReading&quot;&gt;&lt;/div&gt;
+                  &lt;div class&#x3D;&quot;new-ingredients-container&quot;&gt;
+                    &lt;div class&#x3D;&quot;new-ingredient&quot; *ngFor&#x3D;&quot;let ingredient of menuItemIngredients; let i &#x3D; index&quot;&gt;
+                      &lt;mat-form-field class&#x3D;&quot;editing-table-form-field&quot; appearance&#x3D;&quot;fill&quot;&gt;
+                        &lt;mat-label [innerHTML]&#x3D;&quot;&#x27;New Name&#x27; | bionicReading&quot;&gt;&lt;/mat-label&gt;
+                        &lt;input matInput type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;menuItemIngredients[i].name&quot;&gt;
+                      &lt;/mat-form-field&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                
+                  &lt;button class&#x3D;&quot;submit-btn&quot; (click)&#x3D;&quot;submitChanges()&quot; [innerHTML]&#x3D;&quot;&#x27;Submit New Recipe&#x27; | bionicReading&quot;&gt;&lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+    
+    
+            &lt;/div&gt;
+    
+            &lt;ng-content&gt;&lt;/ng-content&gt;
+        &lt;/mat-sidenav-content&gt;
+    &lt;/mat-sidenav-container&gt;
+    
+    &lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="!Bionic">  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    <mat-sidenav-container class="sidenav-container">      <mat-sidenav        #drawer        class="sidenav"        fixedInViewport="false"        [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"        [mode]="(isHandset$ | async) ? \'over\' : \'side\'"        [opened]="(isHandset$ | async) === false">        <div class="revs-image">          <img width="200" height="100" src="assets/REVSLogoUpdated.jpg">        </div>        <mat-nav-list>          <button (click)="switchStyles()">Switch Reading Format</button>          <button routerLink="/product-usage" class="sidenav-link">Product Usage Chart</button>          <button routerLink="/excess-report" class="sidenav-link">Excess Report</button>          <button routerLink="/sales-report" class="sidenav-link">Sales Report</button>          <button class="sidenav-link" routerLink="/sell-together-report">Sells Together Report</button>          <button class="sidenav-link" routerLink="/restock-report">Restock Report</button>          <button class="sidenav-link" routerLink="/menu-popularity">Menu Popularity</button>                    <button routerLink="/manager-edit-menu" class="sidenav-link-active">Edit Menu</button>          <button routerLink="/edit-ingredients" class="sidenav-link">Edit Ingredients</button>          <button routerLink="/cashier-menu" class="sidenav-link">Cashier Menu</button>          <button routerLink="/order-management" class="sidenav-link">Kitchen View</button>            <button routerLink="/admin-view" class="sidenav-link">Admin View</button>            <div class="action-buttons-menu">              <button class="action-buttons" (click)="goHome()">Logout</button>          </div>        </mat-nav-list>      </mat-sidenav>      <mat-sidenav-content>          <mat-toolbar color="primary">              <button              type="button"              aria-label="Toggle sidenav"              mat-icon-button              (click)="drawer.toggle()">              <mat-icon class="menu-icon-btn" aria-label="Side nav toggle icon">menu</mat-icon>              </button>              <span class="menu-category-title">EDIT MENU</span>          </mat-toolbar>                    <div class="column-container-1">              <div class="column-33">              <div class="section-heading">                <div class="section-title">Create Item</div>                <div class="section-desc">Choose a name, price, category, and ingredients and click the submit button to create a new item and add it to the menu.</div>              </div>            </div>              <div class="column-66">              <form [formGroup]="menuForm" (ngSubmit)="submit()">                <mat-form-field>                  <mat-label>Name:</mat-label>                  <input matInput type="text" formControlName="name" required>                </mat-form-field>                <mat-form-field>                  <mat-label>Price:</mat-label>                  <input matInput type="text" formControlName="price" required pattern="^\d+\.?\d{0,2}$">                </mat-form-field>                <mat-form-field>                  <mat-label>Category:</mat-label>                  <mat-select formControlName="category_id" required>                    <mat-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</mat-option>                  </mat-select>                </mat-form-field>                <mat-form-field>                  <mat-label>Ingredients:</mat-label>                  <mat-select multiple formControlName="ingredients">                    <mat-option *ngFor="let ingredient of ingredients" [value]="ingredient.id">{{ingredient.name}}</mat-option>                  </mat-select>                </mat-form-field>                <button class="submit-btn" type="submit">Add Menu Item</button>              </form>                <div class="datepickers">                <mat-form-field appearance="fill">                  <mat-label>Seasonal Item Expiry Date</mat-label>                  <input matInput [matDatepicker]="startDatePicker" (dateChange)="onSeasonalDateChange($event)" formControlName="startDate">                  <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>                  <mat-datepicker #startDatePicker></mat-datepicker>                </mat-form-field>              </div>                                                    </div>          </div>          <div class="container-divider"></div>            <div class="column-container-1">              <div class="column-33">                <div class="section-heading">                  <div class="section-title">Delete an Item</div>                  <div class="section-desc">Choose an item to delete it from the menu.</div>                </div>              </div>              <div class="column-66">                <form [formGroup]="deleteForm" (ngSubmit)="submitDelete()">                  <mat-form-field appearance="fill">                    <mat-label>Menu Item:</mat-label>                    <mat-select formControlName="menu_item_id" required>                      <mat-option *ngFor="let item of menuItems" [value]="item.id">{{item.name}}</mat-option>                    </mat-select>                  </mat-form-field>                  <button class="submit-btn" type="submit">Delete Menu Item</button>                </form>              </div>            </div>          <div class="container-divider"></div>            <div class="column-container-2">            <div class="column-1">              <div class="section-heading">                <div class="section-title">Edit Recipes</div>                <div class="section-desc">Select a menu item below to view its current ingredients. Type in the new ingredient list and submit to change the item\'s recipe.</div>              </div>            </div>                      <div class="column-2">              <div class="select-container">                <mat-form-field appearance="fill">                  <mat-label>Menu Items</mat-label>                  <mat-select (selectionChange)="toggleMenuItem($event.value)">                    <mat-option *ngFor="let item of menuItems" [value]="item">                      {{ item.name }} - {{ item.price | currency }}                    </mat-option>                  </mat-select>                </mat-form-field>              </div>            </div>                      <div class="column-3">              <div class="editing-table-container">                <div class="table-column-title">Current Ingredients:</div>                <div class="current-ingredient-container">                  <ng-container *ngFor="let ingredient of menuItemIngredients; let last = last">                    <div class="current-ingredient">{{ ingredient.name }}{{ !last ? \', \' : \'\' }}</div>                  </ng-container>                </div>                          <div class="table-column-title-2">New Ingredients:</div>                <div class="new-ingredients-container">                  <div class="new-ingredient" *ngFor="let ingredient of menuItemIngredients; let i = index">                    <mat-form-field class="editing-table-form-field" appearance="fill">                      <mat-label>New Name</mat-label>                      <input matInput type="text" [(ngModel)]="menuItemIngredients[i].name">                    </mat-form-field>                  </div>                </div>                          <button class="submit-btn" (click)="submitChanges()">Submit New Recipe</button>              </div>            </div>                    </div>              <ng-content></ng-content>      </mat-sidenav-content>  </mat-sidenav-container>    </div>    <!-- /=/==//=/=/=/=/=/==//==//=/=/=/=/=/=/=/==//=/=/== -->    <div *ngIf="Bionic">    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">        <mat-sidenav-container class="sidenav-container">        <mat-sidenav          #drawer          class="sidenav"          fixedInViewport="false"          [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"          [mode]="(isHandset$ | async) ? \'over\' : \'side\'"          [opened]="(isHandset$ | async) === false">          <div class="revs-image">            <img width="200" height="100" src="assets/REVSLogoUpdated.jpg">          </div>          <mat-nav-list>            <button (click)="switchStyles()">Switch Reading Format</button>            <button routerLink="/product-usage" class="sidenav-link">Product Usage Chart</button>            <button routerLink="/excess-report" class="sidenav-link">Excess Report</button>            <button routerLink="/sales-report" class="sidenav-link">Sales Report</button>            <button class="sidenav-link" routerLink="/sell-together-report">Sells Together Report</button>            <button class="sidenav-link" routerLink="/restock-report">Restock Report</button>            <button class="sidenav-link" routerLink="/order-management">Manage Orders</button>            <button class="sidenav-link" routerLink="/menu-popularity">Menu Popularity</button>                          <button routerLink="/manager-edit-menu" class="sidenav-link-active">Edit Menu</button>            <button routerLink="/edit-ingredients" class="sidenav-link">Edit Ingredients</button>            <button routerLink="/cashier-menu" class="sidenav-link">Cashier Menu</button>              <button routerLink="/admin-view" class="sidenav-link">Admin View</button>                <div class="action-buttons-menu">                <button class="action-buttons" (click)="goHome()">Logout</button>            </div>          </mat-nav-list>        </mat-sidenav>        <mat-sidenav-content>            <mat-toolbar color="primary">                <button                type="button"                aria-label="Toggle sidenav"                mat-icon-button                (click)="drawer.toggle()">                <mat-icon class="menu-icon-btn" aria-label="Side nav toggle icon">menu</mat-icon>                </button>                <span class="menu-category-title" [innerHTML]="\'EDIT MENU\' | bionicReading"></span>            </mat-toolbar>                        <div class="column-container-1">                  <div class="column-33">                <div class="section-heading">                  <div class="section-title" [innerHTML]="\'Create Item\' | bionicReading"></div>                  <div class="section-desc" [innerHTML]="\'Choose a name, price, category, and ingredients and click the submit button to create a new item and add it to the menu.\' | bionicReading"></div>                </div>              </div>                  <div class="column-66">                <form [formGroup]="menuForm" (ngSubmit)="submit()">                  <mat-form-field>                    <mat-label [innerHTML]="\'Name:\' | bionicReading"></mat-label>                    <input matInput type="text" formControlName="name" required>                  </mat-form-field>                  <mat-form-field>                    <mat-label [innerHTML]="\'Price:\' | bionicReading"></mat-label>                    <input matInput type="text" formControlName="price" required pattern="^\d+\.?\d{0,2}$">                  </mat-form-field>                  <mat-form-field>                    <mat-label [innerHTML]="\'Category:\' | bionicReading"></mat-label>                    <mat-select formControlName="category_id" required>                      <mat-option *ngFor="let category of categories" [value]="category.id" [innerHTML]="(category.name) | bionicReading"></mat-option>                    </mat-select>                  </mat-form-field>                  <mat-form-field>                    <mat-label [innerHTML]="\'Ingredients:\' | bionicReading"></mat-label>                    <mat-select multiple formControlName="ingredients">                      <mat-option *ngFor="let ingredient of ingredients" [value]="ingredient.id" [innerHTML]="ingredient.name | bionicReading"></mat-option>                    </mat-select>                  </mat-form-field>                  <button class="submit-btn" type="submit" [innerHTML]="\'Add Menu Item\' | bionicReading"></button>                </form>                    <div class="datepickers">                  <mat-form-field appearance="fill">                    <mat-label [innerHTML]="\'Seasonal Item End Date\' | bionicReading"></mat-label>                    <input matInput [matDatepicker]="startDatePicker" (dateChange)="onSeasonalDateChange($event)" formControlName="startDate">                    <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>                    <mat-datepicker #startDatePicker></mat-datepicker>                  </mat-form-field>                </div>                                                          </div>            </div>                <div class="container-divider"></div>                <div class="column-container-2">                  <div class="column-1">                <div class="section-heading">                  <div class="section-title" [innerHTML]="\'Edit Recipes\' | bionicReading"></div>                  <div class="section-desc" [innerHTML]="\'Select a menu item below to view its current ingredients. Type in the new ingredient list and submit to change the items recipe.\' | bionicReading"></div>                </div>              </div>                  <div class="column-2">                <div class="checkbox-container">                  <mat-checkbox class="menu-items-checkbox" [checked]="false" *ngFor="let item of menuItems" (change)="toggleMenuItem(item)">                    <span [innerHTML]=" (item.name +  \'-\' + item.price) | bionicReading"></span>                  </mat-checkbox>                </div>              </div>                  <div class="column-3">                <div class="editing-table-container">                  <div class="table-column-title" [innerHTML]="\'Current Ingredients:\' | bionicReading"></div>                  <div class="current-ingredient-container">                    <ng-container *ngFor="let ingredient of menuItemIngredients; let last = last">                      <div class="current-ingredient" [innerHTML]="(ingredient.name | bionicReading) + (!last ? \', \' : \'\')"></div>                    </ng-container>                  </div>                                      <div class="table-column-title-2" [innerHTML]="\'New Ingredients:\' | bionicReading"></div>                  <div class="new-ingredients-container">                    <div class="new-ingredient" *ngFor="let ingredient of menuItemIngredients; let i = index">                      <mat-form-field class="editing-table-form-field" appearance="fill">                        <mat-label [innerHTML]="\'New Name\' | bionicReading"></mat-label>                        <input matInput type="text" [(ngModel)]="menuItemIngredients[i].name">                      </mat-form-field>                    </div>                  </div>                                  <button class="submit-btn" (click)="submitChanges()" [innerHTML]="\'Submit New Recipe\' | bionicReading"></button>                </div>              </div>                    </div>                <ng-content></ng-content>        </mat-sidenav-content>    </mat-sidenav-container>        </div></div>'
+    var COMPONENTS = [{'name': 'AddEmployeeComponent', 'selector': 'app-add-employee'},{'name': 'AddOrderDialogComponentComponent', 'selector': 'app-add-order-dialog-component'},{'name': 'AdminViewComponent', 'selector': 'app-admin-view'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CashierCartComponent', 'selector': 'app-cashier-cart'},{'name': 'CashierCheckoutViewComponent', 'selector': 'app-cashier-checkout-view'},{'name': 'CashierCustomizeItemComponent', 'selector': 'app-cashier-customize-item'},{'name': 'CashierMenuComponent', 'selector': 'app-cashier-menu'},{'name': 'CustomerCartComponent', 'selector': 'app-customer-cart'},{'name': 'CustomerCheckoutViewComponent', 'selector': 'app-customer-checkout-view'},{'name': 'CustomerCustomizeItemComponent', 'selector': 'app-customer-customize-item'},{'name': 'CustomerLandingComponent', 'selector': 'app-customer-landing'},{'name': 'CustomerMenuComponent', 'selector': 'app-customer-menu'},{'name': 'EditEmployeeDialogComponent', 'selector': 'app-edit-employee-dialog'},{'name': 'EditOrderComponent', 'selector': 'app-edit-order'},{'name': 'EmployeeLoginComponent', 'selector': 'app-employee-login'},{'name': 'ExcessReportComponent', 'selector': 'app-excess-report'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerEditIngredientsComponent', 'selector': 'app-manager-edit-ingredients'},{'name': 'ManagerEditMenuComponent', 'selector': 'app-manager-edit-menu'},{'name': 'ManagerViewComponent', 'selector': 'app-manager-view'},{'name': 'MenuBoardComponent', 'selector': 'app-menu-board'},{'name': 'MenuPopularityComponent', 'selector': 'app-menu-popularity'},{'name': 'OrderEditDialogComponent', 'selector': 'app-order-edit-dialog'},{'name': 'OrderManagementComponent', 'selector': 'app-order-management'},{'name': 'ProductUsageComponent', 'selector': 'app-product-usage'},{'name': 'RemoveOrderItemsDialogComponent', 'selector': 'app-remove-order-items-dialog'},{'name': 'RestockReportComponent', 'selector': 'app-restock-report'},{'name': 'SalesReportComponent', 'selector': 'app-sales-report'},{'name': 'SellTogetherReportComponent', 'selector': 'app-sell-together-report'},{'name': 'TrevorCartComponent', 'selector': 'app-trevor-cart'},{'name': 'TrevorCashierComponent', 'selector': 'app-trevor-cashier'},{'name': 'TrevorCheckoutComponent', 'selector': 'app-trevor-checkout'},{'name': 'TrevorCustomizeItemComponent', 'selector': 'app-trevor-customize-item'},{'name': 'ViewCustomizationsComponent', 'selector': 'app-view-customizations'}];
+    var DIRECTIVES = [{'name': 'LogoutDirective', 'selector': '[appLogout]'}];
+    var ACTUAL_COMPONENT = {'name': 'ManagerEditMenuComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ManagerEditMenuComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

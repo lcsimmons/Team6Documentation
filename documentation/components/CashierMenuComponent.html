@@ -1,0 +1,2435 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CashierMenuComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/cashier-menu/cashier-menu.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for the cashier to manage menu selections and operations.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-cashier-menu</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./cashier-menu.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./cashier-menu.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categories" >categories</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#drawer" >drawer</a>
+                            </li>
+                            <li>
+                                <a href="#isAccessibilityToolbarContainerVisible" >isAccessibilityToolbarContainerVisible</a>
+                            </li>
+                            <li>
+                                <a href="#isHandset$" >isHandset$</a>
+                            </li>
+                            <li>
+                                <a href="#menuItems" >menuItems</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#readContents" >readContents</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#selectedCategory" >selectedCategory</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#selectedMenuItem" >selectedMenuItem</a>
+                            </li>
+                            <li>
+                                <a href="#selectedTextSize" >selectedTextSize</a>
+                            </li>
+                            <li>
+                                <a href="#textsizers" >textsizers</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addToCart" >addToCart</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getTextFromElement" >getTextFromElement</a>
+                            </li>
+                            <li>
+                                <a href="#goHome" >goHome</a>
+                            </li>
+                            <li>
+                                <a href="#isCategorySelected" >isCategorySelected</a>
+                            </li>
+                            <li>
+                                <a href="#isItemSelected" >isItemSelected</a>
+                            </li>
+                            <li>
+                                <a href="#makeCombo" >makeCombo</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSeeCart" >onSeeCart</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectCategory" >onSelectCategory</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectMenuItem" >onSelectMenuItem</a>
+                            </li>
+                            <li>
+                                <a href="#openSnackBar" >openSnackBar</a>
+                            </li>
+                            <li>
+                                <a href="#setTextSize" >setTextSize</a>
+                            </li>
+                            <li>
+                                <a href="#speakText" >speakText</a>
+                            </li>
+                            <li>
+                                <a href="#toggleAccessibilityToolbarContainer" >toggleAccessibilityToolbarContainer</a>
+                            </li>
+                            <li>
+                                <a href="#updateQuantity" >updateQuantity</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, router: Router, breakpointObserver: BreakpointObserver, _snackBar: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:82</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>breakpointObserver</td>
+                                                  
+                                                        <td>
+                                                                    <code>BreakpointObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addToCart"></a>
+                    <span class="name">
+                        <span ><b>addToCart</b></span>
+                        <a href="#addToCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addToCart()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="206"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:206</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Adds a selected menu item to the cart.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTextFromElement"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getTextFromElement</b></span>
+                        <a href="#getTextFromElement"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTextFromElement(element: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="116"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:116</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Recursively retrieves text content from an HTML element, including its children.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>element</td>
+                                            <td>
+                                                        <code>HTMLElement</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The HTMLElement from which to extract text.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Concatenated text of the element and its children.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goHome"></a>
+                    <span class="name">
+                        <span ><b>goHome</b></span>
+                        <a href="#goHome"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goHome()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="219"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:219</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Logs out the user and navigates to the login screen.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCategorySelected"></a>
+                    <span class="name">
+                        <span ><b>isCategorySelected</b></span>
+                        <a href="#isCategorySelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isCategorySelected(category: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="182"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:182</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if a category is currently selected.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>category</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The category to check.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>True if the category is selected, false otherwise.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isItemSelected"></a>
+                    <span class="name">
+                        <span ><b>isItemSelected</b></span>
+                        <a href="#isItemSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isItemSelected(item: <a href="../interfaces/MenuItem.html" target="_self">MenuItem</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="191"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:191</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if a menu item is selected.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="../interfaces/MenuItem.html" target="_self" >MenuItem</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The item to check.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>True if the item is selected, false otherwise.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="makeCombo"></a>
+                    <span class="name">
+                        <span ><b>makeCombo</b></span>
+                        <a href="#makeCombo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>makeCombo()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="227"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:227</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Converts a selected menu item into a combo by adding fries and a drink.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the component by selecting the &#39;Burger&#39; category by default.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSeeCart"></a>
+                    <span class="name">
+                        <span ><b>onSeeCart</b></span>
+                        <a href="#onSeeCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSeeCart()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="198"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:198</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates to the cashier cart view.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectCategory"></a>
+                    <span class="name">
+                        <span ><b>onSelectCategory</b></span>
+                        <a href="#onSelectCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectCategory(category: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="143"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches menu items for a selected category.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>category</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The category to fetch menu items for.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectMenuItem"></a>
+                    <span class="name">
+                        <span ><b>onSelectMenuItem</b></span>
+                        <a href="#onSelectMenuItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectMenuItem(item: <a href="../interfaces/MenuItem.html" target="_self">MenuItem</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="169"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:169</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Selects or deselects a menu item.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="../interfaces/MenuItem.html" target="_self" >MenuItem</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The menu item to select or deselect.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openSnackBar"></a>
+                    <span class="name">
+                        <span ><b>openSnackBar</b></span>
+                        <a href="#openSnackBar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openSnackBar(message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="246"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:246</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Displays a snack bar with a message.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>message</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The message to display.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTextSize"></a>
+                    <span class="name">
+                        <span ><b>setTextSize</b></span>
+                        <a href="#setTextSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setTextSize(cssClass: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sets the text size based on the selected CSS class.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>cssClass</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The CSS class that defines the text size.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="speakText"></a>
+                    <span class="name">
+                        <span ><b>speakText</b></span>
+                        <a href="#speakText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>speakText()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="101"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Uses the Web Speech API to speak the text content of selected elements.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleAccessibilityToolbarContainer"></a>
+                    <span class="name">
+                        <span ><b>toggleAccessibilityToolbarContainer</b></span>
+                        <a href="#toggleAccessibilityToolbarContainer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleAccessibilityToolbarContainer()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles the visibility of the accessibility toolbar.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateQuantity"></a>
+                    <span class="name">
+                        <span ><b>updateQuantity</b></span>
+                        <a href="#updateQuantity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateQuantity(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="135"
+                                    class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:135</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates the quantity and total price for a menu item.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The menu item to update.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categories"></a>
+                    <span class="name">
+                        <span ><b>categories</b></span>
+                        <a href="#categories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;Burger&#x27;, &#x27;Sandwich&#x27;, &#x27;Value Meal&#x27;, &#x27;Basket&#x27;, &#x27;Side&#x27;, &#x27;Shakes &amp; More&#x27;, &#x27;Beverage&#x27;, &#x27;Extras&#x27;, &#x27;Sauces&#x27;, &#x27;Seasonal&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drawer"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>drawer</b></span>
+                        <a href="#drawer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSidenav</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;drawer&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAccessibilityToolbarContainerVisible"></a>
+                    <span class="name">
+                        <span ><b>isAccessibilityToolbarContainerVisible</b></span>
+                        <a href="#isAccessibilityToolbarContainerVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHandset$"></a>
+                    <span class="name">
+                        <span ><b>isHandset$</b></span>
+                        <a href="#isHandset$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Observable to determine if the device is a handset.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuItems"></a>
+                    <span class="name">
+                        <span ><b>menuItems</b></span>
+                        <a href="#menuItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MenuItem[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="readContents"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>readContents</b></span>
+                        <a href="#readContents"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>QueryList&lt;ElementRef&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChildren(&#x27;readContent&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedCategory"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>selectedCategory</b></span>
+                        <a href="#selectedCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedMenuItem"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>selectedMenuItem</b></span>
+                        <a href="#selectedMenuItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/MenuItem.html" target="_self" >MenuItem</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedTextSize"></a>
+                    <span class="name">
+                        <span ><b>selectedTextSize</b></span>
+                        <a href="#selectedTextSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;text-normal&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The currently selected text size for display.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="textsizers"></a>
+                    <span class="name">
+                        <span ><b>textsizers</b></span>
+                        <a href="#textsizers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    { size: &#x27;Normal&#x27;, cssClass: &#x27;text-normal&#x27; },
+    { size: &#x27;Large&#x27;, cssClass: &#x27;text-large&#x27; },
+    { size: &#x27;Extra Large&#x27;, cssClass: &#x27;text-extra-large&#x27; }
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/cashier-menu/cashier-menu.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array of text size options available for screen display.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, ViewChildren, QueryList, ElementRef } from &#x27;@angular/core&#x27;;
+import { DataService } from &#x27;../data.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
+import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
+import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+
+/**
+ * Interface for menu item objects
+ */
+export interface MenuItem {
+  id: number;
+  name: string; 
+  price: number;
+  quantity: number;
+}
+
+/**
+ * Component for the cashier to manage menu selections and operations.
+ */
+@Component({
+  selector: &#x27;app-cashier-menu&#x27;,
+  templateUrl: &#x27;./cashier-menu.component.html&#x27;,
+  styleUrls: [&#x27;./cashier-menu.component.css&#x27;],
+})
+export class CashierMenuComponent implements OnInit {
+  @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+  // -----
+  // @ViewChild(&#x27;readContent&#x27;, { static: true }) readContent!: ElementRef;
+  @ViewChildren(&#x27;readContent&#x27;) readContents!: QueryList&lt;ElementRef&gt;;
+
+
+  menuItems: MenuItem[] &#x3D; [];
+  selectedMenuItem?: MenuItem;
+  selectedCategory?: string;
+
+
+  categories: string[] &#x3D; [&#x27;Burger&#x27;, &#x27;Sandwich&#x27;, &#x27;Value Meal&#x27;, &#x27;Basket&#x27;, &#x27;Side&#x27;, &#x27;Shakes &amp; More&#x27;, &#x27;Beverage&#x27;, &#x27;Extras&#x27;, &#x27;Sauces&#x27;, &#x27;Seasonal&#x27;];
+
+  /**
+   * Observable to determine if the device is a handset.
+   */
+  isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    );
+
+  /* accesibility toolbar code here */
+  isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
+
+  /**
+   * Toggles the visibility of the accessibility toolbar.
+   */
+  toggleAccessibilityToolbarContainer(): void {
+    this.isAccessibilityToolbarContainerVisible &#x3D; !this.isAccessibilityToolbarContainerVisible;
+    console.log(&#x27;Toolbar visibility:&#x27;, this.isAccessibilityToolbarContainerVisible);
+  }
+  
+   /**
+   * Array of text size options available for screen display.
+   */
+   textsizers &#x3D; [
+    { size: &#x27;Normal&#x27;, cssClass: &#x27;text-normal&#x27; },
+    { size: &#x27;Large&#x27;, cssClass: &#x27;text-large&#x27; },
+    { size: &#x27;Extra Large&#x27;, cssClass: &#x27;text-extra-large&#x27; }
+    ];
+    
+    /**
+     * The currently selected text size for display.
+     */
+    selectedTextSize: string &#x3D; &#x27;text-normal&#x27;;
+    
+    /**
+     * Sets the text size based on the selected CSS class.
+     * @param cssClass The CSS class that defines the text size.
+     */
+    setTextSize(cssClass: string): void {
+      this.selectedTextSize &#x3D; cssClass;
+    }
+    
+
+  /* end accessibility toolbar code */
+
+
+
+  constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver, private _snackBar: MatSnackBar) { }
+
+  /**
+   * Initializes the component by selecting the &#x27;Burger&#x27; category by default.
+   */
+  ngOnInit(): void {
+    this.onSelectCategory(&quot;Burger&quot;);
+  }
+
+  /**
+   * Uses the Web Speech API to speak the text content of selected elements.
+   */
+  speakText(): void {
+    let fullText &#x3D; &#x27;&#x27;;
+    this.readContents.forEach((elementRef) &#x3D;&gt; {
+      fullText +&#x3D; this.getTextFromElement(elementRef.nativeElement) + &#x27; &#x27;;
+    });
+
+    const utterance &#x3D; new SpeechSynthesisUtterance(fullText);
+    window.speechSynthesis.speak(utterance);
+  }
+
+  /**
+   * Recursively retrieves text content from an HTML element, including its children.
+   * @param element The HTMLElement from which to extract text.
+   * @returns Concatenated text of the element and its children.
+   */
+  private getTextFromElement(element: HTMLElement): string {
+    let text &#x3D; &quot;&quot;;
+    const children &#x3D; Array.from(element.childNodes);
+    children.forEach((node) &#x3D;&gt; {
+      if (node.nodeType &#x3D;&#x3D;&#x3D; Node.TEXT_NODE) {
+        text +&#x3D; node.textContent?.trim() + &quot; &quot;;
+        text +&#x3D; &quot;. &quot;;
+      } else if (node.nodeType &#x3D;&#x3D;&#x3D; Node.ELEMENT_NODE) {
+        text +&#x3D; this.getTextFromElement(node as HTMLElement);
+      }
+    });
+    console.log(&#x27;Text: &#x27;, text);
+    return text;
+  }
+
+  /**
+   * Updates the quantity and total price for a menu item.
+   * @param item The menu item to update.
+   */
+  updateQuantity(item: any): void {
+    item.totalPrice &#x3D; item.price * item.quantity;
+  }
+
+  /**
+   * Fetches menu items for a selected category.
+   * @param category The category to fetch menu items for.
+   */
+  onSelectCategory(category: string): void {
+    this.selectedCategory &#x3D; category;
+    this.dataService.getMenuItemsByCategory(category).subscribe(
+      (items: any[]) &#x3D;&gt; {
+        if (Array.isArray(items)) {
+          this.menuItems &#x3D; items.map(item &#x3D;&gt; ({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            quantity: 1
+          }));
+        } else {
+          console.error(&#x27;Data received from API is not an array:&#x27;, items);
+        
+        }
+      },
+      error &#x3D;&gt; {
+        console.error(&#x27;Error fetching menu items:&#x27;, error);
+      }
+    );
+  }
+
+  /**
+   * Selects or deselects a menu item.
+   * @param item The menu item to select or deselect.
+   */
+  onSelectMenuItem(item: MenuItem): void {
+    if (this.selectedMenuItem &amp;&amp; this.selectedMenuItem.id &#x3D;&#x3D;&#x3D; item.id) {
+      this.selectedMenuItem &#x3D; undefined;
+    } else {
+      this.selectedMenuItem &#x3D; item;
+    }
+  }
+
+  /**
+   * Checks if a category is currently selected.
+   * @param category The category to check.
+   * @returns True if the category is selected, false otherwise.
+   */
+  isCategorySelected(category: string): boolean {
+    return this.selectedCategory &#x3D;&#x3D; category;
+  }
+
+  /**
+   * Checks if a menu item is selected.
+   * @param item The item to check.
+   * @returns True if the item is selected, false otherwise.
+   */
+  isItemSelected(item: MenuItem): boolean {
+    return this.selectedMenuItem?.name &#x3D;&#x3D;&#x3D; item.name;
+  }
+
+  /**
+   * Navigates to the cashier cart view.
+   */
+  onSeeCart(): void {
+    this.drawer.close();
+    this.router.navigate([&#x27;/cashier-cart&#x27;]);
+  }
+
+  /**
+   * Adds a selected menu item to the cart.
+   */
+  addToCart(): void {
+    if (this.selectedMenuItem &amp;&amp; this.selectedMenuItem.quantity &gt; 0) {
+      for (let i &#x3D; 0; i &lt; this.selectedMenuItem.quantity; i++) {
+        this.dataService.addToCart(this.selectedMenuItem);
+      }
+      this.selectedMenuItem &#x3D; undefined;
+      this.openSnackBar(&quot;Item added to cart.&quot;)
+    }
+  }
+
+  /**
+   * Logs out the user and navigates to the login screen.
+   */
+  goHome(): void {
+    this.dataService.clearCart();
+    this.router.navigate([&#x27;/employee-login&#x27;]);
+  }
+
+  /**
+   * Converts a selected menu item into a combo by adding fries and a drink.
+   */
+  makeCombo(): void {
+    if (this.selectedMenuItem) {
+      // Fetch fries and 20 oz fountain drink items from data
+      const friesItem: MenuItem &#x3D; { id: 14, name: &#x27;French Fries&#x27;, price: 1.99, quantity: 1 };
+      const drinkItem: MenuItem &#x3D; { id: 25, name: &#x27;20 oz. Fountain Drink&#x27;, price: 1.99, quantity: 1 };
+
+      // Add selected item, fries, and drink to the cart
+      this.dataService.addToCart(this.selectedMenuItem);
+      this.dataService.addToCart(friesItem);
+      this.dataService.addToCart(drinkItem);
+
+      this.openSnackBar(&quot;Item updated as a combo.&quot;)
+    }
+  }
+
+  /**
+   * Displays a snack bar with a message.
+   * @param message The message to display.
+   */
+  openSnackBar(message: string) {
+    this._snackBar.open(message, &quot;Done&quot;, {
+      duration: 5000
+    });
+  }
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+
+&lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+  &lt;mat-sidenav
+    #drawer
+    class&#x3D;&quot;sidenav&quot;
+    fixedInViewport&#x3D;&quot;false&quot;
+    [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+    [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+    [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
+    &lt;div class&#x3D;&quot;icons-toolbar&quot;&gt;
+      &lt;button mat-icon-button (click)&#x3D;&quot;goHome()&quot;&gt;
+        &lt;mat-icon aria-label&#x3D;&quot;Log out&quot;&gt;logout&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      
+      &lt;button mat-icon-button class&#x3D;&quot;shopping-cart-button&quot; (click)&#x3D;&quot;onSeeCart()&quot;&gt;
+        &lt;mat-icon aria-label&#x3D;&quot;See shopping cart&quot;&gt;shopping_cart&lt;/mat-icon&gt;
+      &lt;/button&gt;
+  
+      &lt;button mat-icon-button (click)&#x3D;&quot;toggleAccessibilityToolbarContainer()&quot;&gt;
+        &lt;mat-icon aria-label&#x3D;&quot;Toggle accessibility toolbar&quot;&gt;{{ isAccessibilityToolbarContainerVisible ? &#x27;close&#x27; : &#x27;settings_accessibility&#x27; }}&lt;/mat-icon&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+      &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+    &lt;/div&gt;
+    &lt;mat-nav-list&gt;
+      &lt;button *ngFor&#x3D;&quot;let category of categories&quot;
+        (click)&#x3D;&quot;onSelectCategory(category)&quot;
+        [ngClass]&#x3D;&quot;{&#x27;sidenav-link&#x27;: true, &#x27;sidenav-link-active&#x27;: isCategorySelected(category)}&quot; #readContent&gt;
+          {{ category }}
+        &lt;/button&gt;
+        &lt;button routerLink&#x3D;&quot;/order-management&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Kitchen View&lt;/button&gt;
+
+      
+    &lt;/mat-nav-list&gt;
+  &lt;/mat-sidenav&gt;
+  &lt;mat-sidenav-content&gt;
+    &lt;div class&#x3D;&quot;accessibility-toolbar-container&quot; *ngIf&#x3D;&quot;isAccessibilityToolbarContainerVisible&quot;&gt;
+
+      &lt;div class&#x3D;&quot;accessibility-toolbar&quot;&gt;
+
+        &lt;div class&#x3D;&quot;text-sizer-dropdown-section&quot;&gt;
+          &lt;mat-form-field class&#x3D;&quot;text-sizer-form-field&quot;&gt;
+              &lt;mat-label&gt;Select text size&lt;/mat-label&gt;
+              &lt;mat-select (selectionChange)&#x3D;&quot;setTextSize($event.value.cssClass)&quot;&gt;
+                &lt;mat-option *ngFor&#x3D;&quot;let option of textsizers&quot; [value]&#x3D;&quot;option&quot;&gt;
+                      {{ option.size }}
+                  &lt;/mat-option&gt;
+              &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+
+    
+
+        &lt;div class&#x3D;&quot;screen-reader-section&quot; #readContent&gt;
+          &lt;button mat-button class&#x3D;&quot;accessibility-toolbar-btn&quot; (click)&#x3D;&quot;speakText()&quot; &gt;
+              Activate screenreader
+          &lt;/button&gt;
+      &lt;/div&gt;
+      
+      
+
+        &lt;div class&#x3D;&quot;keyboard-shortcuts-section&quot; #readContent&gt;
+          &lt;button mat-button class&#x3D;&quot;accessibility-toolbar-btn&quot; &gt;Keyboard Shortcuts&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;!-- &lt;div class&#x3D;&quot;translate-dropdown-section&quot;&gt;
+          &lt;mat-form-field class&#x3D;&quot;translate-dropdown-form-field&quot;&gt;
+            &lt;mat-label&gt;Translate API&lt;/mat-label&gt;
+            &lt;mat-select&gt;
+                &lt;mat-option *ngFor&#x3D;&quot;let option of textsizers&quot; [value]&#x3D;&quot;option.size&quot; class&#x3D;&quot;text-sizer-form-field&quot;&gt;
+                    {{ option.size }}
+                &lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+        &lt;/mat-form-field&gt;
+        &lt;/div&gt; --&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;main-content&quot;&gt;
+      &lt;div class&#x3D;&quot;main-content-inner&quot;&gt;
+        &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+          &lt;button
+          type&#x3D;&quot;button&quot;
+          aria-label&#x3D;&quot;Toggle sidenav&quot;
+          mat-icon-button
+          (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+          &lt;mat-icon aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
+          &lt;/button&gt;
+          &lt;span class&#x3D;&quot;menu-category-title&quot; #readContent&gt;
+            {{ selectedCategory }}
+          &lt;/span&gt;
+
+          &lt;div class&#x3D;&quot;toolbar-btn-container&quot; #readContent&gt;
+            &lt;button class&#x3D;&quot;toolbar-btn&quot; (click)&#x3D;&quot;addToCart()&quot; [disabled]&#x3D;&quot;!selectedMenuItem&quot;&gt;Add to Cart&lt;/button&gt;
+            &lt;button class&#x3D;&quot;toolbar-btn&quot; (click)&#x3D;&quot;makeCombo()&quot; [disabled]&#x3D;&quot;!selectedMenuItem&quot;&gt;Make it a Combo&lt;/button&gt;
+          &lt;/div&gt;
+
+        &lt;/mat-toolbar&gt;
+
+
+        &lt;ul&gt;
+          &lt;div class&#x3D;&quot;menu-item-container&quot;&gt;
+            &lt;li *ngFor&#x3D;&quot;let item of menuItems&quot;&gt;
+              &lt;button class&#x3D;&quot;menu-item-btn&quot; (click)&#x3D;&quot;onSelectMenuItem(item)&quot; [ngClass]&#x3D;&quot;{&#x27;selected-item&#x27;: isItemSelected(item)}&quot;&gt;
+                &lt;div class&#x3D;&quot;menu-item-id&quot;  #readContent&gt;
+                  {{item.id + 1}}.
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;menu-item-name&quot; [ngClass]&#x3D;&quot;selectedTextSize&quot; #readContent&gt;
+                  {{ item.name }}
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;menu-item-btn-price&quot; [ngClass]&#x3D;&quot;selectedTextSize&quot; #readContent&gt;
+                  {{ item.price | currency:&#x27;USD&#x27;:&#x27;symbol&#x27;:&#x27;1.2-2&#x27; }}
+                &lt;/div&gt;                                                   
+                &lt;div class&#x3D;&quot;quantity-input-container&quot;&gt;
+                  &lt;mat-form-field class&#x3D;&quot;quantity-input&quot; appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Quantity&lt;/mat-label&gt;
+                    &lt;input matInput type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; [(ngModel)]&#x3D;&quot;item.quantity&quot; placeholder&#x3D;&quot;Quantity&quot; [ngClass]&#x3D;&quot;selectedTextSize&quot;&gt;
+                  &lt;/mat-form-field&gt;
+                &lt;/div&gt;
+              &lt;/button&gt;
+            &lt;/li&gt; 
+          &lt;/div&gt;
+        &lt;/ul&gt;
+        &lt;ng-content&gt;&lt;/ng-content&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/mat-sidenav-content&gt;
+&lt;/mat-sidenav-container&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./cashier-menu.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.selected-item {
+  background-color: #F8BE14;
+  /* color: black;  */
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  background-color: transparent;
+  color: #fff;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: transparent;
+  color: #000;
+  font-size: 50px;
+}
+
+.revs-image {
+  object-fit: cover;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.menu-category-title {
+  margin-right: auto;
+  margin-left: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+  text-transform: uppercase !important;
+  font-weight: 800;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+}
+
+.mat-sidenav-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.mat-sidenav-content {
+  width: 100%;
+  height: 100%;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+}
+
+.sidenav-container {
+  height: 100vh;
+  display: flex;
+  width: 100vw;
+}
+
+.sidenav {
+  width: 15%;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+  background-color: #5B0726;
+  height: 100%;
+}
+
+.sidenav-link {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav-link:hover {
+  background-color: #790E36;
+  width: 100%;
+}
+
+.sidenav-link-active {
+  background-color: #790E36 !important;
+}
+
+.menu-item-container {
+  width: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.menu-item-btn {
+  /* background-color: #e1e1e1; */
+  border: none;
+  font-size: 20px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 100%;
+  height: 100%;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+}
+
+.menu-item-btn:hover {
+  background: #F8BE14;
+}
+
+.menu-item-btn-price {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.action-buttons-menu {
+  width: 100%;
+  position: fixed;
+  bottom: 30px;
+  display: flex;
+}
+
+.action-buttons-menu {
+  width: 15%;
+}
+
+.action-buttons {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.action-buttons:hover {
+  background-color: #790E36;
+  width: 100%;
+}
+
+.toolbar-btn-container {
+  display: flex;
+  margin-left: auto;
+  margin-top: auto;
+}
+
+.toolbar-btn {
+  margin-left: 10px;
+  background-color: #5B0726;
+  border: none;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 32px;
+  padding-right: 32px;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  height: 100%;
+}
+
+.toolbar-btn:hover {
+  background-color: #F8BE14;
+  color: black;
+}
+
+.mat-toolbar {
+  display: flex;
+  padding-right: 0px;
+  padding-left: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.mat-toolbar {
+  display: flex;
+  padding-right: 0px;
+  padding-left: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.accessibility-toolbar-container {
+  display: block;
+}
+
+.accessibility-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e1e1e1;
+  color: #fff;
+  padding-left: 40px;
+  padding-right: 40px;
+  align-items: center;
+}
+
+.icons-toolbar {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: #e1e1e1;
+  background-color: #43091E;
+  border-bottom: 2px solid #43091E;
+}
+
+.text-sizer-dropdown-section {
+  height: 100px;
+  position:flex;
+  padding-top: 0.5em;
+  margin-bottom: -2.4em;
+}
+
+.translate-dropdown-section {
+  height: 100px;
+  position:flex;
+  padding-top: 0.5em;
+  margin-bottom: -2.4em;
+}
+
+.accessibility-toolbar-btn {
+  margin-left: 10px;
+    background-color: #fff;
+    border: none;
+    color: black;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+    letter-spacing: normal;
+}
+
+.weather-api-section {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+    letter-spacing: normal;
+}
+
+.main-content-inner {
+  padding-right: 40px;
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart-button {
+  color: white;
+}
+
+.text-normal {
+  font-size: 25px;
+  }
+  
+  .text-large {
+  font-size: 36px;
+  }
+  
+  .text-extra-large {
+  font-size: 75px;
+  }
+
+  .quantity-input-container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-top: -25px;
+  }
+  
+  .quantity-input {
+    width: 100%;
+  }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><mat-sidenav-container class="sidenav-container">  <mat-sidenav    #drawer    class="sidenav"    fixedInViewport="false"    [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"    [mode]="(isHandset$ | async) ? \'over\' : \'side\'"    [opened]="(isHandset$ | async) === false">    <div class="icons-toolbar">      <button mat-icon-button (click)="goHome()">        <mat-icon aria-label="Log out">logout</mat-icon>      </button>            <button mat-icon-button class="shopping-cart-button" (click)="onSeeCart()">        <mat-icon aria-label="See shopping cart">shopping_cart</mat-icon>      </button>        <button mat-icon-button (click)="toggleAccessibilityToolbarContainer()">        <mat-icon aria-label="Toggle accessibility toolbar">{{ isAccessibilityToolbarContainerVisible ? \'close\' : \'settings_accessibility\' }}</mat-icon>      </button>    </div>    <div class="revs-image">      <img width="200" height="100" src="assets/REVSLogoUpdated.jpg">    </div>    <mat-nav-list>      <button *ngFor="let category of categories"        (click)="onSelectCategory(category)"        [ngClass]="{\'sidenav-link\': true, \'sidenav-link-active\': isCategorySelected(category)}" #readContent>          {{ category }}        </button>        <button routerLink="/order-management" class="sidenav-link">Kitchen View</button>          </mat-nav-list>  </mat-sidenav>  <mat-sidenav-content>    <div class="accessibility-toolbar-container" *ngIf="isAccessibilityToolbarContainerVisible">      <div class="accessibility-toolbar">        <div class="text-sizer-dropdown-section">          <mat-form-field class="text-sizer-form-field">              <mat-label>Select text size</mat-label>              <mat-select (selectionChange)="setTextSize($event.value.cssClass)">                <mat-option *ngFor="let option of textsizers" [value]="option">                      {{ option.size }}                  </mat-option>              </mat-select>          </mat-form-field>        </div>            <div class="screen-reader-section" #readContent>          <button mat-button class="accessibility-toolbar-btn" (click)="speakText()" >              Activate screenreader          </button>      </div>                    <div class="keyboard-shortcuts-section" #readContent>          <button mat-button class="accessibility-toolbar-btn" >Keyboard Shortcuts</button>        </div>        <!-- <div class="translate-dropdown-section">          <mat-form-field class="translate-dropdown-form-field">            <mat-label>Translate API</mat-label>            <mat-select>                <mat-option *ngFor="let option of textsizers" [value]="option.size" class="text-sizer-form-field">                    {{ option.size }}                </mat-option>            </mat-select>        </mat-form-field>        </div> -->      </div>    </div>    <div class="main-content">      <div class="main-content-inner">        <mat-toolbar color="primary">          <button          type="button"          aria-label="Toggle sidenav"          mat-icon-button          (click)="drawer.toggle()">          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>          </button>          <span class="menu-category-title" #readContent>            {{ selectedCategory }}          </span>          <div class="toolbar-btn-container" #readContent>            <button class="toolbar-btn" (click)="addToCart()" [disabled]="!selectedMenuItem">Add to Cart</button>            <button class="toolbar-btn" (click)="makeCombo()" [disabled]="!selectedMenuItem">Make it a Combo</button>          </div>        </mat-toolbar>        <ul>          <div class="menu-item-container">            <li *ngFor="let item of menuItems">              <button class="menu-item-btn" (click)="onSelectMenuItem(item)" [ngClass]="{\'selected-item\': isItemSelected(item)}">                <div class="menu-item-id"  #readContent>                  {{item.id + 1}}.                </div>                <div class="menu-item-name" [ngClass]="selectedTextSize" #readContent>                  {{ item.name }}                </div>                <div class="menu-item-btn-price" [ngClass]="selectedTextSize" #readContent>                  {{ item.price | currency:\'USD\':\'symbol\':\'1.2-2\' }}                </div>                                                                   <div class="quantity-input-container">                  <mat-form-field class="quantity-input" appearance="outline">                    <mat-label>Quantity</mat-label>                    <input matInput type="number" min="1" [(ngModel)]="item.quantity" placeholder="Quantity" [ngClass]="selectedTextSize">                  </mat-form-field>                </div>              </button>            </li>           </div>        </ul>        <ng-content></ng-content>      </div>    </div>  </mat-sidenav-content></mat-sidenav-container></div>'
+    var COMPONENTS = [{'name': 'AddEmployeeComponent', 'selector': 'app-add-employee'},{'name': 'AddOrderDialogComponentComponent', 'selector': 'app-add-order-dialog-component'},{'name': 'AdminViewComponent', 'selector': 'app-admin-view'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CashierCartComponent', 'selector': 'app-cashier-cart'},{'name': 'CashierCheckoutViewComponent', 'selector': 'app-cashier-checkout-view'},{'name': 'CashierCustomizeItemComponent', 'selector': 'app-cashier-customize-item'},{'name': 'CashierMenuComponent', 'selector': 'app-cashier-menu'},{'name': 'CustomerCartComponent', 'selector': 'app-customer-cart'},{'name': 'CustomerCheckoutViewComponent', 'selector': 'app-customer-checkout-view'},{'name': 'CustomerCustomizeItemComponent', 'selector': 'app-customer-customize-item'},{'name': 'CustomerLandingComponent', 'selector': 'app-customer-landing'},{'name': 'CustomerMenuComponent', 'selector': 'app-customer-menu'},{'name': 'EditEmployeeDialogComponent', 'selector': 'app-edit-employee-dialog'},{'name': 'EditOrderComponent', 'selector': 'app-edit-order'},{'name': 'EmployeeLoginComponent', 'selector': 'app-employee-login'},{'name': 'ExcessReportComponent', 'selector': 'app-excess-report'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerEditIngredientsComponent', 'selector': 'app-manager-edit-ingredients'},{'name': 'ManagerEditMenuComponent', 'selector': 'app-manager-edit-menu'},{'name': 'ManagerViewComponent', 'selector': 'app-manager-view'},{'name': 'MenuBoardComponent', 'selector': 'app-menu-board'},{'name': 'MenuPopularityComponent', 'selector': 'app-menu-popularity'},{'name': 'OrderEditDialogComponent', 'selector': 'app-order-edit-dialog'},{'name': 'OrderManagementComponent', 'selector': 'app-order-management'},{'name': 'ProductUsageComponent', 'selector': 'app-product-usage'},{'name': 'RemoveOrderItemsDialogComponent', 'selector': 'app-remove-order-items-dialog'},{'name': 'RestockReportComponent', 'selector': 'app-restock-report'},{'name': 'SalesReportComponent', 'selector': 'app-sales-report'},{'name': 'SellTogetherReportComponent', 'selector': 'app-sell-together-report'},{'name': 'TrevorCartComponent', 'selector': 'app-trevor-cart'},{'name': 'TrevorCashierComponent', 'selector': 'app-trevor-cashier'},{'name': 'TrevorCheckoutComponent', 'selector': 'app-trevor-checkout'},{'name': 'TrevorCustomizeItemComponent', 'selector': 'app-trevor-customize-item'},{'name': 'ViewCustomizationsComponent', 'selector': 'app-view-customizations'}];
+    var DIRECTIVES = [{'name': 'LogoutDirective', 'selector': '[appLogout]'}];
+    var ACTUAL_COMPONENT = {'name': 'CashierMenuComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CashierMenuComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

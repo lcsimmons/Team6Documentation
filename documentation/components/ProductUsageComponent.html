@@ -1,0 +1,2126 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ProductUsageComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/product-usage/product-usage.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for displaying and managing product usage and inventory levels.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-product-usage</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./product-usage.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./product-usage.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#Bionic" >Bionic</a>
+                            </li>
+                            <li>
+                                <a href="#categories" >categories</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartData" >chartData</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#date1" >date1</a>
+                            </li>
+                            <li>
+                                <a href="#date1String" >date1String</a>
+                            </li>
+                            <li>
+                                <a href="#date2" >date2</a>
+                            </li>
+                            <li>
+                                <a href="#date2String" >date2String</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#drawer" >drawer</a>
+                            </li>
+                            <li>
+                                <a href="#Inventory" >Inventory</a>
+                            </li>
+                            <li>
+                                <a href="#isHandset$" >isHandset$</a>
+                            </li>
+                            <li>
+                                <a href="#Product" >Product</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#sort" >sort</a>
+                            </li>
+                            <li>
+                                <a href="#stockData" >stockData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#goHome" >goHome</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#switchStyles" >switchStyles</a>
+                            </li>
+                            <li>
+                                <a href="#updateDateRange" >updateDateRange</a>
+                            </li>
+                            <li>
+                                <a href="#updateTable" >updateTable</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, router: Router, breakpointObserver: BreakpointObserver)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/product-usage/product-usage.component.ts:61</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>breakpointObserver</td>
+                                                  
+                                                        <td>
+                                                                    <code>BreakpointObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goHome"></a>
+                    <span class="name">
+                        <span ><b>goHome</b></span>
+                        <a href="#goHome"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goHome()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="163"
+                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:163</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates back to the employee login screen.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes component data and settings on component load.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="switchStyles"></a>
+                    <span class="name">
+                        <span ><b>switchStyles</b></span>
+                        <a href="#switchStyles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>switchStyles()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="170"
+                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:170</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles the Bionic theme on or off.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDateRange"></a>
+                    <span class="name">
+                        <span ><b>updateDateRange</b></span>
+                        <a href="#updateDateRange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateDateRange(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="78"
+                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates the date range for inventory checks based on user selection and triggers table update.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>HTML select element event containing the selected range.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateTable"></a>
+                    <span class="name">
+                        <span ><b>updateTable</b></span>
+                        <a href="#updateTable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateTable(startDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, endDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="114"
+                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:114</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches and updates the table with inventory differences based on the selected date range.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>startDate</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The starting date of the period for the inventory check.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>endDate</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The ending date of the period for the inventory check.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Bionic"></a>
+                    <span class="name">
+                        <span ><b>Bionic</b></span>
+                        <a href="#Bionic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/product-usage/product-usage.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categories"></a>
+                    <span class="name">
+                        <span ><b>categories</b></span>
+                        <a href="#categories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;Burger&#x27;, &#x27;Sandwich&#x27;, &#x27;Value Meal&#x27;, &#x27;Basket&#x27;, &#x27;Side&#x27;, &#x27;Shakes &amp; More&#x27;, &#x27;Beverage&#x27;, &#x27;Extras&#x27;, &#x27;Sauces&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/product-usage/product-usage.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chartData"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>chartData</b></span>
+                        <a href="#chartData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/product-usage/product-usage.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new MatTableDataSource&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/product-usage/product-usage.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date1"></a>
+                    <span class="name">
+                        <span ><b>date1</b></span>
+                        <a href="#date1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/product-usage/product-usage.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date1String"></a>
+                    <span class="name">
+                        <span ><b>date1String</b></span>
+                        <a href="#date1String"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.date1.toISOString().split(&#x27;T&#x27;)[0]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/product-usage/product-usage.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date2"></a>
+                    <span class="name">
+                        <span ><b>date2</b></span>
+                        <a href="#date2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/product-usage/product-usage.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date2String"></a>
+                    <span class="name">
+                        <span ><b>date2String</b></span>
+                        <a href="#date2String"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.date2.toISOString().split(&#x27;T&#x27;)[0]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/product-usage/product-usage.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;productUsed&#x27;, &#x27;startInventory&#x27;, &#x27;endInventory&#x27;, &#x27;productDifference&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/product-usage/product-usage.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drawer"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>drawer</b></span>
+                        <a href="#drawer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSidenav</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;drawer&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/product-usage/product-usage.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Inventory"></a>
+                    <span class="name">
+                        <span ><b>Inventory</b></span>
+                        <a href="#Inventory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Inventory&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/product-usage/product-usage.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHandset$"></a>
+                    <span class="name">
+                        <span ><b>isHandset$</b></span>
+                        <a href="#isHandset$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/product-usage/product-usage.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Observable to track if the device is a handset for responsive layout purposes.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Product"></a>
+                    <span class="name">
+                        <span ><b>Product</b></span>
+                        <a href="#Product"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Product&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/product-usage/product-usage.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sort"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>sort</b></span>
+                        <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSort</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatSort, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/product-usage/product-usage.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stockData"></a>
+                    <span class="name">
+                        <span ><b>stockData</b></span>
+                        <a href="#stockData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/product-usage/product-usage.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { DataService } from &#x27;../data.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
+import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
+import { forkJoin } from &#x27;rxjs&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+// import { ViewChild } from &#x27;@angular/core&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+
+/**
+ * Interface to define menu items
+ */
+export interface MenuItem {
+  /** Numeric ID of the item */
+  id: number;
+  /** Name of the menu item */
+  name: string; 
+  /** Price of the item */
+  price: number;
+}
+
+/**
+ * Component for displaying and managing product usage and inventory levels.
+ */
+@Component({
+  selector: &#x27;app-product-usage&#x27;,
+  templateUrl: &#x27;./product-usage.component.html&#x27;,
+  styleUrls: [&#x27;./product-usage.component.css&#x27;]
+})
+export class ProductUsageComponent implements OnInit {
+
+  Product &#x3D; &#x27;Product&#x27;;
+  Inventory &#x3D; &#x27;Inventory&#x27;;
+
+  @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+  date1: Date &#x3D; new Date();
+  date2: Date &#x3D; new Date();
+  date1String: string &#x3D; this.date1.toISOString().split(&#x27;T&#x27;)[0];
+  date2String: string &#x3D; this.date2.toISOString().split(&#x27;T&#x27;)[0];
+  stockData: any;
+  displayedColumns: string[] &#x3D; [&#x27;productUsed&#x27;, &#x27;startInventory&#x27;, &#x27;endInventory&#x27;, &#x27;productDifference&#x27;];
+  public chartData: { name: string, series: { name: string, value: number }[] }[] &#x3D; [];
+
+  categories: string[] &#x3D; [&#x27;Burger&#x27;, &#x27;Sandwich&#x27;, &#x27;Value Meal&#x27;, &#x27;Basket&#x27;, &#x27;Side&#x27;, &#x27;Shakes &amp; More&#x27;, &#x27;Beverage&#x27;, &#x27;Extras&#x27;, &#x27;Sauces&#x27;];
+
+  Bionic: boolean &#x3D; false;
+
+  @ViewChild(MatSort, {static: false}) sort!: MatSort;
+  dataSource &#x3D; new MatTableDataSource&lt;any&gt;();
+
+  /**
+  * Observable to track if the device is a handset for responsive layout purposes.
+  */
+  isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    );
+
+  constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver) { }
+
+  /**
+   * Initializes component data and settings on component load.
+   */
+  ngOnInit(): void {
+    this.stockData &#x3D; [
+      { start: &#x27;&#x27;, end: &#x27;&#x27;, startInventory: 0, endInventory: 0 }
+    ];
+  }
+
+  /**
+   * Updates the date range for inventory checks based on user selection and triggers table update.
+   * @param event HTML select element event containing the selected range.
+   */
+  updateDateRange(event: Event) {
+    const target &#x3D; event.target as HTMLSelectElement;
+    const range &#x3D; target.value;
+  
+    let startDate: Date &#x3D; new Date();
+    let endDate &#x3D; new Date();
+  
+    switch (range) {
+      case &#x27;month&#x27;:
+        startDate &#x3D; new Date(endDate.getFullYear(), endDate.getMonth() - 1, endDate.getDate());
+        break;
+      case &#x27;year&#x27;:
+        startDate &#x3D; new Date(endDate.getFullYear() - 1, endDate.getMonth(), endDate.getDate());
+        break;
+      case &#x27;2weeks&#x27;:
+        startDate &#x3D; new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate() - 14);
+        break;
+      default:
+        startDate &#x3D; this.date1;
+        endDate &#x3D; this.date2;
+    }
+
+    this.date1 &#x3D; startDate;
+    this.date2 &#x3D; endDate;
+
+    this.date1String &#x3D; this.date1.toISOString().split(&#x27;T&#x27;)[0];
+    this.date2String &#x3D; this.date2.toISOString().split(&#x27;T&#x27;)[0];
+  
+    this.updateTable(this.date1String, this.date2String);
+  }
+
+  /**
+   * Fetches and updates the table with inventory differences based on the selected date range.
+   * @param startDate The starting date of the period for the inventory check.
+   * @param endDate The ending date of the period for the inventory check.
+   */
+  updateTable(startDate: string, endDate: string): void {
+    const startDateISO &#x3D; new Date(startDate).toISOString().split(&#x27;T&#x27;)[0];
+    const endDateISO &#x3D; new Date(endDate).toISOString().split(&#x27;T&#x27;)[0];
+
+    console.log(&#x27;Start Date: &#x27;, startDateISO);
+    console.log(&#x27;End Date: &#x27;, endDateISO);
+
+    this.dataService.getInventoryDifference(startDateISO, endDateISO).subscribe(data &#x3D;&gt; {
+      forkJoin(
+        Object.keys(data).map(key &#x3D;&gt; 
+          forkJoin({
+            ingredientName: this.dataService.getIngredientNameByID(Number(key)).pipe(map(res &#x3D;&gt; res.ingredientName)),
+            startInventory: this.dataService.getIngredientInventoryByDate(Number(key), startDateISO).pipe(map(res &#x3D;&gt; res.quantity || &#x27;Not found&#x27;)),
+            endInventory: this.dataService.getIngredientInventoryByDate(Number(key), endDateISO).pipe(map(res &#x3D;&gt; res.quantity || &#x27;Not found&#x27;))
+
+          }).pipe(
+            map(response &#x3D;&gt; {
+              const productDifference &#x3D; response.startInventory - response.endInventory;
+              return {
+                productUsed: response.ingredientName,
+                productDifference: productDifference,
+                startInventory: response.startInventory,
+                endInventory: response.endInventory
+              };
+            })
+          )
+        )
+      ).subscribe(stockData &#x3D;&gt; {
+        // Filter out items with productDifference &lt; 0
+        const filteredStockData &#x3D; stockData.filter(item &#x3D;&gt; item.productDifference &gt;&#x3D; 0);
+
+        this.stockData &#x3D; filteredStockData;
+        this.dataSource &#x3D; new MatTableDataSource(this.stockData);
+        this.dataSource.sort &#x3D; this.sort;
+        this.chartData &#x3D; filteredStockData.map(item &#x3D;&gt; ({
+          name: item.productUsed,
+          series: [
+            { name: &#x27;Start Inventory&#x27;, value: item.startInventory },
+            { name: &#x27;End Inventory&#x27;, value: item.endInventory }
+          ]
+        }));
+      });
+    });
+  }
+
+
+  /**
+   * Navigates back to the employee login screen.
+   */
+  goHome(): void {
+    this.router.navigate([&#x27;/employee-login&#x27;]);
+  }
+
+  /**
+   * Toggles the Bionic theme on or off.
+   */
+  switchStyles(): void {
+    this.Bionic &#x3D; !this.Bionic;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;!Bionic&quot;&gt;
+
+    &lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+
+    &lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+        &lt;mat-sidenav
+        #drawer
+        class&#x3D;&quot;sidenav&quot;
+        fixedInViewport&#x3D;&quot;false&quot;
+        [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+        [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+        [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
+        &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+            &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+        &lt;/div&gt;
+        &lt;mat-nav-list&gt;
+
+            &lt;button (click)&#x3D;&quot;switchStyles()&quot;&gt;Switch Reading Format&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/product-usage&quot; class&#x3D;&quot;sidenav-link-active&quot;&gt;Product Usage Chart&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/excess-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Excess Report&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/sales-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Sales Report&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/sell-together-report&quot;&gt;Sells Together Report&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/restock-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Restock Report&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/menu-popularity&quot;&gt;Menu Popularity&lt;/button&gt;    
+            
+            &lt;button routerLink&#x3D;&quot;/manager-edit-menu&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Edit Menu&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/edit-ingredients&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Edit Ingredients&lt;/button&gt;
+    
+            &lt;button routerLink&#x3D;&quot;/cashier-menu&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Cashier Menu&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/order-management&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Kitchen View&lt;/button&gt;
+              &lt;button routerLink&#x3D;&quot;/admin-view&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Admin View&lt;/button&gt;
+    
+            &lt;div class&#x3D;&quot;action-buttons-menu&quot;&gt;
+                &lt;button class&#x3D;&quot;action-buttons&quot; (click)&#x3D;&quot;goHome()&quot;&gt;Logout&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/mat-nav-list&gt;
+        
+        &lt;/mat-sidenav&gt;
+        &lt;mat-sidenav-content&gt;
+            &lt;div class&#x3D;&quot;main-content&quot;&gt;
+                &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+                &lt;button
+                type&#x3D;&quot;button&quot;
+                aria-label&#x3D;&quot;Toggle sidenav&quot;
+                mat-icon-button
+                (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;menu-icon-btn&quot; aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
+                &lt;/button&gt;
+                &lt;span class&#x3D;&quot;menu-category-title&quot;&gt;PRODUCT USAGE REPORT&lt;/span&gt;
+        
+                &lt;div class&#x3D;&quot;toolbar-btn-container&quot;&gt;
+                    &lt;div class&#x3D;&quot;datepickers&quot;&gt;
+                        &lt;mat-form-field&gt;
+                            &lt;input matInput [matDatepicker]&#x3D;&quot;picker1&quot; placeholder&#x3D;&quot;Choose a start date&quot; [(ngModel)]&#x3D;&quot;date1String&quot;&gt;
+                            &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker1&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+                            &lt;mat-datepicker #picker1&gt;&lt;/mat-datepicker&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;datepickers&quot;&gt;
+                        &lt;mat-form-field&gt;
+                            &lt;input matInput [matDatepicker]&#x3D;&quot;picker2&quot; placeholder&#x3D;&quot;Choose an end date&quot; [(ngModel)]&#x3D;&quot;date2String&quot;&gt;
+                            &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker2&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+                            &lt;mat-datepicker #picker2&gt;&lt;/mat-datepicker&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/div&gt;
+
+                    &lt;select (change)&#x3D;&quot;updateDateRange($event)&quot;&gt;
+                        &lt;option value&#x3D;&quot;&quot; [innerHTML]&#x3D;&quot;&#x27;Select a Range&#x27; | bionicReading&quot;&gt;&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;month&quot; [innerHTML]&#x3D;&quot;&#x27;Last Month&#x27; | bionicReading&quot;&gt;&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;year&quot; [innerHTML]&#x3D;&quot;&#x27;Last Year&#x27; | bionicReading&quot;&gt;&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;2weeks&quot; [innerHTML]&#x3D;&quot;&#x27;Last 2 Weeks&#x27; | bionicReading&quot;&gt;&lt;/option&gt;
+                    &lt;/select&gt;
+                    
+                    &lt;button class&#x3D;&quot;toolbar-btn&quot; (click)&#x3D;&quot;updateTable(date1String, date2String)&quot;&gt;Generate Report&lt;/button&gt;
+
+                &lt;/div&gt;
+        
+                &lt;/mat-toolbar&gt;
+            
+                &lt;div class&#x3D;&quot;chart-container&quot;&gt;
+
+                    &lt;ngx-charts-bar-vertical-stacked
+                        [results]&#x3D;&quot;chartData&quot;
+                        [xAxis]&#x3D;&quot;true&quot;
+                        [yAxis]&#x3D;&quot;true&quot;
+                        [showXAxisLabel]&#x3D;&quot;true&quot;
+                        [showYAxisLabel]&#x3D;&quot;true&quot;
+                        [xAxisLabel]&#x3D;&quot;Product&quot;
+                        [yAxisLabel]&#x3D;&quot;Inventory&quot;&gt;
+                    &lt;/ngx-charts-bar-vertical-stacked&gt;
+
+                    &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+                        &lt;ng-container matColumnDef&#x3D;&quot;productUsed&quot;&gt;
+                          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&#x3D;&quot;productUsed&quot;&gt;Ingredient&lt;/th&gt;
+                          &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{element.productUsed}}&lt;/td&gt;
+                        &lt;/ng-container&gt;
+                    
+                        &lt;ng-container matColumnDef&#x3D;&quot;startInventory&quot;&gt;
+                          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&#x3D;&quot;startInventory&quot;&gt;Start Inventory&lt;/th&gt;
+                          &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{element.startInventory}}&lt;/td&gt;
+                        &lt;/ng-container&gt;
+                    
+                        &lt;ng-container matColumnDef&#x3D;&quot;endInventory&quot;&gt;
+                          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&#x3D;&quot;endInventory&quot;&gt;End Inventory&lt;/th&gt;
+                          &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{element.endInventory}}&lt;/td&gt;
+                        &lt;/ng-container&gt;
+                    
+                        &lt;ng-container matColumnDef&#x3D;&quot;productDifference&quot;&gt;
+                          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&#x3D;&quot;productDifference&quot;&gt;Product Used&lt;/th&gt;
+                          &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{element.productDifference}}&lt;/td&gt;
+                        &lt;/ng-container&gt;
+                    
+                        &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+                        &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+                      &lt;/table&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/mat-sidenav-content&gt;
+    &lt;/mat-sidenav-container&gt;
+&lt;/div&gt;
+
+&lt;!-- ------------------------------------------------- --&gt;
+
+&lt;div *ngIf&#x3D;&quot;Bionic&quot;&gt;
+
+    &lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+
+    &lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+        &lt;mat-sidenav
+        #drawer
+        class&#x3D;&quot;sidenav&quot;
+        fixedInViewport&#x3D;&quot;false&quot;
+        [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+        [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+        [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
+        &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+            &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;../../assets/REVSLogoUpdated.jpg&quot;&gt;
+        &lt;/div&gt;
+        &lt;mat-nav-list&gt;
+            
+            &lt;button (click)&#x3D;&quot;switchStyles()&quot;&gt;Switch Reading Format&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/product-usage&quot; class&#x3D;&quot;sidenav-link-active&quot;&gt;Product Usage Chart&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/excess-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Excess Report&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/sales-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Sales Report&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/sell-together-report&quot;&gt;Sells Together Report&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/restock-report&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Restock Report&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/order-management&quot;&gt;Manage Orders&lt;/button&gt;
+            &lt;button class&#x3D;&quot;sidenav-link&quot; routerLink&#x3D;&quot;/menu-popularity&quot;&gt;Menu Popularity&lt;/button&gt;    
+            
+            &lt;button routerLink&#x3D;&quot;/manager-edit-menu&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Edit Menu&lt;/button&gt;
+            &lt;button routerLink&#x3D;&quot;/edit-ingredients&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Edit Ingredients&lt;/button&gt;
+    
+            &lt;button routerLink&#x3D;&quot;/cashier-menu&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Cashier Menu&lt;/button&gt;
+              &lt;button routerLink&#x3D;&quot;/admin-view&quot; class&#x3D;&quot;sidenav-link&quot;&gt;Admin View&lt;/button&gt;
+    
+            &lt;div class&#x3D;&quot;action-buttons-menu&quot;&gt;
+                &lt;button class&#x3D;&quot;action-buttons&quot; (click)&#x3D;&quot;goHome()&quot;&gt;Logout&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/mat-nav-list&gt;
+        &lt;/mat-sidenav&gt;
+        &lt;mat-sidenav-content&gt;
+            &lt;div class&#x3D;&quot;main-content&quot;&gt;
+                &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+                &lt;button
+                type&#x3D;&quot;button&quot;
+                aria-label&#x3D;&quot;Toggle sidenav&quot;
+                mat-icon-button
+                (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;menu-icon-btn&quot; aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
+                &lt;/button&gt;
+                &lt;span class&#x3D;&quot;menu-category-title&quot; [innerHTML]&#x3D;&quot;&#x27;PRODUCT USAGE REPORT&#x27; | bionicReading&quot;&gt;&lt;/span&gt;
+        
+                &lt;div class&#x3D;&quot;toolbar-btn-container&quot;&gt;
+                    &lt;div class&#x3D;&quot;datepickers&quot;&gt;
+                        &lt;mat-form-field&gt;
+                            &lt;input matInput [matDatepicker]&#x3D;&quot;picker1&quot; placeholder&#x3D;&quot;Choose a start date&quot; [(ngModel)]&#x3D;&quot;date1String&quot;&gt;
+                            &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker1&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+                            &lt;mat-datepicker #picker1&gt;&lt;/mat-datepicker&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;datepickers&quot;&gt;
+                        &lt;mat-form-field&gt;
+                            &lt;input matInput [matDatepicker]&#x3D;&quot;picker2&quot; placeholder&#x3D;&quot;Choose an end date&quot; [(ngModel)]&#x3D;&quot;date2String&quot;&gt;
+                            &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker2&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+                            &lt;mat-datepicker #picker2&gt;&lt;/mat-datepicker&gt;
+                        &lt;/mat-form-field&gt;
+                    &lt;/div&gt;
+
+                    &lt;select (change)&#x3D;&quot;updateDateRange($event)&quot;&gt;
+                        &lt;option value&#x3D;&quot;&quot; [innerHTML]&#x3D;&quot;&#x27;Select a Range&#x27; | bionicReading&quot;&gt;&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;month&quot; [innerHTML]&#x3D;&quot;&#x27;Last Month&#x27; | bionicReading&quot;&gt;&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;year&quot; [innerHTML]&#x3D;&quot;&#x27;Last Year&#x27; | bionicReading&quot;&gt;&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;2weeks&quot; [innerHTML]&#x3D;&quot;&#x27;Last 2 Weeks&#x27; | bionicReading&quot;&gt;&lt;/option&gt;
+                    &lt;/select&gt;
+                    
+                    &lt;button class&#x3D;&quot;toolbar-btn&quot; (click)&#x3D;&quot;updateTable(date1String, date2String)&quot; [innerHTML]&#x3D;&quot;&#x27;Generate Report&#x27; | bionicReading&quot;&gt;&lt;/button&gt;
+
+                &lt;/div&gt;
+        
+                &lt;/mat-toolbar&gt;
+            
+                &lt;div class&#x3D;&quot;chart-container&quot;&gt;
+
+                    &lt;ngx-charts-bar-vertical-stacked
+                        [results]&#x3D;&quot;chartData&quot;
+                        [xAxis]&#x3D;&quot;true&quot;
+                        [yAxis]&#x3D;&quot;true&quot;
+                        [showXAxisLabel]&#x3D;&quot;true&quot;
+                        [showYAxisLabel]&#x3D;&quot;true&quot;
+                        [xAxisLabel]&#x3D;&quot;Product&quot;
+                        [yAxisLabel]&#x3D;&quot;Inventory&quot;&gt;
+                    &lt;/ngx-charts-bar-vertical-stacked&gt;
+
+                    &lt;table mat-table [dataSource]&#x3D;&quot;stockData&quot; class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+                        &lt;!-- Product Column --&gt;
+                        &lt;ng-container matColumnDef&#x3D;&quot;productUsed&quot;&gt;
+                            &lt;th mat-header-cell *matHeaderCellDef [innerHTML]&#x3D;&quot;&#x27;Ingredient&#x27; | bionicReading&quot;&gt;  &lt;/th&gt;
+                            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; [innerHTML]&#x3D;&quot;element.productUsed | bionicReading&quot;&gt;&lt;/td&gt;
+                        &lt;/ng-container&gt;
+            
+                        &lt;!-- Start Inventory Column --&gt;
+                        &lt;ng-container matColumnDef&#x3D;&quot;startInventory&quot;&gt;
+                            &lt;th mat-header-cell *matHeaderCellDef [innerHTML]&#x3D;&quot;&#x27;Start Inventory&#x27; | bionicReading&quot;&gt;  &lt;/th&gt;
+                            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; &gt; {{element.startInventory}} &lt;/td&gt;
+                        &lt;/ng-container&gt;
+            
+                        &lt;!-- End Inventory Column --&gt;
+                        &lt;ng-container matColumnDef&#x3D;&quot;endInventory&quot;&gt;
+                            &lt;th mat-header-cell *matHeaderCellDef [innerHTML]&#x3D;&quot;&#x27;End Inventory&#x27; | bionicReading&quot;&gt;  &lt;/th&gt;
+                            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.endInventory}} &lt;/td&gt;
+                        &lt;/ng-container&gt;
+            
+                        &lt;!-- Product Difference Column --&gt;
+                        &lt;ng-container matColumnDef&#x3D;&quot;productDifference&quot;&gt;
+                        &lt;th mat-header-cell *matHeaderCellDef [innerHTML]&#x3D;&quot;&#x27;Product Used&#x27; | bionicReading&quot;&gt;  &lt;/th&gt;
+                        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.productDifference}} &lt;/td&gt;
+                        &lt;/ng-container&gt;
+            
+                        &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+                        &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/mat-sidenav-content&gt;
+    &lt;/mat-sidenav-container&gt;
+
+&lt;/div&gt;
+
+
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./product-usage.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.mat-toolbar,
+.mat-sidenav-content,
+.mat-sidenav,
+.mat-nav-list,
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  margin: 0;
+  padding: 0;
+}
+.my-chart {
+  width: 500px;
+  height: 300px;
+}
+
+b{
+  font-weight: 1000;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 0; /* Ensures no extra space below the header pushing the top buttons down */
+}
+
+.top-buttons {
+    display: flex;
+    flex-direction: row; /* Aligns buttons in a row */
+}
+
+.cart-items {
+    margin-top: 20px;
+    background-color: #e1e1e1;
+}
+
+.cart-container {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.item-actions button {
+    margin-left: 10px;
+}
+
+
+
+.checkout-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/*
+.cdk-overlay-pane {
+  position: absolute;
+}
+
+.cdk-overlay-connected-position-bounding-box {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 1px;
+  min-height: 1px;
+}
+*/
+
+.selected-item {
+    background-color: gold;
+    color: black; 
+  }
+  
+  .active {
+    background-color: gold;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: transparent;
+    color: #000;
+    font-size: 50px;
+  }
+  
+  .revs-image {
+    object-fit: cover;
+    text-align: center;
+  }
+  
+  .menu-category-title {
+    margin-right: auto;
+    margin-left: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    text-transform: uppercase !important;
+    font-weight: 400;
+    color: black;
+    font-size: calc(25px + 0.390625vw);
+  }
+  
+  body {
+    margin: 0;
+    width: 100%;
+  }
+  
+  .mat-sidenav-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .mat-sidenav-content {
+    width: 100%;
+    height: 100%;
+    padding-right: 40px;
+    background-color: white;
+  }
+  
+  .main-content {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sidenav-container {
+    height: 100vh;
+    display: flex;
+    width: 100vw;
+  }
+  
+  .sidenav {
+    width: 15%;
+    box-shadow: 3px 0 6px rgba(0,0,0,.24);
+    background-color: #5B0726;
+    height: 100%;
+  }
+  
+  .sidenav-link {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidenav-link:hover {
+    background-color: #790E36;
+    width: 100%;
+  }
+  
+  .sidenav-link-active {
+    background-color: #790E36 !important;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu-item-container {
+    width: 100%;
+    list-style: none;
+  }
+  
+  .cart-item-module {
+    background: transparent;
+    border: none;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  
+  .cart-item-price {
+    font-style: italic;
+    align-items: center;
+    margin-left: auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 20px;
+  }
+  
+  .cart-item-name {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .action-buttons-menu {
+    width: 100%;
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+  }
+  
+  .action-buttons-menu {
+    width: 15%;
+  }
+  
+  .action-buttons {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .action-buttons:hover {
+    background-color: #790E36;
+    width: 100%;
+  }
+  
+  .toolbar-btn-container {
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+    height: 90%
+  }
+  
+  .toolbar-btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #5B0726;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    height: 100%;
+  }
+  
+  .toolbar-btn:hover {
+    background-color: #F8BE14;
+    color: black;
+  }
+
+  .action-btn {
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    color: #5B0726;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+  }
+  
+  .action-btn:hover {
+    background-color: #e1e1e1;
+    color: #000;
+  }
+
+  .mat-toolbar {
+    display: flex;
+    justify-content: flex-start;
+    /*
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0;
+    */
+    padding-left: 24px;
+    margin: 0;
+    background: white;
+  }
+
+  .mat-toolbar span:last-child {
+    margin-right:auto;
+  }
+  
+
+  .menu-icon-btn {
+    padding:0;
+    margin: 0;
+    color: black;
+  }
+
+  .subtotal-taxes {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    color: #000;
+    line-height: 200%;
+  }
+
+  .total-price {
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    color: #000;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .summary-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 3px solid #e1e1e1;
+    border-top: 3px solid #e1e1e1;
+
+}
+
+.summary-2 {
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 100%;
+}
+
+.checkout-btn {
+    background-color: #5B0726;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+}
+
+.checkout-btn:hover {
+    background-color: #F8BE14;
+    color: #000;
+}
+
+.manager-view-info {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    font-style: italic;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    justify-content: center;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+.chart-container {
+    padding-left: 40px;
+    padding-top: 40px;
+    font-weight: 500;
+}
+
+.datepickers {
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="!Bionic">    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    <mat-sidenav-container class="sidenav-container">        <mat-sidenav        #drawer        class="sidenav"        fixedInViewport="false"        [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"        [mode]="(isHandset$ | async) ? \'over\' : \'side\'"        [opened]="(isHandset$ | async) === false">        <div class="revs-image">            <img width="200" height="100" src="assets/REVSLogoUpdated.jpg">        </div>        <mat-nav-list>            <button (click)="switchStyles()">Switch Reading Format</button>            <button routerLink="/product-usage" class="sidenav-link-active">Product Usage Chart</button>            <button routerLink="/excess-report" class="sidenav-link">Excess Report</button>            <button routerLink="/sales-report" class="sidenav-link">Sales Report</button>            <button class="sidenav-link" routerLink="/sell-together-report">Sells Together Report</button>            <button routerLink="/restock-report" class="sidenav-link">Restock Report</button>            <button class="sidenav-link" routerLink="/menu-popularity">Menu Popularity</button>                            <button routerLink="/manager-edit-menu" class="sidenav-link">Edit Menu</button>            <button routerLink="/edit-ingredients" class="sidenav-link">Edit Ingredients</button>                <button routerLink="/cashier-menu" class="sidenav-link">Cashier Menu</button>            <button routerLink="/order-management" class="sidenav-link">Kitchen View</button>              <button routerLink="/admin-view" class="sidenav-link">Admin View</button>                <div class="action-buttons-menu">                <button class="action-buttons" (click)="goHome()">Logout</button>            </div>          </mat-nav-list>                </mat-sidenav>        <mat-sidenav-content>            <div class="main-content">                <mat-toolbar color="primary">                <button                type="button"                aria-label="Toggle sidenav"                mat-icon-button                (click)="drawer.toggle()">                <mat-icon class="menu-icon-btn" aria-label="Side nav toggle icon">menu</mat-icon>                </button>                <span class="menu-category-title">PRODUCT USAGE REPORT</span>                        <div class="toolbar-btn-container">                    <div class="datepickers">                        <mat-form-field>                            <input matInput [matDatepicker]="picker1" placeholder="Choose a start date" [(ngModel)]="date1String">                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>                            <mat-datepicker #picker1></mat-datepicker>                        </mat-form-field>                    </div>                    <div class="datepickers">                        <mat-form-field>                            <input matInput [matDatepicker]="picker2" placeholder="Choose an end date" [(ngModel)]="date2String">                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>                            <mat-datepicker #picker2></mat-datepicker>                        </mat-form-field>                    </div>                    <select (change)="updateDateRange($event)">                        <option value="" [innerHTML]="\'Select a Range\' | bionicReading"></option>                        <option value="month" [innerHTML]="\'Last Month\' | bionicReading"></option>                        <option value="year" [innerHTML]="\'Last Year\' | bionicReading"></option>                        <option value="2weeks" [innerHTML]="\'Last 2 Weeks\' | bionicReading"></option>                    </select>                                        <button class="toolbar-btn" (click)="updateTable(date1String, date2String)">Generate Report</button>                </div>                        </mat-toolbar>                            <div class="chart-container">                    <ngx-charts-bar-vertical-stacked                        [results]="chartData"                        [xAxis]="true"                        [yAxis]="true"                        [showXAxisLabel]="true"                        [showYAxisLabel]="true"                        [xAxisLabel]="Product"                        [yAxisLabel]="Inventory">                    </ngx-charts-bar-vertical-stacked>                    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">                        <ng-container matColumnDef="productUsed">                          <th mat-header-cell *matHeaderCellDef mat-sort-header="productUsed">Ingredient</th>                          <td mat-cell *matCellDef="let element">{{element.productUsed}}</td>                        </ng-container>                                            <ng-container matColumnDef="startInventory">                          <th mat-header-cell *matHeaderCellDef mat-sort-header="startInventory">Start Inventory</th>                          <td mat-cell *matCellDef="let element">{{element.startInventory}}</td>                        </ng-container>                                            <ng-container matColumnDef="endInventory">                          <th mat-header-cell *matHeaderCellDef mat-sort-header="endInventory">End Inventory</th>                          <td mat-cell *matCellDef="let element">{{element.endInventory}}</td>                        </ng-container>                                            <ng-container matColumnDef="productDifference">                          <th mat-header-cell *matHeaderCellDef mat-sort-header="productDifference">Product Used</th>                          <td mat-cell *matCellDef="let element">{{element.productDifference}}</td>                        </ng-container>                                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>                      </table>                </div>            </div>        </mat-sidenav-content>    </mat-sidenav-container></div><!-- ------------------------------------------------- --><div *ngIf="Bionic">    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    <mat-sidenav-container class="sidenav-container">        <mat-sidenav        #drawer        class="sidenav"        fixedInViewport="false"        [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"        [mode]="(isHandset$ | async) ? \'over\' : \'side\'"        [opened]="(isHandset$ | async) === false">        <div class="revs-image">            <img width="200" height="100" src="../../assets/REVSLogoUpdated.jpg">        </div>        <mat-nav-list>                        <button (click)="switchStyles()">Switch Reading Format</button>            <button routerLink="/product-usage" class="sidenav-link-active">Product Usage Chart</button>            <button routerLink="/excess-report" class="sidenav-link">Excess Report</button>            <button routerLink="/sales-report" class="sidenav-link">Sales Report</button>            <button class="sidenav-link" routerLink="/sell-together-report">Sells Together Report</button>            <button routerLink="/restock-report" class="sidenav-link">Restock Report</button>            <button class="sidenav-link" routerLink="/order-management">Manage Orders</button>            <button class="sidenav-link" routerLink="/menu-popularity">Menu Popularity</button>                            <button routerLink="/manager-edit-menu" class="sidenav-link">Edit Menu</button>            <button routerLink="/edit-ingredients" class="sidenav-link">Edit Ingredients</button>                <button routerLink="/cashier-menu" class="sidenav-link">Cashier Menu</button>              <button routerLink="/admin-view" class="sidenav-link">Admin View</button>                <div class="action-buttons-menu">                <button class="action-buttons" (click)="goHome()">Logout</button>            </div>          </mat-nav-list>        </mat-sidenav>        <mat-sidenav-content>            <div class="main-content">                <mat-toolbar color="primary">                <button                type="button"                aria-label="Toggle sidenav"                mat-icon-button                (click)="drawer.toggle()">                <mat-icon class="menu-icon-btn" aria-label="Side nav toggle icon">menu</mat-icon>                </button>                <span class="menu-category-title" [innerHTML]="\'PRODUCT USAGE REPORT\' | bionicReading"></span>                        <div class="toolbar-btn-container">                    <div class="datepickers">                        <mat-form-field>                            <input matInput [matDatepicker]="picker1" placeholder="Choose a start date" [(ngModel)]="date1String">                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>                            <mat-datepicker #picker1></mat-datepicker>                        </mat-form-field>                    </div>                    <div class="datepickers">                        <mat-form-field>                            <input matInput [matDatepicker]="picker2" placeholder="Choose an end date" [(ngModel)]="date2String">                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>                            <mat-datepicker #picker2></mat-datepicker>                        </mat-form-field>                    </div>                    <select (change)="updateDateRange($event)">                        <option value="" [innerHTML]="\'Select a Range\' | bionicReading"></option>                        <option value="month" [innerHTML]="\'Last Month\' | bionicReading"></option>                        <option value="year" [innerHTML]="\'Last Year\' | bionicReading"></option>                        <option value="2weeks" [innerHTML]="\'Last 2 Weeks\' | bionicReading"></option>                    </select>                                        <button class="toolbar-btn" (click)="updateTable(date1String, date2String)" [innerHTML]="\'Generate Report\' | bionicReading"></button>                </div>                        </mat-toolbar>                            <div class="chart-container">                    <ngx-charts-bar-vertical-stacked                        [results]="chartData"                        [xAxis]="true"                        [yAxis]="true"                        [showXAxisLabel]="true"                        [showYAxisLabel]="true"                        [xAxisLabel]="Product"                        [yAxisLabel]="Inventory">                    </ngx-charts-bar-vertical-stacked>                    <table mat-table [dataSource]="stockData" class="mat-elevation-z8">                        <!-- Product Column -->                        <ng-container matColumnDef="productUsed">                            <th mat-header-cell *matHeaderCellDef [innerHTML]="\'Ingredient\' | bionicReading">  </th>                            <td mat-cell *matCellDef="let element" [innerHTML]="element.productUsed | bionicReading"></td>                        </ng-container>                                    <!-- Start Inventory Column -->                        <ng-container matColumnDef="startInventory">                            <th mat-header-cell *matHeaderCellDef [innerHTML]="\'Start Inventory\' | bionicReading">  </th>                            <td mat-cell *matCellDef="let element" > {{element.startInventory}} </td>                        </ng-container>                                    <!-- End Inventory Column -->                        <ng-container matColumnDef="endInventory">                            <th mat-header-cell *matHeaderCellDef [innerHTML]="\'End Inventory\' | bionicReading">  </th>                            <td mat-cell *matCellDef="let element"> {{element.endInventory}} </td>                        </ng-container>                                    <!-- Product Difference Column -->                        <ng-container matColumnDef="productDifference">                        <th mat-header-cell *matHeaderCellDef [innerHTML]="\'Product Used\' | bionicReading">  </th>                        <td mat-cell *matCellDef="let element"> {{element.productDifference}} </td>                        </ng-container>                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>                    </table>                </div>            </div>        </mat-sidenav-content>    </mat-sidenav-container></div>  </div>'
+    var COMPONENTS = [{'name': 'AddEmployeeComponent', 'selector': 'app-add-employee'},{'name': 'AddOrderDialogComponentComponent', 'selector': 'app-add-order-dialog-component'},{'name': 'AdminViewComponent', 'selector': 'app-admin-view'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CashierCartComponent', 'selector': 'app-cashier-cart'},{'name': 'CashierCheckoutViewComponent', 'selector': 'app-cashier-checkout-view'},{'name': 'CashierCustomizeItemComponent', 'selector': 'app-cashier-customize-item'},{'name': 'CashierMenuComponent', 'selector': 'app-cashier-menu'},{'name': 'CustomerCartComponent', 'selector': 'app-customer-cart'},{'name': 'CustomerCheckoutViewComponent', 'selector': 'app-customer-checkout-view'},{'name': 'CustomerCustomizeItemComponent', 'selector': 'app-customer-customize-item'},{'name': 'CustomerLandingComponent', 'selector': 'app-customer-landing'},{'name': 'CustomerMenuComponent', 'selector': 'app-customer-menu'},{'name': 'EditEmployeeDialogComponent', 'selector': 'app-edit-employee-dialog'},{'name': 'EditOrderComponent', 'selector': 'app-edit-order'},{'name': 'EmployeeLoginComponent', 'selector': 'app-employee-login'},{'name': 'ExcessReportComponent', 'selector': 'app-excess-report'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerEditIngredientsComponent', 'selector': 'app-manager-edit-ingredients'},{'name': 'ManagerEditMenuComponent', 'selector': 'app-manager-edit-menu'},{'name': 'ManagerViewComponent', 'selector': 'app-manager-view'},{'name': 'MenuBoardComponent', 'selector': 'app-menu-board'},{'name': 'MenuPopularityComponent', 'selector': 'app-menu-popularity'},{'name': 'OrderEditDialogComponent', 'selector': 'app-order-edit-dialog'},{'name': 'OrderManagementComponent', 'selector': 'app-order-management'},{'name': 'ProductUsageComponent', 'selector': 'app-product-usage'},{'name': 'RemoveOrderItemsDialogComponent', 'selector': 'app-remove-order-items-dialog'},{'name': 'RestockReportComponent', 'selector': 'app-restock-report'},{'name': 'SalesReportComponent', 'selector': 'app-sales-report'},{'name': 'SellTogetherReportComponent', 'selector': 'app-sell-together-report'},{'name': 'TrevorCartComponent', 'selector': 'app-trevor-cart'},{'name': 'TrevorCashierComponent', 'selector': 'app-trevor-cashier'},{'name': 'TrevorCheckoutComponent', 'selector': 'app-trevor-checkout'},{'name': 'TrevorCustomizeItemComponent', 'selector': 'app-trevor-customize-item'},{'name': 'ViewCustomizationsComponent', 'selector': 'app-view-customizations'}];
+    var DIRECTIVES = [{'name': 'LogoutDirective', 'selector': '[appLogout]'}];
+    var ACTUAL_COMPONENT = {'name': 'ProductUsageComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProductUsageComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

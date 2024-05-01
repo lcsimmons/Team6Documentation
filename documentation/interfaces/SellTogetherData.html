@@ -1,0 +1,841 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  SellTogetherData</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/data.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interface defining the structure for sell together data.</p>
+
+            </p>
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#frequency" 
+>
+                                            frequency
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#menu_item_1" 
+>
+                                            menu_item_1
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#menu_item_2" 
+>
+                                            menu_item_2
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="frequency"></a>
+                                        <span class="name "><b>frequency</b>
+                                            <a href="#frequency">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>frequency:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="menu_item_1"></a>
+                                        <span class="name "><b>menu_item_1</b>
+                                            <a href="#menu_item_1">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>menu_item_1:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="menu_item_2"></a>
+                                        <span class="name "><b>menu_item_2</b>
+                                            <a href="#menu_item_2">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>menu_item_2:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Observable, tap } from &#x27;rxjs&#x27;;
+import { environment } from &#x27;../environments/environment&#x27;;
+import { of } from &#x27;rxjs&#x27;;
+import { HttpClient, HttpParams } from &#x27;@angular/common/http&#x27;;
+
+/**
+ * Interface defining the structure of a menu item.
+ */
+export interface MenuItem {
+  /** Numeric ID of the item */
+  id: number;
+  /** Name of the menu item */
+  name: string; 
+  /** Price of the item */
+  price: number;
+}
+
+/**
+ * Interface defining the structure for sell together data.
+ */
+export interface SellTogetherData {
+  menu_item_1: number;
+  menu_item_2: number;
+  frequency: number;
+}
+
+/**
+ * Interface defining the structure for employee data.
+ */
+interface Employee {
+  id: number;
+  name: string;
+  title: string;
+  salary: number;
+  work_scheduling: string;
+  permissions: number;
+}
+
+/**
+ * Service that handles all data interactions for the application, such as fetching weather data,
+ * managing cart items, and handling order histories.
+ */
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class DataService {
+  private readonly API_URL &#x3D; &#x27;https://api.openweathermap.org/data/3.0/onecall&#x27;;
+
+  /**
+   * Construct data service.
+   * @param http Httpclient to fulfil API requests.
+   */
+  constructor(private http: HttpClient) { }
+
+   /**
+   * Fetches the current weather data for a specific latitude and longitude.
+   * @param lat The latitude coordinate.
+   * @param lon The longitude coordinate.
+   * @param apiKey The API key for the weather service.
+   * @returns An Observable containing the weather data.
+   */
+  getWeather(lat: number, lon: number, apiKey: string): Observable&lt;any&gt; {
+    const url &#x3D; &#x60;${this.API_URL}?lat&#x3D;${lat}&amp;lon&#x3D;${lon}&amp;appid&#x3D;${apiKey}&#x60;;
+    return this.http.get(url);
+  }
+
+  private cart: MenuItem[] &#x3D; [];
+
+  /**
+   * Adds a menu item to the shopping cart.
+   * @param item The menu item to add.
+   */
+  addToCart(item: MenuItem): void {
+    this.cart.push(item);
+  }
+
+  /**
+   * Clears all items from the in-memory cart.
+   */
+  clearCart(): void {
+    this.cart &#x3D; [];
+  }
+
+   /**
+   * Retrieves all menu items.
+   * @returns An Observable of all menu items.
+   */
+  getMenuItems(): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/menu-items&#x60;);
+  }
+
+  /**
+   * Retrieves menu items filtered by category.
+   * @param category The category to filter by.
+   * @returns An Observable of menu items in the specified category.
+   */
+  getMenuItemsByCategory(category: string): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/menu-categories&#x60;, { params: { category } });
+  }
+
+  /**
+   * Retrieves the employee ID based on a given name.
+   * @param name The name of the employee.
+   * @returns An Observable containing the employee ID.
+   */
+  getEmployeeId(name: string): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/get-employee-id&#x60;, { params: { name } });
+  }
+
+  /**
+   * Retrieves the current items in the shopping cart.
+   * @returns An Observable array of current cart items.
+   */
+  getCartItems(): Observable&lt;MenuItem[]&gt; {
+    return of(this.cart);
+  }
+
+  /**
+   * Records an order history in the database.
+   * @param order The order number.
+   * @param itemList A list of item IDs.
+   * @param togo Whether the order is to go.
+   * @param totalPrice The total price of the order.
+   * @param time The timestamp of the order.
+   * @param employeeId The ID of the employee who took the order.
+   * @param isCustomized Whether the order includes customized items.
+   * @returns An Observable of the server response.
+   */
+  addOrderHistory(order: number, itemList: string, togo: boolean, totalPrice: number, time: string, employeeId: number, isCustomized: boolean): Observable&lt;any&gt; {
+    const body &#x3D; {
+      order,
+      itemList,
+      togo,
+      totalPrice,
+      time,
+      employeeId,
+      isCustomized
+    };
+    return this.http.post(&#x60;${environment.apiUrl}/add_order_history&#x60;, body);
+  }
+
+  /**
+   * Retrieves the next available order ID from the server.
+   * @returns An Observable containing the next order ID.
+   */
+  getNextOrderId(): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/get_next_order_id&#x60;);
+  }
+
+  /**
+   * Generate restock report data.
+   * @param threshold limit of items before a item is considered in need of restock report
+   * @returns Observable with restock report data.
+   */
+  getRestockReport(threshold: number): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/restock-report?threshold&#x3D;${threshold}&#x60;);
+  }
+
+  getSupplier(): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/get-supplier&#x60;);
+  }
+
+  /**
+   * Calculates the total cost of items in the cart, including a specified tax rate.
+   * @returns The total cost including tax.
+   */
+  calculateTotalCost(): number {
+    let totalCost &#x3D; 0;
+    for (let item of this.cart) {
+      totalCost +&#x3D; item.price;
+    }
+    totalCost &#x3D; parseFloat((totalCost * .0625 + totalCost).toFixed(2));
+    return totalCost;
+  }
+  
+  /**
+   * Fetches the current seasonal item from the database.
+   * @returns An Observable containing the seasonal item.
+   */
+  getSeasonalItem(): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/get_seasonal_item&#x60;);
+  }
+
+  /**
+   * Removes an item from the cart based on its index.
+   * @param index The index of the item in the cart.
+   */
+  removeItemFromCart(index: number): void {
+    if (index &gt; -1 &amp;&amp; index &lt; this.cart.length) {
+      this.cart.splice(index, 1);
+    }
+  }
+
+  /**
+   * Fetches the ID of a menu item based on its name.
+   * @param name The name of the menu item.
+   * @returns An Observable containing the item ID.
+   */
+  getItemIdByItemName(name: string): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/get-item-id-by-name&#x60;, { params: { name } });
+  }
+  
+  /**
+   * Fetches a specific menu item by its ID.
+   * @param id The ID of the menu item.
+   * @returns An Observable containing the menu item.
+   */
+  getMenuItem(id: number): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/menu-item/${id}&#x60;);
+  }
+
+
+  /**
+   * Submits ingredient changes for a specific menu item to the server.
+   * @param payload The changes to submit.
+   * @returns An Observable of the server response.
+   */
+  submitIngredientChanges(payload: any): Observable&lt;any&gt; {
+    return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/update-ingredients&#x60;, payload);
+  }
+
+
+ 
+  /**
+   * Adds a new menu item to the server database.
+   * @param menuItem The new menu item data.
+   * @returns An Observable of the server response.
+   */
+  addMenuItem(menuItem: any): Observable&lt;any&gt; {
+    return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/add-menu-item&#x60;, menuItem);
+  }
+  
+  /**
+   * Retrieves all categories from the server.
+   * @returns An Observable array of categories.
+   */
+  getCategories(): Observable&lt;any&gt; {
+    return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/categories&#x60;);
+  }
+  
+  /**
+   * Retrieves all ingredients from the server.
+   * @returns An Observable array of ingredients.
+   */
+  getIngredients(): Observable&lt;any&gt; {
+    return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/ingredients&#x60;);
+  } 
+
+  /**
+   * Fetches sales report data between two dates.
+   * @param startDate The start date for the report.
+   * @param endDate The end date for the report.
+   * @returns An Observable containing the sales report data.
+   */
+  getSalesReport(startDate: string, endDate: string): Observable&lt;any&gt; {
+    return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/sales-report&#x60;, {
+      params: { startDate, endDate }
+    });
+  }
+
+  /**
+   * Retrieves frequency data for items sold together within a specified date range.
+   * @param startDateString The start date for the query.
+   * @param endDateString The end date for the query.
+   * @returns An Observable array of sell together frequency data.
+   */
+  getSellTogetherFrequency(startDateString: string, endDateString: string): Observable&lt;any[]&gt; {
+    const url &#x3D; &#x60;${environment.apiUrl}/sell-together-frequency&#x60;;
+    const params &#x3D; new HttpParams()
+      .set(&#x27;start_date&#x27;, startDateString)
+      .set(&#x27;end_date&#x27;, endDateString);
+  
+    return this.http.get&lt;any[]&gt;(url, { params });
+  }
+  
+
+  /**
+   * Fetches the difference in inventory between two dates.
+   * @param startDate The start date for the inventory check.
+   * @param endDate The end date for the inventory check.
+   * @returns An Observable with the inventory difference data.
+   */
+  getInventoryDifference(startDate: string, endDate: string): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/get-inventory-difference&#x60;, {
+      params: {
+        start_date: startDate,
+        end_date: endDate
+      }
+    });
+  }
+
+  /**
+   * Retrieves the name of an ingredient based on its ID.
+   * @param id The ID of the ingredient.
+   * @returns An Observable containing the name of the ingredient.
+   */
+  getIngredientNameByID(id: number): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/get-ingredient-name-by-id&#x60;, { params: { id: id.toString() } });
+  }
+
+  /**
+   * Retrieves the inventory for an ingredient by its name and record date.
+   * @param ingredient_name The name of the ingredient.
+   * @param record_date The date for the inventory record.
+   * @returns An Observable containing the inventory data for the specified ingredient and date.
+   */
+  getIngredientInventoryByDate(ingredient_name: number, record_date: string): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/get-ingredient-inventory-by-date&#x60;, { 
+      params: { 
+        ingredient_name: ingredient_name.toString(), 
+        record_date 
+      } 
+    });
+  }
+
+  // /&#x3D;&#x3D;/&#x3D;//&#x3D;/&#x3D;/&#x3D;&#x3D;/&#x3D;/
+
+  addSeasonalMenuItem(item: any): Observable&lt;any&gt; {
+    return this.http.post(&#x60;${environment.apiUrl}/add-seasonal-item&#x60;, item);
+  }
+
+  getlastSeasonalItem(): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/last-seasonal-item&#x60;);
+  }
+
+  deleteSeasonalItem(end_date: string): Observable&lt;any&gt; {
+    return this.http.post(&#x60;${environment.apiUrl}/delete-seasonal-item&#x60;, { end_date });
+  }
+
+  // &#x3D;/&#x3D;/&#x3D;//&#x3D;&#x3D;/&#x3D;//&#x3D;&#x3D;//&#x3D;/&#x3D;/&#x3D;
+
+
+  getExcessReport(startDate: string): Observable&lt;any&gt; {
+    return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/excess-report&#x60;, {
+      params: { startDate }
+    });
+  }
+
+  
+
+  saveCustomizations(orderId: number, menuItemId: number, ingredientIds: string): Observable&lt;any&gt; {
+    const body &#x3D; {
+      orderId,
+      menuItemId,
+      ingredientIds
+    };
+    return this.http.post(&#x60;${environment.apiUrl}/save-customizations&#x60;, body);
+  }
+
+  getCustomizations(orderId: number, menuItemId: number): Observable&lt;number[]&gt; {
+    const params &#x3D; {
+      orderId: orderId,
+      menuItemId: menuItemId
+    };
+  
+    return this.http.get&lt;number[]&gt;(&#x60;${environment.apiUrl}/get-customizations&#x60;, { params });
+  }
+
+  getMenuItemNameById(itemId: number): Observable&lt;any&gt; {
+    return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/get-menu-item-name-by-item-id&#x60;, { params: { item_id: itemId.toString() } });
+  }
+
+
+  getTopMenuItems(startDate: string, endDate: string, limitCount: number): Observable&lt;any&gt; {
+    return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/top-menu-items/${startDate}/${endDate}/${limitCount}&#x60;);
+  }
+  
+  
+  get_last_orders(page: number) {
+    return this.http.get&lt;any[]&gt;(&#x60;${environment.apiUrl}/get-last-orders?page&#x3D;${page}&#x60;);
+  }
+
+  updateOrderStatus(orderId: string, status: string): Observable&lt;any&gt; {
+    return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/update-order-status/${orderId}/${status}&#x60;, {});
+  }
+  
+  cancelOrder(orderId: string): Observable&lt;any&gt; {
+    return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/cancel-order/${orderId}&#x60;, {});
+  }
+  
+  createOrder(order: any): Observable&lt;any&gt; {
+    return of(null);
+  }
+
+  updateOrder(orderId: string, orderData: any): Observable&lt;any&gt; {
+    return this.http.put(&#x60;${environment.apiUrl}/update-order/${orderId}&#x60;, orderData);
+  }
+
+  removeOrderItems(orderId: string, items: number[]): Observable&lt;any&gt; {
+    return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/orders/${orderId}/remove-items&#x60;, { items });
+  }
+
+
+  getUserPermissions(userEmail: string): Observable&lt;{ permissions: { permissions: number } }&gt; {
+    return this.http.get&lt;{ permissions: { permissions: number } }&gt;(&#x60;${environment.apiUrl}/user-permissions?email&#x3D;${userEmail}&#x60;);
+  }
+
+  getEmployees(): Observable&lt;any&gt; {
+    return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/employees&#x60;);
+  }
+
+  updateEmployee(employee: Employee): Observable&lt;any&gt; {
+    return this.http.put&lt;any&gt;(&#x60;${environment.apiUrl}/employees/${employee.id}&#x60;, employee);
+  }
+
+  removeItemFromMenu(menuItemId: number): Observable&lt;any&gt; {
+    console.log(&quot;Deleting item with ID: &quot;, menuItemId);
+    return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/delete-menu-item&#x60;, { menuItemId: menuItemId });
+  }
+
+  removeIngredientFromTable(ingredientId: number): Observable&lt;any&gt; {
+    return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/delete-ingredient&#x60;, { ingredientID: ingredientId})
+  }
+
+  getIngredientInventory(): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/get-ingredient-inventory&#x60;);
+  }
+  
+  updateIngredientQuantity(name: string, quantity: number): Observable&lt;any&gt; {
+    const url &#x3D; &#x60;${environment.apiUrl}/update-ingredient-quantity/${name}&#x60;;
+    const body &#x3D; { quantity: quantity };
+    return this.http.put(url, body);
+
+  }
+  
+  updateIngredient(ingredientId: number, name: String, price: number): Observable&lt;any&gt; {
+    return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/update-ingredient&#x60;, { ingredientId: ingredientId, name: name, price: price});
+  }
+
+  // addIngredient(name: string, price: number): Observable&lt;any&gt; {
+  //   // return this.http.post(&#x27;/add-ingredient&#x27;, {name, price}).pipe(
+  //   //   tap({
+  //   //     next: (response) &#x3D;&gt; console.log(&#x27;Server response:&#x27;, response),
+  //   //     error: (error) &#x3D;&gt; console.error(&#x27;Server error:&#x27;, error)
+  //   //   })
+  //   // );
+  //   return this.http.post(&#x60;${environment.apiUrl}/add-ingredient&#x60;, { name, price });
+  // }
+
+  addIngredient(name: string, price: number): Observable&lt;any&gt; {
+    console.log(&quot;/add-ingredient &quot;, { name, price })
+    return this.http.post(&#x60;${environment.apiUrl}/add-ingredient&#x60;, { name, price }).pipe(
+
+      tap({
+        next: (response) &#x3D;&gt; console.log(&#x27;Server response:&#x27;, response),
+        error: (error) &#x3D;&gt; console.error(&#x27;Server error:&#x27;, error)
+      })
+    );
+  }
+
+
+  getTopMenuItemsFiltered(startDate: string, endDate: string, limitCount: number): Observable&lt;any&gt; {
+    const url &#x3D; &#x60;${environment.apiUrl}/top-menu-items-filtered/${startDate}/${endDate}/${limitCount}&#x60;;
+    return this.http.get&lt;any&gt;(url);
+  }
+
+  getLowQuantityIngredients(): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/low-quantity-ingredients&#x60;);
+  }
+
+  getOrdersByDate(date: string): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/orders?date&#x3D;${date}&#x60;);
+  }
+
+  addEmployee(employeeData: { name: string, title: string, salary: number, work_scheduling: string, permissions: number }): Observable&lt;any&gt; {
+    return this.http.post(&#x60;${environment.apiUrl}/add_employee&#x60;, employeeData);
+  }
+
+  deleteEmployee(id: number): Observable&lt;any&gt; {
+    return this.http.delete(&#x60;${environment.apiUrl}/delete_employee/${id}&#x60;);
+  }
+
+  
+  
+
+}
+
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'SellTogetherData.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

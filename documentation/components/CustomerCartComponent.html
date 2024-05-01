@@ -1,0 +1,2542 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CustomerCartComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/customer-cart/customer-cart.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for managing the customer&#39;s shopping cart and checkout process.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-customer-cart</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./customer-cart.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./customer-cart.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cartItems" >cartItems</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#drawer" >drawer</a>
+                            </li>
+                            <li>
+                                <a href="#feelsLikeTemperature" >feelsLikeTemperature</a>
+                            </li>
+                            <li>
+                                <a href="#isAccessibilityToolbarContainerVisible" >isAccessibilityToolbarContainerVisible</a>
+                            </li>
+                            <li>
+                                <a href="#isHandset$" >isHandset$</a>
+                            </li>
+                            <li>
+                                <a href="#itemListString" >itemListString</a>
+                            </li>
+                            <li>
+                                <a href="#orderNumber" >orderNumber</a>
+                            </li>
+                            <li>
+                                <a href="#selectedTextSize" >selectedTextSize</a>
+                            </li>
+                            <li>
+                                <a href="#temperature" >temperature</a>
+                            </li>
+                            <li>
+                                <a href="#textsizers" >textsizers</a>
+                            </li>
+                            <li>
+                                <a href="#toGo" >toGo</a>
+                            </li>
+                            <li>
+                                <a href="#weatherDescription" >weatherDescription</a>
+                            </li>
+                            <li>
+                                <a href="#weathericon" >weathericon</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#calculateSubtotal" >calculateSubtotal</a>
+                            </li>
+                            <li>
+                                <a href="#calculateTaxes" >calculateTaxes</a>
+                            </li>
+                            <li>
+                                <a href="#calculateTotalPrice" >calculateTotalPrice</a>
+                            </li>
+                            <li>
+                                <a href="#callWeatherApi" >callWeatherApi</a>
+                            </li>
+                            <li>
+                                <a href="#checkout" >checkout</a>
+                            </li>
+                            <li>
+                                <a href="#editItem" >editItem</a>
+                            </li>
+                            <li>
+                                <a href="#goHome" >goHome</a>
+                            </li>
+                            <li>
+                                <a href="#initGoogleTranslate" >initGoogleTranslate</a>
+                            </li>
+                            <li>
+                                <a href="#loadGoogleTranslate" >loadGoogleTranslate</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSeeMenu" >onSeeMenu</a>
+                            </li>
+                            <li>
+                                <a href="#removeItem" >removeItem</a>
+                            </li>
+                            <li>
+                                <a href="#setTextSize" >setTextSize</a>
+                            </li>
+                            <li>
+                                <a href="#toggleAccessibilityToolbarContainer" >toggleAccessibilityToolbarContainer</a>
+                            </li>
+                            <li>
+                                <a href="#toggleToGo" >toggleToGo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, router: Router, breakpointObserver: BreakpointObserver)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>breakpointObserver</td>
+                                                  
+                                                        <td>
+                                                                    <code>BreakpointObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculateSubtotal"></a>
+                    <span class="name">
+                        <span ><b>calculateSubtotal</b></span>
+                        <a href="#calculateSubtotal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>calculateSubtotal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="256"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:256</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Calculates the subtotal of the items in the cart.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The subtotal amount.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculateTaxes"></a>
+                    <span class="name">
+                        <span ><b>calculateTaxes</b></span>
+                        <a href="#calculateTaxes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>calculateTaxes()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="264"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:264</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Calculates the taxes based on the subtotal and a set tax rate.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The calculated tax amount.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculateTotalPrice"></a>
+                    <span class="name">
+                        <span ><b>calculateTotalPrice</b></span>
+                        <a href="#calculateTotalPrice"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>calculateTotalPrice()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="246"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:246</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Calculates the total price of the items in the cart including taxes.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The total price.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="callWeatherApi"></a>
+                    <span class="name">
+                        <span ><b>callWeatherApi</b></span>
+                        <a href="#callWeatherApi"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>callWeatherApi()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Calls a weather API to retrieve and display current weather conditions.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkout"></a>
+                    <span class="name">
+                        <span ><b>checkout</b></span>
+                        <a href="#checkout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkout()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="192"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:192</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Processes checkout, creates an order, and clears the cart.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editItem"></a>
+                    <span class="name">
+                        <span ><b>editItem</b></span>
+                        <a href="#editItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editItem(itemId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="184"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:184</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates to the item customization page.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>itemId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The ID of the item to customize.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goHome"></a>
+                    <span class="name">
+                        <span ><b>goHome</b></span>
+                        <a href="#goHome"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goHome()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="272"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:272</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Clears the cart and navigates to the employee login page.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initGoogleTranslate"></a>
+                    <span class="name">
+                        <span ><b>initGoogleTranslate</b></span>
+                        <a href="#initGoogleTranslate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initGoogleTranslate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="110"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:110</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the Google Translate widget.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadGoogleTranslate"></a>
+                    <span class="name">
+                        <span ><b>loadGoogleTranslate</b></span>
+                        <a href="#loadGoogleTranslate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadGoogleTranslate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sets up Google Translate on the page.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the component by fetching cart items and setting up external services.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSeeMenu"></a>
+                    <span class="name">
+                        <span ><b>onSeeMenu</b></span>
+                        <a href="#onSeeMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSeeMenu()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="238"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:238</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates to the customer menu page.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeItem"></a>
+                    <span class="name">
+                        <span ><b>removeItem</b></span>
+                        <a href="#removeItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeItem(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="227"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:227</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Removes an item from the cart.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The index of the item in the cart array.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTextSize"></a>
+                    <span class="name">
+                        <span ><b>setTextSize</b></span>
+                        <a href="#setTextSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setTextSize(cssClass: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sets the text size based on the selected CSS class.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>cssClass</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The CSS class that defines the text size.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleAccessibilityToolbarContainer"></a>
+                    <span class="name">
+                        <span ><b>toggleAccessibilityToolbarContainer</b></span>
+                        <a href="#toggleAccessibilityToolbarContainer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleAccessibilityToolbarContainer()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles the visibility of the accessibility toolbar.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleToGo"></a>
+                    <span class="name">
+                        <span ><b>toggleToGo</b></span>
+                        <a href="#toggleToGo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleToGo()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="176"
+                                    class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:176</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles the &#39;to-go&#39; status of the current order.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cartItems"></a>
+                    <span class="name">
+                        <span ><b>cartItems</b></span>
+                        <a href="#cartItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drawer"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>drawer</b></span>
+                        <a href="#drawer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSidenav</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;drawer&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="feelsLikeTemperature"></a>
+                    <span class="name">
+                        <span ><b>feelsLikeTemperature</b></span>
+                        <a href="#feelsLikeTemperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAccessibilityToolbarContainerVisible"></a>
+                    <span class="name">
+                        <span ><b>isAccessibilityToolbarContainerVisible</b></span>
+                        <a href="#isAccessibilityToolbarContainerVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHandset$"></a>
+                    <span class="name">
+                        <span ><b>isHandset$</b></span>
+                        <a href="#isHandset$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="itemListString"></a>
+                    <span class="name">
+                        <span ><b>itemListString</b></span>
+                        <a href="#itemListString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orderNumber"></a>
+                    <span class="name">
+                        <span ><b>orderNumber</b></span>
+                        <a href="#orderNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedTextSize"></a>
+                    <span class="name">
+                        <span ><b>selectedTextSize</b></span>
+                        <a href="#selectedTextSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;text-normal&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The currently selected text size for display.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="temperature"></a>
+                    <span class="name">
+                        <span ><b>temperature</b></span>
+                        <a href="#temperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="textsizers"></a>
+                    <span class="name">
+                        <span ><b>textsizers</b></span>
+                        <a href="#textsizers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    { size: &#x27;Normal&#x27;, cssClass: &#x27;text-normal&#x27; },
+    { size: &#x27;Large&#x27;, cssClass: &#x27;text-large&#x27; },
+    { size: &#x27;Extra Large&#x27;, cssClass: &#x27;text-extra-large&#x27; }
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array of text size options available for screen display.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toGo"></a>
+                    <span class="name">
+                        <span ><b>toGo</b></span>
+                        <a href="#toGo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weatherDescription"></a>
+                    <span class="name">
+                        <span ><b>weatherDescription</b></span>
+                        <a href="#weatherDescription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weathericon"></a>
+                    <span class="name">
+                        <span ><b>weathericon</b></span>
+                        <a href="#weathericon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;01d.png&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/customer-cart/customer-cart.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
+import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
+import { DataService } from &#x27;../data.service&#x27;;
+import { concatMap } from &#x27;rxjs/operators&#x27;;
+import { forkJoin } from &#x27;rxjs&#x27;;
+
+interface ItemId {
+  itemId: string; // Adjust the type if itemId is not a string
+}
+
+/**
+ * Component for managing the customer&#x27;s shopping cart and checkout process.
+ */
+@Component({
+  selector: &#x27;app-customer-cart&#x27;,
+  templateUrl: &#x27;./customer-cart.component.html&#x27;,
+  styleUrls: [&#x27;./customer-cart.component.css&#x27;]
+})
+export class CustomerCartComponent implements OnInit {
+  @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+  cartItems: any[] &#x3D; [];
+  orderNumber: number &#x3D; 0;
+  toGo: boolean &#x3D; false;
+  itemListString: string &#x3D; &quot;&quot;;
+  isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    );
+
+    /* accesibility toolbar code here */
+  isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
+
+  /**
+   * Toggles the visibility of the accessibility toolbar.
+   */
+  toggleAccessibilityToolbarContainer(): void {
+    this.isAccessibilityToolbarContainerVisible &#x3D; !this.isAccessibilityToolbarContainerVisible;
+    console.log(&#x27;Toolbar visibility:&#x27;, this.isAccessibilityToolbarContainerVisible);
+  }
+  
+
+   /**
+   * Array of text size options available for screen display.
+   */
+   textsizers &#x3D; [
+    { size: &#x27;Normal&#x27;, cssClass: &#x27;text-normal&#x27; },
+    { size: &#x27;Large&#x27;, cssClass: &#x27;text-large&#x27; },
+    { size: &#x27;Extra Large&#x27;, cssClass: &#x27;text-extra-large&#x27; }
+    ];
+    
+    /**
+     * The currently selected text size for display.
+     */
+    selectedTextSize: string &#x3D; &#x27;text-normal&#x27;;
+    
+    /**
+     * Sets the text size based on the selected CSS class.
+     * @param cssClass The CSS class that defines the text size.
+     */
+    setTextSize(cssClass: string): void {
+      this.selectedTextSize &#x3D; cssClass;
+    }
+    
+
+  /* end accessibility toolbar code */
+
+
+  weatherDescription: string &#x3D; &#x27;&#x27;;
+  temperature: number &#x3D; 0;
+  feelsLikeTemperature: number &#x3D; 0;
+  weathericon: string &#x3D; &#x27;01d.png&#x27;;
+
+  constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver) { }
+
+  /**
+   * Initializes the component by fetching cart items and setting up external services.
+   */
+  ngOnInit(): void {
+    this.dataService.getCartItems().subscribe(items &#x3D;&gt; {
+      this.cartItems &#x3D; items;
+    });
+    this.callWeatherApi();
+    this.loadGoogleTranslate();
+
+  }
+
+  /**
+   * Sets up Google Translate on the page.
+   */
+  loadGoogleTranslate(): void {
+    const existingScript &#x3D; document.getElementById(&#x27;google-translate-script&#x27;);
+    if (!existingScript) {
+      const script &#x3D; document.createElement(&#x27;script&#x27;);
+      script.id &#x3D; &#x27;google-translate-script&#x27;;
+      script.type &#x3D; &#x27;text/javascript&#x27;;
+      script.src &#x3D; &#x27;//translate.google.com/translate_a/element.js?cb&#x3D;googleTranslateElementInit&#x27;;
+      document.head.appendChild(script);
+    }
+      (window as any).googleTranslateElementInit &#x3D; this.initGoogleTranslate;
+  }
+
+  /**
+   * Initializes the Google Translate widget.
+   */
+  initGoogleTranslate(): void {
+    new window.google.translate.TranslateElement({
+      pageLanguage: &#x27;en&#x27;,
+      layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, &#x27;google_translate_element&#x27;);
+  }
+
+  /**
+   * Calls a weather API to retrieve and display current weather conditions.
+   */
+  callWeatherApi(): void {
+    const lat &#x3D; 30.6125364
+    const lon &#x3D; -96.3433166
+    const api_key &#x3D; &#x27;dcd3c687ea0ab81cb49468a99ae0ddb4&#x27;
+    
+    
+    this.dataService.getWeather(lat, lon, api_key).subscribe((weather: any) &#x3D;&gt; {
+
+      console.log(weather.current.weather[0].icon);
+
+      this.weatherDescription &#x3D; weather.current.weather[0].description;
+      this.temperature &#x3D; Math.round((weather.current.temp - 273.15) * (9 / 5) + 32);
+      if(weather.current.weather[0].icon !&#x3D; null){
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;01d&#x27;){
+          this.weathericon &#x3D; &#x27;01d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;01n&#x27;){
+          this.weathericon &#x3D; &#x27;01n.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;02d&#x27;){
+          this.weathericon &#x3D; &#x27;02d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;02n&#x27;){
+          this.weathericon &#x3D; &#x27;02n.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;03d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;03n&#x27;){
+          this.weathericon &#x3D; &#x27;03d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;04d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;04n&#x27;){
+          this.weathericon &#x3D; &#x27;04d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;09d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;09n&#x27;){
+          this.weathericon &#x3D; &#x27;09d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;10d&#x27;){
+          this.weathericon &#x3D; &#x27;10d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;10n&#x27;){
+          this.weathericon &#x3D; &#x27;10n.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;11d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;11n&#x27;){
+          this.weathericon &#x3D; &#x27;11d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;13d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;13n&#x27;){
+          this.weathericon &#x3D; &#x27;13d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;50d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;50n&#x27;){
+          this.weathericon &#x3D; &#x27;50d.png&#x27;;
+        }
+      }
+    });
+  }
+
+  /**
+   * Toggles the &#x27;to-go&#x27; status of the current order.
+   */
+  toggleToGo(): void {
+    this.toGo &#x3D; !this.toGo;
+  }
+
+  /**
+   * Navigates to the item customization page.
+   * @param itemId The ID of the item to customize.
+   */
+  editItem(itemId: number): void {
+    console.log(&#x27;Navigating to:&#x27;, [&#x27;/customer-customize-item&#x27;, itemId]);
+    this.router.navigate([&#x27;/customer-customize-item&#x27;, itemId]);
+  }
+
+  /**
+   * Processes checkout, creates an order, and clears the cart.
+   */
+  checkout(): void {
+    console.log(&quot;Checking out...&quot;);
+
+    console.log(&quot;Items in cart:&quot;);
+  
+    this.dataService.getNextOrderId().pipe(
+      concatMap((orderNumber: any) &#x3D;&gt; {
+        this.orderNumber &#x3D; orderNumber.next_order_id;
+  
+        let observables &#x3D; this.cartItems.map(item &#x3D;&gt; {
+          return this.dataService.getItemIdByItemName(item.name);
+        });
+        return forkJoin(observables);
+      }),
+      concatMap((itemIds: ItemId[]) &#x3D;&gt; {
+        this.itemListString &#x3D; itemIds.map(item &#x3D;&gt; item.itemId).join(&quot;, &quot;);
+  
+        const totalPrice &#x3D; this.dataService.calculateTotalCost();
+        const time &#x3D; new Date().toISOString();
+        const employeeId &#x3D; 1;
+        const isCustomized &#x3D; false;
+  
+        return this.dataService.addOrderHistory(this.orderNumber, this.itemListString, this.toGo, totalPrice, time, employeeId, isCustomized);
+      })
+    ).subscribe(() &#x3D;&gt; {
+      this.dataService.clearCart();
+      this.cartItems &#x3D; [];
+      this.router.navigate([&#x27;/customer-checkout-view&#x27;]);
+    });
+  }
+
+  /**
+   * Removes an item from the cart.
+   * @param index The index of the item in the cart array.
+   */
+  removeItem(index: number): void {
+    if (index &gt; -1 &amp;&amp; index &lt; this.cartItems.length) {
+      const item &#x3D; this.cartItems[index];
+      this.cartItems.splice(index, 1);
+      this.dataService.removeItemFromCart(item);
+    }
+  }
+
+  /**
+   * Navigates to the customer menu page.
+   */
+  onSeeMenu(): void {
+    this.router.navigate([&#x27;/customer-menu&#x27;]);
+  }
+
+  /**
+   * Calculates the total price of the items in the cart including taxes.
+   * @returns The total price.
+   */
+  calculateTotalPrice(): number {
+    const subtotal &#x3D; this.cartItems.reduce((total, item) &#x3D;&gt; total + item.price, 0);
+    const taxes &#x3D; this.calculateTaxes();
+    return subtotal + taxes;
+  }
+
+  /**
+   * Calculates the subtotal of the items in the cart.
+   * @returns The subtotal amount.
+   */
+  calculateSubtotal(): number {
+    return this.cartItems.reduce((total, item) &#x3D;&gt; total + item.price, 0);
+  }
+  
+  /**
+   * Calculates the taxes based on the subtotal and a set tax rate.
+   * @returns The calculated tax amount.
+   */
+  calculateTaxes(): number {
+    const taxRate &#x3D; 0.0625;
+    return this.calculateSubtotal() * taxRate;
+  }
+
+  /**
+   * Clears the cart and navigates to the employee login page.
+   */
+  goHome(): void {
+    this.dataService.clearCart();
+    this.router.navigate([&#x27;/employee-login&#x27;]);
+  }
+  
+
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+
+&lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+    &lt;mat-sidenav
+    #drawer
+    class&#x3D;&quot;sidenav&quot;
+    fixedInViewport&#x3D;&quot;false&quot;
+    [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+    [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+    [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
+    &lt;div class&#x3D;&quot;icons-toolbar&quot;&gt;
+      &lt;button mat-icon-button (click)&#x3D;&quot;goHome()&quot;&gt;
+        &lt;mat-icon aria-label&#x3D;&quot;Log out&quot;&gt;logout&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      
+      &lt;button mat-icon-button (click)&#x3D;&quot;onSeeMenu()&quot;&gt;
+        &lt;mat-icon aria-label&#x3D;&quot;Back to menu&quot;&gt;menu_open&lt;/mat-icon&gt;
+      &lt;/button&gt;
+  
+      &lt;button mat-icon-button (click)&#x3D;&quot;toggleAccessibilityToolbarContainer()&quot;&gt;
+        &lt;mat-icon aria-label&#x3D;&quot;Toggle accessibility toolbar&quot;&gt;{{ isAccessibilityToolbarContainerVisible ? &#x27;close&#x27; : &#x27;settings_accessibility&#x27; }}&lt;/mat-icon&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+      &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+    &lt;/div&gt;
+  &lt;/mat-sidenav&gt;
+    &lt;mat-sidenav-content&gt;
+        &lt;div class&#x3D;&quot;accessibility-toolbar-container&quot; *ngIf&#x3D;&quot;isAccessibilityToolbarContainerVisible&quot;&gt;
+
+            &lt;div class&#x3D;&quot;accessibility-toolbar&quot;&gt;
+      
+              &lt;div class&#x3D;&quot;weather-api-section&quot; matTooltip&#x3D;&quot;Current weather conditions in College Station, TX&quot; matTooltipPosition&#x3D;&quot;below&quot;&gt;
+                &lt;img class&#x3D;&quot;weather-icon&quot; [src]&#x3D;&quot;&#x27;assets/&#x27; + weathericon&quot; alt&#x3D;&quot;Weather icon&quot;&gt;  {{temperature}} °F
+              &lt;/div&gt;
+      
+              &lt;div class&#x3D;&quot;text-sizer-dropdown-section&quot;&gt;
+                &lt;mat-form-field class&#x3D;&quot;text-sizer-form-field&quot;&gt;
+                    &lt;mat-label&gt;Select text size&lt;/mat-label&gt;
+                    &lt;mat-select (selectionChange)&#x3D;&quot;setTextSize($event.value.cssClass)&quot;&gt;
+                      &lt;mat-option *ngFor&#x3D;&quot;let option of textsizers&quot; [value]&#x3D;&quot;option&quot;&gt;
+                            {{ option.size }}
+                        &lt;/mat-option&gt;
+                    &lt;/mat-select&gt;
+                &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+      
+              &lt;div class&#x3D;&quot;screen-reader-section&quot;&gt;
+                &lt;button mat-button class&#x3D;&quot;accessibility-toolbar-btn&quot;&gt;Activate screenreader&lt;/button&gt;
+              &lt;/div&gt;
+      
+              &lt;div class&#x3D;&quot;keyboard-shortcuts-section&quot;&gt;
+                &lt;button mat-button class&#x3D;&quot;accessibility-toolbar-btn&quot;&gt;Keyboard Shortcuts&lt;/button&gt;
+              &lt;/div&gt;
+
+              &lt;div id&#x3D;&quot;google_translate_element&quot;&gt;&lt;/div&gt;
+      
+              &lt;!-- &lt;div class&#x3D;&quot;translate-dropdown-section&quot;&gt;
+                &lt;mat-form-field class&#x3D;&quot;translate-dropdown-form-field&quot;&gt;
+                  &lt;mat-label&gt;Translate API&lt;/mat-label&gt;
+                  &lt;mat-select&gt;
+                      &lt;mat-option *ngFor&#x3D;&quot;let option of textsizers&quot; [value]&#x3D;&quot;option.size&quot; class&#x3D;&quot;text-sizer-form-field&quot;&gt;
+                          {{ option.size }}
+                      &lt;/mat-option&gt;
+                  &lt;/mat-select&gt;
+              &lt;/mat-form-field&gt;
+              &lt;/div&gt; --&gt;
+      
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;div class&#x3D;&quot;main-content&quot;&gt;
+            &lt;div class&#x3D;&quot;main-content-inner&quot;&gt;
+                &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+                    &lt;button
+                    type&#x3D;&quot;button&quot;
+                    aria-label&#x3D;&quot;Toggle sidenav&quot;
+                    mat-icon-button
+                    (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+                    &lt;mat-icon class&#x3D;&quot;menu-icon-btn&quot; aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                    &lt;span class&#x3D;&quot;menu-category-title&quot;&gt;YOUR CART&lt;/span&gt;
+                    &lt;div class&#x3D;&quot;toolbar-btn-container&quot;&gt;
+                    &lt;button class&#x3D;&quot;toolbar-btn&quot;(click)&#x3D;&quot;toggleToGo()&quot;&gt;To Go: {{ toGo ? &#x27;Yes&#x27; : &#x27;No&#x27; }}&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/mat-toolbar&gt;
+
+                &lt;ul&gt;
+                  &lt;div class&#x3D;&quot;menu-item-container&quot;&gt;
+                    &lt;div class&#x3D;&quot;cart-item-module&quot; *ngFor&#x3D;&quot;let item of cartItems; let i &#x3D; index&quot;&gt;
+                      &lt;div class&#x3D;&quot;cart-item-name&quot;&gt; 1x {{ item.name }}&lt;/div&gt;
+                      &lt;div class&#x3D;&quot;cart-item-price&quot;&gt;{{ item.price | currency }}&lt;/div&gt;
+                      &lt;div class&#x3D;&quot;item-actions&quot;&gt;
+                        &lt;button class&#x3D;&quot;action-btn&quot; (click)&#x3D;&quot;editItem(item.id)&quot;&gt;Edit&lt;/button&gt;
+                        &lt;button class&#x3D;&quot;action-btn&quot; (click)&#x3D;&quot;removeItem(i)&quot;&gt;Remove&lt;/button&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+            
+                    &lt;div class&#x3D;&quot;summary-1&quot;&gt;
+                        &lt;div class&#x3D;&quot;subtotal-taxes&quot; [ngClass]&#x3D;&quot;selectedTextSize&quot;&gt;
+                            &lt;div&gt;Subtotal: {{ calculateSubtotal() | currency }}&lt;/div&gt;
+                            &lt;div&gt;Taxes: {{ calculateTaxes() | currency }}&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;summary-2&quot; [ngClass]&#x3D;&quot;selectedTextSize&quot;&gt;
+                        &lt;div class&#x3D;&quot;total-price&quot;&gt;Total Price: {{ calculateTotalPrice() | currency }}&lt;/div&gt;
+                        &lt;button class&#x3D;&quot;checkout-btn&quot; (click)&#x3D;&quot;checkout()&quot;&gt;Checkout&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/ul&gt;
+                &lt;ng-content&gt;&lt;/ng-content&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/mat-sidenav-content&gt;
+  &lt;/mat-sidenav-container&gt;
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./customer-cart.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* CSS */
+
+.mat-toolbar,
+.mat-sidenav-content,
+.mat-sidenav,
+.mat-nav-list,
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 0; /* Ensures no extra space below the header pushing the top buttons down */
+}
+
+.top-buttons {
+    display: flex;
+    flex-direction: row; /* Aligns buttons in a row */
+}
+
+.cart-items {
+    margin-top: 20px;
+    background-color: #e1e1e1;
+}
+
+.cart-container {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.item-actions button {
+    margin-left: 10px;
+}
+
+
+
+.checkout-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/*
+.cdk-overlay-pane {
+  position: absolute;
+}
+
+.cdk-overlay-connected-position-bounding-box {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 1px;
+  min-height: 1px;
+}
+*/
+
+.selected-item {
+    background-color: gold;
+    color: black; 
+  }
+  
+  .active {
+    background-color: gold;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: transparent;
+    color: #000;
+    font-size: 50px;
+  }
+  
+  .revs-image {
+    object-fit: cover;
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  .menu-category-title {
+    margin-right: auto;
+    margin-left: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    text-transform: uppercase !important;
+    font-weight: 800;
+  }
+  
+  body {
+    margin: 0;
+    width: 100%;
+  }
+  
+  .mat-sidenav-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .mat-sidenav-content {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-content {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sidenav-container {
+    height: 100vh;
+    display: flex;
+    width: 100vw;
+  }
+  
+  .sidenav {
+    width: 15%;
+    box-shadow: 3px 0 6px rgba(0,0,0,.24);
+    background-color: #5B0726;
+    height: 100%;
+  }
+  
+  .sidenav-link {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidenav-link:hover {
+    background-color: #790E36;
+    width: 100%;
+  }
+  
+  .sidenav-link-active {
+    background-color: #790E36 !important;
+  }
+  
+  .menu-item-container {
+    width: 100%;
+    list-style: none;
+  }
+  
+  .cart-item-module {
+    background: transparent;
+    border: none;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  
+  .cart-item-price {
+    font-style: italic;
+    align-items: center;
+    margin-left: auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 20px;
+  }
+  
+  .cart-item-name {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .action-buttons-menu {
+    width: 100%;
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+  }
+  
+  .action-buttons-menu {
+    width: 15%;
+  }
+  
+  .action-buttons {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .action-buttons:hover {
+    background-color: #790E36;
+    width: 100%;
+  }
+  
+  .toolbar-btn-container {
+    display: flex;
+    margin-top: auto;
+  }
+  
+  .toolbar-btn {
+    margin-left: 10px;
+    background-color: #5B0726;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+  }
+  
+  .toolbar-btn:hover {
+    background-color: #F8BE14;
+    color: black;
+  }
+
+  .action-btn {
+    margin-left: 10px;
+    background-color: #5B0726;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+  }
+  
+  .action-btn:hover {
+    background-color: #e1e1e1;
+    color: #000;
+  }
+
+  .mat-toolbar {
+    display: flex;
+    justify-content: flex-start;
+    /*
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0;
+    */
+    padding-left: 24px;
+    margin: 0;
+    background: white;
+  }
+
+  .mat-toolbar span:last-child {
+    margin-right:auto;
+  }
+  
+
+  .menu-icon-btn {
+    padding:0;
+    margin: 0;
+  }
+
+  .subtotal-taxes {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    color: #000;
+    line-height: 200%;
+  }
+
+  .total-price {
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    color: #000;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .summary-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 3px solid #e1e1e1;
+    border-top: 3px solid #e1e1e1;
+
+}
+
+.summary-2 {
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 100%;
+}
+
+.checkout-btn {
+    background-color: #5B0726;
+    border: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+}
+
+.checkout-btn:hover {
+    background-color: #F8BE14;
+    color: #000;
+}
+
+.mat-toolbar {
+  display: flex;
+  padding-right: 0px;
+  padding-left: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.accessibility-toolbar-container {
+  display: block;
+}
+
+.accessibility-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e1e1e1;
+  color: #fff;
+  padding-left: 40px;
+  padding-right: 40px;
+  align-items: center;
+}
+
+.icons-toolbar {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: #e1e1e1;
+  background-color: #43091E;
+  border-bottom: 2px solid #43091E;
+}
+
+.text-sizer-dropdown-section {
+  height: 100px;
+  position:flex;
+  padding-top: 0.5em;
+  margin-bottom: -2.4em;
+}
+
+.translate-dropdown-section {
+  height: 100px;
+  position:flex;
+  padding-top: 0.5em;
+  margin-bottom: -2.4em;
+}
+
+.accessibility-toolbar-btn {
+  margin-left: 10px;
+    background-color: #fff;
+    border: none;
+    color: black;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    height: 100%;
+    letter-spacing: normal;
+}
+
+.weather-api-section {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  height: 100%;
+  letter-spacing: normal;
+  display: flex;
+  align-items: center;
+}
+
+.weather-icon {
+width: 50px;
+}
+
+.main-content-inner {
+  padding-right: 40px;
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart-button {
+  color: white;
+}
+
+.text-normal {
+  font-size: 25px;
+  }
+  
+  .text-large {
+  font-size: 36px;
+  }
+  
+  .text-extra-large {
+  font-size: 75px;
+  }
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><mat-sidenav-container class="sidenav-container">    <mat-sidenav    #drawer    class="sidenav"    fixedInViewport="false"    [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"    [mode]="(isHandset$ | async) ? \'over\' : \'side\'"    [opened]="(isHandset$ | async) === false">    <div class="icons-toolbar">      <button mat-icon-button (click)="goHome()">        <mat-icon aria-label="Log out">logout</mat-icon>      </button>            <button mat-icon-button (click)="onSeeMenu()">        <mat-icon aria-label="Back to menu">menu_open</mat-icon>      </button>        <button mat-icon-button (click)="toggleAccessibilityToolbarContainer()">        <mat-icon aria-label="Toggle accessibility toolbar">{{ isAccessibilityToolbarContainerVisible ? \'close\' : \'settings_accessibility\' }}</mat-icon>      </button>    </div>    <div class="revs-image">      <img width="200" height="100" src="assets/REVSLogoUpdated.jpg">    </div>  </mat-sidenav>    <mat-sidenav-content>        <div class="accessibility-toolbar-container" *ngIf="isAccessibilityToolbarContainerVisible">            <div class="accessibility-toolbar">                    <div class="weather-api-section" matTooltip="Current weather conditions in College Station, TX" matTooltipPosition="below">                <img class="weather-icon" [src]="\'assets/\' + weathericon" alt="Weather icon">  {{temperature}} °F              </div>                    <div class="text-sizer-dropdown-section">                <mat-form-field class="text-sizer-form-field">                    <mat-label>Select text size</mat-label>                    <mat-select (selectionChange)="setTextSize($event.value.cssClass)">                      <mat-option *ngFor="let option of textsizers" [value]="option">                            {{ option.size }}                        </mat-option>                    </mat-select>                </mat-form-field>              </div>                    <div class="screen-reader-section">                <button mat-button class="accessibility-toolbar-btn">Activate screenreader</button>              </div>                    <div class="keyboard-shortcuts-section">                <button mat-button class="accessibility-toolbar-btn">Keyboard Shortcuts</button>              </div>              <div id="google_translate_element"></div>                    <!-- <div class="translate-dropdown-section">                <mat-form-field class="translate-dropdown-form-field">                  <mat-label>Translate API</mat-label>                  <mat-select>                      <mat-option *ngFor="let option of textsizers" [value]="option.size" class="text-sizer-form-field">                          {{ option.size }}                      </mat-option>                  </mat-select>              </mat-form-field>              </div> -->                  </div>          </div>        <div class="main-content">            <div class="main-content-inner">                <mat-toolbar color="primary">                    <button                    type="button"                    aria-label="Toggle sidenav"                    mat-icon-button                    (click)="drawer.toggle()">                    <mat-icon class="menu-icon-btn" aria-label="Side nav toggle icon">menu</mat-icon>                    </button>                    <span class="menu-category-title">YOUR CART</span>                    <div class="toolbar-btn-container">                    <button class="toolbar-btn"(click)="toggleToGo()">To Go: {{ toGo ? \'Yes\' : \'No\' }}</button>                    </div>                </mat-toolbar>                <ul>                  <div class="menu-item-container">                    <div class="cart-item-module" *ngFor="let item of cartItems; let i = index">                      <div class="cart-item-name"> 1x {{ item.name }}</div>                      <div class="cart-item-price">{{ item.price | currency }}</div>                      <div class="item-actions">                        <button class="action-btn" (click)="editItem(item.id)">Edit</button>                        <button class="action-btn" (click)="removeItem(i)">Remove</button>                      </div>                    </div>                  </div>                                <div class="summary-1">                        <div class="subtotal-taxes" [ngClass]="selectedTextSize">                            <div>Subtotal: {{ calculateSubtotal() | currency }}</div>                            <div>Taxes: {{ calculateTaxes() | currency }}</div>                        </div>                    </div>                    <div class="summary-2" [ngClass]="selectedTextSize">                        <div class="total-price">Total Price: {{ calculateTotalPrice() | currency }}</div>                        <button class="checkout-btn" (click)="checkout()">Checkout</button>                    </div>                </ul>                <ng-content></ng-content>            </div>        </div>    </mat-sidenav-content>  </mat-sidenav-container>  </div>'
+    var COMPONENTS = [{'name': 'AddEmployeeComponent', 'selector': 'app-add-employee'},{'name': 'AddOrderDialogComponentComponent', 'selector': 'app-add-order-dialog-component'},{'name': 'AdminViewComponent', 'selector': 'app-admin-view'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CashierCartComponent', 'selector': 'app-cashier-cart'},{'name': 'CashierCheckoutViewComponent', 'selector': 'app-cashier-checkout-view'},{'name': 'CashierCustomizeItemComponent', 'selector': 'app-cashier-customize-item'},{'name': 'CashierMenuComponent', 'selector': 'app-cashier-menu'},{'name': 'CustomerCartComponent', 'selector': 'app-customer-cart'},{'name': 'CustomerCheckoutViewComponent', 'selector': 'app-customer-checkout-view'},{'name': 'CustomerCustomizeItemComponent', 'selector': 'app-customer-customize-item'},{'name': 'CustomerLandingComponent', 'selector': 'app-customer-landing'},{'name': 'CustomerMenuComponent', 'selector': 'app-customer-menu'},{'name': 'EditEmployeeDialogComponent', 'selector': 'app-edit-employee-dialog'},{'name': 'EditOrderComponent', 'selector': 'app-edit-order'},{'name': 'EmployeeLoginComponent', 'selector': 'app-employee-login'},{'name': 'ExcessReportComponent', 'selector': 'app-excess-report'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerEditIngredientsComponent', 'selector': 'app-manager-edit-ingredients'},{'name': 'ManagerEditMenuComponent', 'selector': 'app-manager-edit-menu'},{'name': 'ManagerViewComponent', 'selector': 'app-manager-view'},{'name': 'MenuBoardComponent', 'selector': 'app-menu-board'},{'name': 'MenuPopularityComponent', 'selector': 'app-menu-popularity'},{'name': 'OrderEditDialogComponent', 'selector': 'app-order-edit-dialog'},{'name': 'OrderManagementComponent', 'selector': 'app-order-management'},{'name': 'ProductUsageComponent', 'selector': 'app-product-usage'},{'name': 'RemoveOrderItemsDialogComponent', 'selector': 'app-remove-order-items-dialog'},{'name': 'RestockReportComponent', 'selector': 'app-restock-report'},{'name': 'SalesReportComponent', 'selector': 'app-sales-report'},{'name': 'SellTogetherReportComponent', 'selector': 'app-sell-together-report'},{'name': 'TrevorCartComponent', 'selector': 'app-trevor-cart'},{'name': 'TrevorCashierComponent', 'selector': 'app-trevor-cashier'},{'name': 'TrevorCheckoutComponent', 'selector': 'app-trevor-checkout'},{'name': 'TrevorCustomizeItemComponent', 'selector': 'app-trevor-customize-item'},{'name': 'ViewCustomizationsComponent', 'selector': 'app-view-customizations'}];
+    var DIRECTIVES = [{'name': 'LogoutDirective', 'selector': '[appLogout]'}];
+    var ACTUAL_COMPONENT = {'name': 'CustomerCartComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CustomerCartComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

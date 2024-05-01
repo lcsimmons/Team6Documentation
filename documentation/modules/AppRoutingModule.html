@@ -1,0 +1,402 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">Modules</li>
+    <li class="breadcrumb-item" >AppRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a href="#info" 
+            class="nav-link"
+            class="nav-link active"
+            role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li class="nav-item">
+        <a href="#source" 
+            class="nav-link"
+            
+            role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/app-routing.module.ts</code>
+        </p>
+
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { EmployeeLoginComponent } from &#x27;./employee-login/employee-login.component&#x27;;
+import { CashierMenuComponent } from &#x27;./cashier-menu/cashier-menu.component&#x27;;
+import { CustomerMenuComponent } from &#x27;./customer-menu/customer-menu.component&#x27;;
+import { ManagerViewComponent } from &#x27;./manager-view/manager-view.component&#x27;;
+import { MenuBoardComponent } from &#x27;./menu-board/menu-board.component&#x27;;
+import { CashierCartComponent } from &#x27;./cashier-cart/cashier-cart.component&#x27;;
+import { CustomerCartComponent } from &#x27;./customer-cart/customer-cart.component&#x27;;
+import { CustomerCheckoutViewComponent } from &#x27;./customer-checkout-view/customer-checkout-view.component&#x27;;
+import { CashierCheckoutViewComponent } from &#x27;./cashier-checkout-view/cashier-checkout-view.component&#x27;;
+import { ProductUsageComponent } from &#x27;./product-usage/product-usage.component&#x27;;
+import { CustomerCustomizeItemComponent } from &#x27;./customer-customize-item/customer-customize-item.component&#x27;;
+import { CashierCustomizeItemComponent } from &#x27;./cashier-customize-item/cashier-customize-item.component&#x27;; 
+import { SalesReportComponent } from &#x27;./sales-report/sales-report.component&#x27;;
+import { SellTogetherReportComponent } from &#x27;./sell-together-report/sell-together-report.component&#x27;;
+import { ExcessReportComponent } from &#x27;./excess-report/excess-report.component&#x27;;
+import { ManagerEditMenuComponent } from &#x27;./manager-edit-menu/manager-edit-menu.component&#x27;;
+import { RestockReportComponent } from &#x27;./restock-report/restock-report.component&#x27;;
+import { CustomerLandingComponent } from &#x27;./customer-landing/customer-landing.component&#x27;;
+import { TrevorCashierComponent } from &#x27;./trevor-cashier/trevor-cashier.component&#x27;; 
+import { OrderManagementComponent } from &#x27;./order-management/order-management.component&#x27;;
+import { MenuPopularityComponent } from &#x27;./menu-popularity/menu-popularity.component&#x27;;
+
+import { LoginComponent } from &#x27;./login/login.component&#x27;;
+import { AdminViewComponent } from &#x27;./admin-view/admin-view.component&#x27;;
+import { AuthGuard } from &#x27;./auth-guard.service&#x27;;
+
+import { TrevorCartComponent } from &#x27;./trevor-cart/trevor-cart.component&#x27;;
+import { TrevorCustomizeItemComponent } from &#x27;./trevor-customize-item/trevor-customize-item.component&#x27;;
+import { TrevorCheckoutComponent } from &#x27;./trevor-checkout/trevor-checkout.component&#x27;;
+import { ManagerEditIngredientsComponent } from &#x27;./manager-edit-ingredients/manager-edit-ingredients.component&#x27;;
+
+
+
+const routes: Routes &#x3D; [
+  { path: &#x27;&#x27;, redirectTo: &#x27;/login&#x27;, pathMatch: &#x27;full&#x27; },
+  { path: &#x27;employee-login&#x27;, component: EmployeeLoginComponent },
+
+  {
+    path: &#x27;sales-report&#x27;,
+    component: SalesReportComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 2 }
+  },
+
+ 
+
+  { path: &#x27;customer-menu&#x27;, component: CustomerMenuComponent },
+  {
+    path: &#x27;cashier-cart-view&#x27;,
+    component: CashierCartComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 1 }
+  },
+  { path: &#x27;customer-cart-view&#x27;, component: CustomerCartComponent },
+  { path: &#x27;customer-checkout-view&#x27;, component: CustomerCheckoutViewComponent },
+  {
+    path: &#x27;cashier-checkout-view&#x27;,
+    component: CashierCheckoutViewComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 1 }
+  },
+  { path: &#x27;customer-cart&#x27;, component: CustomerCartComponent },
+  {
+    path: &#x27;cashier-cart&#x27;,
+    component: CashierCartComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 1 }
+  },
+  { path: &#x27;menu-board&#x27;, component: MenuBoardComponent },
+  {
+    path: &#x27;product-usage&#x27;,
+    component: ProductUsageComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 2 }
+  },
+  { path: &#x27;customer-customize-item/:id&#x27;, component: CustomerCustomizeItemComponent },
+
+  {
+    path: &#x27;cashier-customize-item/:id&#x27;,
+    component: CashierCustomizeItemComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 1 }
+  },
+  {
+    path: &#x27;sell-together-report&#x27;,
+    component: SellTogetherReportComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 2 }
+  },
+  {
+    path: &#x27;excess-report&#x27;,
+    component: ExcessReportComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 2 }
+  },
+  {
+    path: &#x27;manager-edit-menu&#x27;,
+    component: ManagerEditMenuComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 2 }
+  },
+  {
+    path: &#x27;trevor-cashier&#x27;,
+    component: TrevorCashierComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 1 }
+  },
+  {
+    path: &#x27;order-management&#x27;,
+    component: OrderManagementComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 1 }
+  },
+  {
+    path: &#x27;menu-popularity&#x27;,
+    component: MenuPopularityComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 2 }
+  },
+  { path: &#x27;login&#x27;, component: LoginComponent },
+  {
+    path: &#x27;admin-view&#x27;,
+    component: AdminViewComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 3 }
+  },
+  {
+    path: &#x27;manager-view&#x27;,
+    component: ManagerViewComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 2 }
+  },
+  {
+    path: &#x27;cashier-menu&#x27;,
+    component: CashierMenuComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 1 }
+  },
+
+  { path: &#x27;customer-landing&#x27;, component: CustomerLandingComponent },
+ 
+  { 
+    path: &#x27;trevor-cart&#x27;, 
+    component: TrevorCartComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 1 }
+  },
+  { 
+    path: &#x27;trevor-customize-item/:id&#x27;, 
+    component: TrevorCustomizeItemComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 1 }
+  },
+  { 
+    path: &#x27;trevor-checkout&#x27;, 
+    component: TrevorCheckoutComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 1 }
+  },
+  { 
+    path: &#x27;edit-ingredients&#x27;, 
+    component: ManagerEditIngredientsComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 2 }
+  },
+  {
+    path: &#x27;restock-report&#x27;, 
+    component: RestockReportComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: 2 } 
+  }
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

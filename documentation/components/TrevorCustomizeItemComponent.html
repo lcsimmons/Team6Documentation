@@ -1,0 +1,1744 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TrevorCustomizeItemComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/trevor-customize-item/trevor-customize-item.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for customizing a specific menu item selected by the customer.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-trevor-customize-item</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./trevor-customize-item.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./trevor-customize-item.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#feelsLikeTemperature" >feelsLikeTemperature</a>
+                            </li>
+                            <li>
+                                <a href="#ingredients" >ingredients</a>
+                            </li>
+                            <li>
+                                <a href="#isAccessibilityToolbarContainerVisible" >isAccessibilityToolbarContainerVisible</a>
+                            </li>
+                            <li>
+                                <a href="#isHandset$" >isHandset$</a>
+                            </li>
+                            <li>
+                                <a href="#menuItem" >menuItem</a>
+                            </li>
+                            <li>
+                                <a href="#orderId" >orderId</a>
+                            </li>
+                            <li>
+                                <a href="#orderNumber" >orderNumber</a>
+                            </li>
+                            <li>
+                                <a href="#selectedIngredients" >selectedIngredients</a>
+                            </li>
+                            <li>
+                                <a href="#temperature" >temperature</a>
+                            </li>
+                            <li>
+                                <a href="#textsizers" >textsizers</a>
+                            </li>
+                            <li>
+                                <a href="#weatherDescription" >weatherDescription</a>
+                            </li>
+                            <li>
+                                <a href="#weathericon" >weathericon</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#callWeatherApi" >callWeatherApi</a>
+                            </li>
+                            <li>
+                                <a href="#getMenuItemImage" >getMenuItemImage</a>
+                            </li>
+                            <li>
+                                <a href="#goHome" >goHome</a>
+                            </li>
+                            <li>
+                                <a href="#initGoogleTranslate" >initGoogleTranslate</a>
+                            </li>
+                            <li>
+                                <a href="#loadCustomizations" >loadCustomizations</a>
+                            </li>
+                            <li>
+                                <a href="#loadGoogleTranslate" >loadGoogleTranslate</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSeeMenu" >onSeeMenu</a>
+                            </li>
+                            <li>
+                                <a href="#saveCustomizations" >saveCustomizations</a>
+                            </li>
+                            <li>
+                                <a href="#toggleAccessibilityToolbarContainer" >toggleAccessibilityToolbarContainer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: ActivatedRoute, dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, router: Router, breakpointObserver: BreakpointObserver)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructs the component with necessary dependencies.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>ActivatedRoute to access route parameters.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>DataService to fetch and submit data related to the menu items.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Router for navigation.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>breakpointObserver</td>
+                                                  
+                                                        <td>
+                                                                    <code>BreakpointObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>BreakpointObserver to react to media query changes.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="callWeatherApi"></a>
+                    <span class="name">
+                        <span ><b>callWeatherApi</b></span>
+                        <a href="#callWeatherApi"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>callWeatherApi()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="108"
+                                    class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:108</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Calls the API to get current weather conditions for a fixed location.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMenuItemImage"></a>
+                    <span class="name">
+                        <span ><b>getMenuItemImage</b></span>
+                        <a href="#getMenuItemImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMenuItemImage(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="229"
+                                    class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:229</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goHome"></a>
+                    <span class="name">
+                        <span ><b>goHome</b></span>
+                        <a href="#goHome"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goHome()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="236"
+                                    class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:236</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates back to the main menu.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initGoogleTranslate"></a>
+                    <span class="name">
+                        <span ><b>initGoogleTranslate</b></span>
+                        <a href="#initGoogleTranslate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initGoogleTranslate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="179"
+                                    class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:179</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the Google Translate widget.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadCustomizations"></a>
+                    <span class="name">
+                        <span ><b>loadCustomizations</b></span>
+                        <a href="#loadCustomizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadCustomizations()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="189"
+                                    class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:189</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Loads customizations for the current order and menu item.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadGoogleTranslate"></a>
+                    <span class="name">
+                        <span ><b>loadGoogleTranslate</b></span>
+                        <a href="#loadGoogleTranslate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadGoogleTranslate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="164"
+                                    class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:164</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Opens Google Translate feature for the application.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initalize the component</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSeeMenu"></a>
+                    <span class="name">
+                        <span ><b>onSeeMenu</b></span>
+                        <a href="#onSeeMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSeeMenu()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="240"
+                                    class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:240</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveCustomizations"></a>
+                    <span class="name">
+                        <span ><b>saveCustomizations</b></span>
+                        <a href="#saveCustomizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveCustomizations(menuItemId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="212"
+                                    class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:212</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Saves the selected customizations for the current menu item.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>menuItemId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The ID of the menu item for which customizations are being saved.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleAccessibilityToolbarContainer"></a>
+                    <span class="name">
+                        <span ><b>toggleAccessibilityToolbarContainer</b></span>
+                        <a href="#toggleAccessibilityToolbarContainer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleAccessibilityToolbarContainer()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="feelsLikeTemperature"></a>
+                    <span class="name">
+                        <span ><b>feelsLikeTemperature</b></span>
+                        <a href="#feelsLikeTemperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ingredients"></a>
+                    <span class="name">
+                        <span ><b>ingredients</b></span>
+                        <a href="#ingredients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAccessibilityToolbarContainerVisible"></a>
+                    <span class="name">
+                        <span ><b>isAccessibilityToolbarContainerVisible</b></span>
+                        <a href="#isAccessibilityToolbarContainerVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHandset$"></a>
+                    <span class="name">
+                        <span ><b>isHandset$</b></span>
+                        <a href="#isHandset$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Observable to determine if the device is a handset for responsive layout purposes.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuItem"></a>
+                    <span class="name">
+                        <span ><b>menuItem</b></span>
+                        <a href="#menuItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orderId"></a>
+                    <span class="name">
+                        <span ><b>orderId</b></span>
+                        <a href="#orderId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orderNumber"></a>
+                    <span class="name">
+                        <span ><b>orderNumber</b></span>
+                        <a href="#orderNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedIngredients"></a>
+                    <span class="name">
+                        <span ><b>selectedIngredients</b></span>
+                        <a href="#selectedIngredients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="temperature"></a>
+                    <span class="name">
+                        <span ><b>temperature</b></span>
+                        <a href="#temperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="textsizers"></a>
+                    <span class="name">
+                        <span ><b>textsizers</b></span>
+                        <a href="#textsizers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    { size: &#x27;Regular&#x27;},
+    { size: &#x27;Large&#x27;},
+    { size: &#x27;Extra Large&#x27;},
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weatherDescription"></a>
+                    <span class="name">
+                        <span ><b>weatherDescription</b></span>
+                        <a href="#weatherDescription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weathericon"></a>
+                    <span class="name">
+                        <span ><b>weathericon</b></span>
+                        <a href="#weathericon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;01d.png&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/trevor-customize-item/trevor-customize-item.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { DataService } from &#x27;../data.service&#x27;; 
+import { FormControl } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
+import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
+import { concatMap } from &#x27;rxjs/operators&#x27;;
+import { forkJoin } from &#x27;rxjs&#x27;;
+
+/**
+ * Component for customizing a specific menu item selected by the customer.
+ */
+@Component({
+  selector: &#x27;app-trevor-customize-item&#x27;,
+  templateUrl: &#x27;./trevor-customize-item.component.html&#x27;,
+  styleUrl: &#x27;./trevor-customize-item.component.css&#x27;
+})
+export class TrevorCustomizeItemComponent {
+
+  menuItem: any;
+  ingredients: any[] &#x3D; [];
+  selectedIngredients: { [key: number]: FormControl } &#x3D; {};
+  orderNumber: number &#x3D; 0; 
+  orderId: number | null &#x3D; null; 
+
+  /**
+   * Observable to determine if the device is a handset for responsive layout purposes.
+   */
+  isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result &#x3D;&gt; result.matches),
+      shareReplay()
+    );
+  
+    /* accesibility toolbar code here */
+  isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
+
+  toggleAccessibilityToolbarContainer(): void {
+    this.isAccessibilityToolbarContainerVisible &#x3D; !this.isAccessibilityToolbarContainerVisible;
+    console.log(&#x27;Toolbar visibility:&#x27;, this.isAccessibilityToolbarContainerVisible);
+  }
+  
+
+  textsizers &#x3D; [
+    { size: &#x27;Regular&#x27;},
+    { size: &#x27;Large&#x27;},
+    { size: &#x27;Extra Large&#x27;},
+  ]
+
+  /* end accessibility toolbar code */
+
+
+  weatherDescription: string &#x3D; &#x27;&#x27;;
+  temperature: number &#x3D; 0;
+  feelsLikeTemperature: number &#x3D; 0;
+  weathericon: string &#x3D; &#x27;01d.png&#x27;;
+
+  /**
+   * Constructs the component with necessary dependencies.
+   * @param route ActivatedRoute to access route parameters.
+   * @param dataService DataService to fetch and submit data related to the menu items.
+   * @param router Router for navigation.
+   * @param breakpointObserver BreakpointObserver to react to media query changes.
+   */
+  constructor(
+    private route: ActivatedRoute, 
+    private dataService: DataService,
+    private router: Router,
+    private breakpointObserver: BreakpointObserver
+  ) {}
+
+  /**
+   * Initalize the component
+   */
+  ngOnInit(): void {
+    this.dataService.getNextOrderId().subscribe((response: any) &#x3D;&gt; {
+      this.orderNumber &#x3D; response.next_order_id; 
+
+    });
+  
+    const itemId &#x3D; this.route.snapshot.paramMap.get(&#x27;id&#x27;);
+    if (itemId !&#x3D;&#x3D; null) {
+      this.dataService.getMenuItem(+itemId).subscribe((menuItem: any) &#x3D;&gt; {
+        this.menuItem &#x3D; menuItem;
+        this.ingredients &#x3D; menuItem.ingredients;
+        this.selectedIngredients &#x3D; {}; 
+        this.ingredients.forEach(ingredient &#x3D;&gt; {
+          this.selectedIngredients[ingredient.id] &#x3D; new FormControl(true);
+        });
+  
+        this.loadCustomizations();
+      });
+    } else {
+      console.error(&#x27;ID parameter is null&#x27;);
+    }
+
+    this.callWeatherApi();  
+    this.loadGoogleTranslate();
+  }
+
+  /**
+   * Calls the API to get current weather conditions for a fixed location.
+   */
+  callWeatherApi(): void {
+    const lat &#x3D; 30.6125364
+    const lon &#x3D; -96.3433166
+    const api_key &#x3D; &#x27;dcd3c687ea0ab81cb49468a99ae0ddb4&#x27;
+    
+    
+    this.dataService.getWeather(lat, lon, api_key).subscribe((weather: any) &#x3D;&gt; {
+      this.weatherDescription &#x3D; weather.current.weather[0].description;
+      this.temperature &#x3D; Math.round((weather.current.temp - 273.15) * (9 / 5) + 32);
+      // this.feelsLikeTemperature &#x3D; Math.round((weather.current.feels_like - 273.15) * (9 / 5) + 32);
+      if(weather.current.weather[0].icon !&#x3D; null){
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;01d&#x27;){
+          this.weathericon &#x3D; &#x27;01d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;01n&#x27;){
+          this.weathericon &#x3D; &#x27;01n.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;02d&#x27;){
+          this.weathericon &#x3D; &#x27;02d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;02n&#x27;){
+          this.weathericon &#x3D; &#x27;02n.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;03d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;03n&#x27;){
+          this.weathericon &#x3D; &#x27;03d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;04d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;04n&#x27;){
+          this.weathericon &#x3D; &#x27;04d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;09d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;09n&#x27;){
+          this.weathericon &#x3D; &#x27;09d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;10d&#x27;){
+          this.weathericon &#x3D; &#x27;10d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;10n&#x27;){
+          this.weathericon &#x3D; &#x27;10n.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;11d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;11n&#x27;){
+          this.weathericon &#x3D; &#x27;11d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;13d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;13n&#x27;){
+          this.weathericon &#x3D; &#x27;13d.png&#x27;;
+        }
+        if(weather.current.weather[0].icon &#x3D;&#x3D; &#x27;50d&#x27; || weather.current.weather[0].icon &#x3D;&#x3D; &#x27;50n&#x27;){
+          this.weathericon &#x3D; &#x27;50d.png&#x27;;
+        }
+      }
+      
+    });
+
+  }
+
+  /**
+   * Opens Google Translate feature for the application.
+   */
+  loadGoogleTranslate(): void {
+    const existingScript &#x3D; document.getElementById(&#x27;google-translate-script&#x27;);
+    if (!existingScript) {
+      const script &#x3D; document.createElement(&#x27;script&#x27;);
+      script.id &#x3D; &#x27;google-translate-script&#x27;;
+      script.type &#x3D; &#x27;text/javascript&#x27;;
+      script.src &#x3D; &#x27;//translate.google.com/translate_a/element.js?cb&#x3D;googleTranslateElementInit&#x27;;
+      document.head.appendChild(script);
+    }
+      (window as any).googleTranslateElementInit &#x3D; this.initGoogleTranslate;
+  }
+
+  /**
+   * Initializes the Google Translate widget.
+   */
+  initGoogleTranslate(): void {
+    new window.google.translate.TranslateElement({
+      pageLanguage: &#x27;en&#x27;,
+      layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, &#x27;google_translate_element&#x27;);
+  }
+  
+  /**
+   * Loads customizations for the current order and menu item.
+   */
+  loadCustomizations(): void {
+    console.log(&#x27;Loading customizations for order ID:&#x27;, this.orderNumber);
+    console.log(&#x27;Menu item ID:&#x27;, this.menuItem.id);
+  
+    if (this.orderNumber !&#x3D;&#x3D; 0 &amp;&amp; this.menuItem !&#x3D;&#x3D; undefined) {
+      this.dataService.getCustomizations(this.orderNumber, this.menuItem.id).subscribe((customizations: any[]) &#x3D;&gt; {
+        console.log(&#x27;Customizations loaded:&#x27;, customizations);
+        customizations.forEach(customization &#x3D;&gt; {
+          const ingredientId &#x3D; customization;
+          if (this.selectedIngredients[ingredientId]) {
+            this.selectedIngredients[ingredientId].setValue(true);
+          }
+        });
+      });
+    }
+  }
+  
+  
+
+  /**
+   * Saves the selected customizations for the current menu item.
+   * @param menuItemId The ID of the menu item for which customizations are being saved.
+   */
+  saveCustomizations(menuItemId: number): void {
+    console.log(&#x27;Order Number:&#x27;, this.orderNumber); 
+    console.log(&#x27;Menu Item ID:&#x27;, menuItemId); 
+    const ingredientIds &#x3D; Object.keys(this.selectedIngredients)
+      .filter(key &#x3D;&gt; this.selectedIngredients[parseInt(key)].value)
+      .join(&#x27;,&#x27;);
+    console.log(&#x27;Selected Ingredient IDs:&#x27;, ingredientIds); 
+    
+    this.dataService.saveCustomizations(this.orderNumber, menuItemId, ingredientIds)
+      .subscribe(() &#x3D;&gt; {
+        console.log(&#x27;Customizations saved successfully&#x27;);
+        this.router.navigate([&#x27;/trevor-cart&#x27;]);
+      }, error &#x3D;&gt; {
+        console.error(&#x27;Error saving customizations:&#x27;, error);
+      });
+  }
+
+  getMenuItemImage(id: number): string {
+    return &#x60;assets/menu_item_images/item${id}.jpg&#x60;;
+  }
+
+  /**
+   * Navigates back to the main menu.
+   */
+  goHome(): void {
+    this.router.navigate([&#x27;/employee-login&#x27;]);
+  }
+  
+  onSeeMenu(): void {
+    this.router.navigate([&#x27;/trevor-cashier&#x27;]);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+
+&lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+    &lt;mat-sidenav
+      #drawer
+      class&#x3D;&quot;sidenav&quot;
+      fixedInViewport&#x3D;&quot;false&quot;
+      [attr.role]&#x3D;&quot;(isHandset$ | async) ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot;
+      [mode]&#x3D;&quot;(isHandset$ | async) ? &#x27;over&#x27; : &#x27;side&#x27;&quot;
+      [opened]&#x3D;&quot;(isHandset$ | async) &#x3D;&#x3D;&#x3D; false&quot;&gt;
+      &lt;div class&#x3D;&quot;icons-toolbar&quot;&gt;
+        &lt;button mat-icon-button (click)&#x3D;&quot;goHome()&quot;&gt;
+          &lt;mat-icon aria-label&#x3D;&quot;Log out&quot;&gt;logout&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        
+        &lt;button mat-icon-button (click)&#x3D;&quot;onSeeMenu()&quot;&gt;
+          &lt;mat-icon aria-label&#x3D;&quot;Back to menu&quot;&gt;menu_open&lt;/mat-icon&gt;
+        &lt;/button&gt;
+
+        
+    
+        &lt;button mat-icon-button (click)&#x3D;&quot;toggleAccessibilityToolbarContainer()&quot;&gt;
+          &lt;mat-icon aria-label&#x3D;&quot;Toggle accessibility toolbar&quot;&gt;{{ isAccessibilityToolbarContainerVisible ? &#x27;chevron_left&#x27; : &#x27;chevron_right&#x27; }}&lt;/mat-icon&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+        &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+      &lt;/div&gt;
+      &lt;mat-nav-list&gt;
+      &lt;/mat-nav-list&gt;
+    &lt;/mat-sidenav&gt;
+    &lt;mat-sidenav-content&gt;
+        &lt;div class&#x3D;&quot;accessibility-toolbar-container&quot; *ngIf&#x3D;&quot;isAccessibilityToolbarContainerVisible&quot;&gt;
+
+            &lt;div class&#x3D;&quot;accessibility-toolbar&quot;&gt;
+
+              &lt;div id&#x3D;&quot;google_translate_element&quot;&gt;&lt;/div&gt;
+      
+                &lt;div class&#x3D;&quot;weather-api-section&quot;&gt;
+                    {{temperature}} |
+                    &lt;span [innerHTML]&#x3D;&quot;weatherDescription | bionicReading&quot;&gt;&lt;/span&gt; |
+                    &lt;img [src]&#x3D;&quot;&#x27;assets/&#x27; + weathericon&quot; alt&#x3D;&quot;Weather icon&quot;&gt;
+                  &lt;/div&gt;
+      
+                  &lt;div class&#x3D;&quot;text-sizer-dropdown-section&quot;&gt;
+                    &lt;mat-form-field class&#x3D;&quot;text-sizer-form-field&quot;&gt;
+                        &lt;mat-label [innerHTML]&#x3D;&quot;&#x27;Select text size&#x27; | bionicReading&quot;&gt;&lt;/mat-label&gt;
+                        &lt;mat-select&gt;
+                            &lt;mat-option *ngFor&#x3D;&quot;let option of textsizers&quot; [value]&#x3D;&quot;option.size&quot; class&#x3D;&quot;text-sizer-form-field&quot;&gt;
+                              &lt;span [innerHTML]&#x3D;&quot;option.size | bionicReading&quot;&gt;&lt;/span&gt;
+                            &lt;/mat-option&gt;
+                        &lt;/mat-select&gt;
+                    &lt;/mat-form-field&gt;
+                  &lt;/div&gt;
+          
+                  &lt;div class&#x3D;&quot;screen-reader-section&quot;&gt;
+                    &lt;button mat-button class&#x3D;&quot;accessibility-toolbar-btn&quot;&gt;
+                      &lt;span [innerHTML]&#x3D;&quot;&#x27;Activate screenreader&#x27; | bionicReading&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+                  
+          
+                  &lt;div class&#x3D;&quot;keyboard-shortcuts-section&quot;&gt;
+                    &lt;button mat-button class&#x3D;&quot;accessibility-toolbar-btn&quot;&gt;
+                      &lt;span [innerHTML]&#x3D;&quot;&#x27;Keyboard Shortcuts&#x27; | bionicReading&quot;&gt;&lt;/span&gt;  
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+      
+              &lt;div class&#x3D;&quot;translate-dropdown-section&quot;&gt;
+                &lt;mat-form-field class&#x3D;&quot;translate-dropdown-form-field&quot;&gt;
+                  &lt;mat-label [innerHTML]&#x3D;&quot;&#x27;Translate API&#x27; | bionicReading&quot;&gt;&lt;/mat-label&gt;
+                  &lt;mat-select&gt;
+                      &lt;mat-option *ngFor&#x3D;&quot;let option of textsizers&quot; [value]&#x3D;&quot;option.size&quot; class&#x3D;&quot;text-sizer-form-field&quot;&gt;
+                        &lt;span [innerHTML]&#x3D;&quot;option.size | bionicReading&quot;&gt;&lt;/span&gt;
+                      &lt;/mat-option&gt;
+                  &lt;/mat-select&gt;
+              &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+      
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;div class&#x3D;&quot;main-content&quot;&gt;
+            &lt;div class&#x3D;&quot;main-content-inner&quot;&gt;
+                &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+                    &lt;button
+                    type&#x3D;&quot;button&quot;
+                    aria-label&#x3D;&quot;Toggle sidenav&quot;
+                    mat-icon-button
+                    (click)&#x3D;&quot;drawer.toggle()&quot;&gt;
+                    &lt;mat-icon class&#x3D;&quot;menu-icon-btn&quot; aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;menu&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                    &lt;span class&#x3D;&quot;menu-category-title&quot; [innerHTML]&#x3D;&quot;&#x27;CUSTOMIZE YOUR ITEM&#x27; | bionicReading&quot;&gt;&lt;/span&gt;
+                    &lt;div class&#x3D;&quot;toolbar-btn-container&quot;&gt;
+                        &lt;div *ngIf&#x3D;&quot;menuItem&quot;&gt;
+                            &lt;button class&#x3D;&quot;toolbar-btn&quot; (click)&#x3D;&quot;saveCustomizations(menuItem.id)&quot; [innerHTML]&#x3D;&quot;&#x27;Save Customizations&#x27; | bionicReading&quot;&gt;&lt;/button&gt;
+                            &lt;button class&#x3D;&quot;toolbar-btn&quot; color&#x3D;&quot;primary&quot; routerLink&#x3D;&quot;/trevor-cart&quot; [innerHTML]&#x3D;&quot;&#x27;Go Back&#x27; | bionicReading&quot;&gt;&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div *ngIf&#x3D;&quot;!menuItem&quot;&gt;
+                            &lt;button mat-button color&#x3D;&quot;primary&quot; routerLink&#x3D;&quot;/trevor-cart&quot; [innerHTML]&#x3D;&quot;&#x27;Go Back&#x27; | bionicReading&quot;&gt;&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/mat-toolbar&gt;
+
+                &lt;ul&gt;
+                    &lt;div class&#x3D;&quot;columns-container&quot;&gt;
+                        &lt;div class&#x3D;&quot;column-1&quot;&gt;
+                            &lt;div *ngIf&#x3D;&quot;menuItem&quot;&gt;
+                                &lt;div class&#x3D;&quot;includes-container&quot;&gt;
+                                    &lt;div class&#x3D;&quot;includes-column&quot;&gt;
+                                        &lt;div class&#x3D;&quot;cart-item-name&quot; [innerHTML]&#x3D;&quot;&#x27;Included ingredients&#x27; | bionicReading&quot;&gt;:&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;includes-column&quot;&gt;
+                                        &lt;div class&#x3D;&quot;cart-item-price&quot; [innerHTML]&#x3D;&quot;&#x27;Click to remove&#x27; | bionicReading&quot;&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;checkbox-container&quot;&gt;
+                                    &lt;mat-checkbox class&#x3D;&quot;ingredient-checkbox&quot; [checked]&#x3D;&quot;true&quot; *ngFor&#x3D;&quot;let ingredient of ingredients&quot; [formControl]&#x3D;&quot;selectedIngredients[ingredient.id]&quot;&gt;
+                                      &lt;span [innerHTML]&#x3D;&quot;ingredient.name | bionicReading&quot;&gt;&lt;/span&gt;
+                                    &lt;/mat-checkbox&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div *ngIf&#x3D;&quot;!menuItem&quot;&gt;
+                                &lt;p [innerHTML]&#x3D;&quot;&#x27;Menu item not found&#x27; | bionicReading&quot;&gt;&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;column-2&quot;&gt;
+                            &lt;div class&#x3D;&quot;item-container&quot;&gt;
+                                &lt;img class&#x3D;&quot;menu-item-img&quot; [src]&#x3D;&quot;getMenuItemImage(menuItem.id)&quot; alt&#x3D;&quot;MenuItem Image&quot;&gt;
+                                &lt;div class&#x3D;&quot;menu-item-name&quot; [innerHTML]&#x3D;&quot;menuItem.name | bionicReading&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/ul&gt;
+                &lt;ng-content&gt;&lt;/ng-content&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/mat-sidenav-content&gt;
+  &lt;/mat-sidenav-container&gt;
+  </code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><mat-sidenav-container class="sidenav-container">    <mat-sidenav      #drawer      class="sidenav"      fixedInViewport="false"      [attr.role]="(isHandset$ | async) ? \'dialog\' : \'navigation\'"      [mode]="(isHandset$ | async) ? \'over\' : \'side\'"      [opened]="(isHandset$ | async) === false">      <div class="icons-toolbar">        <button mat-icon-button (click)="goHome()">          <mat-icon aria-label="Log out">logout</mat-icon>        </button>                <button mat-icon-button (click)="onSeeMenu()">          <mat-icon aria-label="Back to menu">menu_open</mat-icon>        </button>                    <button mat-icon-button (click)="toggleAccessibilityToolbarContainer()">          <mat-icon aria-label="Toggle accessibility toolbar">{{ isAccessibilityToolbarContainerVisible ? \'chevron_left\' : \'chevron_right\' }}</mat-icon>        </button>      </div>      <div class="revs-image">        <img width="200" height="100" src="assets/REVSLogoUpdated.jpg">      </div>      <mat-nav-list>      </mat-nav-list>    </mat-sidenav>    <mat-sidenav-content>        <div class="accessibility-toolbar-container" *ngIf="isAccessibilityToolbarContainerVisible">            <div class="accessibility-toolbar">              <div id="google_translate_element"></div>                      <div class="weather-api-section">                    {{temperature}} |                    <span [innerHTML]="weatherDescription | bionicReading"></span> |                    <img [src]="\'assets/\' + weathericon" alt="Weather icon">                  </div>                        <div class="text-sizer-dropdown-section">                    <mat-form-field class="text-sizer-form-field">                        <mat-label [innerHTML]="\'Select text size\' | bionicReading"></mat-label>                        <mat-select>                            <mat-option *ngFor="let option of textsizers" [value]="option.size" class="text-sizer-form-field">                              <span [innerHTML]="option.size | bionicReading"></span>                            </mat-option>                        </mat-select>                    </mat-form-field>                  </div>                            <div class="screen-reader-section">                    <button mat-button class="accessibility-toolbar-btn">                      <span [innerHTML]="\'Activate screenreader\' | bionicReading"></span>                    </button>                  </div>                                              <div class="keyboard-shortcuts-section">                    <button mat-button class="accessibility-toolbar-btn">                      <span [innerHTML]="\'Keyboard Shortcuts\' | bionicReading"></span>                      </button>                  </div>                    <div class="translate-dropdown-section">                <mat-form-field class="translate-dropdown-form-field">                  <mat-label [innerHTML]="\'Translate API\' | bionicReading"></mat-label>                  <mat-select>                      <mat-option *ngFor="let option of textsizers" [value]="option.size" class="text-sizer-form-field">                        <span [innerHTML]="option.size | bionicReading"></span>                      </mat-option>                  </mat-select>              </mat-form-field>              </div>                  </div>          </div>        <div class="main-content">            <div class="main-content-inner">                <mat-toolbar color="primary">                    <button                    type="button"                    aria-label="Toggle sidenav"                    mat-icon-button                    (click)="drawer.toggle()">                    <mat-icon class="menu-icon-btn" aria-label="Side nav toggle icon">menu</mat-icon>                    </button>                    <span class="menu-category-title" [innerHTML]="\'CUSTOMIZE YOUR ITEM\' | bionicReading"></span>                    <div class="toolbar-btn-container">                        <div *ngIf="menuItem">                            <button class="toolbar-btn" (click)="saveCustomizations(menuItem.id)" [innerHTML]="\'Save Customizations\' | bionicReading"></button>                            <button class="toolbar-btn" color="primary" routerLink="/trevor-cart" [innerHTML]="\'Go Back\' | bionicReading"></button>                        </div>                        <div *ngIf="!menuItem">                            <button mat-button color="primary" routerLink="/trevor-cart" [innerHTML]="\'Go Back\' | bionicReading"></button>                        </div>                    </div>                </mat-toolbar>                <ul>                    <div class="columns-container">                        <div class="column-1">                            <div *ngIf="menuItem">                                <div class="includes-container">                                    <div class="includes-column">                                        <div class="cart-item-name" [innerHTML]="\'Included ingredients\' | bionicReading">:</div>                                    </div>                                    <div class="includes-column">                                        <div class="cart-item-price" [innerHTML]="\'Click to remove\' | bionicReading"></div>                                    </div>                                </div>                                <div class="checkbox-container">                                    <mat-checkbox class="ingredient-checkbox" [checked]="true" *ngFor="let ingredient of ingredients" [formControl]="selectedIngredients[ingredient.id]">                                      <span [innerHTML]="ingredient.name | bionicReading"></span>                                    </mat-checkbox>                                </div>                            </div>                            <div *ngIf="!menuItem">                                <p [innerHTML]="\'Menu item not found\' | bionicReading"></p>                            </div>                        </div>                        <div class="column-2">                            <div class="item-container">                                <img class="menu-item-img" [src]="getMenuItemImage(menuItem.id)" alt="MenuItem Image">                                <div class="menu-item-name" [innerHTML]="menuItem.name | bionicReading"></div>                            </div>                        </div>                    </div>                </ul>                <ng-content></ng-content>            </div>        </div>    </mat-sidenav-content>  </mat-sidenav-container>  </div>'
+    var COMPONENTS = [{'name': 'AddEmployeeComponent', 'selector': 'app-add-employee'},{'name': 'AddOrderDialogComponentComponent', 'selector': 'app-add-order-dialog-component'},{'name': 'AdminViewComponent', 'selector': 'app-admin-view'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CashierCartComponent', 'selector': 'app-cashier-cart'},{'name': 'CashierCheckoutViewComponent', 'selector': 'app-cashier-checkout-view'},{'name': 'CashierCustomizeItemComponent', 'selector': 'app-cashier-customize-item'},{'name': 'CashierMenuComponent', 'selector': 'app-cashier-menu'},{'name': 'CustomerCartComponent', 'selector': 'app-customer-cart'},{'name': 'CustomerCheckoutViewComponent', 'selector': 'app-customer-checkout-view'},{'name': 'CustomerCustomizeItemComponent', 'selector': 'app-customer-customize-item'},{'name': 'CustomerLandingComponent', 'selector': 'app-customer-landing'},{'name': 'CustomerMenuComponent', 'selector': 'app-customer-menu'},{'name': 'EditEmployeeDialogComponent', 'selector': 'app-edit-employee-dialog'},{'name': 'EditOrderComponent', 'selector': 'app-edit-order'},{'name': 'EmployeeLoginComponent', 'selector': 'app-employee-login'},{'name': 'ExcessReportComponent', 'selector': 'app-excess-report'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerEditIngredientsComponent', 'selector': 'app-manager-edit-ingredients'},{'name': 'ManagerEditMenuComponent', 'selector': 'app-manager-edit-menu'},{'name': 'ManagerViewComponent', 'selector': 'app-manager-view'},{'name': 'MenuBoardComponent', 'selector': 'app-menu-board'},{'name': 'MenuPopularityComponent', 'selector': 'app-menu-popularity'},{'name': 'OrderEditDialogComponent', 'selector': 'app-order-edit-dialog'},{'name': 'OrderManagementComponent', 'selector': 'app-order-management'},{'name': 'ProductUsageComponent', 'selector': 'app-product-usage'},{'name': 'RemoveOrderItemsDialogComponent', 'selector': 'app-remove-order-items-dialog'},{'name': 'RestockReportComponent', 'selector': 'app-restock-report'},{'name': 'SalesReportComponent', 'selector': 'app-sales-report'},{'name': 'SellTogetherReportComponent', 'selector': 'app-sell-together-report'},{'name': 'TrevorCartComponent', 'selector': 'app-trevor-cart'},{'name': 'TrevorCashierComponent', 'selector': 'app-trevor-cashier'},{'name': 'TrevorCheckoutComponent', 'selector': 'app-trevor-checkout'},{'name': 'TrevorCustomizeItemComponent', 'selector': 'app-trevor-customize-item'},{'name': 'ViewCustomizationsComponent', 'selector': 'app-view-customizations'}];
+    var DIRECTIVES = [{'name': 'LogoutDirective', 'selector': '[appLogout]'}];
+    var ACTUAL_COMPONENT = {'name': 'TrevorCustomizeItemComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TrevorCustomizeItemComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

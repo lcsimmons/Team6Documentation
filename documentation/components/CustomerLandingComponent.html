@@ -1,0 +1,1763 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CustomerLandingComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/customer-landing/customer-landing.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-customer-landing</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./customer-landing.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./customer-landing.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#center" >center</a>
+                            </li>
+                            <li>
+                                <a href="#display" >display</a>
+                            </li>
+                            <li>
+                                <a href="#feelsLikeTemperature" >feelsLikeTemperature</a>
+                            </li>
+                            <li>
+                                <a href="#isAccessibilityToolbarContainerVisible" >isAccessibilityToolbarContainerVisible</a>
+                            </li>
+                            <li>
+                                <a href="#markerPosition" >markerPosition</a>
+                            </li>
+                            <li>
+                                <a href="#selectedTextSize" >selectedTextSize</a>
+                            </li>
+                            <li>
+                                <a href="#temperature" >temperature</a>
+                            </li>
+                            <li>
+                                <a href="#textsizers" >textsizers</a>
+                            </li>
+                            <li>
+                                <a href="#weatherDescription" >weatherDescription</a>
+                            </li>
+                            <li>
+                                <a href="#weathericon" >weathericon</a>
+                            </li>
+                            <li>
+                                <a href="#zoom" >zoom</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#GoToOrder" >GoToOrder</a>
+                            </li>
+                            <li>
+                                <a href="#move" >move</a>
+                            </li>
+                            <li>
+                                <a href="#moveMap" >moveMap</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#scrollTo" >scrollTo</a>
+                            </li>
+                            <li>
+                                <a href="#setTextSize" >setTextSize</a>
+                            </li>
+                            <li>
+                                <a href="#toggleAccessibilityToolbarContainer" >toggleAccessibilityToolbarContainer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:58</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="GoToOrder"></a>
+                    <span class="name">
+                        <span ><b>GoToOrder</b></span>
+                        <a href="#GoToOrder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>GoToOrder()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="90"
+                                    class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="move"></a>
+                    <span class="name">
+                        <span ><b>move</b></span>
+                        <a href="#move"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>move(event: <a href="../anys/google.html" target="_self">google.maps.MapMouseEvent</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/variables.html#google" target="_self" >google.maps.MapMouseEvent</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="moveMap"></a>
+                    <span class="name">
+                        <span ><b>moveMap</b></span>
+                        <a href="#moveMap"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>moveMap(event: <a href="../anys/google.html" target="_self">google.maps.MapMouseEvent</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates the center of the map to the location where the user clicked.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/variables.html#google" target="_self" >google.maps.MapMouseEvent</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The map click event containing the new location.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scrollTo"></a>
+                    <span class="name">
+                        <span ><b>scrollTo</b></span>
+                        <a href="#scrollTo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>scrollTo(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTextSize"></a>
+                    <span class="name">
+                        <span ><b>setTextSize</b></span>
+                        <a href="#setTextSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setTextSize(cssClass: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="49"
+                                    class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sets the text size based on the selected CSS class.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>cssClass</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The CSS class that defines the text size.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleAccessibilityToolbarContainer"></a>
+                    <span class="name">
+                        <span ><b>toggleAccessibilityToolbarContainer</b></span>
+                        <a href="#toggleAccessibilityToolbarContainer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleAccessibilityToolbarContainer()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="center"></a>
+                    <span class="name">
+                        <span ><b>center</b></span>
+                        <a href="#center"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/variables.html#google" target="_self" >google.maps.LatLngLiteral</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+      lat: 30.6125502,
+      lng: -96.3413613
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="display"></a>
+                    <span class="name">
+                        <span ><b>display</b></span>
+                        <a href="#display"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="feelsLikeTemperature"></a>
+                    <span class="name">
+                        <span ><b>feelsLikeTemperature</b></span>
+                        <a href="#feelsLikeTemperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAccessibilityToolbarContainerVisible"></a>
+                    <span class="name">
+                        <span ><b>isAccessibilityToolbarContainerVisible</b></span>
+                        <a href="#isAccessibilityToolbarContainerVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="markerPosition"></a>
+                    <span class="name">
+                        <span ><b>markerPosition</b></span>
+                        <a href="#markerPosition"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/variables.html#google" target="_self" >google.maps.LatLngLiteral</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    lat: 30.6125502,  // Specific latitude for the marker
+    lng: -96.3413613  // Specific longitude for the marker
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedTextSize"></a>
+                    <span class="name">
+                        <span ><b>selectedTextSize</b></span>
+                        <a href="#selectedTextSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;text-normal&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The currently selected text size for display.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="temperature"></a>
+                    <span class="name">
+                        <span ><b>temperature</b></span>
+                        <a href="#temperature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="textsizers"></a>
+                    <span class="name">
+                        <span ><b>textsizers</b></span>
+                        <a href="#textsizers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+        { size: &#x27;Normal&#x27;, cssClass: &#x27;text-normal&#x27; },
+        { size: &#x27;Large&#x27;, cssClass: &#x27;text-large&#x27; },
+        { size: &#x27;Extra Large&#x27;, cssClass: &#x27;text-extra-large&#x27; }
+        ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array of text size options available for screen display.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weatherDescription"></a>
+                    <span class="name">
+                        <span ><b>weatherDescription</b></span>
+                        <a href="#weatherDescription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weathericon"></a>
+                    <span class="name">
+                        <span ><b>weathericon</b></span>
+                        <a href="#weathericon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;01d.png&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zoom"></a>
+                    <span class="name">
+                        <span ><b>zoom</b></span>
+                        <a href="#zoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>15</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/customer-landing/customer-landing.component.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, ElementRef } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
+import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
+import { DataService } from &#x27;../data.service&#x27;;
+import { concatMap } from &#x27;rxjs/operators&#x27;;
+import { forkJoin } from &#x27;rxjs&#x27;;
+
+/**
+ * Used to interact with the Google Maps API
+ */
+declare var google: any;
+
+@Component({
+  selector: &#x27;app-customer-landing&#x27;,
+  templateUrl: &#x27;./customer-landing.component.html&#x27;,
+  styleUrls: [&#x27;./customer-landing.component.css&#x27;]
+})
+export class CustomerLandingComponent implements OnInit{
+  
+      /* accesibility toolbar code here */
+      isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
+
+      toggleAccessibilityToolbarContainer(): void {
+        this.isAccessibilityToolbarContainerVisible &#x3D; !this.isAccessibilityToolbarContainerVisible;
+        console.log(&#x27;Toolbar visibility:&#x27;, this.isAccessibilityToolbarContainerVisible);
+      }
+      
+       /**
+       * Array of text size options available for screen display.
+       */
+      textsizers &#x3D; [
+        { size: &#x27;Normal&#x27;, cssClass: &#x27;text-normal&#x27; },
+        { size: &#x27;Large&#x27;, cssClass: &#x27;text-large&#x27; },
+        { size: &#x27;Extra Large&#x27;, cssClass: &#x27;text-extra-large&#x27; }
+        ];
+    
+        /**
+         * The currently selected text size for display.
+         */
+        selectedTextSize: string &#x3D; &#x27;text-normal&#x27;;
+        
+        /**
+         * Sets the text size based on the selected CSS class.
+         * @param cssClass The CSS class that defines the text size.
+         */
+        setTextSize(cssClass: string): void {
+          this.selectedTextSize &#x3D; cssClass;
+        }
+      /* end accessibility toolbar code */
+    
+    
+      weatherDescription: string &#x3D; &#x27;&#x27;;
+      temperature: number &#x3D; 0;
+      feelsLikeTemperature: number &#x3D; 0;
+      weathericon: string &#x3D; &#x27;01d.png&#x27;;
+    
+  constructor(private router: Router){}
+      
+  ngOnInit(): void {}
+  
+  display: any;
+  center: google.maps.LatLngLiteral &#x3D; {
+      lat: 30.6125502,
+      lng: -96.3413613
+  };
+  zoom &#x3D; 15;
+
+  // markerOptions: google.maps.MarkerOptions &#x3D; { draggable: false };
+  markerPosition: google.maps.LatLngLiteral &#x3D; {
+    lat: 30.6125502,  // Specific latitude for the marker
+    lng: -96.3413613  // Specific longitude for the marker
+  };
+  
+  /**
+   * Updates the center of the map to the location where the user clicked.
+   * @param event The map click event containing the new location.
+   */
+  moveMap(event: google.maps.MapMouseEvent) {
+      if (event.latLng !&#x3D; null) this.center &#x3D; (event.latLng.toJSON());
+  }
+
+  
+  move(event: google.maps.MapMouseEvent) {
+      if (event.latLng !&#x3D; null) this.display &#x3D; event.latLng.toJSON();
+  }  
+
+  GoToOrder(): void {
+    console.log(&quot;Going to customer menu...&quot;);
+    this.router.navigate([&#x27;/customer-menu&#x27;]);
+  }
+
+  scrollTo(id: string) {
+    const element &#x3D; document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: &#x27;smooth&#x27;, block: &#x27;start&#x27; });
+    }
+}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;link href&#x3D;&quot;https://fonts.googleapis.com/icon?family&#x3D;Material+Icons&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+
+
+
+&lt;div class&#x3D;&quot;header&quot;&gt;
+  &lt;div class&#x3D;&quot;header-container&quot;&gt;
+    &lt;div class&#x3D;&quot;column-1&quot;&gt;
+      &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+        &lt;img width&#x3D;&quot;180&quot; height&#x3D;&quot;90&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;container-1&quot;&gt;
+        &lt;div class&#x3D;&quot;find-a-revs&quot; (click)&#x3D;&quot;scrollTo(&#x27;your-revs&#x27;)&quot;&gt;
+          &lt;mat-icon class&#x3D;&quot;menu-icon-btn&quot; aria-label&#x3D;&quot;Side nav toggle icon&quot;&gt;location_on&lt;/mat-icon&gt;
+          Find your Rev&#x27;s
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;column-2&quot;&gt;
+      &lt;div class&#x3D;&quot;container-2&quot;&gt;
+        &lt;div class&#x3D;&quot;order-now&quot; (click)&#x3D;&quot;GoToOrder()&quot;&gt;Order Now&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class&#x3D;&quot;content&quot;&gt;
+
+  &lt;div class&#x3D;&quot;content-container&quot;&gt;
+
+    &lt;div class&#x3D;&quot;hero-section&quot;&gt;
+      &lt;div class&#x3D;&quot;hero-column-1&quot;&gt;
+        &lt;div class&#x3D;&quot;hero-text&quot;&gt;
+          &lt;div class&#x3D;&quot;hero-text-title&quot;&gt;An Aggieland Favorite&lt;/div&gt;
+          &lt;div class&#x3D;&quot;hero-text-desc&quot;&gt;Offering fresh made burgers, chicken tenders, fries, and more.&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;see-menu-container&quot;&gt;
+          &lt;div class&#x3D;&quot;see-menu&quot; (click)&#x3D;&quot;GoToOrder()&quot;&gt;Order Now&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;hero-column-2&quot;&gt;
+        &lt;img class&#x3D;&quot;hero-image&quot; src&#x3D;&quot;assets/menu_item_images/item1.jpg&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;featured-section&quot;&gt;
+      &lt;div class&#x3D;&quot;featured-column-1&quot;&gt;
+        &lt;img class&#x3D;&quot;featured-image&quot; src&#x3D;&quot;assets/menu_item_images/item0.jpg&quot;&gt;
+        &lt;div class&#x3D;&quot;featured-text-container&quot;&gt;
+          &lt;div class&#x3D;&quot;featured-identifier&quot;&gt;FEATURED&lt;/div&gt;
+          &lt;div class&#x3D;&quot;featured-title&quot;&gt;Bacon Cheeseburger&lt;/div&gt;
+          &lt;div class&#x3D;&quot;featured-desc&quot;&gt;Our signature beef patty topped with crispy bacon and American cheese on a toasty bun.&lt;/div&gt;
+          &lt;div class&#x3D;&quot;featured-order-btn-container&quot;&gt;
+            &lt;div class&#x3D;&quot;featured-order-btn&quot; (click)&#x3D;&quot;GoToOrder()&quot;&gt;Order Now&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;featured-column-2&quot;&gt;
+        &lt;img class&#x3D;&quot;featured-image-2&quot; src&#x3D;&quot;assets/menu_item_images/item4.jpg&quot;&gt;
+        &lt;div class&#x3D;&quot;featured-text-container&quot;&gt;
+          &lt;div class&#x3D;&quot;featured-identifier&quot;&gt;FEATURED&lt;/div&gt;
+          &lt;div class&#x3D;&quot;featured-title&quot;&gt;Gig &#x27;Em Patty Melt&lt;/div&gt;
+          &lt;div class&#x3D;&quot;featured-desc&quot;&gt;Beef patty served on buttery Texas Toast, slathered in Gig &#x27;Em Sauce and served with caramelized onions and American Swiss cheese.&lt;/div&gt;
+          &lt;div class&#x3D;&quot;featured-order-btn-container&quot;&gt;
+            &lt;div class&#x3D;&quot;featured-order-btn&quot; (click)&#x3D;&quot;GoToOrder()&quot;&gt;Order Now&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;featured-column-3&quot;&gt;
+        &lt;img class&#x3D;&quot;featured-image&quot; src&#x3D;&quot;assets/menu_item_images/item15.jpg&quot;&gt;
+        &lt;div class&#x3D;&quot;featured-text-container&quot;&gt;
+          &lt;div class&#x3D;&quot;featured-identifier&quot;&gt;FEATURED&lt;/div&gt;
+          &lt;div class&#x3D;&quot;featured-title&quot;&gt;Aggie Shakes&lt;/div&gt;
+          &lt;div class&#x3D;&quot;featured-desc&quot;&gt;Handspun milkshake in your flavor of choice.&lt;/div&gt;
+          &lt;div class&#x3D;&quot;featured-order-btn-container&quot;&gt;
+            &lt;div class&#x3D;&quot;featured-order-btn&quot; (click)&#x3D;&quot;GoToOrder()&quot;&gt;Order Now&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;location-section&quot; id&#x3D;&quot;your-revs&quot;&gt;
+      &lt;div class&#x3D;&quot;location-column-1&quot;&gt;
+        &lt;google-map
+            [center]&#x3D;&quot;center&quot;
+            [zoom]&#x3D;&quot;zoom&quot;
+            (mapClick)&#x3D;&quot;moveMap($event)&quot;
+            (mapMousemove)&#x3D;&quot;move($event)&quot;&gt;
+          &lt;map-marker [position]&#x3D;&quot;markerPosition&quot;&gt;&lt;/map-marker&gt;
+        &lt;/google-map&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;location-column-2&quot;&gt;
+        &lt;div class&#x3D;&quot;location-text-container&quot;&gt;
+          &lt;div class&#x3D;&quot;location-title&quot;&gt;Visit your Rev&#x27;s&lt;/div&gt;
+          &lt;div class&#x3D;&quot;location-desc&quot;&gt;Hang out with your friends, pick up your food, and enjoy your meal in the dining room or the outside patio.&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./customer-landing.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.header {
+    background-color: #5B0726;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    padding: 10px 20px 10px 20px;
+    width: 100%;
+}
+
+.column-1 {
+    width: 75%;
+    display: flex;
+}
+
+.column-2 {
+    width: 25%;
+    display: flex;
+}
+
+.container-1 {
+    display: flex;
+}
+
+.container-2 {
+    display: flex;
+    margin-left: auto;
+}
+
+.revs-image {
+    object-fit: cover;
+    align-content: center;
+    padding: 0 20px 0 0;
+}
+
+.order-now {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 80%;
+    padding: 0 32px 0 32px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #790E36;
+    border: 2px solid #790E36;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.order-now:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+.find-a-revs {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    padding: 0;
+    margin: 0;
+    height: 80%;
+    padding: 0 32px 0 32px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-left: 2px solid #43091E;
+}
+
+.icons-container {
+    margin: 0 0 0 20px;
+}
+
+.menu-icon-btn {
+    padding: 0;
+    margin: 0;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    color: white;
+}
+
+.content {
+    max-width: 100%;
+    min-width: 100%;
+    display: flex;
+}
+
+.content-container {
+    width: calc(100% - 10rem); /* Subtract 5rem from each side for padding */
+    height: 100%;
+    max-width: 100vw;
+    padding: 100px 5rem 10px 5rem; /* 5rem padding on left and right */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-section-1 {
+    width: 50%;
+    height: 100%;
+}
+
+.hero-section-2 {
+    width: 50%;
+}
+
+.hero-text {
+    padding-left: 5rem;
+}
+
+.hero-text-title {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #790E36;
+}
+
+.hero-text-desc {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+    padding: 1rem 0 0 0;
+}
+
+.hero-image {
+    width: 80%;
+    float: right;
+    clip-path: inset(0 10px 0 0 );
+}
+
+.see-menu-container {
+    display: flex;
+    padding: 3rem 0 0 5rem;
+}
+
+.see-menu {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #790E36;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    padding: 15px 32px 15px 32px;
+    align-content: center;
+    background-color: transparent;
+    border: 3px solid #790E36;
+}
+
+.see-menu:hover {
+    background-color: #790E36;
+    color: white;
+}
+
+.featured-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: start;
+    gap: 50px;
+    margin: 200px 0 100px 0;
+}
+
+.featured-column-1 {
+    width: 33%;
+    background-color: #f4f3f3;
+    border-radius: 20px;
+}
+
+.featured-column-2 {
+    width: 33%;
+    background-color: #f4f3f3;
+    border-radius: 20px;
+}
+
+.featured-column-3 {
+    width: 33%;
+    background-color: #f4f3f3;
+    border-radius: 20px;
+}
+
+.featured-image {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    height: 100%;
+    clip-path: inset(0 0 10px 0);
+}
+
+.featured-image-2 {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    height: 100%;
+    clip-path: inset(0 0 10px 0);
+}
+
+
+.featured-text-container {
+    padding: 5rem 5rem 5rem 5rem;
+}
+
+.featured-identifier {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #790E36;
+}
+
+.featured-title {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
+
+.featured-desc {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    color: black;
+    padding: 1rem 0 0 0;
+}
+
+.featured-order-btn-container {
+    display: flex;
+    padding: 5rem 0 0 0;
+}
+
+.featured-order-btn {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    background-color: #790E36;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    padding: 15px 32px 15px 32px;
+    align-content: center;
+}
+
+.featured-order-btn:hover {
+    background-color: #43091E;
+    color: white;
+}
+
+.location-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin: 200px 0 50px 0;
+    background-color: #f4f3f3;
+    border-radius: 20px 20px 0 0;
+}
+
+.location-column-1 {
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.location-column-2 {
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.map-styling {
+    border-radius: 0 20px 20px 0;
+    width: 100%;
+    margin-left: auto;
+    float: right;
+}
+
+.location-text-container {
+    padding: 5rem 5rem 5rem 5rem;
+    margin: 0;
+}
+
+.location-title {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
+
+.location-desc {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    color: black;
+    padding: 1rem 0 0 0;
+}
+
+.text-normal {
+font-size: 25px;
+}
+
+.text-large {
+font-size: 36px;
+}
+
+.text-extra-large {
+font-size: 75px;
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><div class="header">  <div class="header-container">    <div class="column-1">      <div class="revs-image">        <img width="180" height="90" src="assets/REVSLogoUpdated.jpg">      </div>      <div class="container-1">        <div class="find-a-revs" (click)="scrollTo(\'your-revs\')">          <mat-icon class="menu-icon-btn" aria-label="Side nav toggle icon">location_on</mat-icon>          Find your Rev\'s        </div>      </div>    </div>    <div class="column-2">      <div class="container-2">        <div class="order-now" (click)="GoToOrder()">Order Now</div>      </div>    </div>  </div></div><div class="content">  <div class="content-container">    <div class="hero-section">      <div class="hero-column-1">        <div class="hero-text">          <div class="hero-text-title">An Aggieland Favorite</div>          <div class="hero-text-desc">Offering fresh made burgers, chicken tenders, fries, and more.</div>        </div>        <div class="see-menu-container">          <div class="see-menu" (click)="GoToOrder()">Order Now</div>        </div>      </div>      <div class="hero-column-2">        <img class="hero-image" src="assets/menu_item_images/item1.jpg">      </div>    </div>    <div class="featured-section">      <div class="featured-column-1">        <img class="featured-image" src="assets/menu_item_images/item0.jpg">        <div class="featured-text-container">          <div class="featured-identifier">FEATURED</div>          <div class="featured-title">Bacon Cheeseburger</div>          <div class="featured-desc">Our signature beef patty topped with crispy bacon and American cheese on a toasty bun.</div>          <div class="featured-order-btn-container">            <div class="featured-order-btn" (click)="GoToOrder()">Order Now</div>          </div>        </div>      </div>      <div class="featured-column-2">        <img class="featured-image-2" src="assets/menu_item_images/item4.jpg">        <div class="featured-text-container">          <div class="featured-identifier">FEATURED</div>          <div class="featured-title">Gig \'Em Patty Melt</div>          <div class="featured-desc">Beef patty served on buttery Texas Toast, slathered in Gig \'Em Sauce and served with caramelized onions and American Swiss cheese.</div>          <div class="featured-order-btn-container">            <div class="featured-order-btn" (click)="GoToOrder()">Order Now</div>          </div>        </div>      </div>      <div class="featured-column-3">        <img class="featured-image" src="assets/menu_item_images/item15.jpg">        <div class="featured-text-container">          <div class="featured-identifier">FEATURED</div>          <div class="featured-title">Aggie Shakes</div>          <div class="featured-desc">Handspun milkshake in your flavor of choice.</div>          <div class="featured-order-btn-container">            <div class="featured-order-btn" (click)="GoToOrder()">Order Now</div>          </div>        </div>      </div>    </div>    <div class="location-section" id="your-revs">      <div class="location-column-1">        <google-map            [center]="center"            [zoom]="zoom"            (mapClick)="moveMap($event)"            (mapMousemove)="move($event)">          <map-marker [position]="markerPosition"></map-marker>        </google-map>      </div>      <div class="location-column-2">        <div class="location-text-container">          <div class="location-title">Visit your Rev\'s</div>          <div class="location-desc">Hang out with your friends, pick up your food, and enjoy your meal in the dining room or the outside patio.</div>        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddEmployeeComponent', 'selector': 'app-add-employee'},{'name': 'AddOrderDialogComponentComponent', 'selector': 'app-add-order-dialog-component'},{'name': 'AdminViewComponent', 'selector': 'app-admin-view'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CashierCartComponent', 'selector': 'app-cashier-cart'},{'name': 'CashierCheckoutViewComponent', 'selector': 'app-cashier-checkout-view'},{'name': 'CashierCustomizeItemComponent', 'selector': 'app-cashier-customize-item'},{'name': 'CashierMenuComponent', 'selector': 'app-cashier-menu'},{'name': 'CustomerCartComponent', 'selector': 'app-customer-cart'},{'name': 'CustomerCheckoutViewComponent', 'selector': 'app-customer-checkout-view'},{'name': 'CustomerCustomizeItemComponent', 'selector': 'app-customer-customize-item'},{'name': 'CustomerLandingComponent', 'selector': 'app-customer-landing'},{'name': 'CustomerMenuComponent', 'selector': 'app-customer-menu'},{'name': 'EditEmployeeDialogComponent', 'selector': 'app-edit-employee-dialog'},{'name': 'EditOrderComponent', 'selector': 'app-edit-order'},{'name': 'EmployeeLoginComponent', 'selector': 'app-employee-login'},{'name': 'ExcessReportComponent', 'selector': 'app-excess-report'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerEditIngredientsComponent', 'selector': 'app-manager-edit-ingredients'},{'name': 'ManagerEditMenuComponent', 'selector': 'app-manager-edit-menu'},{'name': 'ManagerViewComponent', 'selector': 'app-manager-view'},{'name': 'MenuBoardComponent', 'selector': 'app-menu-board'},{'name': 'MenuPopularityComponent', 'selector': 'app-menu-popularity'},{'name': 'OrderEditDialogComponent', 'selector': 'app-order-edit-dialog'},{'name': 'OrderManagementComponent', 'selector': 'app-order-management'},{'name': 'ProductUsageComponent', 'selector': 'app-product-usage'},{'name': 'RemoveOrderItemsDialogComponent', 'selector': 'app-remove-order-items-dialog'},{'name': 'RestockReportComponent', 'selector': 'app-restock-report'},{'name': 'SalesReportComponent', 'selector': 'app-sales-report'},{'name': 'SellTogetherReportComponent', 'selector': 'app-sell-together-report'},{'name': 'TrevorCartComponent', 'selector': 'app-trevor-cart'},{'name': 'TrevorCashierComponent', 'selector': 'app-trevor-cashier'},{'name': 'TrevorCheckoutComponent', 'selector': 'app-trevor-checkout'},{'name': 'TrevorCustomizeItemComponent', 'selector': 'app-trevor-customize-item'},{'name': 'ViewCustomizationsComponent', 'selector': 'app-view-customizations'}];
+    var DIRECTIVES = [{'name': 'LogoutDirective', 'selector': '[appLogout]'}];
+    var ACTUAL_COMPONENT = {'name': 'CustomerLandingComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CustomerLandingComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

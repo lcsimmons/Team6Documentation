@@ -1,0 +1,1063 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>pos-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">pos-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  MenuBoardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/menu-board/menu-board.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for displaying the menu board with different categories.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-menu-board</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./menu-board.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./menu-board.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categories" >categories</a>
+                            </li>
+                            <li>
+                                <a href="#displayCategories" >displayCategories</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getItemsByCategory" >getItemsByCategory</a>
+                            </li>
+                            <li>
+                                <a href="#goHome" >goHome</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectCategory" >onSelectCategory</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/menu-board/menu-board.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Initializes a new instance of the MenuBoardComponent.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to fetch menu items by category.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Router service to navigate between components.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getItemsByCategory"></a>
+                    <span class="name">
+                        <span ><b>getItemsByCategory</b></span>
+                        <a href="#getItemsByCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getItemsByCategory(category: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/menu-board/menu-board.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves items by category from the displayCategories array.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>category</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The category to filter items by.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>any[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An array of items belonging to the specified category.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goHome"></a>
+                    <span class="name">
+                        <span ><b>goHome</b></span>
+                        <a href="#goHome"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goHome()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/menu-board/menu-board.component.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates back to the employee login page.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/menu-board/menu-board.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Lifecycle hook that is called after Angular has initialized all data-bound properties.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectCategory"></a>
+                    <span class="name">
+                        <span ><b>onSelectCategory</b></span>
+                        <a href="#onSelectCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectCategory(category: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/app/menu-board/menu-board.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Selects a category and fetches its menu items from the DataService, then adds them to the displayCategories array.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>category</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The category to fetch menu items for.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categories"></a>
+                    <span class="name">
+                        <span ><b>categories</b></span>
+                        <a href="#categories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;Burger&#x27;, &#x27;Sandwich&#x27;, &#x27;Value Meal&#x27;, &#x27;Basket&#x27;, &#x27;Side&#x27;, &#x27;Shakes &amp; More&#x27;, &#x27;Beverage&#x27;, &#x27;Extras&#x27;, &#x27;Sauce&#x27;, &#x27;Seasonal&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/menu-board/menu-board.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Predefined categories available for selection.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayCategories"></a>
+                    <span class="name">
+                        <span ><b>displayCategories</b></span>
+                        <a href="#displayCategories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/menu-board/menu-board.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array to hold categories with their respective items.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { DataService } from &#x27;../data.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+/**
+ * Component for displaying the menu board with different categories.
+ */
+@Component({
+  selector: &#x27;app-menu-board&#x27;,
+  templateUrl: &#x27;./menu-board.component.html&#x27;,
+  styleUrls: [&#x27;./menu-board.component.css&#x27;]
+})
+export class MenuBoardComponent implements OnInit {
+  /**
+   * Array to hold categories with their respective items.
+   */
+  displayCategories: any[] &#x3D; [];
+
+  /**
+   * Predefined categories available for selection.
+   */
+  categories: string[] &#x3D; [&#x27;Burger&#x27;, &#x27;Sandwich&#x27;, &#x27;Value Meal&#x27;, &#x27;Basket&#x27;, &#x27;Side&#x27;, &#x27;Shakes &amp; More&#x27;, &#x27;Beverage&#x27;, &#x27;Extras&#x27;, &#x27;Sauce&#x27;, &#x27;Seasonal&#x27;];
+
+  /**
+   * Initializes a new instance of the MenuBoardComponent.
+   * @param dataService Service to fetch menu items by category.
+   * @param router Router service to navigate between components.
+   */
+  constructor(private dataService: DataService, private router: Router) { }
+
+  /**
+   * Lifecycle hook that is called after Angular has initialized all data-bound properties.
+   */
+  ngOnInit(): void {
+    this.categories.forEach(category &#x3D;&gt; {
+      this.onSelectCategory(category);
+    });
+  }
+
+  /**
+   * Retrieves items by category from the displayCategories array.
+   * @param category The category to filter items by.
+   * @returns An array of items belonging to the specified category.
+   */
+  getItemsByCategory(category: string): any[] {
+    const categoryObject &#x3D; this.displayCategories.find(cat &#x3D;&gt; cat.category &#x3D;&#x3D;&#x3D; category);
+    return categoryObject ? categoryObject.items : [];
+  }
+  
+
+  /**
+   * Selects a category and fetches its menu items from the DataService, then adds them to the displayCategories array.
+   * @param category The category to fetch menu items for.
+   */
+  onSelectCategory(category: string): void {
+    this.dataService.getMenuItemsByCategory(category).subscribe(items &#x3D;&gt; {
+      let categoryItems &#x3D; [];
+      for (let name in items) {
+        categoryItems.push({ name: name, price: items[name] });
+      }
+      this.displayCategories.push({ category: category, items: categoryItems }); 
+    });
+  }
+
+  /**
+   * Navigates back to the employee login page.
+   */
+  goHome(): void {
+    this.router.navigate([&#x27;/employee-login&#x27;]);
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;page-container&quot;&gt;
+
+  &lt;div class&#x3D;&quot;header&quot;&gt;
+    &lt;div class&#x3D;&quot;revs-image&quot;&gt;
+      &lt;img width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; src&#x3D;&quot;assets/REVSLogoUpdated.jpg&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;column-container&quot;&gt;
+    &lt;div class&#x3D;&quot;column&quot;&gt;
+      &lt;!-- Burgers section--&gt;
+      &lt;div *ngFor&#x3D;&quot;let category of categories&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;category &#x3D;&#x3D;&#x3D; &#x27;Burger&#x27;&quot; class&#x3D;&quot;menu-columns&quot;&gt;
+          &lt;div class&#x3D;&quot;category-title&quot;&gt;{{ category }}S&lt;/div&gt;
+          &lt;div class&#x3D;&quot;menu-items-list&quot;&gt;
+            &lt;li class&#x3D;&quot;menu-items&quot; *ngFor&#x3D;&quot;let item of getItemsByCategory(category)&quot;&gt;
+              &lt;div class&#x3D;&quot;menu-item-id&quot;&gt;{{ item.price.id + 1}}.&lt;/div&gt;
+              &lt;div class&#x3D;&quot;menu-item-name&quot;&gt;{{ item.price.name }}&lt;/div&gt;
+              &lt;div class&#x3D;&quot;menu-item-price&quot;&gt;{{ item.price.price.toFixed(2) }}&lt;/div&gt;
+            &lt;/li&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- end section--&gt;
+      &lt;!-- Sandwich section--&gt;
+      &lt;div *ngFor&#x3D;&quot;let category of categories&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;category &#x3D;&#x3D;&#x3D; &#x27;Sandwich&#x27;&quot; class&#x3D;&quot;menu-columns&quot;&gt;
+          &lt;div class&#x3D;&quot;category-title&quot;&gt;{{ category }}ES&lt;/div&gt;
+          &lt;div class&#x3D;&quot;menu-items-list&quot;&gt;
+            &lt;li class&#x3D;&quot;menu-items&quot; *ngFor&#x3D;&quot;let item of getItemsByCategory(category)&quot;&gt;
+              &lt;div class&#x3D;&quot;menu-item-id&quot;&gt;{{ item.price.id + 1}}.&lt;/div&gt;
+              &lt;div class&#x3D;&quot;menu-item-name&quot;&gt;{{ item.price.name }}&lt;/div&gt;
+              &lt;div class&#x3D;&quot;menu-item-price&quot;&gt;{{ item.price.price.toFixed(2) }}&lt;/div&gt;
+            &lt;/li&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- end section--&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;column&quot;&gt;
+        &lt;!-- Value Meals section--&gt;
+        &lt;div *ngFor&#x3D;&quot;let category of categories&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;category &#x3D;&#x3D;&#x3D; &#x27;Value Meal&#x27;&quot; class&#x3D;&quot;menu-columns&quot;&gt;
+            &lt;div class&#x3D;&quot;category-title&quot;&gt;{{ category }}S&lt;/div&gt;
+            &lt;div class&#x3D;&quot;menu-items-list&quot;&gt;
+              &lt;li class&#x3D;&quot;menu-items&quot; *ngFor&#x3D;&quot;let item of getItemsByCategory(category)&quot;&gt;
+                &lt;div class&#x3D;&quot;menu-item-id&quot;&gt;{{ item.price.id + 1}}.&lt;/div&gt;
+                &lt;div class&#x3D;&quot;menu-item-name&quot;&gt;{{ item.price.name }}&lt;/div&gt;
+                &lt;div class&#x3D;&quot;menu-item-price&quot;&gt;{{ item.price.price.toFixed(2) }}&lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- end section--&gt;
+        &lt;!-- Baskets section--&gt;
+        &lt;div *ngFor&#x3D;&quot;let category of categories&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;category &#x3D;&#x3D;&#x3D; &#x27;Basket&#x27;&quot; class&#x3D;&quot;menu-columns&quot;&gt;
+            &lt;div class&#x3D;&quot;category-title-2&quot;&gt;{{ category }}S&lt;/div&gt;
+            &lt;div class&#x3D;&quot;menu-items-list&quot;&gt;
+              &lt;li class&#x3D;&quot;menu-items&quot; *ngFor&#x3D;&quot;let item of getItemsByCategory(category)&quot;&gt;
+                &lt;div class&#x3D;&quot;menu-item-id&quot;&gt;{{ item.price.id + 1}}.&lt;/div&gt;
+                &lt;div class&#x3D;&quot;menu-item-name&quot;&gt;{{ item.price.name }}&lt;/div&gt;
+                &lt;div class&#x3D;&quot;menu-item-price&quot;&gt;{{ item.price.price.toFixed(2) }}&lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- end section--&gt;
+        &lt;!-- Sides section--&gt;
+        &lt;div *ngFor&#x3D;&quot;let category of categories&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;category &#x3D;&#x3D;&#x3D; &#x27;Side&#x27;&quot; class&#x3D;&quot;menu-columns&quot;&gt;
+            &lt;div class&#x3D;&quot;category-title-2&quot;&gt;{{ category }}S&lt;/div&gt;
+            &lt;div class&#x3D;&quot;menu-items-list&quot;&gt;
+              &lt;li class&#x3D;&quot;menu-items&quot; *ngFor&#x3D;&quot;let item of getItemsByCategory(category)&quot;&gt;
+                &lt;div class&#x3D;&quot;menu-item-id&quot;&gt;{{ item.price.id + 1}}.&lt;/div&gt;
+                &lt;div class&#x3D;&quot;menu-item-name&quot;&gt;{{ item.price.name }}&lt;/div&gt;
+                &lt;div class&#x3D;&quot;menu-item-price&quot;&gt;{{ item.price.price.toFixed(2) }}&lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div *ngFor&#x3D;&quot;let category of categories&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;category &#x3D;&#x3D;&#x3D; &#x27;Seasonal&#x27;&quot; class&#x3D;&quot;menu-columns&quot;&gt;
+            &lt;div class&#x3D;&quot;category-title-2&quot;&gt;{{ category }}S&lt;/div&gt;
+            &lt;div class&#x3D;&quot;menu-items-list&quot;&gt;
+              &lt;li class&#x3D;&quot;menu-items&quot; *ngFor&#x3D;&quot;let item of getItemsByCategory(category)&quot;&gt;
+                &lt;div class&#x3D;&quot;menu-item-id&quot;&gt;{{ item.price.id + 1}}.&lt;/div&gt;
+                &lt;div class&#x3D;&quot;menu-item-name&quot;&gt;{{ item.price.name }}&lt;/div&gt;
+                &lt;div class&#x3D;&quot;menu-item-price&quot;&gt;{{ item.price.price.toFixed(2) }}&lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- end section--&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;column&quot;&gt;
+      &lt;!-- Shakes and more section--&gt;
+      &lt;div *ngFor&#x3D;&quot;let category of categories&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;category &#x3D;&#x3D;&#x3D; &#x27;Shakes &amp; More&#x27;&quot; class&#x3D;&quot;menu-columns&quot;&gt;
+          &lt;div class&#x3D;&quot;category-title&quot;&gt;{{ category }}&lt;/div&gt;
+          &lt;div class&#x3D;&quot;menu-items-list&quot;&gt;
+            &lt;li class&#x3D;&quot;menu-items&quot; *ngFor&#x3D;&quot;let item of getItemsByCategory(category)&quot;&gt;
+              &lt;div class&#x3D;&quot;menu-item-id&quot;&gt;{{ item.price.id + 1}}.&lt;/div&gt;
+              &lt;div class&#x3D;&quot;menu-item-name&quot;&gt;{{ item.price.name }}&lt;/div&gt;
+              &lt;div class&#x3D;&quot;menu-item-price&quot;&gt;{{ item.price.price.toFixed(2) }}&lt;/div&gt;
+            &lt;/li&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- end section--&gt;
+      &lt;!-- Beverages section--&gt;
+      &lt;div *ngFor&#x3D;&quot;let category of categories&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;category &#x3D;&#x3D;&#x3D; &#x27;Beverage&#x27;&quot; class&#x3D;&quot;menu-columns&quot;&gt;
+          &lt;div class&#x3D;&quot;category-title&quot;&gt;{{ category }}S&lt;/div&gt;
+          &lt;div class&#x3D;&quot;menu-items-list&quot;&gt;
+            &lt;li class&#x3D;&quot;menu-items&quot; *ngFor&#x3D;&quot;let item of getItemsByCategory(category)&quot;&gt;
+              &lt;div class&#x3D;&quot;menu-item-id&quot;&gt;{{ item.price.id + 1}}.&lt;/div&gt;
+              &lt;div class&#x3D;&quot;menu-item-name&quot;&gt;{{ item.price.name }}&lt;/div&gt;
+              &lt;div class&#x3D;&quot;menu-item-price&quot;&gt;{{ item.price.price.toFixed(2) }}&lt;/div&gt;
+            &lt;/li&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- end section--&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./menu-board.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.page-container {
+    background-color: #43091E;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+}
+
+.header {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #5B0726;
+}
+
+.revs-image {
+    object-fit: cover;
+    text-align: center;
+}
+
+.column-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+}
+
+.menu-items-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.category-title {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 40px;
+    color:#f8be14;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 100%;
+}
+
+.category-title-2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 40px;
+    color:#f8be14;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    line-height: 100%;
+}
+
+.menu-item-id,
+.menu-item-name,
+.menu-item-price {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Roboto, Oxygen, Ubuntu, Cantarell, &#x27;Open Sans&#x27;, &#x27;Helvetica Neue&#x27;, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    margin-right: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu-item-id {
+    font-weight: 900;
+    color: #770b33;
+    font-style: italic;
+    flex-shrink: 0;
+}
+
+.menu-item-name {
+    flex-grow: 1;
+}
+
+.menu-item-price {
+    font-style: italic;
+    text-align: right;
+    flex-shrink: 0;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="page-container">  <div class="header">    <div class="revs-image">      <img width="200" height="100" src="assets/REVSLogoUpdated.jpg">    </div>  </div>  <div class="column-container">    <div class="column">      <!-- Burgers section-->      <div *ngFor="let category of categories">        <div *ngIf="category === \'Burger\'" class="menu-columns">          <div class="category-title">{{ category }}S</div>          <div class="menu-items-list">            <li class="menu-items" *ngFor="let item of getItemsByCategory(category)">              <div class="menu-item-id">{{ item.price.id + 1}}.</div>              <div class="menu-item-name">{{ item.price.name }}</div>              <div class="menu-item-price">{{ item.price.price.toFixed(2) }}</div>            </li>          </div>        </div>      </div>      <!-- end section-->      <!-- Sandwich section-->      <div *ngFor="let category of categories">        <div *ngIf="category === \'Sandwich\'" class="menu-columns">          <div class="category-title">{{ category }}ES</div>          <div class="menu-items-list">            <li class="menu-items" *ngFor="let item of getItemsByCategory(category)">              <div class="menu-item-id">{{ item.price.id + 1}}.</div>              <div class="menu-item-name">{{ item.price.name }}</div>              <div class="menu-item-price">{{ item.price.price.toFixed(2) }}</div>            </li>          </div>        </div>      </div>      <!-- end section-->    </div>    <div class="column">        <!-- Value Meals section-->        <div *ngFor="let category of categories">          <div *ngIf="category === \'Value Meal\'" class="menu-columns">            <div class="category-title">{{ category }}S</div>            <div class="menu-items-list">              <li class="menu-items" *ngFor="let item of getItemsByCategory(category)">                <div class="menu-item-id">{{ item.price.id + 1}}.</div>                <div class="menu-item-name">{{ item.price.name }}</div>                <div class="menu-item-price">{{ item.price.price.toFixed(2) }}</div>              </li>            </div>          </div>        </div>        <!-- end section-->        <!-- Baskets section-->        <div *ngFor="let category of categories">          <div *ngIf="category === \'Basket\'" class="menu-columns">            <div class="category-title-2">{{ category }}S</div>            <div class="menu-items-list">              <li class="menu-items" *ngFor="let item of getItemsByCategory(category)">                <div class="menu-item-id">{{ item.price.id + 1}}.</div>                <div class="menu-item-name">{{ item.price.name }}</div>                <div class="menu-item-price">{{ item.price.price.toFixed(2) }}</div>              </li>            </div>          </div>        </div>        <!-- end section-->        <!-- Sides section-->        <div *ngFor="let category of categories">          <div *ngIf="category === \'Side\'" class="menu-columns">            <div class="category-title-2">{{ category }}S</div>            <div class="menu-items-list">              <li class="menu-items" *ngFor="let item of getItemsByCategory(category)">                <div class="menu-item-id">{{ item.price.id + 1}}.</div>                <div class="menu-item-name">{{ item.price.name }}</div>                <div class="menu-item-price">{{ item.price.price.toFixed(2) }}</div>              </li>            </div>          </div>        </div>        <div *ngFor="let category of categories">          <div *ngIf="category === \'Seasonal\'" class="menu-columns">            <div class="category-title-2">{{ category }}S</div>            <div class="menu-items-list">              <li class="menu-items" *ngFor="let item of getItemsByCategory(category)">                <div class="menu-item-id">{{ item.price.id + 1}}.</div>                <div class="menu-item-name">{{ item.price.name }}</div>                <div class="menu-item-price">{{ item.price.price.toFixed(2) }}</div>              </li>            </div>          </div>        </div>        <!-- end section-->    </div>    <div class="column">      <!-- Shakes and more section-->      <div *ngFor="let category of categories">        <div *ngIf="category === \'Shakes & More\'" class="menu-columns">          <div class="category-title">{{ category }}</div>          <div class="menu-items-list">            <li class="menu-items" *ngFor="let item of getItemsByCategory(category)">              <div class="menu-item-id">{{ item.price.id + 1}}.</div>              <div class="menu-item-name">{{ item.price.name }}</div>              <div class="menu-item-price">{{ item.price.price.toFixed(2) }}</div>            </li>          </div>        </div>      </div>      <!-- end section-->      <!-- Beverages section-->      <div *ngFor="let category of categories">        <div *ngIf="category === \'Beverage\'" class="menu-columns">          <div class="category-title">{{ category }}S</div>          <div class="menu-items-list">            <li class="menu-items" *ngFor="let item of getItemsByCategory(category)">              <div class="menu-item-id">{{ item.price.id + 1}}.</div>              <div class="menu-item-name">{{ item.price.name }}</div>              <div class="menu-item-price">{{ item.price.price.toFixed(2) }}</div>            </li>          </div>        </div>      </div>      <!-- end section-->    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddEmployeeComponent', 'selector': 'app-add-employee'},{'name': 'AddOrderDialogComponentComponent', 'selector': 'app-add-order-dialog-component'},{'name': 'AdminViewComponent', 'selector': 'app-admin-view'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CashierCartComponent', 'selector': 'app-cashier-cart'},{'name': 'CashierCheckoutViewComponent', 'selector': 'app-cashier-checkout-view'},{'name': 'CashierCustomizeItemComponent', 'selector': 'app-cashier-customize-item'},{'name': 'CashierMenuComponent', 'selector': 'app-cashier-menu'},{'name': 'CustomerCartComponent', 'selector': 'app-customer-cart'},{'name': 'CustomerCheckoutViewComponent', 'selector': 'app-customer-checkout-view'},{'name': 'CustomerCustomizeItemComponent', 'selector': 'app-customer-customize-item'},{'name': 'CustomerLandingComponent', 'selector': 'app-customer-landing'},{'name': 'CustomerMenuComponent', 'selector': 'app-customer-menu'},{'name': 'EditEmployeeDialogComponent', 'selector': 'app-edit-employee-dialog'},{'name': 'EditOrderComponent', 'selector': 'app-edit-order'},{'name': 'EmployeeLoginComponent', 'selector': 'app-employee-login'},{'name': 'ExcessReportComponent', 'selector': 'app-excess-report'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerEditIngredientsComponent', 'selector': 'app-manager-edit-ingredients'},{'name': 'ManagerEditMenuComponent', 'selector': 'app-manager-edit-menu'},{'name': 'ManagerViewComponent', 'selector': 'app-manager-view'},{'name': 'MenuBoardComponent', 'selector': 'app-menu-board'},{'name': 'MenuPopularityComponent', 'selector': 'app-menu-popularity'},{'name': 'OrderEditDialogComponent', 'selector': 'app-order-edit-dialog'},{'name': 'OrderManagementComponent', 'selector': 'app-order-management'},{'name': 'ProductUsageComponent', 'selector': 'app-product-usage'},{'name': 'RemoveOrderItemsDialogComponent', 'selector': 'app-remove-order-items-dialog'},{'name': 'RestockReportComponent', 'selector': 'app-restock-report'},{'name': 'SalesReportComponent', 'selector': 'app-sales-report'},{'name': 'SellTogetherReportComponent', 'selector': 'app-sell-together-report'},{'name': 'TrevorCartComponent', 'selector': 'app-trevor-cart'},{'name': 'TrevorCashierComponent', 'selector': 'app-trevor-cashier'},{'name': 'TrevorCheckoutComponent', 'selector': 'app-trevor-checkout'},{'name': 'TrevorCustomizeItemComponent', 'selector': 'app-trevor-customize-item'},{'name': 'ViewCustomizationsComponent', 'selector': 'app-view-customizations'}];
+    var DIRECTIVES = [{'name': 'LogoutDirective', 'selector': '[appLogout]'}];
+    var ACTUAL_COMPONENT = {'name': 'MenuBoardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MenuBoardComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
