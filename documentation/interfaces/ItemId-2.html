@@ -124,6 +124,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Represent an item</p>
+
+            </p>
 
 
         <section data-compodoc="block-index">
@@ -186,6 +193,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Id number of the item in the database</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -202,8 +215,9 @@ import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
 import { DataService } from &#x27;../data.service&#x27;;
 import { concatMap } from &#x27;rxjs/operators&#x27;;
 import { forkJoin } from &#x27;rxjs&#x27;;
-
+/** Represent an item */
 interface ItemId {
+  /** Id number of the item in the database */
   itemId: string; // Adjust the type if itemId is not a string
 }
 

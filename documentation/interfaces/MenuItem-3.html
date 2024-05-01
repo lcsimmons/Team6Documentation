@@ -128,7 +128,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Interface for items on the menu, allowing type-safe usage of menu item data.</p>
+                <p>Interface to define menu items</p>
 
             </p>
 
@@ -212,6 +212,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Numeric ID of the item</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -245,6 +251,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Name of the menu item</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -278,6 +290,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Price of the item</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -316,6 +334,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Is the item selected</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -335,12 +359,16 @@ import { MatDatepickerInputEvent } from &#x27;@angular/material/datepicker&#x27;
 import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
 
 /**
- * Interface for items on the menu, allowing type-safe usage of menu item data.
+ * Interface to define menu items
  */
 export interface MenuItem {
+  /** Numeric ID of the item */
   id: number;
+  /** Name of the menu item */
   name: string; 
+  /** Price of the item */
   price: number;
+  /** Is the item selected */
   selected?: boolean;
 }
 

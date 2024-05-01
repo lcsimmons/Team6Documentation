@@ -351,18 +351,14 @@ import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
 import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
 // import { ViewEncapsulation } from &#x27;@angular/compiler&#x27;;
 
+
 declare global {
+  /** Window to support Google maps */
   interface Window {
+    /** Allows interaction with Google API */
     google: any;
   }
 }
-
-declare global {
-  interface Window {
-    google: any;
-  }
-}
-
 /**
  * Interface to define menu items
  */

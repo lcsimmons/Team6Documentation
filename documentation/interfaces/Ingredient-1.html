@@ -124,6 +124,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Represents an ingredient</p>
+
+            </p>
 
 
         <section data-compodoc="block-index">
@@ -192,6 +199,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>ID of the ingredient in the database</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -225,6 +238,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Name of the item</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -243,20 +262,25 @@ import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
 import { concatMap } from &#x27;rxjs/operators&#x27;;
 import { forkJoin } from &#x27;rxjs&#x27;;
 
+/**
+ * Represents an ingredient 
+ */
 interface Ingredient {
+  /** ID of the ingredient in the database */
   id: number;
+  /** Name of the item */
   name: string;
 }
 
+/** Allow customer to submit custom orders */
 @Component({
   selector: &#x27;app-customer-customize-item&#x27;,
   templateUrl: &#x27;./customer-customize-item.component.html&#x27;,
   styleUrls: [&#x27;./customer-customize-item.component.css&#x27;] 
 })
-
 export class CustomerCustomizeItemComponent implements OnInit {
 
-
+  /** Default weather description */
   weatherDescription: string &#x3D; &#x27;&#x27;;
   temperature: number &#x3D; 0;
   feelsLikeTemperature: number &#x3D; 0;
@@ -264,8 +288,10 @@ export class CustomerCustomizeItemComponent implements OnInit {
   
 
   menuItem: any;
+  /** Stores ingredients in selected item */
   ingredients: Ingredient[] &#x3D; [];
   selectedIngredients: { [key: number]: FormControl } &#x3D; {};
+  /** Default order number */
   orderNumber: number &#x3D; 0;
   customizationChoices: { id: number; name: string; price: number }[] &#x3D; []; // Include price in the customization choices
   customizations: any[] &#x3D; [];
@@ -274,6 +300,9 @@ export class CustomerCustomizeItemComponent implements OnInit {
 
   @Output() totalPriceChanged: EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;(); // Event emitter for total price
 
+  /**
+   * Observable to determine if the device is a handset for responsive layout purposes.
+   */
   isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result &#x3D;&gt; result.matches),
@@ -283,6 +312,7 @@ export class CustomerCustomizeItemComponent implements OnInit {
     /* accesibility toolbar code here */
   isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
 
+  /** Toggle if accessibility toolbar is shown */
   toggleAccessibilityToolbarContainer(): void {
     this.isAccessibilityToolbarContainerVisible &#x3D; !this.isAccessibilityToolbarContainerVisible;
     console.log(&#x27;Toolbar visibility:&#x27;, this.isAccessibilityToolbarContainerVisible);
@@ -347,7 +377,7 @@ export class CustomerCustomizeItemComponent implements OnInit {
     });
   }
 
-
+  /** Initialize component */
   ngOnInit(): void {
     this.dataService.getNextOrderId().subscribe((response: any) &#x3D;&gt; {
       this.orderNumber &#x3D; response.next_order_id;
@@ -411,7 +441,7 @@ export class CustomerCustomizeItemComponent implements OnInit {
     }, &#x27;google_translate_element&#x27;);
   }
 
-
+  /** Update weather */
   callWeatherApi(): void {
     const lat &#x3D; 30.6125364
     const lon &#x3D; -96.3433166
@@ -465,7 +495,7 @@ export class CustomerCustomizeItemComponent implements OnInit {
       }
     });
   }
-
+  /** Loads customizations */
   loadCustomizations(): void {
     console.log(&#x27;Loading customizations for order ID:&#x27;, this.orderNumber);
     console.log(&#x27;Menu item ID:&#x27;, this.menuItem?.id); // Add null check with &#x27;?&#x27;
@@ -488,7 +518,7 @@ export class CustomerCustomizeItemComponent implements OnInit {
   }
   
 
-
+  /** Saves customizations */
   saveCustomizations(menuItemId: number): void {
     console.log(&#x27;Order Number:&#x27;, this.orderNumber);
     console.log(&#x27;Menu Item ID:&#x27;, menuItemId);

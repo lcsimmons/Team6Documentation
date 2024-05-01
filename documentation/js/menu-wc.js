@@ -328,9 +328,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="interfaces/Window.html" data-type="entity-link" >Window</a>
                             </li>
-                            <li class="link">
-                                <a href="interfaces/Window-1.html" data-type="entity-link" >Window</a>
-                            </li>
                         </ul>
                     </li>
                     <li class="chapter">

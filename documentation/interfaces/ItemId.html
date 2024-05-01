@@ -124,6 +124,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Tracks an item&#39;s ID</p>
+
+            </p>
 
 
         <section data-compodoc="block-index">
@@ -186,6 +193,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Item&#39;s ID number in the databse</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -203,7 +216,11 @@ import { DataService } from &#x27;../data.service&#x27;;
 import { concatMap } from &#x27;rxjs/operators&#x27;;
 import { forkJoin } from &#x27;rxjs&#x27;;
 
+/**
+ * Tracks an item&#x27;s ID 
+ */
 interface ItemId {
+  /** Item&#x27;s ID number in the databse */
   itemId: string; // Adjust the type if itemId is not a string
 }
 
@@ -220,6 +237,8 @@ export class CashierCartComponent implements OnInit {
   @ViewChildren(&#x27;readContent&#x27;) readContents!: QueryList&lt;ElementRef&gt;;
 
   @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+
+  /** Array to track items currently placed in cart */
   cartItems: any[] &#x3D; [];
 
   /**

@@ -124,6 +124,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Represents an ingredient</p>
+
+            </p>
 
 
         <section data-compodoc="block-index">
@@ -192,6 +199,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>ID of the ingredient in the database</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -225,6 +238,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Name of the item</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -241,13 +260,19 @@ import { BreakpointObserver, Breakpoints } from &#x27;@angular/cdk/layout&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { map, shareReplay } from &#x27;rxjs/operators&#x27;;
 
-
+/**
+ * Represents an ingredient 
+ */
 interface Ingredient {
+  /** ID of the ingredient in the database */
   id: number;
+  /** Name of the item */
   name: string;
 }
 
-
+/**
+ * Allow cashier to create custom orders
+ */
 @Component({
   selector: &#x27;app-cashier-customize-item&#x27;,
   templateUrl: &#x27;./cashier-customize-item.component.html&#x27;,
@@ -280,6 +305,9 @@ export class CashierCustomizeItemComponent implements OnInit {
     /* accesibility toolbar code here */
   isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
 
+  /**
+   * Toggle if accessibility bar is shown
+   */
   toggleAccessibilityToolbarContainer(): void {
     this.isAccessibilityToolbarContainerVisible &#x3D; !this.isAccessibilityToolbarContainerVisible;
     console.log(&#x27;Toolbar visibility:&#x27;, this.isAccessibilityToolbarContainerVisible);
@@ -347,7 +375,7 @@ export class CashierCustomizeItemComponent implements OnInit {
   }   
     
 
-
+  /** Initilize component */
   ngOnInit(): void {
     this.dataService.getNextOrderId().subscribe((response: any) &#x3D;&gt; {
       this.orderNumber &#x3D; response.next_order_id;
@@ -370,6 +398,7 @@ export class CashierCustomizeItemComponent implements OnInit {
     }
   }
 
+  /** Text to speech menu */
   speakText(): void {
     let fullText &#x3D; &#x27;&#x27;;
     this.readContents.forEach((elementRef) &#x3D;&gt; {
@@ -380,6 +409,11 @@ export class CashierCustomizeItemComponent implements OnInit {
     window.speechSynthesis.speak(utterance);
   }
 
+  /**
+   * Get text from element
+   * @param element DOM element
+   * @returns text
+   */
   private getTextFromElement(element: HTMLElement): string {
     let text &#x3D; &quot;&quot;;
     const children &#x3D; Array.from(element.childNodes);
@@ -395,6 +429,9 @@ export class CashierCustomizeItemComponent implements OnInit {
     return text;
   }
 
+  /**
+   * Save customizations
+   */
   loadCustomizations(): void {
     console.log(&#x27;Loading customizations for order ID:&#x27;, this.orderNumber);
     console.log(&#x27;Menu item ID:&#x27;, this.menuItem?.id); // Add null check with &#x27;?&#x27;
@@ -418,6 +455,10 @@ export class CashierCustomizeItemComponent implements OnInit {
   
 
 
+  /**
+   * Save customizations
+   * @param menuItemId ID of item
+   */
   saveCustomizations(menuItemId: number): void {
     console.log(&#x27;Order Number:&#x27;, this.orderNumber);
     console.log(&#x27;Menu Item ID:&#x27;, menuItemId);
@@ -455,6 +496,10 @@ export class CashierCustomizeItemComponent implements OnInit {
   }
 
 
+  /**
+   * Calculate total price
+   * @returns Total Price
+   */
   calculateTotalPrice(): number {
     let totalPrice &#x3D; 0;
   
@@ -477,10 +522,11 @@ export class CashierCustomizeItemComponent implements OnInit {
     return &#x60;assets/menu_item_images/item${id}.jpg&#x60;;
   }
 
+  /** Navigate to home page */
   goHome(): void {
     this.router.navigate([&#x27;/employee-login&#x27;]);
   }
-  
+  /** Navigate to menu page */
   onSeeMenu(): void {
     this.router.navigate([&#x27;/cashier-menu&#x27;]);
   }

@@ -124,6 +124,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Represent an Order</p>
+
+            </p>
 
 
         <section data-compodoc="block-index">
@@ -222,6 +229,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Date of the order</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -255,6 +268,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Employee who took the order</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -288,6 +307,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>ID</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -321,6 +346,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Items in order</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -354,6 +385,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Status</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -387,6 +424,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Is the order togo?</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -420,6 +463,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Total price</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -451,14 +500,21 @@ import { forkJoin } from &#x27;rxjs&#x27;;
 import { ViewCustomizationsComponent } from &#x27;../view-customizations/view-customizations.component&#x27;;
 
 
-
+/** Represent an Order */
 interface Order {
+  /** ID */
   id: number;
+  /** Items in order */
   menu_items: any[];
+  /** Is the order togo? */
   togo: boolean;
+  /** Total price */
   total_price: number;
+  /** Date of the order */
   date: string;
+  /** Employee who took the order */
   employee: string;
+  /** Status */
   status: string;
 }
 
@@ -488,7 +544,10 @@ export class OrderManagementComponent implements OnInit {
    * Tracks the current page of orders being viewed
    */
   page: number &#x3D; 1;
+
+  /** Orders displayed on page */
   orders: any[] &#x3D; [];
+  /** Chart columns */
   displayedColumns: string[] &#x3D; [&#x27;id&#x27;, &#x27;menu_items&#x27;, &#x27;togo&#x27;, &#x27;total_price&#x27;, &#x27;date&#x27;, &#x27;employee_id&#x27;, &#x27;status&#x27;, &#x27;actions&#x27;];
 
 
@@ -497,6 +556,7 @@ export class OrderManagementComponent implements OnInit {
   }
 
 
+  /** Show orders on initialization */
   ngOnInit(): void {
     this.loadOrders();
   }

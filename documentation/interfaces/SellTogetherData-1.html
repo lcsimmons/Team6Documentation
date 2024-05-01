@@ -128,7 +128,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Interface defining the structure for selling data together.</p>
+                <p>Interface defining the structure for sell together data.</p>
 
             </p>
 
@@ -205,6 +205,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Frequency</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -238,6 +244,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Item one</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -271,6 +283,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Item 2</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -293,11 +311,14 @@ import { ViewChild } from &#x27;@angular/core&#x27;;
 import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
 
 /**
- * Interface defining the structure for selling data together.
+ * Interface defining the structure for sell together data.
  */
 export interface SellTogetherData {
-  menu_item_1: string; // Change number to string
-  menu_item_2: string; // Change number to string
+  /** Item one */
+  menu_item_1: string;
+  /** Item 2 */
+  menu_item_2: string;
+  /** Frequency */
   frequency: number;
 }
 

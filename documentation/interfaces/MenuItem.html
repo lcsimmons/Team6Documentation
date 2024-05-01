@@ -318,8 +318,11 @@ export interface MenuItem {
  * Interface defining the structure for sell together data.
  */
 export interface SellTogetherData {
+  /** Item one */
   menu_item_1: number;
+  /** Item 2 */
   menu_item_2: number;
+  /** Frequency */
   frequency: number;
 }
 
@@ -327,11 +330,17 @@ export interface SellTogetherData {
  * Interface defining the structure for employee data.
  */
 interface Employee {
+  /** ID in database */
   id: number;
+  /** Name */
   name: string;
+  /** Title */
   title: string;
+  /** Salary */
   salary: number;
+  /** Work Schedule */
   work_scheduling: string;
+  /** Permission level */
   permissions: number;
 }
 

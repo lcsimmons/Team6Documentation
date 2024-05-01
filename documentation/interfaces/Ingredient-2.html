@@ -205,6 +205,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>ID Number in database</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -238,6 +244,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Name</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -271,6 +283,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Unit Price</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -292,8 +310,11 @@ import { Router } from &#x27;@angular/router&#x27;;
  * Interface to define the structure of an ingredient object.
  */
 export interface Ingredient {
+  /** ID Number in database */
   id: number;
+  /** Name */
   name: string;
+  /** Unit Price */
   price: number;
 }
 

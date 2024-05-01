@@ -124,6 +124,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>ItemID</p>
+
+            </p>
 
 
         <section data-compodoc="block-index">
@@ -186,6 +193,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>ID in database</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -203,7 +216,9 @@ import { DataService } from &#x27;../data.service&#x27;;
 import { concatMap } from &#x27;rxjs/operators&#x27;;
 import { forkJoin } from &#x27;rxjs&#x27;;
 
+/** ItemID */
 interface ItemId {
+  /** ID in database */
   itemId: string; // Adjust the type if itemId is not a string
 }
 
@@ -221,6 +236,9 @@ export class CustomerCartComponent implements OnInit {
   orderNumber: number &#x3D; 0;
   toGo: boolean &#x3D; false;
   itemListString: string &#x3D; &quot;&quot;;
+  /**
+   * Observable to determine if the device is a handset for responsive layout purposes.
+   */
   isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result &#x3D;&gt; result.matches),

@@ -223,6 +223,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Numeric ID</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -256,6 +262,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Employee name</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -289,6 +301,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Level of permission on application</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -322,6 +340,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Employee Salary</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -355,6 +379,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Employee title</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -388,6 +418,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Work schedule</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -409,11 +445,17 @@ import { AddEmployeeComponent } from &#x27;../add-employee/add-employee.componen
  * Interface for employee objects.
  */
 export interface Employee {
+  /** Numeric ID */
   id: number;
+  /** Employee name */
   name: string;
+  /** Employee title */
   title: string;
+  /** Employee Salary */
   salary: number;
+  /** Work schedule */
   work_scheduling: string;
+  /** Level of permission on application */
   permissions: number;
 }
 
@@ -427,6 +469,7 @@ export interface Employee {
 })
 export class AdminViewComponent implements OnInit {
 
+  /** Flag to track current style */
   Bionic &#x3D; false;
 
   /**
