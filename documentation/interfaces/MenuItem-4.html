@@ -329,22 +329,48 @@ export interface MenuItem {
   styleUrls: [&#x27;./menu-popularity.component.css&#x27;],
   providers: [DatePipe]
 })
+
+/**
+ * Component for displaying the popularity of menu items within a specified date range.
+ */
 export class MenuPopularityComponent implements OnInit {
 
+  /** Flag indicating the current visual theme. */
   Bionic &#x3D; false; 
-
+  /** Reference to the MatSidenav element. */
   @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+  /** Form group for selecting date range. */
   dateForm!: FormGroup;
+  
+  /** Number of top menu items to display. */
   topN: number &#x3D; 10;
   
+  /** Start date for the date range. */
   date1: Date &#x3D; new Date();
+
+  /** End date for the date range. */
   date2: Date &#x3D; new Date();
+
+  /** String representation of the start date. */
   date1String: string &#x3D; this.date1.toISOString().split(&#x27;T&#x27;)[0];
+
+  /** String representation of the end date. */
   date2String: string &#x3D; this.date2.toISOString().split(&#x27;T&#x27;)[0];
 
+  /** Displayed columns in the top menu items table. */
   displayedColumns: string[] &#x3D; [&#x27;id&#x27;, &#x27;name&#x27;, &#x27;price&#x27;];
+  /** Top menu items based on popularity. */
   topMenuItems: MenuItem[] &#x3D; [];
 
+  /**
+ * Constructs an instance of the MenuPopularityComponent.
+ * @param fb The FormBuilder service for creating form groups.
+ * @param router The router service for navigating between routes.
+ * @param dataService The data service for fetching menu items and related data.
+ * @param breakpointObserver The breakpoint observer service for monitoring screen size changes.
+ * @param _snackBar The snack bar service for displaying notifications.
+ * @param datePipe The date pipe service for formatting dates.
+ */
   constructor(private fb: FormBuilder, private router: Router, private dataService: DataService, private breakpointObserver: BreakpointObserver, private _snackBar: MatSnackBar, private datePipe: DatePipe) {
       this.dateForm &#x3D; this.fb.group({
       startDate: [&#x27;&#x27;],
@@ -353,12 +379,17 @@ export class MenuPopularityComponent implements OnInit {
     });
   }
 
+  /** Observable representing whether the device is a handset. */
   isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result &#x3D;&gt; result.matches),
       shareReplay()
     );
 
+  /**
+ * Lifecycle hook that is called after Angular has initialized all data-bound properties of a directive.
+ * It is a good place to perform initialization logic.
+ */
   ngOnInit(): void {
   }
 

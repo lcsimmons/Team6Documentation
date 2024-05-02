@@ -467,6 +467,10 @@ export interface Employee {
   templateUrl: &#x27;./admin-view.component.html&#x27;,
   styleUrls: [&#x27;./admin-view.component.css&#x27;]
 })
+
+/**
+ * Component responsible for the admin view functionality.
+ */
 export class AdminViewComponent implements OnInit {
 
   /** Flag to track current style */
@@ -491,6 +495,13 @@ export class AdminViewComponent implements OnInit {
    */
   displayedColumns: string[] &#x3D; [&#x27;email&#x27;, &#x27;title&#x27;, &#x27;salary&#x27;, &#x27;work_scheduling&#x27;, &#x27;permissions&#x27;, &#x27;update&#x27;, &#x27;delete&#x27;];
 
+  /**
+ * Constructs the AdminViewComponent with necessary dependencies.
+ * @param authService The authentication service.
+ * @param dataService The data service for fetching data.
+ * @param dialog The dialog service for displaying dialogs.
+ * @param breakpointObserver The observer for breakpoints.
+ */
   constructor(private authService: AuthService, private dataService: DataService, private dialog: MatDialog, private breakpointObserver: BreakpointObserver) { }
 
   /**

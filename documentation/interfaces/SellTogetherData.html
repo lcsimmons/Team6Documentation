@@ -351,7 +351,13 @@ interface Employee {
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+
+/**
+ * Service for fetching and submitting data from/to various APIs.
+ */
 export class DataService {
+  
+  /** Base URL for the OpenWeatherMap API. */
   private readonly API_URL &#x3D; &#x27;https://api.openweathermap.org/data/3.0/onecall&#x27;;
 
   /**
@@ -372,6 +378,9 @@ export class DataService {
     return this.http.get(url);
   }
 
+  /**
+ * Array containing the items currently in the cart.
+ */
   private cart: MenuItem[] &#x3D; [];
 
   /**
@@ -464,6 +473,10 @@ export class DataService {
     return this.http.get(&#x60;${environment.apiUrl}/restock-report?threshold&#x3D;${threshold}&#x60;);
   }
 
+  /**
+ * Fetches the list of suppliers from the server.
+ * @returns An observable that emits the response containing the list of suppliers.
+ */
   getSupplier(): Observable&lt;any&gt; {
     return this.http.get(&#x60;${environment.apiUrl}/get-supplier&#x60;);
   }
@@ -623,14 +636,28 @@ export class DataService {
 
   // /&#x3D;&#x3D;/&#x3D;//&#x3D;/&#x3D;/&#x3D;&#x3D;/&#x3D;/
 
+  /**
+ * Adds a seasonal menu item to the server.
+ * @param item The seasonal menu item to be added.
+ * @returns An observable that emits the response from the server after adding the seasonal item.
+ */
   addSeasonalMenuItem(item: any): Observable&lt;any&gt; {
     return this.http.post(&#x60;${environment.apiUrl}/add-seasonal-item&#x60;, item);
   }
 
+  /**
+ * Retrieves the last seasonal menu item added from the server.
+ * @returns An observable that emits the response containing the last seasonal item.
+ */
   getlastSeasonalItem(): Observable&lt;any&gt; {
     return this.http.get(&#x60;${environment.apiUrl}/last-seasonal-item&#x60;);
   }
 
+  /**
+ * Deletes a seasonal menu item from the server based on its end date.
+ * @param end_date The end date of the seasonal menu item to be deleted.
+ * @returns An observable that emits the response from the server after deleting the seasonal item.
+ */
   deleteSeasonalItem(end_date: string): Observable&lt;any&gt; {
     return this.http.post(&#x60;${environment.apiUrl}/delete-seasonal-item&#x60;, { end_date });
   }
@@ -638,6 +665,11 @@ export class DataService {
   // &#x3D;/&#x3D;/&#x3D;//&#x3D;&#x3D;/&#x3D;//&#x3D;&#x3D;//&#x3D;/&#x3D;/&#x3D;
 
 
+  /**
+ * Retrieves the excess report from the server based on the specified start date.
+ * @param startDate The start date for the excess report.
+ * @returns An observable that emits the excess report response from the server.
+ */
   getExcessReport(startDate: string): Observable&lt;any&gt; {
     return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/excess-report&#x60;, {
       params: { startDate }
@@ -645,7 +677,13 @@ export class DataService {
   }
 
   
-
+  /**
+   * Saves customizations for a specific order and menu item on the server.
+   * @param orderId The ID of the order for which customizations are being saved.
+   * @param menuItemId The ID of the menu item for which customizations are being saved.
+   * @param ingredientIds The IDs of the selected ingredients for customization.
+   * @returns An observable that emits the response from the server after saving the customizations.
+   */
   saveCustomizations(orderId: number, menuItemId: number, ingredientIds: string): Observable&lt;any&gt; {
     const body &#x3D; {
       orderId,
@@ -655,6 +693,12 @@ export class DataService {
     return this.http.post(&#x60;${environment.apiUrl}/save-customizations&#x60;, body);
   }
 
+  /**
+ * Retrieves the customizations for a specific order and menu item from the server.
+ * @param orderId The ID of the order for which customizations are being retrieved.
+ * @param menuItemId The ID of the menu item for which customizations are being retrieved.
+ * @returns An observable that emits an array of ingredient IDs representing the customizations for the specified order and menu item.
+ */
   getCustomizations(orderId: number, menuItemId: number): Observable&lt;number[]&gt; {
     const params &#x3D; {
       orderId: orderId,
@@ -664,66 +708,146 @@ export class DataService {
     return this.http.get&lt;number[]&gt;(&#x60;${environment.apiUrl}/get-customizations&#x60;, { params });
   }
 
+  /**
+ * Retrieves the name of a menu item by its ID from the server.
+ * @param itemId The ID of the menu item.
+ * @returns An observable that emits the name of the menu item.
+ */
   getMenuItemNameById(itemId: number): Observable&lt;any&gt; {
     return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/get-menu-item-name-by-item-id&#x60;, { params: { item_id: itemId.toString() } });
   }
 
 
+  /**
+ * Retrieves the top menu items within a specified date range and limit count from the server.
+ * @param startDate The start date of the date range.
+ * @param endDate The end date of the date range.
+ * @param limitCount The maximum number of top menu items to retrieve.
+ * @returns An observable that emits the top menu items within the specified date range.
+ */
   getTopMenuItems(startDate: string, endDate: string, limitCount: number): Observable&lt;any&gt; {
     return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/top-menu-items/${startDate}/${endDate}/${limitCount}&#x60;);
   }
   
-  
+  /**
+ * Retrieves the last orders from the server for pagination.
+ * @param page The page number for pagination.
+ * @returns An observable that emits an array of last orders for the specified page.
+ */
   get_last_orders(page: number) {
     return this.http.get&lt;any[]&gt;(&#x60;${environment.apiUrl}/get-last-orders?page&#x3D;${page}&#x60;);
   }
 
+  /**
+ * Updates the status of an order on the server.
+ * @param orderId The ID of the order to be updated.
+ * @param status The new status of the order.
+ * @returns An observable that emits the response from the server after updating the order status.
+ */
   updateOrderStatus(orderId: string, status: string): Observable&lt;any&gt; {
     return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/update-order-status/${orderId}/${status}&#x60;, {});
   }
   
+  /**
+ * Cancels an order on the server.
+ * @param orderId The ID of the order to be canceled.
+ * @returns An observable that emits the response from the server after canceling the order.
+ */
   cancelOrder(orderId: string): Observable&lt;any&gt; {
     return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/cancel-order/${orderId}&#x60;, {});
   }
   
+  /**
+ * Creates an order on the server.
+ * @param order The order data to be created.
+ * @returns An observable that emits the response from the server after creating the order.
+ */
   createOrder(order: any): Observable&lt;any&gt; {
     return of(null);
   }
 
+  /**
+ * Updates an existing order on the server.
+ * @param orderId The ID of the order to be updated.
+ * @param orderData The updated order data.
+ * @returns An observable that emits the response from the server after updating the order.
+ */
   updateOrder(orderId: string, orderData: any): Observable&lt;any&gt; {
     return this.http.put(&#x60;${environment.apiUrl}/update-order/${orderId}&#x60;, orderData);
   }
 
+  
+/**
+ * Removes items from an order on the server.
+ * @param orderId The ID of the order from which items are to be removed.
+ * @param items An array of item IDs to be removed from the order.
+ * @returns An observable that emits the response from the server after removing the items from the order.
+ */
   removeOrderItems(orderId: string, items: number[]): Observable&lt;any&gt; {
     return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/orders/${orderId}/remove-items&#x60;, { items });
   }
 
 
+  /**
+ * Retrieves the permissions of a user from the server.
+ * @param userEmail The email of the user whose permissions are to be retrieved.
+ * @returns An observable that emits the permissions of the user.
+ */
   getUserPermissions(userEmail: string): Observable&lt;{ permissions: { permissions: number } }&gt; {
     return this.http.get&lt;{ permissions: { permissions: number } }&gt;(&#x60;${environment.apiUrl}/user-permissions?email&#x3D;${userEmail}&#x60;);
   }
 
+  /**
+ * Retrieves the list of employees from the server.
+ * @returns An observable that emits the list of employees.
+ */
   getEmployees(): Observable&lt;any&gt; {
     return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}/employees&#x60;);
   }
 
+  
+/**
+ * Updates an employee record on the server.
+ * @param employee The employee data to be updated.
+ * @returns An observable that emits the response from the server after updating the employee.
+ */
   updateEmployee(employee: Employee): Observable&lt;any&gt; {
     return this.http.put&lt;any&gt;(&#x60;${environment.apiUrl}/employees/${employee.id}&#x60;, employee);
   }
 
+  /**
+ * Removes a menu item from the server.
+ * @param menuItemId The ID of the menu item to be removed.
+ * @returns An observable that emits the response from the server after removing the menu item.
+ */
   removeItemFromMenu(menuItemId: number): Observable&lt;any&gt; {
     console.log(&quot;Deleting item with ID: &quot;, menuItemId);
     return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/delete-menu-item&#x60;, { menuItemId: menuItemId });
   }
 
+  /**
+ * Removes an ingredient from the server.
+ * @param ingredientId The ID of the ingredient to be removed.
+ * @returns An observable that emits the response from the server after removing the ingredient.
+ */
   removeIngredientFromTable(ingredientId: number): Observable&lt;any&gt; {
     return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/delete-ingredient&#x60;, { ingredientID: ingredientId})
   }
 
+  /**
+ * Retrieves the inventory of ingredients from the server.
+ * @returns An observable that emits the inventory of ingredients.
+ */
   getIngredientInventory(): Observable&lt;any&gt; {
     return this.http.get(&#x60;${environment.apiUrl}/get-ingredient-inventory&#x60;);
   }
-  
+
+  /**
+ * Updates the quantity of an ingredient on the server.
+ * @param name The name of the ingredient to be updated.
+ * @param quantity The new quantity of the ingredient.
+ * @returns An observable that emits the response from the server after updating the ingredient quantity.
+ */
   updateIngredientQuantity(name: string, quantity: number): Observable&lt;any&gt; {
     const url &#x3D; &#x60;${environment.apiUrl}/update-ingredient-quantity/${name}&#x60;;
     const body &#x3D; { quantity: quantity };
@@ -731,6 +855,13 @@ export class DataService {
 
   }
   
+  /**
+ * Updates an ingredient record on the server.
+ * @param ingredientId The ID of the ingredient to be updated.
+ * @param name The new name of the ingredient.
+ * @param price The new price of the ingredient.
+ * @returns An observable that emits the response from the server after updating the ingredient.
+ */
   updateIngredient(ingredientId: number, name: String, price: number): Observable&lt;any&gt; {
     return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/update-ingredient&#x60;, { ingredientId: ingredientId, name: name, price: price});
   }
@@ -745,6 +876,12 @@ export class DataService {
   //   return this.http.post(&#x60;${environment.apiUrl}/add-ingredient&#x60;, { name, price });
   // }
 
+  /**
+ * Adds a new ingredient to the server.
+ * @param name The name of the new ingredient.
+ * @param price The price of the new ingredient.
+ * @returns An observable that emits the response from the server after adding the ingredient.
+ */
   addIngredient(name: string, price: number): Observable&lt;any&gt; {
     console.log(&quot;/add-ingredient &quot;, { name, price })
     return this.http.post(&#x60;${environment.apiUrl}/add-ingredient&#x60;, { name, price }).pipe(
@@ -757,23 +894,49 @@ export class DataService {
   }
 
 
+  /**
+ * Retrieves the top menu items within a specified date range and limit count from the server.
+ * @param startDate The start date of the date range.
+ * @param endDate The end date of the date range.
+ * @param limitCount The maximum number of top menu items to retrieve.
+ * @returns An observable that emits the top menu items within the specified date range.
+ */
   getTopMenuItemsFiltered(startDate: string, endDate: string, limitCount: number): Observable&lt;any&gt; {
     const url &#x3D; &#x60;${environment.apiUrl}/top-menu-items-filtered/${startDate}/${endDate}/${limitCount}&#x60;;
     return this.http.get&lt;any&gt;(url);
   }
 
+  /**
+ * Retrieves the list of ingredients with low quantity from the server.
+ * @returns An observable that emits the list of ingredients with low quantity.
+ */
   getLowQuantityIngredients(): Observable&lt;any&gt; {
     return this.http.get(&#x60;${environment.apiUrl}/low-quantity-ingredients&#x60;);
   }
 
+  /**
+ * Retrieves the orders for a specific date from the server.
+ * @param date The date for which orders are to be retrieved.
+ * @returns An observable that emits the orders for the specified date.
+ */
   getOrdersByDate(date: string): Observable&lt;any&gt; {
     return this.http.get(&#x60;${environment.apiUrl}/orders?date&#x3D;${date}&#x60;);
   }
 
+  /**
+ * Adds a new employee to the server.
+ * @param employeeData The data of the new employee including name, title, salary, work scheduling, and permissions.
+ * @returns An observable that emits the response from the server after adding the employee.
+ */
   addEmployee(employeeData: { name: string, title: string, salary: number, work_scheduling: string, permissions: number }): Observable&lt;any&gt; {
     return this.http.post(&#x60;${environment.apiUrl}/add_employee&#x60;, employeeData);
   }
 
+  /**
+ * Deletes an employee from the server.
+ * @param id The ID of the employee to be deleted.
+ * @returns An observable that emits the response from the server after deleting the employee.
+ */
   deleteEmployee(id: number): Observable&lt;any&gt; {
     return this.http.delete(&#x60;${environment.apiUrl}/delete_employee/${id}&#x60;);
   }

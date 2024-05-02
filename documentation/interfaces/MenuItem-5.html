@@ -328,22 +328,46 @@ export interface MenuItem {
   templateUrl: &#x27;./product-usage.component.html&#x27;,
   styleUrls: [&#x27;./product-usage.component.css&#x27;]
 })
+
+/**
+ * Component for displaying product usage and inventory differences.
+ */
 export class ProductUsageComponent implements OnInit {
 
+  /** Title for the product section. */
   Product &#x3D; &#x27;Product&#x27;;
+
+  /** Title for the inventory section. */
   Inventory &#x3D; &#x27;Inventory&#x27;;
 
+  /** Reference to the MatSidenav element. */
   @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+
+ /** Start date for the date range. */
   date1: Date &#x3D; new Date();
+
+  /** End date for the date range. */
   date2: Date &#x3D; new Date();
+
+  /** String representation of the start date. */
   date1String: string &#x3D; this.date1.toISOString().split(&#x27;T&#x27;)[0];
+
+  /** String representation of the end date. */
   date2String: string &#x3D; this.date2.toISOString().split(&#x27;T&#x27;)[0];
+
+  /** Data for stock inventory. */
   stockData: any;
+
+  /** Displayed columns in the inventory table. */
   displayedColumns: string[] &#x3D; [&#x27;productUsed&#x27;, &#x27;startInventory&#x27;, &#x27;endInventory&#x27;, &#x27;productDifference&#x27;];
+
+  /** Chart data for visualization. */
   public chartData: { name: string, series: { name: string, value: number }[] }[] &#x3D; [];
 
+  /** Categories of products. */
   categories: string[] &#x3D; [&#x27;Burger&#x27;, &#x27;Sandwich&#x27;, &#x27;Value Meal&#x27;, &#x27;Basket&#x27;, &#x27;Side&#x27;, &#x27;Shakes &amp; More&#x27;, &#x27;Beverage&#x27;, &#x27;Extras&#x27;, &#x27;Sauces&#x27;];
 
+  /** Flag indicating the current visual theme. */
   Bionic: boolean &#x3D; false;
 
   @ViewChild(MatSort, {static: false}) sort!: MatSort;
@@ -358,6 +382,12 @@ export class ProductUsageComponent implements OnInit {
       shareReplay()
     );
 
+  /**
+ * Constructs an instance of the ProductUsageComponent.
+ * @param dataService The DataService for fetching data related to product usage and inventory.
+ * @param router The Router service for navigating between routes.
+ * @param breakpointObserver The BreakpointObserver service for monitoring screen size changes.
+ */
   constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver) { }
 
   /**

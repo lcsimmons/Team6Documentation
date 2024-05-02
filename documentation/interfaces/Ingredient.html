@@ -278,19 +278,55 @@ interface Ingredient {
   templateUrl: &#x27;./cashier-customize-item.component.html&#x27;,
   styleUrls: [&#x27;./cashier-customize-item.component.css&#x27;]
 })
+
+/**
+ * Component for customizing menu items in the cashier interface.
+ */
 export class CashierCustomizeItemComponent implements OnInit {
 
+  /**
+   * ViewChildren query list to access DOM elements with the reference &#x27;readContent&#x27;.
+   */
   @ViewChildren(&#x27;readContent&#x27;) readContents!: QueryList&lt;ElementRef&gt;;
 
+   /**
+   * The menu item being customized.
+   */
   menuItem: any;
+
+  /**
+   * The list of available ingredients for customization.
+   */
   ingredients: Ingredient[] &#x3D; [];
+
+  /**
+   * Object to track selected ingredients using their IDs as keys.
+   */
   selectedIngredients: { [key: number]: FormControl } &#x3D; {};
+
+  /**
+   * The order number associated with the customization process.
+   */
   orderNumber: number &#x3D; 0;
+
+  /**
+   * The list of available customization choices for the menu item.
+   */
   customizationChoices: { id: number; name: string; price: number }[] &#x3D; []; // Include price in the customization choices
+
+  /**
+   * The list of customizations already applied to the menu item.
+   */
   customizations: any[] &#x3D; [];
+
+  /**
+   * Object to track selected customizations using their IDs as keys.
+   */
   selectedCustomizations: { [key: number]: FormControl } &#x3D; {};
 
-
+  /**
+ * EventEmitter for notifying changes in the total price.
+ */
   @Output() totalPriceChanged: EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;(); // Event emitter for total price
 
   /**
@@ -302,7 +338,9 @@ export class CashierCustomizeItemComponent implements OnInit {
       shareReplay()
     );
   
-    /* accesibility toolbar code here */
+  /**
+   * Flag indicating whether the accessibility toolbar container is visible.
+   */
   isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
 
   /**
@@ -339,14 +377,34 @@ export class CashierCustomizeItemComponent implements OnInit {
 
   /* end accessibility toolbar code */
 
-
+  /**
+   * Description of the weather.
+   */
   weatherDescription: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Current temperature.
+   */
   temperature: number &#x3D; 0;
+
+  /**
+   * Feels-like temperature.
+   */
   feelsLikeTemperature: number &#x3D; 0;
+
+  /**
+   * Weather icon representation.
+   */
   weathericon: string &#x3D; &#x27;01d.png&#x27;;
 
 
-
+  /**
+   * Constructs the component with necessary dependencies.
+   * @param route ActivatedRoute for accessing route parameters.
+   * @param dataService DataService for fetching and submitting data related to menu items.
+   * @param router Router for navigation.
+   * @param breakpointObserver BreakpointObserver for reacting to media query changes.
+   */
   constructor(
     private route: ActivatedRoute,
     private dataService: DataService,

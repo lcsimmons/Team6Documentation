@@ -380,6 +380,9 @@ export interface MenuItem {
   templateUrl: &#x27;./manager-edit-menu.component.html&#x27;,
   styleUrl: &#x27;./manager-edit-menu.component.css&#x27;
 })
+/**
+ * Component for managing menu items by the manager.
+ */
 export class ManagerEditMenuComponent {
   /** Flag for toggling the seasonal menu items display. */
   seasonal &#x3D; false
@@ -421,6 +424,9 @@ export class ManagerEditMenuComponent {
       shareReplay()
     );
 
+  /**
+ * Component for managing menu items by the manager.
+ */
   constructor(private cdr: ChangeDetectorRef, private fb: FormBuilder, private dataService: DataService, private breakpointObserver: BreakpointObserver, private router: Router, private _snackbar: MatSnackBar) {
     this.menuForm &#x3D; this.fb.group({
       name: [&#x27;&#x27;, Validators.required],
@@ -470,7 +476,9 @@ export class ManagerEditMenuComponent {
     this.dataService.getIngredients().subscribe(data &#x3D;&gt; this.ingredients &#x3D; data);
   }
 
-
+  /**
+ * Initializes the component and loads necessary data on component load.
+ */
   ngOnInit(): void {
     let dateObj &#x3D; new Date();
     this.TodayDate &#x3D; dateObj.toISOString().slice(0, 10); // 2021-07-01
