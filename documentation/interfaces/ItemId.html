@@ -264,6 +264,11 @@ export class CashierCartComponent implements OnInit {
     /* accesibility toolbar code here */
   isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
 
+  /**
+ * Toggles the visibility of the accessibility toolbar container.
+ * When called, it toggles the value of &#x60;isAccessibilityToolbarContainerVisible&#x60;
+ * and logs the new visibility status to the console.
+ */
   toggleAccessibilityToolbarContainer(): void {
     this.isAccessibilityToolbarContainerVisible &#x3D; !this.isAccessibilityToolbarContainerVisible;
     console.log(&#x27;Toolbar visibility:&#x27;, this.isAccessibilityToolbarContainerVisible);
@@ -296,20 +301,49 @@ export class CashierCartComponent implements OnInit {
   /* end accessibility toolbar code */
 
 
+    /**
+   * Description of the weather condition.
+   */
   weatherDescription: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Current temperature.
+   */
   temperature: number &#x3D; 0;
+
+  /**
+   * Temperature it feels like.
+   */
   feelsLikeTemperature: number &#x3D; 0;
-  weathericon: string &#x3D; &#x27;01d.png&#x27;;
 
+  /**
+   * File name of the weather icon image.
+   */
+  weatherIcon: string &#x3D; &#x27;01d.png&#x27;;
 
+    
+
+  /**
+ * Constructs an instance of the CashierCartComponent.
+ * @param dataService The data service used to retrieve cart items.
+ * @param router The router service for navigating between routes.
+ * @param breakpointObserver The breakpoint observer service for monitoring screen size changes.
+ */
   constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver) { }
 
+  /**
+ * Lifecycle hook that is called after Angular has initialized all data-bound properties of a directive.
+ * It is a good place to perform initialization logic.
+ */
   ngOnInit(): void {
     this.dataService.getCartItems().subscribe(items &#x3D;&gt; {
       this.cartItems &#x3D; items;
     });
   }
 
+  /**
+ * Speaks the text content of elements stored in &#x60;readContents&#x60; array.
+ */
   speakText(): void {
     let fullText &#x3D; &#x27;&#x27;;
     this.readContents.forEach((elementRef) &#x3D;&gt; {
@@ -320,6 +354,11 @@ export class CashierCartComponent implements OnInit {
     window.speechSynthesis.speak(utterance);
   }
 
+  /**
+ * Recursively retrieves text content from a given HTML element.
+ * @param element The HTML element to extract text content from.
+ * @returns The text content of the element and its children.
+ */
   private getTextFromElement(element: HTMLElement): string {
     let text &#x3D; &quot;&quot;;
     const children &#x3D; Array.from(element.childNodes);
@@ -335,15 +374,26 @@ export class CashierCartComponent implements OnInit {
     return text;
   }
 
+  /**
+ * Toggles the value of &#x60;toGo&#x60; between true and false.
+ */
   toggleToGo(): void {
     this.toGo &#x3D; !this.toGo;
   }
 
+  /**
+ * Navigates to the cashier-customize-item route with the specified item ID.
+ * @param itemId The ID of the item to be edited.
+ */
   editItem(itemId: number): void {
     console.log(&#x27;Navigating to:&#x27;, [&#x27;/cashier-customize-item&#x27;, itemId]);
     this.router.navigate([&#x27;/cashier-customize-item&#x27;, itemId]);
   }
 
+  /**
+ * Processes checkout for the items in the cart.
+ * Adds order history, clears the cart, and navigates to the cashier-checkout-view route.
+ */
   checkout(): void {
     console.log(&quot;Checking out...&quot;);
 
@@ -375,6 +425,10 @@ export class CashierCartComponent implements OnInit {
     });
   }
 
+  /**
+ * Removes an item from the cart by its index.
+ * @param index The index of the item to be removed.
+ */
   removeItem(index: number): void {
     if (index &gt; -1 &amp;&amp; index &lt; this.cartItems.length) {
       const item &#x3D; this.cartItems[index];
@@ -383,25 +437,44 @@ export class CashierCartComponent implements OnInit {
     }
   }
 
+  /**
+ * Calculates the total price of items in the cart including taxes.
+ * @returns The total price including taxes.
+ */
   calculateTotalPrice(): number {
     const subtotal &#x3D; this.cartItems.reduce((total, item) &#x3D;&gt; total + item.price, 0);
     const taxes &#x3D; this.calculateTaxes();
     return subtotal + taxes;
   }
 
+  /**
+ * Calculates the subtotal of items in the cart.
+ * @returns The subtotal of items.
+ */
   calculateSubtotal(): number {
     return this.cartItems.reduce((total, item) &#x3D;&gt; total + item.price, 0);
   }
-  
+
+
+  /**
+ * Calculates the total taxes based on the subtotal and a fixed tax rate.
+ * @returns The total taxes.
+ */
   calculateTaxes(): number {
     const taxRate &#x3D; 0.0625;
     return this.calculateSubtotal() * taxRate;
   }
 
+  /**
+ * Navigates to the employee-login route.
+ */
   goHome(): void {
     this.router.navigate([&#x27;/employee-login&#x27;]);
   }
   
+  /**
+ * Navigates to the cashier-menu route.
+ */
   onSeeMenu(): void {
     this.router.navigate([&#x27;/cashier-menu&#x27;]);
   }
