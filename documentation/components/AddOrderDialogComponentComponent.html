@@ -741,7 +741,7 @@ export class AddOrderDialogComponentComponent implements OnInit {
       const orderData &#x3D; { ...this.addOrderForm.value };
       let totalPrice &#x3D; 0;
       from(orderData.menuItems).pipe(
-        concatMap((itemId: unknown) &#x3D;&gt; this.dataService.getMenuItem((itemId as number) - 100)),
+        concatMap((itemId: unknown) &#x3D;&gt; this.dataService.getMenuItemByItemId((itemId as number))),
         toArray()
       ).subscribe(menuItems &#x3D;&gt; {
         orderData.menuItems &#x3D; menuItems.map(item &#x3D;&gt; {

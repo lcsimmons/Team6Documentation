@@ -530,7 +530,14 @@ export class DataService {
     return this.http.get(&#x60;${environment.apiUrl}/menu-item/${id}&#x60;);
   }
 
-
+  /**
+     * Fetches a specific menu item by its item_id.
+     * @param item_id The item_id of the menu item.
+     * @returns An Observable containing the menu item.
+     */
+  getMenuItemByItemId(item_id: number): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/menu-item-item-id/${item_id}&#x60;);
+  }
   /**
    * Submits ingredient changes for a specific menu item to the server.
    * @param payload The changes to submit.
@@ -540,7 +547,16 @@ export class DataService {
     return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/update-ingredients&#x60;, payload);
   }
 
-
+  
+  /**
+   * Sends a POST request to change the supplier.
+   *
+   * @param {string} supplier - The name of the new supplier.
+   * @returns {Observable&lt;any&gt;} An Observable that contains the response from the server.
+   */
+  changeSupplier(supplier: string): Observable&lt;any&gt; {
+    return this.http.post(&#x60;${environment.apiUrl}/change-supplier&#x60;, { supplier });
+  }
  
   /**
    * Adds a new menu item to the server database.

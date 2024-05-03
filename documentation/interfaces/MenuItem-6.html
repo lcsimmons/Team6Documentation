@@ -326,29 +326,54 @@ export interface MenuItem {
   styleUrl: &#x27;./trevor-cashier.component.css&#x27;
 })
 export class TrevorCashierComponent {
+  /**
+   * Reference to the side navigation component.
+   */
   @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+  /**
+   *  Array of menu items to display in the cashier view.
+   */
   menuItems: MenuItem[] &#x3D; [];
+  /**
+   * The currently selected menu item for customization or addition to cart.
+   */
   selectedMenuItem?: MenuItem;
+  /**
+   * The currently selected category of menu items.
+   */
   selectedCategory?: string;
 
 
+  /**
+   * Array of categories for menu items.
+   */
   categories: string[] &#x3D; [&#x27;Burger&#x27;, &#x27;Sandwich&#x27;, &#x27;Value Meal&#x27;, &#x27;Basket&#x27;, &#x27;Side&#x27;, &#x27;Shakes &amp; More&#x27;, &#x27;Beverage&#x27;, &#x27;Extras&#x27;, &#x27;Sauces&#x27;];
 
+  /**
+   * Observable that emits true if the screen is a handset device, false otherwise.
+   */
   isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result &#x3D;&gt; result.matches),
       shareReplay()
     );
 
-  /* accesibility toolbar code here */
+  /**
+   * Accessibility toolbar container visibility status.
+   */
   isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
 
+  /**
+   * Toggles the visibility of the accessibility toolbar container.
+   */
   toggleAccessibilityToolbarContainer(): void {
     this.isAccessibilityToolbarContainerVisible &#x3D; !this.isAccessibilityToolbarContainerVisible;
     console.log(&#x27;Toolbar visibility:&#x27;, this.isAccessibilityToolbarContainerVisible);
   }
   
-
+  /**
+   * Increases the font size of the page.
+    */
   textsizers &#x3D; [
     { size: &#x27;Regular&#x27;},
     { size: &#x27;Large&#x27;},
@@ -358,9 +383,21 @@ export class TrevorCashierComponent {
   /* end accessibility toolbar code */
 
 
+  /**
+   * Weather data for College Station, TX.
+   */
   weatherDescription: string &#x3D; &#x27;&#x27;;
+  /**
+   * Temperature in Fahrenheit for College Station, TX.
+   */
   temperature: number &#x3D; 0;
+  /**
+   * Feels-like temperature in Fahrenheit for College Station, TX.
+   */
   feelsLikeTemperature: number &#x3D; 0;
+  /**
+   * Weather icon for College Station, TX.
+   */
   weathericon: string &#x3D; &#x27;01d.png&#x27;;
 
   /**
@@ -371,12 +408,20 @@ export class TrevorCashierComponent {
    */
   constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver) { }
 
+  /**
+   * Initializes the cashier component by fetching menu items and weather data.
+   * Also loads the Google Translate script.
+   * @returns void
+   */
   ngOnInit(): void {
     this.onSelectCategory(&quot;Burger&quot;);
     this.loadGoogleTranslate();
     this.callWeatherApi();
   }
 
+  /**
+   * Calls the OpenWeatherMap API to fetch weather data for College Station, TX.
+   */
   callWeatherApi(): void {
     const lat &#x3D; 30.6125364
     const lon &#x3D; -96.3433166
@@ -430,6 +475,10 @@ export class TrevorCashierComponent {
 
   }
 
+  /**
+   * Loads the Google Translate script to enable translation of the page.
+   * @returns void
+   */
   loadGoogleTranslate(): void {
     const existingScript &#x3D; document.getElementById(&#x27;google-translate-script&#x27;);
     if (!existingScript) {
@@ -442,6 +491,10 @@ export class TrevorCashierComponent {
       (window as any).googleTranslateElementInit &#x3D; this.initGoogleTranslate;
   }
 
+  /**
+   * Initializes the Google Translate element on the page.
+   * @returns void
+   */
   initGoogleTranslate(): void {
     new window.google.translate.TranslateElement({
       pageLanguage: &#x27;en&#x27;,

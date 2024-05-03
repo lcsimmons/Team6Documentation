@@ -186,6 +186,9 @@ managing cart items, and handling order histories.</p>
                                 <a href="#cancelOrder" >cancelOrder</a>
                             </li>
                             <li>
+                                <a href="#changeSupplier" >changeSupplier</a>
+                            </li>
+                            <li>
                                 <a href="#clearCart" >clearCart</a>
                             </li>
                             <li>
@@ -244,6 +247,9 @@ managing cart items, and handling order histories.</p>
                             </li>
                             <li>
                                 <a href="#getMenuItem" >getMenuItem</a>
+                            </li>
+                            <li>
+                                <a href="#getMenuItemByItemId" >getMenuItemByItemId</a>
                             </li>
                             <li>
                                 <a href="#getMenuItemNameById" >getMenuItemNameById</a>
@@ -413,8 +419,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="633"
-                                    class="link-to-prism">src/app/data.service.ts:633</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="649"
+                                    class="link-to-prism">src/app/data.service.ts:649</a></div>
                         </td>
                     </tr>
 
@@ -488,8 +494,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="587"
-                                    class="link-to-prism">src/app/data.service.ts:587</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="603"
+                                    class="link-to-prism">src/app/data.service.ts:603</a></div>
                         </td>
                     </tr>
 
@@ -579,8 +585,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="252"
-                                    class="link-to-prism">src/app/data.service.ts:252</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="268"
+                                    class="link-to-prism">src/app/data.service.ts:268</a></div>
                         </td>
                     </tr>
 
@@ -825,8 +831,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="346"
-                                    class="link-to-prism">src/app/data.service.ts:346</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="362"
+                                    class="link-to-prism">src/app/data.service.ts:362</a></div>
                         </td>
                     </tr>
 
@@ -1017,8 +1023,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="458"
-                                    class="link-to-prism">src/app/data.service.ts:458</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="474"
+                                    class="link-to-prism">src/app/data.service.ts:474</a></div>
                         </td>
                     </tr>
 
@@ -1066,6 +1072,83 @@ managing cart items, and handling order histories.</p>
                         </div>
                             <div class="io-description">
                                 <p>An observable that emits the response from the server after canceling the order.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeSupplier"></a>
+                    <span class="name">
+                        <span ><b>changeSupplier</b></span>
+                        <a href="#changeSupplier"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeSupplier(supplier: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="259"
+                                    class="link-to-prism">src/app/data.service.ts:259</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sends a POST request to change the supplier.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>supplier</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The name of the new supplier.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An Observable that contains the response from the server.</p>
 
                             </div>
                 </td>
@@ -1131,8 +1214,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="467"
-                                    class="link-to-prism">src/app/data.service.ts:467</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="483"
+                                    class="link-to-prism">src/app/data.service.ts:483</a></div>
                         </td>
                     </tr>
 
@@ -1206,8 +1289,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="642"
-                                    class="link-to-prism">src/app/data.service.ts:642</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="658"
+                                    class="link-to-prism">src/app/data.service.ts:658</a></div>
                         </td>
                     </tr>
 
@@ -1281,8 +1364,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="363"
-                                    class="link-to-prism">src/app/data.service.ts:363</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="379"
+                                    class="link-to-prism">src/app/data.service.ts:379</a></div>
                         </td>
                     </tr>
 
@@ -1356,8 +1439,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="439"
-                                    class="link-to-prism">src/app/data.service.ts:439</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="455"
+                                    class="link-to-prism">src/app/data.service.ts:455</a></div>
                         </td>
                     </tr>
 
@@ -1474,8 +1557,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="260"
-                                    class="link-to-prism">src/app/data.service.ts:260</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="276"
+                                    class="link-to-prism">src/app/data.service.ts:276</a></div>
                         </td>
                     </tr>
 
@@ -1517,8 +1600,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="404"
-                                    class="link-to-prism">src/app/data.service.ts:404</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="420"
+                                    class="link-to-prism">src/app/data.service.ts:420</a></div>
                         </td>
                     </tr>
 
@@ -1683,8 +1766,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="506"
-                                    class="link-to-prism">src/app/data.service.ts:506</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="522"
+                                    class="link-to-prism">src/app/data.service.ts:522</a></div>
                         </td>
                     </tr>
 
@@ -1726,8 +1809,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="375"
-                                    class="link-to-prism">src/app/data.service.ts:375</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="391"
+                                    class="link-to-prism">src/app/data.service.ts:391</a></div>
                         </td>
                     </tr>
 
@@ -1801,8 +1884,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="543"
-                                    class="link-to-prism">src/app/data.service.ts:543</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="559"
+                                    class="link-to-prism">src/app/data.service.ts:559</a></div>
                         </td>
                     </tr>
 
@@ -1844,8 +1927,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="330"
-                                    class="link-to-prism">src/app/data.service.ts:330</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="346"
+                                    class="link-to-prism">src/app/data.service.ts:346</a></div>
                         </td>
                     </tr>
 
@@ -1935,8 +2018,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="320"
-                                    class="link-to-prism">src/app/data.service.ts:320</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="336"
+                                    class="link-to-prism">src/app/data.service.ts:336</a></div>
                         </td>
                     </tr>
 
@@ -2010,8 +2093,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="268"
-                                    class="link-to-prism">src/app/data.service.ts:268</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="284"
+                                    class="link-to-prism">src/app/data.service.ts:284</a></div>
                         </td>
                     </tr>
 
@@ -2053,8 +2136,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="306"
-                                    class="link-to-prism">src/app/data.service.ts:306</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="322"
+                                    class="link-to-prism">src/app/data.service.ts:322</a></div>
                         </td>
                     </tr>
 
@@ -2219,8 +2302,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="354"
-                                    class="link-to-prism">src/app/data.service.ts:354</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="370"
+                                    class="link-to-prism">src/app/data.service.ts:370</a></div>
                         </td>
                     </tr>
 
@@ -2262,8 +2345,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="615"
-                                    class="link-to-prism">src/app/data.service.ts:615</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="631"
+                                    class="link-to-prism">src/app/data.service.ts:631</a></div>
                         </td>
                     </tr>
 
@@ -2364,6 +2447,81 @@ managing cart items, and handling order histories.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getMenuItemByItemId"></a>
+                    <span class="name">
+                        <span ><b>getMenuItemByItemId</b></span>
+                        <a href="#getMenuItemByItemId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMenuItemByItemId(item_id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="240"
+                                    class="link-to-prism">src/app/data.service.ts:240</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches a specific menu item by its item_id.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item_id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The item_id of the menu item.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An Observable containing the menu item.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getMenuItemNameById"></a>
                     <span class="name">
                         <span ><b>getMenuItemNameById</b></span>
@@ -2380,8 +2538,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="418"
-                                    class="link-to-prism">src/app/data.service.ts:418</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="434"
+                                    class="link-to-prism">src/app/data.service.ts:434</a></div>
                         </td>
                     </tr>
 
@@ -2616,8 +2774,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="624"
-                                    class="link-to-prism">src/app/data.service.ts:624</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="640"
+                                    class="link-to-prism">src/app/data.service.ts:640</a></div>
                         </td>
                     </tr>
 
@@ -2766,8 +2924,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="278"
-                                    class="link-to-prism">src/app/data.service.ts:278</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="294"
+                                    class="link-to-prism">src/app/data.service.ts:294</a></div>
                         </td>
                     </tr>
 
@@ -2900,8 +3058,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="290"
-                                    class="link-to-prism">src/app/data.service.ts:290</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="306"
+                                    class="link-to-prism">src/app/data.service.ts:306</a></div>
                         </td>
                     </tr>
 
@@ -3034,8 +3192,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="430"
-                                    class="link-to-prism">src/app/data.service.ts:430</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="446"
+                                    class="link-to-prism">src/app/data.service.ts:446</a></div>
                         </td>
                     </tr>
 
@@ -3141,8 +3299,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="606"
-                                    class="link-to-prism">src/app/data.service.ts:606</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="622"
+                                    class="link-to-prism">src/app/data.service.ts:622</a></div>
                         </td>
                     </tr>
 
@@ -3248,8 +3406,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="498"
-                                    class="link-to-prism">src/app/data.service.ts:498</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="514"
+                                    class="link-to-prism">src/app/data.service.ts:514</a></div>
                         </td>
                     </tr>
 
@@ -3430,8 +3588,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="535"
-                                    class="link-to-prism">src/app/data.service.ts:535</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="551"
+                                    class="link-to-prism">src/app/data.service.ts:551</a></div>
                         </td>
                     </tr>
 
@@ -3579,8 +3737,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="525"
-                                    class="link-to-prism">src/app/data.service.ts:525</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="541"
+                                    class="link-to-prism">src/app/data.service.ts:541</a></div>
                         </td>
                     </tr>
 
@@ -3654,8 +3812,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="488"
-                                    class="link-to-prism">src/app/data.service.ts:488</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="504"
+                                    class="link-to-prism">src/app/data.service.ts:504</a></div>
                         </td>
                     </tr>
 
@@ -3745,8 +3903,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="389"
-                                    class="link-to-prism">src/app/data.service.ts:389</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="405"
+                                    class="link-to-prism">src/app/data.service.ts:405</a></div>
                         </td>
                     </tr>
 
@@ -3852,8 +4010,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="241"
-                                    class="link-to-prism">src/app/data.service.ts:241</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="248"
+                                    class="link-to-prism">src/app/data.service.ts:248</a></div>
                         </td>
                     </tr>
 
@@ -3927,8 +4085,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="516"
-                                    class="link-to-prism">src/app/data.service.ts:516</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="532"
+                                    class="link-to-prism">src/app/data.service.ts:532</a></div>
                         </td>
                     </tr>
 
@@ -4002,8 +4160,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="567"
-                                    class="link-to-prism">src/app/data.service.ts:567</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="583"
+                                    class="link-to-prism">src/app/data.service.ts:583</a></div>
                         </td>
                     </tr>
 
@@ -4109,8 +4267,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="553"
-                                    class="link-to-prism">src/app/data.service.ts:553</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="569"
+                                    class="link-to-prism">src/app/data.service.ts:569</a></div>
                         </td>
                     </tr>
 
@@ -4200,8 +4358,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="477"
-                                    class="link-to-prism">src/app/data.service.ts:477</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="493"
+                                    class="link-to-prism">src/app/data.service.ts:493</a></div>
                         </td>
                     </tr>
 
@@ -4291,8 +4449,8 @@ managing cart items, and handling order histories.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="449"
-                                    class="link-to-prism">src/app/data.service.ts:449</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="465"
+                                    class="link-to-prism">src/app/data.service.ts:465</a></div>
                         </td>
                     </tr>
 
@@ -4685,7 +4843,14 @@ export class DataService {
     return this.http.get(&#x60;${environment.apiUrl}/menu-item/${id}&#x60;);
   }
 
-
+  /**
+     * Fetches a specific menu item by its item_id.
+     * @param item_id The item_id of the menu item.
+     * @returns An Observable containing the menu item.
+     */
+  getMenuItemByItemId(item_id: number): Observable&lt;any&gt; {
+    return this.http.get(&#x60;${environment.apiUrl}/menu-item-item-id/${item_id}&#x60;);
+  }
   /**
    * Submits ingredient changes for a specific menu item to the server.
    * @param payload The changes to submit.
@@ -4695,7 +4860,16 @@ export class DataService {
     return this.http.post&lt;any&gt;(&#x60;${environment.apiUrl}/update-ingredients&#x60;, payload);
   }
 
-
+  
+  /**
+   * Sends a POST request to change the supplier.
+   *
+   * @param {string} supplier - The name of the new supplier.
+   * @returns {Observable&lt;any&gt;} An Observable that contains the response from the server.
+   */
+  changeSupplier(supplier: string): Observable&lt;any&gt; {
+    return this.http.post(&#x60;${environment.apiUrl}/change-supplier&#x60;, { supplier });
+  }
  
   /**
    * Adds a new menu item to the server database.

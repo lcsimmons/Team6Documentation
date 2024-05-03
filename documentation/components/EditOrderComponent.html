@@ -883,7 +883,7 @@ export class EditOrderComponent implements OnInit {
       const updatedOrder &#x3D; { ...this.orderForm.value };
       let totalPrice &#x3D; this.data.total_price;
       from(updatedOrder.menuItems).pipe(
-        concatMap((itemId: unknown) &#x3D;&gt; this.dataService.getMenuItem(itemId as number - 100)),
+        concatMap((itemId: unknown) &#x3D;&gt; this.dataService.getMenuItemByItemId(itemId as number)),
         toArray()
       ).subscribe(menuItems &#x3D;&gt; {
         updatedOrder.menuItems &#x3D; menuItems.map(item &#x3D;&gt; {

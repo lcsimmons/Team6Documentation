@@ -374,6 +374,20 @@ export class ManagerEditIngredientsComponent implements OnInit {
   }
 
   /**
+   * Changes the supplier for the restaurant.
+   */
+  change_supplier() {
+    if(this.supplierName) {
+    this.dataService.changeSupplier(this.supplierName).subscribe({
+      next: (response) &#x3D;&gt; console.log(&#x27;Supplier changed successfully&#x27;, response),
+      error: (error) &#x3D;&gt; console.error(&#x27;Error changing supplier&#x27;, error)
+    });
+    }else{
+      console.log(&#x27;No supplier selected&#x27;);
+    }
+  }
+
+  /**
    * Initializes the component by loading ingredients and supplier data.
    */
   ngOnInit(): void {

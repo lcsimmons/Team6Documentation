@@ -540,7 +540,7 @@
 import { FormBuilder, FormGroup } from &#x27;@angular/forms&#x27;;
 import { MAT_DIALOG_DATA, MatDialogRef } from &#x27;@angular/material/dialog&#x27;;
 import { DataService } from &#x27;../data.service&#x27;;
-import { concatMap, from, toArray } from &#x27;rxjs&#x27;;
+import { concatMap, from, map, tap, toArray } from &#x27;rxjs&#x27;;
 
 /**
  * Component to handle the removal of items from an existing order.
@@ -576,7 +576,7 @@ export class RemoveOrderItemsDialogComponent {
   ) {
     // Parse the menu_items string into an array
     console.log(data.menu_items);
-    this.menuItems &#x3D; JSON.parse(data.menu_items);
+    this.menuItems &#x3D; data.menu_items;
   
     // Create a form group with a checkbox for each item in the order
     const formControls &#x3D; this.menuItems.reduce((controls: any, item: any, index: number) &#x3D;&gt; {
@@ -591,58 +591,81 @@ export class RemoveOrderItemsDialogComponent {
    * Submits the form to remove selected items from the order and update the order details.
    */
   onFormSubmit() {
+    console.log(&quot;data: &quot;, this.data);
     if (this.orderForm.valid) {
       const selectedItems &#x3D; Object.keys(this.orderForm.value)
         .filter(index &#x3D;&gt; this.orderForm.value[index])
-        .map(index &#x3D;&gt; this.menuItems[Number(index)]); // Explicitly cast index to number
+        .map(index &#x3D;&gt; this.menuItems[Number(index)].menu_item_name); // Get the item name
   
-      //console.log(&#x27;Selected menu items for deletion:&#x27;, selectedItems);
+      console.log(&#x27;Selected menu items for deletion:&#x27;, selectedItems);
   
-      // Call the removeOrderItems method from the DataService
-      this.dataService.removeOrderItems(this.data.id, selectedItems).subscribe(response &#x3D;&gt; {
-        //console.log(response);
+      // For each item name in selectedItems, get the item ID and remove the item
+      from(selectedItems).pipe(
+        tap(itemName &#x3D;&gt; console.log(&#x27;Processing item:&#x27;, itemName)), // Log the item name
+        concatMap((itemName: string) &#x3D;&gt; 
+          this.dataService.getItemIdByItemName(itemName).pipe(
+            tap(response &#x3D;&gt; console.log(&#x27;Response of getItemIdByItemName:&#x27;, response)), // Log the response
+            concatMap((response: any) &#x3D;&gt; this.dataService.removeOrderItems(this.data.id, [response.itemId])) // Get the item ID and remove the item
+          )
+        ),
+        toArray()
+      ).subscribe(response &#x3D;&gt; {
+        console.log(&#x27;Response of removeOrderItems:&#x27;, response); // Log the response
   
         // Calculate the total price of the remaining items
         let remainingItems &#x3D; [...this.menuItems]; // Create a copy of this.menuItems
         let selectedItemsCopy &#x3D; [...selectedItems]; // Create a copy of selectedItems
   
         for (let item of selectedItemsCopy) {
-          const index &#x3D; remainingItems.indexOf(item);
+          const index &#x3D; remainingItems.findIndex(remainingItem &#x3D;&gt; remainingItem.menu_item_name &#x3D;&#x3D;&#x3D; item);
           if (index !&#x3D;&#x3D; -1) {
             remainingItems.splice(index, 1); // Remove the item from remainingItems
           }
         }
   
-        console.log(&#x27;Remaining items:&#x27;, remainingItems);
-        let totalPrice &#x3D; 0;
+        // Get the item IDs of the remaining items
         from(remainingItems).pipe(
-          concatMap((itemId: unknown) &#x3D;&gt; this.dataService.getMenuItem((itemId as number) - 100)), // Decrement itemId by 100
+          tap(item &#x3D;&gt; console.log(&#x27;Processing remaining item:&#x27;, item)), // Log the item
+          concatMap((item: any) &#x3D;&gt; 
+            this.dataService.getItemIdByItemName(item.menu_item_name).pipe(
+              tap(response &#x3D;&gt; console.log(&#x27;Response of getItemIdByItemName for remaining item:&#x27;, response)), // Log the response
+              map(response &#x3D;&gt; response.itemId)
+            )
+          ),
           toArray()
-        ).subscribe(menuItems &#x3D;&gt; {
-          totalPrice &#x3D; menuItems.reduce((total, item) &#x3D;&gt; total + item.price, 0);
+        ).subscribe(remainingItemIds &#x3D;&gt; {
+          console.log(&#x27;Remaining item IDs:&#x27;, remainingItemIds); // Log the remaining item IDs
   
-          // Round the total price to two decimal places
-          totalPrice &#x3D; Number((totalPrice + totalPrice * .0625).toFixed(2));
-          //console.log(&#x27;Total price of remaining items:&#x27;, totalPrice);
+          let totalPrice &#x3D; 0;
+          from(remainingItemIds).pipe(
+            concatMap((itemId: number) &#x3D;&gt; this.dataService.getMenuItemByItemId(itemId)),
+            toArray()
+          ).subscribe(menuItems &#x3D;&gt; {
+            console.log(&#x27;Menu items:&#x27;, menuItems); // Log the menu items
+            totalPrice &#x3D; menuItems.reduce((total, item) &#x3D;&gt; total + item.price, 0);
   
-          // Prepare the data to be sent to updateOrder
-          const updateData &#x3D; {
-            menuItems: [], // Send the remaining items after deletion
-            togo: this.data.togo, // Assuming this.data.togo contains the previous togo value
-            employeeId: this.data.employee_id, // Assuming this.data.employeeId contains the previous employee ID
-            totalPrice: totalPrice
-          };
+            // Round the total price to two decimal places
+            totalPrice &#x3D; Number((totalPrice + totalPrice * .0625).toFixed(2));
   
-          //console.log(&#x27;Data being sent to updateOrder:&#x27;, updateData);
+            // Prepare the data to be sent to updateOrder
+            const updateData &#x3D; {
+              menuItems: &quot;&quot;,
+              togo: this.data.togo,
+              employeeId: this.data.employee_id,
+              totalPrice: totalPrice
+            };
   
-          // Update the order with the new total price
-          this.dataService.updateOrder(this.data.id, updateData)
-            .subscribe(updateResponse &#x3D;&gt; {
-              //console.log(updateResponse);
-              this.dialogRef.close(selectedItems);
-            });
-        }, error &#x3D;&gt; {
-          console.error(error);
+            console.log(&#x27;Update data:&#x27;, updateData); // Log the update data
+  
+            // Update the order with the new total price
+            this.dataService.updateOrder(this.data.id, updateData)
+              .subscribe(updateResponse &#x3D;&gt; {
+                console.log(&#x27;Response of updateOrder:&#x27;, updateResponse); // Log the response
+                this.dialogRef.close(selectedItems);
+              });
+          }, error &#x3D;&gt; {
+            console.error(error);
+          });
         });
       });
     }
@@ -659,11 +682,11 @@ export class RemoveOrderItemsDialogComponent {
   &lt;div class&#x3D;&quot;form-container&quot;&gt;
     &lt;form [formGroup]&#x3D;&quot;orderForm&quot; (ngSubmit)&#x3D;&quot;onFormSubmit()&quot;&gt;
         &lt;div *ngFor&#x3D;&quot;let item of menuItems; let i &#x3D; index&quot;&gt;
-          &lt;mat-checkbox [formControlName]&#x3D;&quot;i&quot;&gt;{{item}}&lt;/mat-checkbox&gt;
+          &lt;mat-checkbox [formControlName]&#x3D;&quot;i&quot;&gt;{{item.menu_item_name}}&lt;/mat-checkbox&gt;
         &lt;/div&gt;
+        &lt;button class&#x3D;&quot;submit-button&quot; type&#x3D;&quot;submit&quot;&gt;Remove Selected Items&lt;/button&gt;
     &lt;/form&gt;
   &lt;/div&gt;
-  &lt;button class&#x3D;&quot;submit-button&quot; type&#x3D;&quot;submit&quot;&gt;Remove Selected Items&lt;/button&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -693,7 +716,7 @@ export class RemoveOrderItemsDialogComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="header">  <div class="header-text">Remove Items in Order #{{data.id}}</div></div><div class="container">  <div class="form-container">    <form [formGroup]="orderForm" (ngSubmit)="onFormSubmit()">        <div *ngFor="let item of menuItems; let i = index">          <mat-checkbox [formControlName]="i">{{item}}</mat-checkbox>        </div>    </form>  </div>  <button class="submit-button" type="submit">Remove Selected Items</button></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="header">  <div class="header-text">Remove Items in Order #{{data.id}}</div></div><div class="container">  <div class="form-container">    <form [formGroup]="orderForm" (ngSubmit)="onFormSubmit()">        <div *ngFor="let item of menuItems; let i = index">          <mat-checkbox [formControlName]="i">{{item.menu_item_name}}</mat-checkbox>        </div>        <button class="submit-button" type="submit">Remove Selected Items</button>    </form>  </div></div></div>'
     var COMPONENTS = [{'name': 'AddEmployeeComponent', 'selector': 'app-add-employee'},{'name': 'AddOrderDialogComponentComponent', 'selector': 'app-add-order-dialog-component'},{'name': 'AdminViewComponent', 'selector': 'app-admin-view'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CashierCartComponent', 'selector': 'app-cashier-cart'},{'name': 'CashierCheckoutViewComponent', 'selector': 'app-cashier-checkout-view'},{'name': 'CashierCustomizeItemComponent', 'selector': 'app-cashier-customize-item'},{'name': 'CashierMenuComponent', 'selector': 'app-cashier-menu'},{'name': 'CustomerCartComponent', 'selector': 'app-customer-cart'},{'name': 'CustomerCheckoutViewComponent', 'selector': 'app-customer-checkout-view'},{'name': 'CustomerCustomizeItemComponent', 'selector': 'app-customer-customize-item'},{'name': 'CustomerLandingComponent', 'selector': 'app-customer-landing'},{'name': 'CustomerMenuComponent', 'selector': 'app-customer-menu'},{'name': 'EditEmployeeDialogComponent', 'selector': 'app-edit-employee-dialog'},{'name': 'EditOrderComponent', 'selector': 'app-edit-order'},{'name': 'EmployeeLoginComponent', 'selector': 'app-employee-login'},{'name': 'ExcessReportComponent', 'selector': 'app-excess-report'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerEditIngredientsComponent', 'selector': 'app-manager-edit-ingredients'},{'name': 'ManagerEditMenuComponent', 'selector': 'app-manager-edit-menu'},{'name': 'ManagerViewComponent', 'selector': 'app-manager-view'},{'name': 'MenuBoardComponent', 'selector': 'app-menu-board'},{'name': 'MenuPopularityComponent', 'selector': 'app-menu-popularity'},{'name': 'OrderEditDialogComponent', 'selector': 'app-order-edit-dialog'},{'name': 'OrderManagementComponent', 'selector': 'app-order-management'},{'name': 'ProductUsageComponent', 'selector': 'app-product-usage'},{'name': 'RemoveOrderItemsDialogComponent', 'selector': 'app-remove-order-items-dialog'},{'name': 'RestockReportComponent', 'selector': 'app-restock-report'},{'name': 'SalesReportComponent', 'selector': 'app-sales-report'},{'name': 'SellTogetherReportComponent', 'selector': 'app-sell-together-report'},{'name': 'TrevorCartComponent', 'selector': 'app-trevor-cart'},{'name': 'TrevorCashierComponent', 'selector': 'app-trevor-cashier'},{'name': 'TrevorCheckoutComponent', 'selector': 'app-trevor-checkout'},{'name': 'TrevorCustomizeItemComponent', 'selector': 'app-trevor-customize-item'},{'name': 'ViewCustomizationsComponent', 'selector': 'app-view-customizations'}];
     var DIRECTIVES = [{'name': 'LogoutDirective', 'selector': '[appLogout]'}];
     var ACTUAL_COMPONENT = {'name': 'RemoveOrderItemsDialogComponent'};
