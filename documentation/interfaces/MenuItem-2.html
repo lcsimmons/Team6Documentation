@@ -408,17 +408,48 @@ export class CustomerMenuComponent implements OnInit{//, OnDestroy {
 
   /* end accessibility toolbar code */
 
+  /**
+   * weather description variable
+   */
   weatherDescription: string &#x3D; &#x27;&#x27;;
+  /**
+   * temperature variable
+   */
   temperature: number &#x3D; 0;
   // feelsLikeTemperature: number &#x3D; 0;
+  /**
+   * weather icon variable
+   */
   weathericon: string &#x3D; &#x27;01d.png&#x27;;
 
+  /**
+   * Reference to the side navigation drawer.
+   */
   @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+  /**
+   * Array of menu items to display in the customer view.
+   */
   menuItems: MenuItem[] &#x3D; [];
+  /**
+   * The currently selected menu item for customization or addition to cart.
+   */
   selectedMenuItem?: MenuItem; 
+  /**
+   * The currently selected category of menu items.
+   */
   selectedCategory?: string;
+  /**
+   * Array of categories for menu items.
+   */
   categories: string[] &#x3D; [&#x27;Burger&#x27;, &#x27;Sandwich&#x27;, &#x27;Value Meal&#x27;, &#x27;Basket&#x27;, &#x27;Side&#x27;, &#x27;Shakes &amp; More&#x27;, &#x27;Beverage&#x27;, &#x27;Extras&#x27;, &#x27;Sauces&#x27;, &#x27;Seasonal&#x27;];
 
+  /**
+   * Initializes the component with required services.
+   * @param dataService 
+   * @param router 
+   * @param breakpointObserver 
+   * @param _snackBar 
+   */
   constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver, private _snackBar: MatSnackBar) { }
 
   /**
@@ -547,10 +578,20 @@ export class CustomerMenuComponent implements OnInit{//, OnDestroy {
   }
 
 
+  /**
+   * Determines if a menu item is currently selected.
+   * @param item 
+   * @returns 
+   */
   isItemSelected(item: MenuItem): boolean {
     return this.selectedMenuItem?.name &#x3D;&#x3D;&#x3D; item.name;
   }
 
+  /**
+   * Determines if a category is currently selected.
+   * @param category 
+   * @returns 
+   */
   isCategorySelected(category: string): boolean {
     return this.selectedCategory &#x3D;&#x3D; category;
   }
@@ -613,8 +654,15 @@ export class CustomerMenuComponent implements OnInit{//, OnDestroy {
   // Toggle text size 
   
 
+  /**
+   * The currently selected text size for the page.
+   */
   selectedTextSize: string &#x3D; &#x27;text-normal&#x27;; // Default size
 
+  /**
+   * Sets the text size for the page.
+   * @param cssClass 
+   */
   setTextSize(cssClass: string): void {
     this.selectedTextSize &#x3D; cssClass;
   }

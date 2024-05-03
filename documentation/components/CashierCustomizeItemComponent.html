@@ -526,14 +526,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="326"
-                                    class="link-to-prism">src/app/cashier-customize-item/cashier-customize-item.component.ts:326</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="331"
+                                    class="link-to-prism">src/app/cashier-customize-item/cashier-customize-item.component.ts:331</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Get menu item image</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -670,8 +672,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="331"
-                                    class="link-to-prism">src/app/cashier-customize-item/cashier-customize-item.component.ts:331</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="336"
+                                    class="link-to-prism">src/app/cashier-customize-item/cashier-customize-item.component.ts:336</a></div>
                         </td>
                     </tr>
 
@@ -709,14 +711,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="339"
-                                    class="link-to-prism">src/app/cashier-customize-item/cashier-customize-item.component.ts:339</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="349"
+                                    class="link-to-prism">src/app/cashier-customize-item/cashier-customize-item.component.ts:349</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Handle image error</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -854,8 +858,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="335"
-                                    class="link-to-prism">src/app/cashier-customize-item/cashier-customize-item.component.ts:335</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="340"
+                                    class="link-to-prism">src/app/cashier-customize-item/cashier-customize-item.component.ts:340</a></div>
                         </td>
                     </tr>
 
@@ -2036,6 +2040,11 @@ export class CashierCustomizeItemComponent implements OnInit {
   }
   
 
+  /**
+   * Get menu item image
+   * @param id 
+   * @returns 
+   */
   getMenuItemImage(id: number): string {
     return &#x60;assets/menu_item_images/item${id}.jpg&#x60;;
   }
@@ -2049,6 +2058,11 @@ export class CashierCustomizeItemComponent implements OnInit {
     this.router.navigate([&#x27;/cashier-menu&#x27;]);
   }
 
+
+  /**
+   * Handle image error
+   * @param event 
+   */
   handleImageError(event: any) {
     event.target.src &#x3D; &#x27;assets/REVSLogoUpdated.jpg&#x27;; // Replace with path to your placeholder image
   }

@@ -576,6 +576,11 @@ export class CashierCustomizeItemComponent implements OnInit {
   }
   
 
+  /**
+   * Get menu item image
+   * @param id 
+   * @returns 
+   */
   getMenuItemImage(id: number): string {
     return &#x60;assets/menu_item_images/item${id}.jpg&#x60;;
   }
@@ -589,6 +594,11 @@ export class CashierCustomizeItemComponent implements OnInit {
     this.router.navigate([&#x27;/cashier-menu&#x27;]);
   }
 
+
+  /**
+   * Handle image error
+   * @param event 
+   */
   handleImageError(event: any) {
     event.target.src &#x3D; &#x27;assets/REVSLogoUpdated.jpg&#x27;; // Replace with path to your placeholder image
   }

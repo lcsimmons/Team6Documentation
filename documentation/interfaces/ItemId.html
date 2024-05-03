@@ -234,8 +234,15 @@ interface ItemId {
 })
 export class CashierCartComponent implements OnInit {
 
+  /**
+   * Query list of elements to read content from.
+   */
+
   @ViewChildren(&#x27;readContent&#x27;) readContents!: QueryList&lt;ElementRef&gt;;
 
+  /**
+   * Reference to the side navigation component.
+   */
   @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
 
   /** Array to track items currently placed in cart */
@@ -250,6 +257,9 @@ export class CashierCartComponent implements OnInit {
    * Tracks if an order is to-go or not.
    */
   toGo: boolean &#x3D; false;
+  /**
+   * String of item IDs in the cart.
+   */
   itemListString: string &#x3D; &quot;&quot;;
 
   /**
@@ -262,6 +272,9 @@ export class CashierCartComponent implements OnInit {
     );
   
     /* accesibility toolbar code here */
+  /**
+   * Boolean to determine if the accessibility toolbar container is visible.
+   */
   isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
 
   /**

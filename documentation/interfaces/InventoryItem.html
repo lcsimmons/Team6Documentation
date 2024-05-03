@@ -517,6 +517,9 @@ interface InventoryItem {
 })
 export class RestockReportComponent {
 
+  /**
+   * Bionic variable to toggle the visual theme of the component.
+   */
   Bionic &#x3D; false;
 
   /**
@@ -528,11 +531,26 @@ export class RestockReportComponent {
       shareReplay()
     );
 
+  /**
+   * Ingredient name for the current inventory item.
+   */
   ingredientName: string &#x3D; &#x27;&#x27;;
+  /**
+   * Current quantity of the selected ingredient.
+   */
   currentQuantity: number &#x3D; 0;
+  /**
+   * Quantity to add to the selected ingredient.
+   */
   quantityToAdd: number &#x3D; 0;
+  /**
+   * Array of inventory items.
+   */
   inventory: InventoryItem[] &#x3D; [];
 
+  /**
+   * Quantity threshold for restocking.
+   */
   quantityThreshold: number &#x3D; 100;
 
   /**
@@ -544,6 +562,9 @@ export class RestockReportComponent {
    */
   constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver, private _snackBar: MatSnackBar) { }
 
+  /**
+   * Array of items to restock.
+   */
   restockItems: any[] &#x3D; [];
 
   /**

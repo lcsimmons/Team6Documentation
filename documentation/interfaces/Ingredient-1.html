@@ -280,24 +280,53 @@ interface Ingredient {
 })
 export class CustomerCustomizeItemComponent implements OnInit {
 
-  /** Default weather description */
+  /**
+   * Weather description variable
+   */
   weatherDescription: string &#x3D; &#x27;&#x27;;
+  /**
+   * Temperature variable
+   */
   temperature: number &#x3D; 0;
+  /**
+   * Feels like temperature variable
+   */
   feelsLikeTemperature: number &#x3D; 0;
+  /**
+   * Weather icon variable
+   */
   weathericon: string &#x3D; &#x27;01d.png&#x27;;
   
 
+  /**
+   * Menu item to be customized
+   */
   menuItem: any;
   /** Stores ingredients in selected item */
   ingredients: Ingredient[] &#x3D; [];
+  /**
+   * Selected ingredients
+   */
   selectedIngredients: { [key: number]: FormControl } &#x3D; {};
   /** Default order number */
   orderNumber: number &#x3D; 0;
+  /**
+   * Customization choices
+   */
   customizationChoices: { id: number; name: string; price: number }[] &#x3D; []; // Include price in the customization choices
+  /**
+   * Customizations selected by the customer
+   */
   customizations: any[] &#x3D; [];
+  /**
+   * Selected customizations
+   */
   selectedCustomizations: { [key: number]: FormControl } &#x3D; {};
 
 
+  /**
+   * Event emitter for total price
+   */
   @Output() totalPriceChanged: EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;(); // Event emitter for total price
 
   /**
@@ -310,6 +339,9 @@ export class CustomerCustomizeItemComponent implements OnInit {
     );
   
     /* accesibility toolbar code here */
+    /**
+     * Accessibility toolbar container visibility status.
+     */
   isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
 
   /** Toggle if accessibility toolbar is shown */
@@ -350,6 +382,13 @@ export class CustomerCustomizeItemComponent implements OnInit {
 
 
 
+  /**
+   * Initializes the component.
+   * @param route 
+   * @param dataService 
+   * @param router 
+   * @param breakpointObserver 
+   */
   constructor(
     private route: ActivatedRoute,
     private dataService: DataService,
@@ -377,7 +416,9 @@ export class CustomerCustomizeItemComponent implements OnInit {
     });
   }
 
-  /** Initialize component */
+  /**
+   * Initializes the component by fetching the next order ID and menu item.
+   */
   ngOnInit(): void {
     this.dataService.getNextOrderId().subscribe((response: any) &#x3D;&gt; {
       this.orderNumber &#x3D; response.next_order_id;
@@ -422,6 +463,9 @@ export class CustomerCustomizeItemComponent implements OnInit {
     this.loadGoogleTranslate();
   }
 
+  /**
+   * Loads Google Translate script.
+   */
   loadGoogleTranslate(): void {
     const existingScript &#x3D; document.getElementById(&#x27;google-translate-script&#x27;);
     if (!existingScript) {
@@ -434,6 +478,9 @@ export class CustomerCustomizeItemComponent implements OnInit {
       (window as any).googleTranslateElementInit &#x3D; this.initGoogleTranslate;
   }
 
+  /**
+   * Initializes the Google Translate element on the page.
+   */
   initGoogleTranslate(): void {
     new window.google.translate.TranslateElement({
       pageLanguage: &#x27;en&#x27;,
@@ -569,6 +616,10 @@ export class CustomerCustomizeItemComponent implements OnInit {
   
 
 
+  /**
+   * Calculates the total price of selected customizations.
+   * @returns Total price of selected customizations
+   */
   calculateTotalPrice(): number {
     let totalPrice &#x3D; 0;
   
@@ -587,18 +638,33 @@ export class CustomerCustomizeItemComponent implements OnInit {
   }
   
 
+  /**
+   * Gets the image for a menu item.
+   * @param id 
+   * @returns MenuItemImage
+   */
   getMenuItemImage(id: number): string {
     return &#x60;assets/menu_item_images/item${id}.jpg&#x60;;
   }
 
+  /**
+   * Navigates to the home page.
+   */
   goHome(): void {
     this.router.navigate([&#x27;/employee-login&#x27;]);
   }
   
+  /**
+   * Navigates to the menu page.
+   */
   onSeeMenu(): void {
     this.router.navigate([&#x27;/cashier-menu&#x27;]);
   }
 
+  /**
+   * Handles image error by replacing the image with a placeholder.
+   * @param event 
+   */
   handleImageError(event: any) {
     event.target.src &#x3D; &#x27;assets/REVSLogoUpdated.jpg&#x27;; // Replace with path to your placeholder image
   }

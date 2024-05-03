@@ -231,10 +231,26 @@ interface ItemId {
   styleUrls: [&#x27;./customer-cart.component.css&#x27;]
 })
 export class CustomerCartComponent implements OnInit {
+
+  /**
+   * Reference to the side navigation component.
+   */
   @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+  /**
+   * Array of cart items to display in the cart view.
+   */
   cartItems: any[] &#x3D; [];
+  /**
+   * The current order number for the customer&#x27;s order.
+   */
   orderNumber: number &#x3D; 0;
+  /**
+   * Boolean to determine if the order is &#x27;to-go&#x27;.
+   */
   toGo: boolean &#x3D; false;
+  /**
+   * String of item IDs in the cart.
+   */
   itemListString: string &#x3D; &quot;&quot;;
   /**
    * Observable to determine if the device is a handset for responsive layout purposes.
@@ -246,6 +262,9 @@ export class CustomerCartComponent implements OnInit {
     );
 
     /* accesibility toolbar code here */
+  /**
+   * Boolean to determine if the accessibility toolbar container is visible.
+   */
   isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
 
   /**
@@ -283,11 +302,29 @@ export class CustomerCartComponent implements OnInit {
   /* end accessibility toolbar code */
 
 
+  /**
+   * Weather data for College Station, TX.
+   */
   weatherDescription: string &#x3D; &#x27;&#x27;;
+  /**
+   * Temperature in Fahrenheit for College Station, TX.
+   */
   temperature: number &#x3D; 0;
+  /**
+   * Feels-like temperature in Fahrenheit for College Station, TX.
+   */
   feelsLikeTemperature: number &#x3D; 0;
+  /**
+   * Weather icon for College Station, TX.
+   */
   weathericon: string &#x3D; &#x27;01d.png&#x27;;
 
+  /**
+   * Constructs the Customer Cart component with necessary dependencies.
+   * @param dataService DataService for fetching and updating cart data.
+   * @param router Router for navigation.
+   * @param breakpointObserver BreakpointObserver for responsive adjustments.
+   */
   constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver) { }
 
   /**

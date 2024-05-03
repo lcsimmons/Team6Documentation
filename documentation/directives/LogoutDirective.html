@@ -204,6 +204,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructs the directive with the necessary dependencies.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -212,6 +214,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -226,6 +229,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Router for navigation.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -257,8 +264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/logout.directive.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/logout.directive.ts:23</a></div>
                 </td>
             </tr>
 
@@ -308,8 +315,8 @@ and navigates to the employee login page to simulate a logout.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="19"
-                                    class="link-to-prism">src/app/logout.directive.ts:19</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="23"
+                                    class="link-to-prism">src/app/logout.directive.ts:23</a></div>
                         </td>
                     </tr>
 
@@ -346,6 +353,10 @@ import { Router } from &#x27;@angular/router&#x27;;
 })
 export class LogoutDirective {
 
+  /**
+   * Constructs the directive with the necessary dependencies.
+   * @param router Router for navigation.
+   */
   constructor(private router: Router) { }
 
   /**

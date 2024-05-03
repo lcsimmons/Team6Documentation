@@ -333,13 +333,25 @@ export interface SellTogetherData {
 })
 export class SellTogetherReportComponent {
 
+  /**
+   * Bionic variable to toggle the visual theme of the component.
+   */
   Bionic &#x3D; false;
 
   // startDate: Date;
   // endDate: Date;
   // range: string &#x3D; &#x27;&#x27;;
+  /**
+   * Form group for the date range selection form.
+   */
   dateForm!: FormGroup;
+  /**
+   * Array of sell together data to display in the report.
+   */
   sellTogetherData: SellTogetherData[] &#x3D; [];
+  /**
+   * Columns to display in the sell together report table.
+   */
   displayedColumns: string[] &#x3D; [&#x27;menu_item_1&#x27;, &#x27;menu_item_2&#x27;, &#x27;frequency&#x27;];
 
   /**
@@ -351,7 +363,13 @@ export class SellTogetherReportComponent {
       shareReplay()
     );
 
+    /**
+     * Reference to the sort component for the table.
+     */
   @ViewChild(MatSort, {static: false}) sort!: MatSort;
+  /**
+   * Data source for the sell together report table.
+   */
   dataSource &#x3D; new MatTableDataSource&lt;any&gt;(this.sellTogetherData);
   
 
@@ -457,6 +475,11 @@ export class SellTogetherReportComponent {
       );
   }
 
+  /**
+   * Fetches the name of a menu item by its ID.
+   * @param itemId 
+   * @returns 
+   */
   fetchMenuItemNameById(itemId: number): Observable&lt;string&gt; { // Change parameter type to number
     // Add delay here if necessary
     return this.dataService.getMenuItemNameById(itemId).pipe(

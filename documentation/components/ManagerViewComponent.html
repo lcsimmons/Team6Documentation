@@ -242,12 +242,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/manager-view/manager-view.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/manager-view/manager-view.component.ts:33</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructs a new manager view component.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -256,6 +258,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -270,6 +273,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The breakpoint observer to determine device type.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -282,6 +289,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The router for navigation.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -321,8 +332,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/app/manager-view/manager-view.component.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="52"
+                                    class="link-to-prism">src/app/manager-view/manager-view.component.ts:52</a></div>
                         </td>
                     </tr>
 
@@ -360,8 +371,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="34"
-                                    class="link-to-prism">src/app/manager-view/manager-view.component.ts:34</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/manager-view/manager-view.component.ts:45</a></div>
                         </td>
                     </tr>
 
@@ -414,10 +425,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/manager-view/manager-view.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/manager-view/manager-view.component.ts:20</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Reference to the side navigation component.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -449,7 +466,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/manager-view/manager-view.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/manager-view/manager-view.component.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -486,10 +503,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/manager-view/manager-view.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/manager-view/manager-view.component.ts:24</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Boolean to determine if the order is &#39;to-go&#39;.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -515,7 +538,13 @@ import { Router } from &#x27;@angular/router&#x27;;
   styleUrls: [&#x27;./manager-view.component.css&#x27;]
 })
 export class ManagerViewComponent {
+  /**
+   * Reference to the side navigation component.
+   */
   @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+  /**
+   * Boolean to determine if the order is &#x27;to-go&#x27;.
+   */
   toGo: boolean &#x3D; false;
 
   /**
@@ -527,6 +556,11 @@ export class ManagerViewComponent {
       shareReplay()
     );
 
+  /**
+   * Constructs a new manager view component.
+   * @param breakpointObserver The breakpoint observer to determine device type.
+   * @param router The router for navigation.
+   */
   constructor(private breakpointObserver: BreakpointObserver, private router: Router) { }
 
   /**

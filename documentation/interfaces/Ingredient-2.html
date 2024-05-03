@@ -355,6 +355,14 @@ export class ManagerEditIngredientsComponent implements OnInit {
       shareReplay()
     );
 
+  /**
+   * Initializes the component with a form builder, data service, breakpoint observer, and router.
+   * @param cdr 
+   * @param fb 
+   * @param dataService 
+   * @param breakpointObserver 
+   * @param router 
+   */
   constructor(private cdr: ChangeDetectorRef, private fb: FormBuilder, private dataService: DataService, private breakpointObserver: BreakpointObserver, private router: Router) {
     
     this.ingredientForm &#x3D; this.fb.group({
@@ -369,6 +377,9 @@ export class ManagerEditIngredientsComponent implements OnInit {
 
 
 
+  /**
+   * Forces the component to check for changes after the view has been initialized.
+   */
   ngAfterViewInit() {
     this.cdr.detectChanges();
   }

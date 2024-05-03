@@ -231,18 +231,38 @@ interface ItemId {
 })
 export class TrevorCartComponent implements OnInit{
 
+  /**
+   * Reference for the side navigation component.
+   */
   @ViewChild(&#x27;drawer&#x27;) drawer!: MatSidenav;
+  /**
+   * Array of items in the cart.
+   */
   cartItems: any[] &#x3D; [];
+  /**
+   * Order number for the current order.
+   */
   orderNumber: number &#x3D; 0;
+  /**
+   *  Boolean to determine if the order is &#x27;to-go&#x27;.
+   */
   toGo: boolean &#x3D; false;
+  /**
+   * List of item IDs in the cart.
+   */
   itemListString: string &#x3D; &quot;&quot;;
+  /**
+   * Observable that emits true if the screen is a handset device, false otherwise.
+   */
   isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result &#x3D;&gt; result.matches),
       shareReplay()
     );
   
-    /* accesibility toolbar code here */
+  /**
+   * Accessibility toolbar container visibility state.
+   */
   isAccessibilityToolbarContainerVisible: boolean &#x3D; true;
 
   /**
@@ -254,6 +274,9 @@ export class TrevorCartComponent implements OnInit{
   }
   
 
+  /**
+   * Array of text sizes for the accessibility toolbar.
+   */
   textsizers &#x3D; [
     { size: &#x27;Regular&#x27;},
     { size: &#x27;Large&#x27;},
@@ -263,9 +286,21 @@ export class TrevorCartComponent implements OnInit{
   /* end accessibility toolbar code */
 
 
+  /**
+   * Current weather description.
+   */
   weatherDescription: string &#x3D; &#x27;&#x27;;
+  /**
+   * Current temperature.
+   */
   temperature: number &#x3D; 0;
+  /**
+   * Current &#x27;feels like&#x27; temperature.
+   */
   feelsLikeTemperature: number &#x3D; 0;
+  /**
+   * Current weather icon.
+   */
   weathericon: string &#x3D; &#x27;01d.png&#x27;;
 
 

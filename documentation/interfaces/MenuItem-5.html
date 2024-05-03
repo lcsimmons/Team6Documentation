@@ -370,7 +370,13 @@ export class ProductUsageComponent implements OnInit {
   /** Flag indicating the current visual theme. */
   Bionic: boolean &#x3D; false;
 
+  /**
+   * Sorting component for the inventory table.
+   */
   @ViewChild(MatSort, {static: false}) sort!: MatSort;
+  /**
+   * Data source for the inventory table.
+   */
   dataSource &#x3D; new MatTableDataSource&lt;any&gt;();
 
   /**

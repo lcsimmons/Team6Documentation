@@ -175,6 +175,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of the AuthGuard.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -244,8 +246,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="22"
-                                    class="link-to-prism">src/app/auth-guard.service.ts:22</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="27"
+                                    class="link-to-prism">src/app/auth-guard.service.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -333,6 +335,11 @@ import { AuthService } from &#x27;./auth.service&#x27;;
   providedIn: &#x27;root&#x27;
 })
 export class AuthGuard implements CanActivate {
+  /**
+   * Creates an instance of the AuthGuard.
+   * @param authService 
+   * @param router 
+   */
   constructor(private authService: AuthService, private router: Router) {}
 
   /**

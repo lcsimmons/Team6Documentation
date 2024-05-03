@@ -295,7 +295,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/product-usage/product-usage.component.ts:85</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/product-usage/product-usage.component.ts:91</a></div>
                             </td>
                         </tr>
 
@@ -401,8 +401,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="193"
-                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:193</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="199"
+                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:199</a></div>
                         </td>
                     </tr>
 
@@ -440,8 +440,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="98"
-                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:98</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="104"
+                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:104</a></div>
                         </td>
                     </tr>
 
@@ -479,8 +479,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="200"
-                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:200</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="206"
+                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:206</a></div>
                         </td>
                     </tr>
 
@@ -518,8 +518,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="108"
-                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:108</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="114"
+                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:114</a></div>
                         </td>
                     </tr>
 
@@ -592,8 +592,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="144"
-                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:144</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="150"
+                                    class="link-to-prism">src/app/product-usage/product-usage.component.ts:150</a></div>
                         </td>
                     </tr>
 
@@ -798,10 +798,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/product-usage/product-usage.component.ts:76</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/product-usage/product-usage.component.ts:82</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Data source for the inventory table.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1097,7 +1103,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/product-usage/product-usage.component.ts:81</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/product-usage/product-usage.component.ts:87</a></div>
                         </td>
                     </tr>
 
@@ -1176,10 +1182,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/product-usage/product-usage.component.ts:75</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/product-usage/product-usage.component.ts:78</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Sorting component for the inventory table.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1295,7 +1307,13 @@ export class ProductUsageComponent implements OnInit {
   /** Flag indicating the current visual theme. */
   Bionic: boolean &#x3D; false;
 
+  /**
+   * Sorting component for the inventory table.
+   */
   @ViewChild(MatSort, {static: false}) sort!: MatSort;
+  /**
+   * Data source for the inventory table.
+   */
   dataSource &#x3D; new MatTableDataSource&lt;any&gt;();
 
   /**

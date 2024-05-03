@@ -186,6 +186,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of AuthService.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -194,6 +196,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -208,6 +211,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The OAuthService instance to use for authentication.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>dataService</td>
@@ -220,6 +227,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The DataService instance to use for data access.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -232,6 +243,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The Router instance to use for navigation.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>snackBar</td>
@@ -244,6 +259,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The MatSnackBar instance to use for notifications.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -281,8 +300,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="68"
-                                    class="link-to-prism">src/app/auth.service.ts:68</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/auth.service.ts:79</a></div>
                         </td>
                     </tr>
 
@@ -324,14 +343,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="43"
-                                    class="link-to-prism">src/app/auth.service.ts:43</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/auth.service.ts:54</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Logs in the user with the provided username and password.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -342,6 +363,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -356,6 +378,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>The username of the user.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>password</td>
@@ -368,6 +394,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>The password of the user.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -403,8 +433,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="50"
-                                    class="link-to-prism">src/app/auth.service.ts:50</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/auth.service.ts:61</a></div>
                         </td>
                     </tr>
 
@@ -442,8 +472,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="58"
-                                    class="link-to-prism">src/app/auth.service.ts:58</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="69"
+                                    class="link-to-prism">src/app/auth.service.ts:69</a></div>
                         </td>
                     </tr>
 
@@ -483,8 +513,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="106"
-                                    class="link-to-prism">src/app/auth.service.ts:106</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/auth.service.ts:117</a></div>
                         </td>
                     </tr>
 
@@ -559,6 +589,13 @@ import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
 })
 export class AuthService {
 
+  /**
+   * Creates an instance of AuthService.
+   * @param oauthService The OAuthService instance to use for authentication.
+   * @param dataService The DataService instance to use for data access.
+   * @param router The Router instance to use for navigation.
+   * @param snackBar The MatSnackBar instance to use for notifications.
+   */
   constructor(private oauthService: OAuthService, private dataService: DataService, private router: Router, private snackBar: MatSnackBar) {
     this.oauthService.configure({
       clientId: &#x27;1058560215093-5np1girp1v8m5mkd054vnckgooer3dhf.apps.googleusercontent.com&#x27;,
@@ -584,7 +621,11 @@ export class AuthService {
   }
 
   
-
+  /**
+   * Logs in the user with the provided username and password.
+   * @param username The username of the user.
+   * @param password The password of the user.
+   */
   login(username: string, password: string): void {
     // Implement your login logic here
   }

@@ -527,8 +527,16 @@ interface Order {
   styleUrl: &#x27;./order-management.component.css&#x27;
 })
 export class OrderManagementComponent implements OnInit {
+
+  /**
+   * Reference to the side navigation component.
+   */
   @ViewChild(&#x27;datePickerInput&#x27;) datePickerInput!: ElementRef;
 
+
+  /**
+   * Bionic variable to toggle the visual theme of the component.
+   */
   Bionic &#x3D; false;
 
   /**
@@ -551,6 +559,14 @@ export class OrderManagementComponent implements OnInit {
   displayedColumns: string[] &#x3D; [&#x27;id&#x27;, &#x27;menu_items&#x27;, &#x27;togo&#x27;, &#x27;total_price&#x27;, &#x27;date&#x27;, &#x27;employee_id&#x27;, &#x27;status&#x27;, &#x27;actions&#x27;];
 
 
+  /**
+   * Constructor for the OrderManagementComponent.
+   * @param dataService 
+   * @param router 
+   * @param dialog 
+   * @param breakpointObserver 
+   * @param authService 
+   */
   constructor(private dataService: DataService, private router: Router, private dialog: MatDialog, private breakpointObserver: BreakpointObserver, private authService: AuthService) {
     this.datePickerInput &#x3D; new ElementRef(null);
   }
@@ -601,6 +617,9 @@ export class OrderManagementComponent implements OnInit {
     this.authService.logout();
   }
 
+  /**
+   * Subject to unsubscribe from observables when the component is destroyed.
+   */
   private unsubscribe$ &#x3D; new Subject&lt;void&gt;();
 
   /**
@@ -648,11 +667,20 @@ export class OrderManagementComponent implements OnInit {
     });
   }
   
+
+  /**
+   * Fetches the name of a menu item by its ID.
+   * @param itemId 
+   * @returns 
+   */
   getMenuItemName(itemId: number): Observable&lt;string&gt; {
     //console.log(&quot;Getting menu item for ID:&quot;, itemId);
     return this.dataService.getMenuItemNameById(itemId)
   }
   
+  /**
+   * Resets the date picker input field.
+   */
   resetDatePicker() {
     if (this.datePickerInput &amp;&amp; this.datePickerInput.nativeElement) {
       this.datePickerInput.nativeElement.value &#x3D; &#x27;&#x27;;
@@ -660,12 +688,21 @@ export class OrderManagementComponent implements OnInit {
     }
   }
 
+  /**
+   * Creates an order based on the provided data.
+   * @param order The order to create.
+   */
   createOrder(order: any): void {
     this.dataService.createOrder(order).subscribe(() &#x3D;&gt; {
       this.ngOnInit(); 
     });
   }
 
+  /**
+   * Updates the status of an order.
+   * @param orderId The ID of the order to update.
+   * @param event The event that triggered the update.
+   */
   updateOrderStatus(orderId: string, event: Event): void {
     const target &#x3D; event.target as HTMLSelectElement;
     const status &#x3D; target.value;
@@ -721,6 +758,10 @@ export class OrderManagementComponent implements OnInit {
   }
 
 
+  /**
+   * Opens the dialog to view customizations for an order.
+   * @param order The order to view customizations for.
+   */
   viewCustomization(order: any): void {
     const dialogRef &#x3D; this.dialog.open(ViewCustomizationsComponent, {
       width: &#x27;700px&#x27;,
